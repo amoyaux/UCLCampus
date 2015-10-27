@@ -3,4 +3,4 @@ Multi platforms mobile application UCLCampus developped in the context of a memo
 
 Framework : Ionic
 
-DashBoard : https://trello.com/b/UOn6HOIq/uclcampus
+DashBoard : https://trello.com/b/UOn6HOIq
