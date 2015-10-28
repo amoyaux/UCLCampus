@@ -1,0 +1,32 @@
+	-Etudiants:
+	-Horaire de cours
+	-Moodle (pas icampus) -> notifications
+	-Site de l'ucl
+	-Bibliothques
+	-Restaurant universitaire(cartes, horaire, map)
+	-Sport(infrastructure, horaire, site de réservation)
+	-Carte spécial avec juste les auditoires, restaurants,... -> itinéraire vers un auditoire inconnu.	
+
+	-Agenda facile(fait automatiquement avec les cours, sports choisis)
+
+	-Liaison avec les réseaux sociaux
+
+-Campus:
+	-Activité(Carpe studentem) 
+	-Cercle
+	-Cafés
+	-Kot à projets
+	-Recherche de kot
+	-Seconde main
+
+-Maps(collobaration)
+
+-Ville:
+	-Esplanade 
+	-cinéma
+	-Restuaration pour le temps de midi
+
+-Plusieurs langues(entre autre anglais pour les erasmus), même si on le fait pas prévoir le coup si quelqu'un veut le faire(programme open source)
+
+
+Essayer d'avoir beau et fluide
