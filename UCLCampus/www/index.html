@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+
+    <!-- Demo styles -->
+    
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -27,8 +31,19 @@
       <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title">UCLCampus</h1>
       </ion-header-bar>
-      <ion-content>
-      <div class="button-bar">
+	  <ion-content>
+	  	<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
+		  <ion-slide>
+		    <img src="img/pic1.jpg" style="width:100%">
+		  </ion-slide>
+		  <ion-slide>
+		    <img src="img/pic2.jpg" style="width:100%">
+		  </ion-slide>
+		  <ion-slide>
+		    <img src="img/pic3.	jpg" style="width:100%">
+		  </ion-slide>
+		</ion-slide-box>
+		<div class="button-bar">
   			<a class="button button-energized">First</a>
   			<a class="item item-thumbnail" ng-ref="#">
       			<img src="img/graduate-member.jpg">
@@ -37,7 +52,8 @@
   			<a class="button">Third</a>
   			<a class="button">Four</a>
 		</div>
-      </ion-content>
+	  </ion-content>
     </ion-pane>
+   
   </body>
 </html>
