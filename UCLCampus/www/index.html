@@ -33,6 +33,7 @@
         <h1 class="title">UCLCampus</h1> 
     </ion-header-bar>
     <ion-content>
+    <div style="width:100%">
       <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
 		  <ion-slide>
 		    <img src="img/pic1.jpg" style="width:100%">
@@ -44,8 +45,8 @@
 		    <img src="img/pic3.	jpg" style="width:100%">
 		  </ion-slide>
 		</ion-slide-box>
-
-
+	</div>
+	<div style="text-align:center">
       <button class="round-overlay-button positive button-icon" ng-click="newTask()"> 
           <i class="icon ion-university"></i>
       </button>
@@ -58,6 +59,7 @@
       <button class="round-overlay-button balanced button-icon"> 
          <i class="icon ion-compose"></i>
       </button>
+      </div>
     </ion-content>
 
   <script id="new-task.html" type="text/ng-template">
