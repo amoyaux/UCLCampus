@@ -115,6 +115,30 @@
 
     </script>
     
+      <script id="student.html" type="text/ng-template">
+
+      <div class="modal">
+
+        <!-- Modal header bar -->
+        <ion-header-bar class="bar-secondary">
+          <h1 class="title">Student</h1>
+          <button class="button button-clear button-positive" ng-click="closeStudentMenu()">Cancel</button>
+        </ion-header-bar>
+
+        <!-- Modal content area -->
+        <ion-content class="content-stable">
+          <ion-list>
+            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ng-click="closeStudentMenu()">
+              <i class={{item.icon}}></i>
+              {{item.title}}
+            </ion-item>
+          </ion-list>
+        </ion-content>
+
+      </div>
+
+      </script>
+
     <script id="ionCart.html" type="text/ng-template">
       <div class="list">
 
