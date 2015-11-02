@@ -25,9 +25,33 @@ angular.module('ionicApp', ['ionic'])
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
+  $scope.toggleRight = function() {
+    $ionicSideMenuDelegate.toggleRight();
+  };
 })
 
-.controller("HomeController", function($scope) {
+.controller("HomeController", function($scope, $ionicModal) {
+  $ionicModal.fromTemplateUrl('student.html', function(modal) {
+    $scope.studentModal = modal;
+  }, {
+    scope: $scope
+  });
+  $scope.studentMenu = function() {
+    $scope.studentModal.show();
+  }
+  $scope.closeStudentMenu = function() {
+    $scope.studentModal.hide();
+  }
+  $scope.slide = function(index) {
+    $ionicSlideBoxDelegate.slide(index);
+  };
+  $scope.studentList = [
+    { title: 'Schedule' , icon:'icon ion-calendar'},
+    { title: 'Lecture Halls' , icon:'icon ion-android-pin'},
+    { title: 'Libraries', icon:'icon ion-ios-book'},
+    { title: 'Moodle', icon:'icon ion-help' },
+    { title: 'UCLouvain.be', icon:'icon ion-help'}
+  ];
   $scope.newTask = function() {
     $scope.taskModal.show();
   };
