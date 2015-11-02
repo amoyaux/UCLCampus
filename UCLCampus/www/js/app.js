@@ -17,6 +17,15 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
         }
       }
     })
+    .state('app.lectureHalls', {
+      url: "/halls",
+      views: {
+        'appContent' :{
+          templateUrl: "halls.html",
+          controller: "HallsController"
+        }
+      }
+    })
   
   $urlRouterProvider.otherwise("/app/home");
 
@@ -69,11 +78,11 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     $ionicSlideBoxDelegate.slide(index);
   };
   $scope.studentList = [
-    { title: 'Schedule' , icon:'icon ion-calendar'},
-    { title: 'Lecture Halls' , icon:'icon ion-android-pin'},
-    { title: 'Libraries', icon:'icon ion-ios-book'},
-    { title: 'Moodle', icon:'icon ion-help' },
-    { title: 'UCLouvain.be', icon:'icon ion-help'}
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
+    { title: 'Lecture Halls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
+    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
+    { title: 'Moodle', icon:'icon ion-help', url:'app.home' },
+    { title: 'UCLouvain.be', icon:'icon ion-help', url:'app.home'}
   ];
   $scope.newTask = function() {
     $scope.taskModal.show();
@@ -90,4 +99,11 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     restrict : "E",
     templateUrl : "ionSettings.html"
   }
+})
+.controller('HallsController', function($scope) {
+  $scope.lectureHallList = [
+    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud'},
+    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1'},
+    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12'}
+  ];
 })

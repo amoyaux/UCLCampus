@@ -96,7 +96,15 @@
       </ion-view>
     </script>
 
-    <script id="student.html" type="text/ng-template">
+    <script id="ionSettings.html" type="text/ng-template">
+      <div class="button-bar">
+        <a class="button button-clear" ng-click="ChangeLanguage('fr')"><img src="img/fr.png" style="width:80%"</a>
+        <a class="button button-clear" ng-click="ChangeLanguage('nl')"><img src="img/nl.png" style="width:80%"</a>
+        <a class="button button-clear" ng-click="ChangeLanguage('en')"><img src="img/uk.png" style="width:80%"</a>
+      </div>
+      </script>
+    
+      <script id="student.html" type="text/ng-template">
 
       <div class="modal">
 
@@ -109,7 +117,7 @@
         <!-- Modal content area -->
         <ion-content class="content-stable">
           <ion-list>
-            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ng-click="closeStudentMenu()">
+            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ui-sref={{item.url}} ng-click="closeStudentMenu()">
               <i class={{item.icon}}></i>
               {{item.title | translate}}
             </ion-item>
@@ -118,14 +126,22 @@
 
       </div>
 
-    </script>
+      </script>
 
-    <script id="ionSettings.html" type="text/ng-template">
-      <div class="button-bar">
-        <a class="button button-clear" ng-click="ChangeLanguage('fr')"><img src="img/fr.png" style="width:80%"</a>
-        <a class="button button-clear" ng-click="ChangeLanguage('nl')"><img src="img/nl.png" style="width:80%"</a>
-        <a class="button button-clear" ng-click="ChangeLanguage('en')"><img src="img/uk.png" style="width:80%"</a>
-      </div>
+    <script id="halls.html" type="text/ng-template">
+
+      <ion-view title="Lecture Halls">
+        <ion-content>
+          <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList">
+              <img ng-src={{item.img}}>
+              <h2>{{item.title}}</h2>
+              <p>{{item.address}}</p>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+
     </script>
     
   </body>
