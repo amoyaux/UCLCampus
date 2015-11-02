@@ -51,7 +51,6 @@
             <h1 class="title">Settings</h1>
           </ion-header-bar>
           <ion-content>
-            <ion-cart ng-controller='CartController'></ion-cart>
           </ion-content>
         </ion-side-menu>
       </ion-side-menus>
@@ -144,12 +143,22 @@
       <ion-view title="Lecture Halls">
         <ion-content>
           <ion-list>
-            <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList">
+            <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList" ui-sref="app.lectureHallDetails({id:{{item.id}}})">
               <img ng-src={{item.img}}>
               <h2>{{item.title}}</h2>
               <p>{{item.address}}</p>
             </ion-item>
           </ion-list>
+        </ion-content>
+      </ion-view>
+
+    </script>
+
+    <script id="hallDetails.html" type="text/ng-template">
+
+      <ion-view title="Lecture Halls">
+        <ion-content>
+          {{lectureHall.title}}
         </ion-content>
       </ion-view>
 

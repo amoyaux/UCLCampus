@@ -1,5 +1,23 @@
 angular.module('ionicApp', ['ionic'])
 
+.factory('LectureHallsFactory', function() {
+  return {
+    lectureHallList : [
+      { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'},
+      { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1', id:'2'},
+      { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12', id:'3'}
+    ],
+    all: function() {
+      return this.lectureHallList;
+    },
+    getLectureHallById: function (id) {
+      for(var i=0; i<this.lectureHallList.length; i++) {
+        if(this.lectureHallList[i].id==id) return this.lectureHallList[i];
+      }
+    }
+  }
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
@@ -26,6 +44,16 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     })
+
+    .state('app.lectureHallDetails', {
+      url: "/halls/:id",
+      views: {
+        'appContent' :{
+          templateUrl: "hallDetails.html",
+          controller: "HallDetailsController"
+        }
+      }
+    })
   
   $urlRouterProvider.otherwise("/app/home");
 })
@@ -39,12 +67,12 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-.controller('HallsController', function($scope) {
-  $scope.lectureHallList = [
-    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud'},
-    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1'},
-    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12'}
-  ];
+.controller('HallsController', function($scope, LectureHallsFactory) {
+  $scope.lectureHallList =  LectureHallsFactory.all();
+})
+
+.controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory) {
+  $scope.lectureHall= LectureHallsFactory.getLectureHallById($stateParams.id);
 })
 
 .controller("HomeController", function($scope,$ionicModal) {
