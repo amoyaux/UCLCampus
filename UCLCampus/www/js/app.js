@@ -30,11 +30,9 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-<<<<<<< HEAD
-.controller("HomeController", function($scope, $ionicModal) {
-=======
+
 .controller("HomeController", function($scope,$ionicModal) {
->>>>>>> 20454b6bde3e342f1ede272f3c14dfdc536f5adb
+
   $ionicModal.fromTemplateUrl('student.html', function(modal) {
     $scope.studentModal = modal;
   }, {
@@ -45,7 +43,7 @@ angular.module('ionicApp', ['ionic'])
   }
   $scope.closeStudentMenu = function() {
     $scope.studentModal.hide();
-<<<<<<< HEAD
+
   }
   $scope.slide = function(index) {
     $ionicSlideBoxDelegate.slide(index);
@@ -63,8 +61,7 @@ angular.module('ionicApp', ['ionic'])
 
   $scope.closeNewTask = function() {
     $scope.taskModal.hide();
-=======
->>>>>>> 20454b6bde3e342f1ede272f3c14dfdc536f5adb
+
   }
   $scope.slide = function(index) {
     $ionicSlideBoxDelegate.slide(index);
