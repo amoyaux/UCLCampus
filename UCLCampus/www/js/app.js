@@ -27,17 +27,28 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-.controller("HomeController", function($scope) {
-  $scope.newTask = function() {
-    $scope.taskModal.show();
-  };
-
-  $scope.closeNewTask = function() {
-    $scope.taskModal.hide();
+.controller("HomeController", function($scope,$ionicModal) {
+  $ionicModal.fromTemplateUrl('student.html', function(modal) {
+    $scope.studentModal = modal;
+  }, {
+    scope: $scope
+  });
+  $scope.studentMenu = function() {
+    $scope.studentModal.show();
+  }
+  $scope.closeStudentMenu = function() {
+    $scope.studentModal.hide();
   }
   $scope.slide = function(index) {
     $ionicSlideBoxDelegate.slide(index);
   };
+  $scope.studentList = [
+    { title: 'Schedule' , icon:'icon ion-calendar'},
+    { title: 'Lecture Halls' , icon:'icon ion-android-pin'},
+    { title: 'Libraries', icon:'icon ion-ios-book'},
+    { title: 'Moodle', icon:'icon ion-help' },
+    { title: 'UCLouvain.be', icon:'icon ion-help'}
+  ];
 })
 
 .controller("CartController", function($scope) {
