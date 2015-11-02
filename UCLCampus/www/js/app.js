@@ -70,6 +70,8 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   $translateProvider.preferredLanguage("en");
   $translateProvider.fallbackLanguage("en");
 
+  $translateProvider.useSanitizeValueStrategy('escapeParameters');
+
 
 })
 
