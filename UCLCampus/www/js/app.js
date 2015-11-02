@@ -1,6 +1,6 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
     .state('app', {
@@ -19,6 +19,20 @@ angular.module('ionicApp', ['ionic'])
     })
   
   $urlRouterProvider.otherwise("/app/home");
+
+  $translateProvider.translations('en', {
+      Schedule: "Schedule",
+  });
+  $translateProvider.translations('fr', {
+      Schedule: "Horaire",
+  });
+  $translateProvider.translations('nl', {
+      
+  });
+  $translateProvider.preferredLanguage("en");
+  $translateProvider.fallbackLanguage("en");
+
+
 })
 
 .controller('AppController', function($scope, $ionicSideMenuDelegate) {
@@ -28,6 +42,12 @@ angular.module('ionicApp', ['ionic'])
   $scope.toggleRight = function() {
     $ionicSideMenuDelegate.toggleRight();
   };
+})
+
+.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate) {
+  $scope.ChangeLanguage = function(lang){
+    $translate.use(lang);
+  }
 })
 
 
@@ -63,43 +83,11 @@ angular.module('ionicApp', ['ionic'])
     $scope.taskModal.hide();
 
   }
-  $scope.slide = function(index) {
-    $ionicSlideBoxDelegate.slide(index);
-  };
-  $scope.studentList = [
-    { title: 'Schedule' , icon:'icon ion-calendar'},
-    { title: 'Lecture Halls' , icon:'icon ion-android-pin'},
-    { title: 'Libraries', icon:'icon ion-ios-book'},
-    { title: 'Moodle', icon:'icon ion-help' },
-    { title: 'UCLouvain.be', icon:'icon ion-help'}
-  ];
 })
 
-.controller("CartController", function($scope) {
-  
-  $scope.data = {
-    items : []
-  };
-  
-  for(var i = 0; i < 25; i++) {
-    $scope.data.items.push({
-      id : i,
-      label : "Item " + i
-    })
-  }
-  
-})
-
-.directive("ionCart", function() {
+.directive("ionSettings", function() {
   return {
     restrict : "E",
-    templateUrl : "ionCart.html"
-  }
-})
-
-.directive("ionPurchase", function() {
-  return {
-    restrict : "E",
-    template : "<h2>This is Ion Purchase</h2>"
+    templateUrl : "ionSettings.html"
   }
 })
