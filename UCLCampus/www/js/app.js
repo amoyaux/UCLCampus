@@ -17,6 +17,15 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     })
+    .state('app.lectureHalls', {
+      url: "/halls",
+      views: {
+        'appContent' :{
+          templateUrl: "halls.html",
+          controller: "HallsController"
+        }
+      }
+    })
   
   $urlRouterProvider.otherwise("/app/home");
 })
@@ -30,6 +39,13 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
+.controller('HallsController', function($scope) {
+  $scope.lectureHallList = [
+    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud'},
+    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1'},
+    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12'}
+  ];
+})
 
 .controller("HomeController", function($scope,$ionicModal) {
 
@@ -67,39 +83,11 @@ angular.module('ionicApp', ['ionic'])
     $ionicSlideBoxDelegate.slide(index);
   };
   $scope.studentList = [
-    { title: 'Schedule' , icon:'icon ion-calendar'},
-    { title: 'Lecture Halls' , icon:'icon ion-android-pin'},
-    { title: 'Libraries', icon:'icon ion-ios-book'},
-    { title: 'Moodle', icon:'icon ion-help' },
-    { title: 'UCLouvain.be', icon:'icon ion-help'}
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
+    { title: 'Lecture Halls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
+    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
+    { title: 'Moodle', icon:'icon ion-help', url:'app.home' },
+    { title: 'UCLouvain.be', icon:'icon ion-help', url:'app.home'}
   ];
 })
 
-.controller("CartController", function($scope) {
-  
-  $scope.data = {
-    items : []
-  };
-  
-  for(var i = 0; i < 25; i++) {
-    $scope.data.items.push({
-      id : i,
-      label : "Item " + i
-    })
-  }
-  
-})
-
-.directive("ionCart", function() {
-  return {
-    restrict : "E",
-    templateUrl : "ionCart.html"
-  }
-})
-
-.directive("ionPurchase", function() {
-  return {
-    restrict : "E",
-    template : "<h2>This is Ion Purchase</h2>"
-  }
-})

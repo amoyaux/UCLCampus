@@ -128,7 +128,7 @@
         <!-- Modal content area -->
         <ion-content class="content-stable">
           <ion-list>
-            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ng-click="closeStudentMenu()">
+            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ui-sref={{item.url}} ng-click="closeStudentMenu()">
               <i class={{item.icon}}></i>
               {{item.title}}
             </ion-item>
@@ -139,11 +139,20 @@
 
       </script>
 
-    <script id="ionCart.html" type="text/ng-template">
-      <div class="list">
+    <script id="halls.html" type="text/ng-template">
 
-        <div class="item" ng-repeat="item in data.items">{{item.label}}</div>
-      </div>
+      <ion-view title="Lecture Halls">
+        <ion-content>
+          <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList">
+              <img ng-src={{item.img}}>
+              <h2>{{item.title}}</h2>
+              <p>{{item.address}}</p>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+
     </script>
     
   </body>
