@@ -16,7 +16,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script src="js/angular-translate.min.js"></script>
 
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -51,6 +51,8 @@
             <h1 class="title">Settings</h1>
           </ion-header-bar>
           <ion-content>
+
+            <ion-settings ng-controller='SettingsController'></ion-settings>
           </ion-content>
         </ion-side-menu>
       </ion-side-menus>
@@ -58,6 +60,11 @@
     
     <script id="home.html" type="text/ng-template">
       <ion-view title="UCLCampus">
+      </ion-nav-buttons>        
+        <ion-nav-buttons side="right">
+          <button class="button button-clear ion-navicon-round" ng-click="toggleRight()">
+          </button>
+        </ion-nav-buttons>  
         <ion-content>
           <div>
       <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
@@ -90,29 +97,13 @@
       </ion-view>
     </script>
 
-    <script id="student.html" type="text/ng-template">
-
-      <div class="modal">
-
-        <!-- Modal header bar -->
-        <ion-header-bar class="bar-secondary">
-          <h1 class="title">Student</h1>
-          <button class="button button-clear button-positive" ng-click="closeStudentMenu()">Cancel</button>
-        </ion-header-bar>
-
-        <!-- Modal content area -->
-        <ion-content class="content-stable">
-          <ion-list>
-            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ng-click="closeStudentMenu()">
-              <i class={{item.icon}}></i>
-              {{item.title}}
-            </ion-item>
-          </ion-list>
-        </ion-content>
-
+    <script id="ionSettings.html" type="text/ng-template">
+      <div class="button-bar">
+        <a class="button button-clear" ng-click="ChangeLanguage('fr')"><img src="img/fr.png" style="width:80%"</a>
+        <a class="button button-clear" ng-click="ChangeLanguage('nl')"><img src="img/nl.png" style="width:80%"</a>
+        <a class="button button-clear" ng-click="ChangeLanguage('en')"><img src="img/uk.png" style="width:80%"</a>
       </div>
-
-    </script>
+      </script>
     
       <script id="student.html" type="text/ng-template">
 
@@ -129,7 +120,7 @@
           <ion-list>
             <ion-item class="item item-icon-left" ng-repeat="item in studentList" ui-sref={{item.url}} ng-click="closeStudentMenu()">
               <i class={{item.icon}}></i>
-              {{item.title}}
+              {{item.title | translate}}
             </ion-item>
           </ion-list>
         </ion-content>
