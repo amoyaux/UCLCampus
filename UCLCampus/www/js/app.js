@@ -31,9 +31,13 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
   $translateProvider.translations('en', {
       Schedule: "Schedule",
+      LectureHalls: "Lecture Halls",
   });
   $translateProvider.translations('fr', {
       Schedule: "Horaire",
+      LectureHalls: "Auditoires",
+      Libraries: "Bibliothèques",
+
   });
   $translateProvider.translations('nl', {
       
@@ -81,7 +85,7 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   };
   $scope.studentList = [
     { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
-    { title: 'Lecture Halls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
+    { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
     { title: 'Moodle', icon:'icon ion-help', url:'app.home' },
     { title: 'UCLouvain.be', icon:'icon ion-help', url:'app.home'}
