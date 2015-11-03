@@ -1,5 +1,24 @@
 angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
+.factory('LectureHallsFactory', function() {
+  return {
+    lectureHallList : [
+      { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'},
+      { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1', id:'2'},
+      { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12', id:'3'}
+    ],
+    all: function() {
+      return this.lectureHallList;
+    },
+    getLectureHallById: function (id) {
+      for(var i=0; i<this.lectureHallList.length; i++) {
+        if(this.lectureHallList[i].id==id) return this.lectureHallList[i];
+      }
+    }
+  }
+})
+
+
 .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
@@ -23,6 +42,16 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
         'appContent' :{
           templateUrl: "halls.html",
           controller: "HallsController"
+        }
+      }
+    })
+
+    .state('app.lectureHallDetails', {
+      url: "/halls/:id",
+      views: {
+        'appContent' :{
+          templateUrl: "hallDetails.html",
+          controller: "HallDetailsController"
         }
       }
     })
@@ -57,6 +86,15 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   $scope.toggleRight = function() {
     $ionicSideMenuDelegate.toggleRight();
   };
+})
+
+
+.controller('HallsController', function($scope, LectureHallsFactory) {
+  $scope.lectureHallList =  LectureHallsFactory.all();
+})
+
+.controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory) {
+  $scope.lectureHall= LectureHallsFactory.getLectureHallById($stateParams.id);
 })
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate) {
@@ -106,10 +144,4 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     templateUrl : "ionSettings.html"
   }
 })
-.controller('HallsController', function($scope) {
-  $scope.lectureHallList = [
-    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud'},
-    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1'},
-    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12'}
-  ];
-})
+
