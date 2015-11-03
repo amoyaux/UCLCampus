@@ -61,11 +61,15 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   $translateProvider.translations('en', {
       Schedule: "Schedule",
       LectureHalls: "Lecture Halls",
+      Student: "Student",
   });
   $translateProvider.translations('fr', {
       Schedule: "Horaire",
       LectureHalls: "Auditoires",
       Libraries: "Bibliothèques",
+      Student: "Etudiant",
+      Map: "Carte",
+      Town: "Ville",
 
   });
   $translateProvider.translations('nl', {
