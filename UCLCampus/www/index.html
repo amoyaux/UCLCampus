@@ -69,13 +69,13 @@
           <div>
       <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
       <ion-slide>
-        <img src="img/pic1.png" style="width:100%">
+        <img src="img/pic1.jpg" style="width:100%">
       </ion-slide>
       <ion-slide>
-        <img src="img/pic2.png" style="width:100%">
+        <img src="img/pic2.jpg" style="width:100%">
       </ion-slide>
       <ion-slide>
-        <img src="img/pic3.png" style="width:100%">
+        <img src="img/pic3.jpg" style="width:100%">
       </ion-slide>
     </ion-slide-box>
   </div>
@@ -131,7 +131,7 @@
 
     <script id="halls.html" type="text/ng-template">
 
-      <ion-view title="Lecture Halls">
+      <ion-view title="{{'LectureHalls' | translate}}">
         <ion-content>
           <ion-list>
             <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList" ui-sref="app.lectureHallDetails({id:{{item.id}}})">
