@@ -1,3 +1,9 @@
+/*!
+ * angular UCLCampus controler - v1 - 2015-11-24
+ * 
+ * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
+ */
+
 angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
 .factory('LectureHallsFactory', function() {
