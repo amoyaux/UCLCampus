@@ -1,0 +1,9 @@
+<ion-content>
+	<ion-list>
+		<ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList" ui-sref="app.lectureHallDetails({id:{{item.id}}})">
+			<img ng-src={{item.img}}>
+			<h2>{{item.title}}</h2>
+		<p>{{item.address}}</p>
+		</ion-item>
+	</ion-list>
+</ion-content>

@@ -1,161 +1,94 @@
 <!DOCTYPE html>
 <html ng-app="ionicApp">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>UCLCampus</title>
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>UCLCampus</title>
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
 
-    <!-- Demo styles -->
-    
+	<!-- Demo styles -->
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+-->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/angular-translate.min.js"></script>
+<!-- ionic/angularjs js -->
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="js/angular-translate.min.js"></script>
 
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+<!-- cordova script (this will be a 404 during development) -->
+<script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body>
-    
-    <div ng-controller="AppController">       
-      <ion-nav-view></ion-nav-view>
-    </div>
-    
-    <script id="app.html" type="text/ng-template">
-      <ion-side-menus>
-        
-        <ion-side-menu-content>
-          <ion-nav-bar class="bar bar-header bar-positive">
-            <ion-nav-button class="button-icon button-clear ion-arrow-left-c">
-            </ion-nav-button>
-          </ion-nav-bar>
-          <ion-nav-buttons side="right">
-            <button class="" ng-click="toggleRight()">
-            </button>
-          </ion-nav-buttons>
-          <ion-nav-view name="appContent"></ion-nav-view>
-        </ion-side-menu-content> 
-        
-        <ion-side-menu side="right">
-          <ion-header-bar class="bar-assertive">
-            <h1 class="title">Settings</h1>
-          </ion-header-bar>
-          <ion-content>
+<!-- your app's js -->
+<script src="js/app.js"></script>
+</head>
+<body>
 
-            <ion-settings ng-controller='SettingsController'></ion-settings>
-          </ion-content>
-        </ion-side-menu>
-      </ion-side-menus>
-    </script>
-    
-    <script id="home.html" type="text/ng-template">
-      <ion-view title="UCLCampus">
-      </ion-nav-buttons>        
-        <ion-nav-buttons side="right">
-          <button class="button button-clear" ng-click="toggleRight()">
-            <i class="icon ion-navicon-round"></i>
-          </button>
-        </ion-nav-buttons>  
-        <ion-content>
-          <div>
-      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
-      <ion-slide>
-        <img src="img/pic2.jpg" style="width:100%">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/pic3.jpg" style="width:100%">
-      </ion-slide>
-    </ion-slide-box>
-  </div>
-  <div style="text-align:center" class="myDiv">
-      <button class="round-overlay-button positive button-icon" ng-click="studentMenu()"> 
-          <i class="icon ion-university my-icon"></i>
-          <i>{{"Student"| translate}}</i>
-      </button>
-      <button class="round-overlay-button energized button-icon"> 
-          <i class="icon ion-earth my-icon"></i>
-          <i>{{"Campus"| translate}}</i>
-      </button>
-      <button class="round-overlay-button royal button-icon"> 
-          <i class="icon ion-map my-icon"></i>
-          <i>{{"Map"| translate}}</i>
-      </button>
-      <button class="round-overlay-button balanced button-icon"> 
-         <i class="icon ion-compose my-icon"></i>
-         <i>{{"Town"|translate}}</i>
-      </button>
-      </div>
-        </ion-content>
-      </ion-view>
-    </script>
+	<div ng-controller="AppController">       
+		<ion-nav-view></ion-nav-view>
+	</div>
 
-    <script id="ionSettings.html" type="text/ng-template">
-      <div class="button-bar">
-        <a menu-close class="button button-clear" ng-click="ChangeLanguage('fr')"><img src="img/fr.png" style="width:80%"</a>
-        <a menu-close class="button button-clear" ng-click="ChangeLanguage('nl')"><img src="img/nl.png" style="width:80%"</a>
-        <a menu-close class="button button-clear" ng-click="ChangeLanguage('en')"><img src="img/uk.png" style="width:80%"</a>
-      </div>
-      </script>
-    
-      <script id="student.html" type="text/ng-template">
+	<script id="app.html" type="text/ng-template">
+		<ion-side-menus>
 
-      <div class="modal">
+		<ion-side-menu-content>
+		<ion-nav-bar class="bar bar-header bar-positive">
+		<ion-nav-button class="button-icon button-clear ion-arrow-left-c">
+	</ion-nav-button>
+</ion-nav-bar>
+<ion-nav-buttons side="right">
+<button class="" ng-click="toggleRight()">
+</button>
+</ion-nav-buttons>
+<ion-nav-view name="appContent"></ion-nav-view>
+</ion-side-menu-content> 
 
-        <!-- Modal header bar -->
-        <ion-header-bar class="bar-secondary">
-          <h1 class="title">Student</h1>
-          <button class="button button-clear button-positive" ng-click="closeStudentMenu()">Cancel</button>
-        </ion-header-bar>
+<ion-side-menu side="right">
+<ion-header-bar class="bar-assertive">
+<h1 class="title">Settings</h1>
+</ion-header-bar>
+<ion-content>
 
-        <!-- Modal content area -->
-        <ion-content class="content-stable">
-          <ion-list>
-            <ion-item class="item item-icon-left" ng-repeat="item in studentList" ui-sref={{item.url}} ng-click="closeStudentMenu()">
-              <i class={{item.icon}}></i>
-              {{item.title | translate}}
-            </ion-item>
-          </ion-list>
-        </ion-content>
+<ion-settings ng-controller='SettingsController'></ion-settings>
+</ion-content>
+</ion-side-menu>
+</ion-side-menus>
+</script>
 
-      </div>
+<script id="home.html" type="text/ng-template">
+	<ion-view title="UCLCampus">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>  
+<ng-include src="'templates/home.html'"></ng-include>
+</ion-view>
+</script>
 
-      </script>
+<script id="ionSettings.html" type="text/ng-template">
+	<ng-include src="'templates/settings.html'"></ng-include>
+</script>
 
-    <script id="halls.html" type="text/ng-template">
+<script id="student.html" type="text/ng-template">
+	<ng-include src="'templates/student.html'"></ng-include>
+</script>
 
-      <ion-view title="{{'LectureHalls' | translate}}">
-        <ion-content>
-          <ion-list>
-            <ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList" ui-sref="app.lectureHallDetails({id:{{item.id}}})">
-              <img ng-src={{item.img}}>
-              <h2>{{item.title}}</h2>
-              <p>{{item.address}}</p>
-            </ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-view>
+<script id="halls.html" type="text/ng-template">
+	<ion-view title="{{'LectureHalls' | translate}}">
+	<ng-include src="'templates/halls.html'"></ng-include>
+	</ion-view>
+</script>
 
-    </script>
+<script id="hallDetails.html" type="text/ng-template">
+	<ion-view title="{{'LectureHalls' | translate}}">
+		<ng-include src="'templates/hallDetails.html'"></ng-include>
+	</ion-view>
+</script>
 
-    <script id="hallDetails.html" type="text/ng-template">
-
-      <ion-view title="{{'LectureHalls' | translate}}">
-        <ion-content>
-          {{lectureHall.title}}
-        </ion-content>
-      </ion-view>
-
-    </script>
-    
-  </body>
+</body>
 </html>
