@@ -67,34 +67,26 @@
           </button>
         </ion-nav-buttons>  
         <ion-content>
-          <div>
-      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true"  auto-play="true" active-slide="0">
-      <ion-slide>
-        <img src="img/pic2.jpg" style="width:100%">
-      </ion-slide>
-      <ion-slide>
-        <img src="img/pic3.jpg" style="width:100%">
-      </ion-slide>
-    </ion-slide-box>
-  </div>
   <div style="text-align:center" class="myDiv">
       <button class="round-overlay-button positive button-icon" ng-click="studentMenu()"> 
           <i class="icon ion-university my-icon"></i>
-          <i>{{"Student"| translate}}</i>
+          <i class="my-text">{{"Student"| translate}}</i>
       </button>
       <button class="round-overlay-button energized button-icon"> 
           <i class="icon ion-earth my-icon"></i>
-          <i>{{"Campus"| translate}}</i>
+          <i class="my-text">{{"Campus"| translate}}</i>
       </button>
-      <button class="round-overlay-button royal button-icon"> 
+  </div>
+  <div style="text-align:center" class="myDiv">
+  <button class="round-overlay-button royal button-icon"> 
           <i class="icon ion-map my-icon"></i>
-          <i>{{"Map"| translate}}</i>
+          <i class="my-text">{{"Map"| translate}}</i>
       </button>
       <button class="round-overlay-button balanced button-icon"> 
          <i class="icon ion-compose my-icon"></i>
-         <i>{{"Town"|translate}}</i>
+         <i class="my-text">{{"Town"|translate}}</i>
       </button>
-      </div>
+  </div>
         </ion-content>
       </ion-view>
     </script>
@@ -151,7 +143,21 @@
 
       <ion-view title="{{'LectureHalls' | translate}}">
         <ion-content>
-          {{lectureHall.title}}
+          <div style="text-align:center" class="lecture-hall-detail-title">
+            {{lectureHall.title}}
+          </div>
+          <div style="text-align:center">
+            <img class="lecture-hall-detail-img" ng-src={{lectureHall.img}}>
+          </div>
+          <div style="text-align:center;margin-bottom:20px">
+            {{'Address' | translate}}: {{lectureHall.address}}
+          </div>
+
+          <div style="text-align:center">
+            <button class="button icon-left ion-map button-positive">
+              &nbsp{{'See on map' | translate}}
+            </button>
+          </div>  
         </ion-content>
       </ion-view>
 

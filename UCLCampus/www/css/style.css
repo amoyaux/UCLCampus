@@ -26,9 +26,9 @@ html, body {
 } 
 
 button.button-icon.round-overlay-button {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
   min-height: 56px;
   padding: 0;
   border: none;
@@ -95,7 +95,7 @@ button.button-icon.round-overlay-button.balanced.activated {
 
 
 button.button-icon.round-overlay-button.icon:before {
-  font-size: 24px;
+  font-size: 36px;
 }
 button.button-icon.round-overlay-button.small {
   height: 40px;
@@ -132,9 +132,55 @@ button.button-icon.round-overlay-button.bottom-right.slide-down {
 
 .my-icon:before,
 .my-icon{
-  font-size:60px !important;
+  font-size:120px !important;
   display:block !important;
 }
 .myDiv{
-  margin-top: 75px;
+  margin-top: 10px;
 }
+
+
+.my-text:before,
+.my-text{
+  font-size:36px !important;
+  display:block !important;
+}
+
+
+
+.lecture-hall-detail-title{
+  font-size: 24px;
+  margin: 20px;
+}
+
+.lecture-hall-detail-img{
+  height: 300px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.text-map-button{
+  margin-left: 10px;
+}
+
+button.button-icon.map-button.positive {
+  background-color: #387ef5;
+  color: white  ;
+}
+button.button-icon.map-button.positive.activated {
+  background-color: #0b56d6;
+}
+
+.icon-map:before,
+.icon-map{
+  font-size:20px !important;
+  display:block !important;
+}
+
+.text-map:before,
+.text-map{
+  font-size:10px !important;
+  display:block !important;
+}
+
+    
