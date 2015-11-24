@@ -70,6 +70,7 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
       Student: "Etudiant",
       Map: "Carte",
       Town: "Ville",
+      Tools: "Outils",
 
   });
   $translateProvider.translations('nl', {
@@ -119,9 +120,10 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     $scope.studentModal.show();
   }
   $scope.closeStudentMenu = function() {
-    $scope.studentModal.hide();
+    $scope.studentModal.hide(); 
 
   }
+
   $scope.slide = function(index) {
     $ionicSlideBoxDelegate.slide(index);
   };
@@ -129,8 +131,8 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
     { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
-    { title: 'Moodle', icon:'icon ion-help', url:'app.home' },
-    { title: 'UCLouvain.be', icon:'icon ion-help', url:'app.home'}
+    { title: 'Moodle', icon:'icon ion-help', site:'http://moodleucl.uclouvain.be'},
+    { title: 'UCLouvain.be', icon:'icon ion-help', site:'http://uclouvain.be'}
   ];
   $scope.newTask = function() {
     $scope.taskModal.show();

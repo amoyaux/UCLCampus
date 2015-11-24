@@ -1,16 +1,20 @@
 <div class="modal">
 
 	<!-- Modal header bar -->
-	<ion-header-bar class="bar-secondary">
+	<ion-header-bar align-title="center" class="bar-secondary bar-positive">
 	<h1 class="title">Student</h1>
-	<button class="button button-clear button-positive" ng-click="closeStudentMenu()">Cancel</button>
+	<button class="button button-clear" ng-click="closeStudentMenu()">Cancel</button>
 </ion-header-bar>
 
 <!-- Modal content area -->
 <ion-content class="content-stable">
 <ion-list>
-<ion-item class="item item-icon-left" ng-repeat="item in studentList" ui-sref={{item.url}} ng-click="closeStudentMenu()">
-<i class={{item.icon}}></i>
+<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: ''}" ui-sref={{item.url}} ng-click="closeStudentMenu()">
+<a class={{item.icon}}></a>
+{{item.title | translate}}
+</ion-item>
+<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: '!'}" ui-sref={{item.url}} ng-click="closeStudentMenu()" onclick="window.open('https://plus.google.com/+NicRaboy', '_blank', 'location=yes'); return false;">
+<a class={{item.icon}}></a>
 {{item.title | translate}}
 </ion-item>
 </ion-list>
