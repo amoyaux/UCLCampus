@@ -19,7 +19,7 @@
 <a class={{item.icon}}></a>
 {{item.title | translate}}
 </ion-item>
-<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: '!'}" ui-sref={{item.url}} ng-click="closeStudentMenu()" onclick="window.open('https://plus.google.com/+NicRaboy', '_blank', 'location=yes'); return false;">
+<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: '!'}" ui-sref={{item.url}} ng-click="closeStudentMenu();openUrl(item.site)">
 <a class={{item.icon}}></a>
 {{item.title | translate}}
 </ion-item>

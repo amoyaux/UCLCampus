@@ -21,6 +21,27 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
         if(this.lectureHallList[i].id==id) return this.lectureHallList[i];
       }
     }
+
+  }
+})
+
+.factory('StudentFactory', function() {
+  return {    
+    studentList : [
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
+    { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
+    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
+    { title: 'Moodle', icon:'icon ion-help', site:'http://moodleucl.uclouvain.be'},
+    { title: 'UCLouvain.be', icon:'icon ion-help', site:'http://uclouvain.be'}
+    ],
+    all: function() {
+      return this.studentList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.studentList.length; i++) {
+        if(this.studentList[i].id==id) return this.studentList[i];
+      }
+    }
   }
 })
 
@@ -115,13 +136,16 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 })
 
 
-.controller("HomeController", function($scope,$ionicModal) {
+.controller("HomeController", function($scope,$ionicModal, StudentFactory) {
 
   $ionicModal.fromTemplateUrl('student.html', function(modal) {
     $scope.studentModal = modal;
   }, {
     scope: $scope
   });
+
+  $scope.studentList = StudentFactory.all();
+
   $scope.studentMenu = function() {
     $scope.studentModal.show();
   }
@@ -129,17 +153,17 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     $scope.studentModal.hide(); 
 
   }
+  $scope.openUrl = function(val){
+    console.log(val);
+    window.open(val, '_blank', 'location=yes');
+  }
 
   $scope.slide = function(index) {
     $ionicSlideBoxDelegate.slide(index);
   };
-  $scope.studentList = [
-    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
-    { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
-    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
-    { title: 'Moodle', icon:'icon ion-help', site:'http://moodleucl.uclouvain.be'},
-    { title: 'UCLouvain.be', icon:'icon ion-help', site:'http://uclouvain.be'}
-  ];
+
+  
+
   $scope.newTask = function() {
     $scope.taskModal.show();
   };
@@ -148,6 +172,7 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
     $scope.taskModal.hide();
 
   }
+  
 })
 
 .directive("ionSettings", function() {
