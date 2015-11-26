@@ -4,14 +4,14 @@
  * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
  */
 
-angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
+ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
-.factory('LectureHallsFactory', function() {
+ .factory('LectureHallsFactory', function() {
   return {
     lectureHallList : [
-      { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'},
-      { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1', id:'2'},
-      { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12', id:'3'}
+    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'},
+    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1', id:'2'},
+    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12', id:'3'}
     ],
     all: function() {
       return this.lectureHallList;
@@ -25,7 +25,7 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   }
 })
 
-.factory('StudentFactory', function() {
+ .factory('StudentFactory', function() {
   return {    
     studentList : [
     { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
@@ -46,62 +46,71 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 })
 
 
-.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+ .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "app.html"
-    })
-    .state('app.home', {
-      url: "/home",
-      views: {
-        'appContent' :{
-          templateUrl: "home.html",
-          controller : "HomeController"
-        }
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "app.html"
+  })
+  .state('app.home', {
+    url: "/home",
+    views: {
+      'home-tab' :{
+        templateUrl: "home.html",
+        controller : "HomeController"
       }
-    })
-    .state('app.lectureHalls', {
-      url: "/halls",
-      views: {
-        'appContent' :{
-          templateUrl: "halls.html",
-          controller: "HallsController"
-        }
+    }
+  })
+  .state('app.student', {
+    url: "/student",
+    views: {
+      'student-tab' :{
+        templateUrl: "student.html",
+        controller: "HomeController"
       }
-    })
+    }
+  })
+  .state('app.lectureHalls', {
+    url: "/halls",
+    views: {
+      'student-tab' :{
+        templateUrl: "halls.html",
+        controller: "HallsController"
+      }
+    }
+  })
 
-    .state('app.lectureHallDetails', {
-      url: "/halls/:id",
-      views: {
-        'appContent' :{
-          templateUrl: "hallDetails.html",
-          controller: "HallDetailsController"
-        }
+  .state('app.lectureHallDetails', {
+    url: "/halls/:id",
+    views: {
+      'student-tab' :{
+        templateUrl: "hallDetails.html",
+        controller: "HallDetailsController"
       }
-    })
+    }
+  })
   
   $urlRouterProvider.otherwise("/app/home");
 
   $translateProvider.translations('en', {
-      Schedule: "Schedule",
-      LectureHalls: "Lecture Halls",
-      Student: "Student",
+    Schedule: "Schedule",
+    LectureHalls: "Lecture Halls",
+    Student: "Student",
   });
   $translateProvider.translations('fr', {
-      Schedule: "Horaire",
-      LectureHalls: "Auditoires",
-      Libraries: "Bibliothèques",
-      Student: "Etudiant",
-      Map: "Carte",
-      Town: "Ville",
-      Tools: "Outils",
+    Schedule: "Horaire",
+    LectureHalls: "Auditoires",
+    Libraries: "Bibliothèques",
+    Student: "Etudiant",
+    Map: "Carte",
+    Town: "Ville",
+    Tools: "Outils",
 
   });
   $translateProvider.translations('nl', {
-      
+
   });
   $translateProvider.preferredLanguage("en");
   $translateProvider.fallbackLanguage("en");
@@ -138,40 +147,12 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
 
 .controller("HomeController", function($scope,$ionicModal, StudentFactory) {
 
-  $ionicModal.fromTemplateUrl('student.html', function(modal) {
-    $scope.studentModal = modal;
-  }, {
-    scope: $scope
-  });
-
   $scope.studentList = StudentFactory.all();
 
-  $scope.studentMenu = function() {
-    $scope.studentModal.show();
-  }
-  $scope.closeStudentMenu = function() {
-    $scope.studentModal.hide(); 
-
-  }
   $scope.openUrl = function(val){
-    console.log(val);
     window.open(val, '_blank', 'location=yes');
   }
 
-  $scope.slide = function(index) {
-    $ionicSlideBoxDelegate.slide(index);
-  };
-
-  
-
-  $scope.newTask = function() {
-    $scope.taskModal.show();
-  };
-
-  $scope.closeNewTask = function() {
-    $scope.taskModal.hide();
-
-  }
   
 })
 
@@ -182,3 +163,14 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   }
 })
 
+.directive('hideTabs', function($rootScope) {
+  return {
+      restrict: 'A',
+      link: function($scope, $el) {
+          $rootScope.hideTabs = 'tabs-item-hide';
+          $scope.$on('$destroy', function() {
+              $rootScope.hideTabs = '';
+          });
+      }
+  };
+});

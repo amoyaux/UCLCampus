@@ -4,26 +4,16 @@
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
 
-<div class="modal">
-
-	<!-- Modal header bar -->
-	<ion-header-bar align-title="center" class="bar-secondary bar-positive">
-	<h1 class="title">Student</h1>
-	<button class="button button-clear" ng-click="closeStudentMenu()">Cancel</button>
-</ion-header-bar>
-
 <!-- Modal content area -->
-<ion-content class="content-stable">
-<ion-list>
-<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: ''}" ui-sref={{item.url}} ng-click="closeStudentMenu()">
-<a class={{item.icon}}></a>
-{{item.title | translate}}
-</ion-item>
-<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: '!'}" ui-sref={{item.url}} ng-click="closeStudentMenu();openUrl(item.site)">
-<a class={{item.icon}}></a>
-{{item.title | translate}}
-</ion-item>
-</ion-list>
+<ion-content>
+	<ion-list>
+		<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: ''}" ui-sref={{item.url}}>
+			<a class={{item.icon}}></a>
+			{{item.title | translate}}
+		</ion-item>
+		<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: '!'}" ui-sref={{item.url}} ng-click="openUrl(item.site)">
+			<a class={{item.icon}}></a>
+			{{item.title | translate}}
+		</ion-item>
+	</ion-list>
 </ion-content>
-
-</div>
