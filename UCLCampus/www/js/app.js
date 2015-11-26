@@ -3,8 +3,22 @@
  * 
  * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
  */
+var db = null;
 
- angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
+angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
+
+.run(function($ionicPlatform, $cordovaSQLite) {
+        $ionicPlatform.ready(function() {
+            if(window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            }
+            if(window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+            db = $cordovaSQLite.openDB("myApp.db");
+            $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
+        });
+})
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
@@ -48,6 +62,16 @@
       'student-tab' :{
         templateUrl: "hallDetails.html",
         controller: "HallDetailsController"
+      }
+    }
+  })
+
+  .state('app.schedule', {
+    url: "/schedule",
+    views: {
+      'student-tab' :{
+        templateUrl: "schedule.html",
+        controller: "ScheduleController"
       }
     }
   })
@@ -115,6 +139,31 @@
 
   
 })
+
+.controller('ScheduleController', function($scope, $cordovaSQLite) {
+   $scope.insert = function(firstname, lastname) {
+        var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
+        $cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(res) {
+            console.log("INSERT ID -> " + res.insertId);
+        }, function (err) {
+            console.error(err);
+        });
+    }
+ 
+    $scope.select = function(lastname) {
+        var query = "SELECT firstname, lastname FROM people WHERE lastname = ?";
+        $cordovaSQLite.execute(db, query, [lastname]).then(function(res) {
+            if(res.rows.length > 0) {
+                console.log("SELECTED -> " + res.rows.item(0).firstname + " " + res.rows.item(0).lastname);
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+            console.error(err);
+        });
+    }
+})
+
 
 .directive("ionSettings", function() {
   return {

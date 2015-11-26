@@ -1,11 +1,11 @@
 angular.module('ionicApp').factory('StudentFactory', function() {
   return {    
     studentList : [
-    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule'},
     { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.home'},
-    { title: 'Moodle', icon:'icon ion-help', site:'http://moodleucl.uclouvain.be'},
-    { title: 'UCLouvain.be', icon:'icon ion-help', site:'http://uclouvain.be'}
+    { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be'},
+    { title: 'UCLouvain.be', icon:'icon ion-help', url:'null',site:'http://uclouvain.be'}
     ],
     all: function() {
       return this.studentList;
