@@ -24,7 +24,6 @@ angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLit
       ],
       all: function() {
         var tempLHL = [];
-        this.lectureHallList[0] = { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'};
         var query = "SELECT * FROM lecturehalls";
         $cordovaSQLite.execute(db, query, []).then(function(res) {
             for(var i=0; i<res.rows.length; i++) {
