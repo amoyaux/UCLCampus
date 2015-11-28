@@ -5,8 +5,18 @@
  */
 var db = null;
 
-angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
+angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
 
+.run(function($ionicPlatform) {
+    $ionicPlatform.ready(function() {
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
+})
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
@@ -127,8 +137,21 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
   
 })
 
-.controller('ScheduleController', function($scope) {
-
+.controller('ScheduleController', function($scope, $cordovaCalendar) {
+   
+   $scope.createEvent = function() {
+        $cordovaCalendar.createEvent({
+            title: 'Space Race',
+            location: 'The Moon',
+            notes: 'Bring sandwiches',
+            startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
+            endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
+        }).then(function (result) {
+            console.log("Event created successfully");
+        }, function (err) {
+            console.error("There was an error: " + err);
+        });
+      }
 })
 
 
