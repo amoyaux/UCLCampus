@@ -22,8 +22,8 @@
 <!-- cordova script (this will be a 404 during development) -->
 <script src="js/ng-cordova.min.js"></script>
 <script src="cordova.js"></script>
-
 <!-- your app's js -->
+
 <script src="js/app.js"></script>
 <script src="js/factory.js"></script>
 </head>
@@ -132,6 +132,18 @@
 </button>
 </ion-nav-buttons>  
 <ng-include src="'templates/hallDetails.html'"></ng-include>
+</ion-view>
+</script>
+
+<script id="schedule.html" type="text/ng-template">
+	<ion-view title="{{'Schedule' | translate}}">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>  
+<ng-include src="'templates/schedule.html'"></ng-include>
 </ion-view>
 </script>
 

@@ -3,9 +3,21 @@
  * 
  * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
  */
- var db = null;
- angular.module('ionicApp', ['ionic', 'ngCordova', 'pascalprecht.translate'])
 
+var db = null;
+
+angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
+
+.run(function($ionicPlatform) {
+    $ionicPlatform.ready(function() {
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
+})
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
@@ -48,6 +60,16 @@
       'student-tab' :{
         templateUrl: "hallDetails.html",
         controller: "HallDetailsController"
+      }
+    }
+  })
+
+  .state('app.schedule', {
+    url: "/schedule",
+    views: {
+      'student-tab' :{
+        templateUrl: "schedule.html",
+        controller: "ScheduleController"
       }
     }
   })
@@ -136,6 +158,24 @@
 
   
 })
+
+.controller('ScheduleController', function($scope, $cordovaCalendar) {
+   
+   $scope.createEvent = function() {
+        $cordovaCalendar.createEvent({
+            title: 'Space Race',
+            location: 'The Moon',
+            notes: 'Bring sandwiches',
+            startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
+            endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
+        }).then(function (result) {
+            console.log("Event created successfully");
+        }, function (err) {
+            console.error("There was an error: " + err);
+        });
+      }
+})
+
 
 .directive("ionSettings", function() {
   return {
