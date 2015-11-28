@@ -3,8 +3,8 @@
  * 
  * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
  */
-
- angular.module('ionicApp', ['ionic', 'pascalprecht.translate'])
+ var db = null;
+ angular.module('ionicApp', ['ionic', 'ngCordova', 'pascalprecht.translate'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
@@ -79,6 +79,27 @@
 
 
 })
+
+.run(function($ionicPlatform, $cordovaSQLite) {
+    $ionicPlatform.ready(function() {
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+        if (window.cordova) { //emulator/device
+          window.plugins.sqlDB.remove("test.db", 0, function() {}, function(error) {});  //remove db first
+          window.plugins.sqlDB.copy("test.db", 0, function() {
+            db = $cordovaSQLite.openDB("test.db");
+          }, function(error) {
+              console.error("There was an error copying the database: " + error.code);
+              db = $cordovaSQLite.openDB("test.db");
+          });
+        }
+        else{
+          db = window.openDatabase("test.db", '1', 'test', 1024 * 1024 * 100); // browser
+        }
+    });
+})
+
 
 .controller('AppController', function($scope, $ionicSideMenuDelegate) {
   $scope.toggleLeft = function() {

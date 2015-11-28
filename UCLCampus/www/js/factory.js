@@ -18,21 +18,30 @@ angular.module('ionicApp').factory('StudentFactory', function() {
   }
 })
 
-angular.module('ionicApp').factory('LectureHallsFactory', function() {
-  return {
-    lectureHallList : [
-    { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'},
-    { title: 'Sainte Barbe (BARB)', img:'img/ste-barbe.jpg', address:'Place Sainte Barbe, 1', id:'2'},
-    { title: 'Socrate (SOCR)', img:'img/ste-barbe.jpg', address:'Place du Cardinal Mercier, 10-12', id:'3'}
-    ],
-    all: function() {
-      return this.lectureHallList;
-    },
-    getLectureHallById: function (id) {
-      for(var i=0; i<this.lectureHallList.length; i++) {
-        if(this.lectureHallList[i].id==id) return this.lectureHallList[i];
+angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLite) {
+    return {
+      lectureHallList : [
+      ],
+      all: function() {
+        var tempLHL = [];
+        this.lectureHallList[0] = { title: 'Croix du Sud (SUD)', img:'img/ste-barbe.jpg', address:'Place Croix du Sud', id:'1'};
+        var query = "SELECT * FROM lecturehalls";
+        $cordovaSQLite.execute(db, query, []).then(function(res) {
+            for(var i=0; i<res.rows.length; i++) {
+              tempLHL[i]=res.rows.item(i);
+            }
+        }, function (err) {
+            console.error(JSON.stringify(err));
+        });
+        this.lectureHallList = tempLHL;
+        return tempLHL;
+      },
+      getLectureHallById: function (id) {
+        for(var i=0; i<this.lectureHallList.length; i++) {
+          if(this.lectureHallList[i].id==id) return this.lectureHallList[i];
+        }
       }
-    }
+
 
   }
 })
