@@ -3,19 +3,19 @@
  * 
  * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
  */
-var db = null;
+ var db = null;
 
-angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
+ angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
-.run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-        if(window.cordova && window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        }
-        if(window.StatusBar) {
-            StatusBar.styleDefault();
-        }
-    });
+ .run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
 })
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
@@ -138,21 +138,61 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
 })
 
 .controller('ScheduleController', function($scope, $cordovaCalendar) {
-   
-   $scope.createEvent = function() {
-        $cordovaCalendar.createEvent({
-            title: 'Space Race',
-            location: 'The Moon',
-            notes: 'Bring sandwiches',
-            startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
-            endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
-        }).then(function (result) {
-            console.log("Event created successfully");
-        }, function (err) {
-            console.error("There was an error: " + err);
-        });
-      }
-})
+
+ $scope.createEvent = function() {
+  $cordovaCalendar.createEvent({
+    title: 'Space Race',
+    location: 'The Moon',
+    notes: 'Bring sandwiches',
+    startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
+    endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
+  }).then(function (result) {
+    console.log("Event created successfully");
+  }, function (err) {
+    console.error("There was an error: " + err);
+  });
+}
+
+
+var disabledDates = [];
+var weekDaysList = ["Sun", "Mon", "Tue", "Wed", "thu", "Fri", "Sat"];
+var monthList = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+$scope.datepickerObject = {
+      titleLabel: 'Title',  //Optional
+      todayLabel: 'Today',  //Optional
+      closeLabel: 'Close',  //Optional
+      setLabel: 'Set',  //Optional
+      setButtonType : 'button-assertive',  //Optional
+      todayButtonType : 'button-assertive',  //Optional
+      closeButtonType : 'button-assertive',  //Optional
+      inputDate: new Date(),  //Optional
+      mondayFirst: true,  //Optional
+      disabledDates: disabledDates, //Optional
+      weekDaysList: weekDaysList, //Optional
+      monthList: monthList, //Optional
+      templateType: 'popup', //Optional
+      showTodayButton: 'true', //Optional
+      modalHeaderColor: 'bar-positive', //Optional
+      modalFooterColor: 'bar-positive', //Optional
+      from: new Date(2012, 8, 2), //Optional
+      to: new Date(2018, 8, 25),  //Optional
+      callback: function (val) {  //Mandatory
+        datePickerCallback(val);
+      },
+      dateFormat: 'dd-MM-yyyy', //Optional
+      closeOnSelect: false, //Optional
+    };
+
+var datePickerCallback = function (val) {
+        if (typeof(val) === 'undefined') {
+          console.log('No date selected');
+        } else {
+          $scope.datepickerObject.inputDate = val;
+          console.log('Selected date is : ', val)
+        }
+      };
+    })
 
 
 .directive("ionSettings", function() {
@@ -164,12 +204,12 @@ angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova'])
 
 .directive('hideTabs', function($rootScope) {
   return {
-      restrict: 'A',
-      link: function($scope, $el) {
-          $rootScope.hideTabs = 'tabs-item-hide';
-          $scope.$on('$destroy', function() {
-              $rootScope.hideTabs = '';
-          });
-      }
+    restrict: 'A',
+    link: function($scope, $el) {
+      $rootScope.hideTabs = 'tabs-item-hide';
+      $scope.$on('$destroy', function() {
+        $rootScope.hideTabs = '';
+      });
+    }
   };
 });
