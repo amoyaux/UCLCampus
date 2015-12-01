@@ -26,8 +26,8 @@ html, body {
 } 
 
 button.button-icon.round-overlay-button {
-  height: 200px;
-  width: 200px;
+  height: 130px;
+  width: 130px;
   border-radius: 10%;
   min-height: 56px;
   padding: 0;
@@ -132,8 +132,11 @@ button.button-icon.round-overlay-button.bottom-right.slide-down {
 
 .my-icon:before,
 .my-icon{
-  font-size:120px !important;
+  font-size:80px !important;
   display:block !important;
+}
+.myDivTop{
+  margin-top: 50px;
 }
 .myDiv{
   margin-top: 10px;
@@ -142,7 +145,7 @@ button.button-icon.round-overlay-button.bottom-right.slide-down {
 
 .my-text:before,
 .my-text{
-  font-size:36px !important;
+  font-size:20px !important;
   display:block !important;
 }
 
