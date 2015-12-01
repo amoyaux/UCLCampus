@@ -8,16 +8,6 @@
 
  angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
- .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   $stateProvider
@@ -41,6 +31,20 @@
       'student-tab' :{
         templateUrl: "student.html",
         controller: "HomeController"
+      }
+    }
+  })
+  .state('app.libraries', {
+    url: "/libraries",
+    views: {
+      'student-tab' :{
+        templateUrl: "libraries.html",
+        controller: "LibrariesController",
+        resolve:{
+          libraries: function(LibraryFactory) {
+            return LibraryFactory.all();
+          }
+        }
       }
     }
   })
@@ -108,16 +112,16 @@
             StatusBar.styleDefault();
         }
         if (window.cordova) { //emulator/device
-          window.plugins.sqlDB.remove("test.db", 0, function() {}, function(error) {});  //remove db first
-          window.plugins.sqlDB.copy("test.db", 0, function() {
-            db = $cordovaSQLite.openDB("test.db");
+          window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
+          window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+            db = $cordovaSQLite.openDB("database.sqlite");
           }, function(error) {
               console.error("There was an error copying the database: " + error.code);
-              db = $cordovaSQLite.openDB("test.db");
+              db = $cordovaSQLite.openDB("database.sqlite");
           });
         }
         else{
-          db = window.openDatabase("test.db", '1', 'test', 1024 * 1024 * 100); // browser
+          db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
         }
     });
 })
@@ -135,6 +139,10 @@
 
 .controller('HallsController', function($scope, LectureHallsFactory) {
   $scope.lectureHallList =  LectureHallsFactory.all();
+})
+
+.controller('LibrariesController', function($scope, LibraryFactory, libraries) {
+  $scope.libraryList =  libraries;
 })
 
 .controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory) {
