@@ -48,6 +48,15 @@
       }
     }
   })
+  .state('app.libraryDetails', {
+    url: "/libraries/:id",
+    views: {
+      'student-tab' :{
+        templateUrl: "libraryDetails.html",
+        controller: "LibraryDetailsController"
+      }
+    }
+  })
   .state('app.lectureHalls', {
     url: "/halls",
     views: {
@@ -147,6 +156,10 @@
 
 .controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory) {
   $scope.lectureHall= LectureHallsFactory.getLectureHallById($stateParams.id);
+})
+
+.controller('LibraryDetailsController', function($scope, $stateParams, LibraryFactory) {
+  $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate) {

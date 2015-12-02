@@ -138,6 +138,18 @@
 </ion-view>
 </script>
 
+<script id="libraryDetails.html" type="text/ng-template">
+  <ion-view title="{{library.NAME}}">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+  <i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>  
+<ng-include src="'templates/libraryDetails.html'"></ng-include>
+</ion-view>
+</script>
+
 <script id="hallDetails.html" type="text/ng-template">
 	<ion-view title="{{lectureHall.NAME}}">
 </ion-nav-buttons>        
