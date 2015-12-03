@@ -115,7 +115,7 @@
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope) {
     $ionicPlatform.ready(function() {
         if(window.StatusBar) {
             StatusBar.styleDefault();
@@ -162,10 +162,16 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate) {
+.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
+  $scope.campus = CampusFactory.all();
+  $scope.selectedItem = $scope.campus[0];
+  $scope.selectedCampus = $scope.campus[0];
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
-  }
+  };
+  $scope.update = function(){
+  	$scope.selectedCampus = $scope.selectedItem;
+  };
 })
 
 
