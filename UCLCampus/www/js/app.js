@@ -164,13 +164,9 @@
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
   $scope.campus = CampusFactory.all();
-  $scope.selectedItem = $scope.campus[0];
   $scope.selectedCampus = $scope.campus[0];
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
-  };
-  $scope.update = function(){
-  	$scope.selectedCampus = $scope.selectedItem;
   };
 })
 
