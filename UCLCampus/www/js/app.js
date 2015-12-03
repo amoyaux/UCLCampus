@@ -189,10 +189,6 @@
 })
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
-  //$scope.campus = CampusFactory.all();
-  //console.log($scope.selectedCampus);
-  //$scope.selectedItem = campus;
-  //$scope.selectedCampus = $scope.campus[0];
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
   };
