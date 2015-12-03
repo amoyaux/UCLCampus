@@ -4,4 +4,5 @@ cordova plugin add org.apache.cordova.network-information
 cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
 cordova plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
 cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+cordova plugin add cordova-plugin-geolocation
 

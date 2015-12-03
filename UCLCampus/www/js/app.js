@@ -169,9 +169,45 @@
 })
 
 
-.controller("HomeController", function($scope,$ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory) {
+.controller("HomeController", function($scope,$ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, $cordovaGeolocation) {
 
 	$scope.studentList = StudentFactory.all();
+
+  /*var posOptions = {timeout: 10000, enableHighAccuracy: false};
+  $cordovaGeolocation.getCurrentPosition(posOptions)
+    .then(function (position) {
+      var lat  = position.coords.latitude
+      var lon = position.coords.longitude
+      console.log(lat+" "+lon);
+      //50.6718994 4.6098811
+      //var dist = getDistance(lat, 50.6682900, lon, 4.6144300);
+      window.alert(lat+" "+lon);
+    }, function(err) {
+      console.log("failed to get location");
+      // error
+    });*/
+  var toRadians = function(value) {
+    /** Converts numeric degrees to radians */
+    return value * Math.PI / 180;
+  };
+  var getDistance = function(lat1, lat2, lon1, lon2) {
+    var R = 6371000; // metres
+    var d1 = toRadians(lat1);
+    var d2 = toRadians(lat2);
+    var da = toRadians(lat2-lat1);
+    var db = toRadians(lon2-lon1);
+
+    var a = Math.sin(da/2) * Math.sin(da/2) +
+            Math.cos(d1) * Math.cos(d2) *
+            Math.sin(db/2) * Math.sin(db/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+    var d = R * c;
+    return d;
+  };
+  //50.4529289,3.9845087
+  console.log(getDistance(50.6718994, 50.4529323, 4.6098811, 3.9823147));
+
 
 	$scope.openUrl = function(val){
 		console.log(window.Connection);	
@@ -212,6 +248,8 @@
         })
 
     }, false);
+
+
 
 })
 
@@ -266,7 +304,7 @@ $scope.datepickerObject = {
       closeOnSelect: false, //Optional
     };
 
-var datePickerCallback = function (val) {
+    var datePickerCallback = function (val) {
         if (typeof(val) === 'undefined') {
           console.log('No date selected');
         } else {
