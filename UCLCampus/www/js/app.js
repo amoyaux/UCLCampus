@@ -14,14 +14,20 @@
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "app.html"
+    templateUrl: "app.html",
+    controller: "SettingsController"
   })
   .state('app.home', {
     url: "/home",
     views: {
       'home-tab' :{
         templateUrl: "home.html",
-        controller : "HomeController"
+        controller : "HomeController",
+        resolve:{
+          campus: function(CampusFactory) {
+            return CampusFactory.getClosestCampus();
+          }
+        }
       }
     }
   })
@@ -30,7 +36,12 @@
     views: {
       'student-tab' :{
         templateUrl: "student.html",
-        controller: "HomeController"
+        controller: "HomeController",
+        resolve:{
+          campus: function(CampusFactory) {
+            return CampusFactory.getClosestCampus();
+          }
+        }
       }
     }
   })
@@ -86,6 +97,15 @@
       }
     }
   })
+  .state('app.campusSelection', {
+    url: "/campusselect",
+    views: {
+      'student-tab' :{
+        templateUrl: "campusSelection.html",
+        controller: "CampusSelectionController"
+      }
+    }
+  })
   
   $urlRouterProvider.otherwise("/app/home");
 
@@ -115,23 +135,24 @@
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation) {
     $ionicPlatform.ready(function() {
-        if(window.StatusBar) {
-            StatusBar.styleDefault();
-        }
-        if (window.cordova) { //emulator/device
-          window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
-          window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+      
+      if(window.StatusBar) {
+          StatusBar.styleDefault();
+      }
+      if (window.cordova) { //emulator/device
+        window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
+        window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+          db = $cordovaSQLite.openDB("database.sqlite");
+        }, function(error) {
+            console.error("There was an error copying the database: " + error.code);
             db = $cordovaSQLite.openDB("database.sqlite");
-          }, function(error) {
-              console.error("There was an error copying the database: " + error.code);
-              db = $cordovaSQLite.openDB("database.sqlite");
-          });
-        }
-        else{
-          db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
-        }
+        });
+      }
+      else{
+        db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
+      }
     });
 })
 
@@ -162,59 +183,28 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
+.controller('CampusSelectionController', function($scope, $rootScope, CampusFactory) {
+ $scope.campusList = CampusFactory.all();
+ $scope.selectedCampus = $rootScope.selectedCampus;
+})
+
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
-  $scope.campus = CampusFactory.all();
-  $scope.selectedItem = $scope.campus[0];
-  $scope.selectedCampus = $scope.campus[0];
+  //$scope.campus = CampusFactory.all();
+  //console.log($scope.selectedCampus);
+  //$scope.selectedItem = campus;
+  //$scope.selectedCampus = $scope.campus[0];
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
-  };
-  $scope.update = function(){
-  	$scope.selectedCampus = $scope.selectedItem;
   };
 })
 
 
-.controller("HomeController", function($scope,$ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, $cordovaGeolocation) {
+.controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, campus) {
 
+
+  $rootScope.selectedCampus = campus;
+  console.log(campus.name);
 	$scope.studentList = StudentFactory.all();
-
-  /*var posOptions = {timeout: 10000, enableHighAccuracy: false};
-  $cordovaGeolocation.getCurrentPosition(posOptions)
-    .then(function (position) {
-      var lat  = position.coords.latitude
-      var lon = position.coords.longitude
-      console.log(lat+" "+lon);
-      //50.6718994 4.6098811
-      //var dist = getDistance(lat, 50.6682900, lon, 4.6144300);
-      window.alert(lat+" "+lon);
-    }, function(err) {
-      console.log("failed to get location");
-      // error
-    });*/
-  var toRadians = function(value) {
-    /** Converts numeric degrees to radians */
-    return value * Math.PI / 180;
-  };
-  var getDistance = function(lat1, lat2, lon1, lon2) {
-    var R = 6371000; // metres
-    var d1 = toRadians(lat1);
-    var d2 = toRadians(lat2);
-    var da = toRadians(lat2-lat1);
-    var db = toRadians(lon2-lon1);
-
-    var a = Math.sin(da/2) * Math.sin(da/2) +
-            Math.cos(d1) * Math.cos(d2) *
-            Math.sin(db/2) * Math.sin(db/2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-    var d = R * c;
-    return d;
-  };
-  //50.4529289,3.9845087
-  console.log(getDistance(50.6718994, 50.4529323, 4.6098811, 3.9823147));
-
-
 	$scope.openUrl = function(val){
 		console.log(window.Connection);	
 		if(window.Connection) {
@@ -327,6 +317,8 @@ $scope.datepickerObject = {
     templateUrl : "ionSettings.html"
   }
 })
+
+
 
 .directive('hideTabs', function($rootScope) {
   return {

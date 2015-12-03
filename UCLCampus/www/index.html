@@ -174,4 +174,16 @@
 </ion-view>
 </script>
 
+<script id="campusSelection.html" type="text/ng-template">
+  <ion-view title="{{'Choose a campus' | translate}}">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+  <i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>  
+<ng-include src="'templates/campusSelection.html'"></ng-include>
+</ion-view>
+</script>
+
 </body>
