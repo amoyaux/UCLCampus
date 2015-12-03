@@ -1,0 +1,17 @@
+<!-- 
+ halls - v1 - 2015-11-24
+  
+ Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+-->
+
+<ion-content>
+	<ion-list>
+		<ion-item class="item item-thumbnail-left" ng-repeat="item in libraryList" ui-sref="app.libraryDetails({id:{{item.ID}}})">
+			<img ng-src={{item.IMG}}>
+			<h2>{{item.NAME}}</h2>
+		<p>{{item.ADDRESS}}</p>
+		<div ng-if="!item.OPEN" class="closed-p">Closed</div>
+		<div ng-if="item.OPEN" class="open-p">Open</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
