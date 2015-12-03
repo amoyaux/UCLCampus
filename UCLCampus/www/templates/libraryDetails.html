@@ -1,0 +1,24 @@
+<!-- 
+ hallDetails - v1 - 2015-11-24
+  
+ Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+-->
+
+<ion-content>
+
+<div style="text-align:center" class="lecture-hall-detail-title">
+	
+</div>
+<div style="text-align:center">
+	<img class="lecture-hall-detail-img" ng-src={{library.IMG}}>
+</div>
+<div style="text-align:center;margin-bottom:20px">
+	{{'Address' | translate}}: {{library.ADDRESS}}
+</div>
+
+<div style="text-align:center">
+	<button class="button icon-left ion-map button-positive">
+		&nbsp{{'See on map' | translate}}
+	</button>
+</div>  
+</ion-content>	

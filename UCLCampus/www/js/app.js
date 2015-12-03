@@ -169,18 +169,53 @@
 })
 
 
-.controller("HomeController", function($scope,$ionicModal, StudentFactory) {
+.controller("HomeController", function($scope,$ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory) {
 
-  $scope.studentList = StudentFactory.all();
+	$scope.studentList = StudentFactory.all();
 
-  $scope.openUrl = function(val){
-    window.open(val, '_blank', 'location=yes');
-  }
+	$scope.openUrl = function(val){
+		console.log(window.Connection);	
+		if(window.Connection) {
+			if(navigator.connection.type == Connection.NONE){
+				$ionicPopup.alert({
+					title: "Internet Disconnected",
+					content: "The internet is disconnected on your device."
+				})
+			}
+			else{
+				window.open(val, '_blank', 'location=yes');
+			}
+		}
+	}
 
-  
+	document.addEventListener("deviceready", function () {
+
+		$scope.network = $cordovaNetwork.getNetwork();
+		$scope.isOnline = $cordovaNetwork.isOnline();
+		$scope.$apply();
+
+        // listen for Online event
+        $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
+        	$scope.isOnline = true;
+        	$scope.network = $cordovaNetwork.getNetwork();
+
+        	$scope.$apply();
+        })
+
+        // listen for Offline event
+        $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
+        	console.log("got offline");
+        	$scope.isOnline = false;
+        	$scope.network = $cordovaNetwork.getNetwork();
+
+        	$scope.$apply();
+        })
+
+    }, false);
+
 })
 
-.controller('ScheduleController', function($scope, $cordovaCalendar) {
+.controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup) {
 
  $scope.createEvent = function() {
   $cordovaCalendar.createEvent({
@@ -190,7 +225,11 @@
     startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
     endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
   }).then(function (result) {
-    console.log("Event created successfully");
+  	$ionicPopup.alert({
+					title: "Done",
+					content: "Your classes have been exported	."
+				})
+
   }, function (err) {
     console.error("There was an error: " + err);
   });
