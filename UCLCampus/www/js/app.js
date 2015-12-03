@@ -172,6 +172,7 @@
 .controller("HomeController", function($scope,$ionicModal, StudentFactory) {
 
   $scope.studentList = StudentFactory.all();
+  
 
   $scope.openUrl = function(val){
     window.open(val, '_blank', 'location=yes');
