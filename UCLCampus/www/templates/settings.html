@@ -5,7 +5,16 @@
 -->
 
 <div class="button-bar">
-	<a menu-close class="button button-clear" ng-click="ChangeLanguage('fr')"><img src="img/fr.png" style="width:80%"</a>
-	<a menu-close class="button button-clear" ng-click="ChangeLanguage('nl')"><img src="img/nl.png" style="width:80%"</a>
-	<a menu-close class="button button-clear" ng-click="ChangeLanguage('en')"><img src="img/uk.png" style="width:80%"</a>
+	<a menu-close class="button button-positive" ng-click="ChangeLanguage('fr')">FR</a>
+	<a menu-close class="button button-positive" ng-click="ChangeLanguage('nl')">NL</a>
+	<a menu-close class="button button-positive" ng-click="ChangeLanguage('en')">EN</a>
+</div>
+<br>
+<div>
+<label>
+Campus : 
+<select class="input-block-level" ng-options="c.name for c in campus"
+	ng-model="selectedItem" ng->
+</select>
+</label>
 </div>

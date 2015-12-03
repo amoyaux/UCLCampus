@@ -18,6 +18,23 @@ angular.module('ionicApp').factory('StudentFactory', function() {
   }
 })
 
+angular.module('ionicApp').factory('CampusFactory', function() {
+  return {    
+    CampusList : [
+    { name : 'Louvain-la-Neuve' },
+    { name : 'Woluwe'}
+    ],
+    all: function() {
+      return this.CampusList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.CampusList.length; i++) {
+        if(this.CampusList[i].id==id) return this.CampusList[i];
+      }
+    }
+  }
+})
+
 angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLite) {
     return {
       lectureHallList : [
