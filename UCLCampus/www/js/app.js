@@ -183,7 +183,7 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory) {
+.controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory,$ionicPlatform) {
    $scope.campusList = CampusFactory.all();
    $scope.selectedCampus = $rootScope.selectedCampus;
    var nameC;
@@ -204,10 +204,9 @@
       }
     }
   }
-  $rootScope.$ionicGoBack = function() {
-    window.alert("BACK");
-    $location.url('/home');
-  };
+  $ionicPlatform.registerBackButtonAction(function (event) {
+    
+  }, 100);
 
 })
 
