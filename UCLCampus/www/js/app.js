@@ -6,6 +6,7 @@
 
  var db = null;
 
+
  angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
@@ -162,9 +163,7 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
-  $scope.campus = CampusFactory.all();
-  $scope.selectedCampus = $scope.campus[0];
+.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {;
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
   };
@@ -194,14 +193,14 @@
 
 		$scope.network = $cordovaNetwork.getNetwork();
 		$scope.isOnline = $cordovaNetwork.isOnline();
-		$scope.$apply();
+		//$scope.$apply();
 
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
         	$scope.isOnline = true;
         	$scope.network = $cordovaNetwork.getNetwork();
 
-        	$scope.$apply();
+        	//$scope.$apply();
         })
 
         // listen for Offline event
@@ -210,14 +209,14 @@
         	$scope.isOnline = false;
         	$scope.network = $cordovaNetwork.getNetwork();
 
-        	$scope.$apply();
+        	//$scope.$apply();
         })
 
     }, false);
 
 })
 
-.controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup) {
+.controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http) {
 
  $scope.createEvent = function() {
   $cordovaCalendar.createEvent({
@@ -235,8 +234,18 @@
   }, function (err) {
     console.error("There was an error: " + err);
   });
-}
+};
 
+$scope.parse = function(){
+    //http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=7&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false
+    $http.get('http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false').then(function(resp) {
+      console.log('Success', resp);
+      console.log(resp.data);
+    }, function(err) {
+      console.error('ERR', err);
+    // err.status will contain the status code
+    })
+  };
 
 var disabledDates = [];
 var weekDaysList = ["Sun", "Mon", "Tue", "Wed", "thu", "Fri", "Sat"];
