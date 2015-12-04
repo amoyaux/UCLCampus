@@ -53,7 +53,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
     },
     getClosestCampus: function() {
       var dfd = $q.defer();
-      var posOptions = {timeout: 3000, enableHighAccuracy: false};
+      var posOptions = {timeout: 2000, enableHighAccuracy: false};
       var t = this;
       $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
@@ -71,7 +71,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
           dfd.resolve(currentCampus);
         }, function(err) {
           console.log("failed to get location");
-          // error
+          dfd.resolve(undefined);
         });
         return dfd.promise;
     }

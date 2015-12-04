@@ -186,9 +186,15 @@
 .controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory) {
    $scope.campusList = CampusFactory.all();
    $scope.selectedCampus = $rootScope.selectedCampus;
-   console.log($scope.selectedCampus.name);
+   var nameC;
+   if($scope.selectedCampus == undefined) {
+    nameC = 'Louvain-la-Neuve';
+   }
+   else {
+    nameC = $scope.selectedCampus.name;
+   }
    $scope.data = {
-    name: 'Louvain-la-Neuve'
+    name: nameC
    };
    $scope.changeCampus = function() {
     for(var i = 0; i<$scope.campusList.length; i++) {
@@ -199,7 +205,8 @@
     }
   }
   $rootScope.$ionicGoBack = function() {
-    $location.path('app.home');
+    window.alert("BACK");
+    $location.url('/home');
   };
 
 })
@@ -216,7 +223,6 @@
   if($rootScope.selectedCampus == undefined) {
     $rootScope.selectedCampus = campus;
   }
-  console.log($rootScope.selectedCampus.name);
   
 	$scope.studentList = StudentFactory.all();
 	$scope.openUrl = function(val){
