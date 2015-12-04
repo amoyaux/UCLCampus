@@ -1,0 +1,12 @@
+<!-- 
+ student - v1 - 2015-11-24
+  
+ Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+-->
+
+<!-- Modal content area -->
+<ion-content>
+	<ion-list>
+		<ion-radio ng-repeat="item in campusList" ng-model="selectedCampus.name" value="{{item.name}}">{{item.name}}</ion-radio>
+	</ion-list>
+</ion-content>
