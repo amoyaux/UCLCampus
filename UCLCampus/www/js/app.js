@@ -183,21 +183,25 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('CampusSelectionController', function($scope, $rootScope, CampusFactory) {
- $scope.campusList = CampusFactory.all();
- $scope.selectedCampus = $rootScope.selectedCampus;
- console.log($scope.selectedCampus.name);
- $scope.data = {
-  name: 'Louvain-la-Neuve'
- };
- $scope.changeCampus = function() {
-  for(var i = 0; i<$scope.campusList.length; i++) {
-    if($scope.data.name == $scope.campusList[i].name) {
-      $rootScope.selectedCampus = $scope.campusList[i];
-      $scope.selectedCampus = $scope.campusList[i];
+.controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory) {
+   $scope.campusList = CampusFactory.all();
+   $scope.selectedCampus = $rootScope.selectedCampus;
+   console.log($scope.selectedCampus.name);
+   $scope.data = {
+    name: 'Louvain-la-Neuve'
+   };
+   $scope.changeCampus = function() {
+    for(var i = 0; i<$scope.campusList.length; i++) {
+      if($scope.data.name == $scope.campusList[i].name) {
+        $rootScope.selectedCampus = $scope.campusList[i];
+        $scope.selectedCampus = $scope.campusList[i];
+      }
     }
   }
- }
+  $rootScope.$ionicGoBack = function() {
+    $location.path('app.home');
+  };
+
 })
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
