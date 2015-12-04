@@ -6,7 +6,6 @@
 
  var db = null;
 
-
  angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
@@ -15,14 +14,20 @@
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "app.html"
+    templateUrl: "app.html",
+    controller: "SettingsController"
   })
   .state('app.home', {
     url: "/home",
     views: {
       'home-tab' :{
         templateUrl: "home.html",
-        controller : "HomeController"
+        controller : "HomeController",
+        resolve:{
+          campus: function(CampusFactory) {
+            return CampusFactory.getClosestCampus();
+          }
+        }
       }
     }
   })
@@ -31,7 +36,12 @@
     views: {
       'student-tab' :{
         templateUrl: "student.html",
-        controller: "HomeController"
+        controller: "HomeController",
+        resolve:{
+          campus: function(CampusFactory) {
+            return CampusFactory.getClosestCampus();
+          }
+        }
       }
     }
   })
@@ -87,6 +97,15 @@
       }
     }
   })
+  .state('app.campusSelection', {
+    url: "/campusselect",
+    views: {
+      'student-tab' :{
+        templateUrl: "campusSelection.html",
+        controller: "CampusSelectionController"
+      }
+    }
+  })
   
   $urlRouterProvider.otherwise("/app/home");
 
@@ -116,23 +135,24 @@
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation) {
     $ionicPlatform.ready(function() {
-        if(window.StatusBar) {
-            StatusBar.styleDefault();
-        }
-        if (window.cordova) { //emulator/device
-          window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
-          window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+      
+      if(window.StatusBar) {
+          StatusBar.styleDefault();
+      }
+      if (window.cordova) { //emulator/device
+        window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
+        window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+          db = $cordovaSQLite.openDB("database.sqlite");
+        }, function(error) {
+            console.error("There was an error copying the database: " + error.code);
             db = $cordovaSQLite.openDB("database.sqlite");
-          }, function(error) {
-              console.error("There was an error copying the database: " + error.code);
-              db = $cordovaSQLite.openDB("database.sqlite");
-          });
-        }
-        else{
-          db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
-        }
+        });
+      }
+      else{
+        db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
+      }
     });
 })
 
@@ -163,60 +183,69 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {;
+.controller('CampusSelectionController', function($scope, $rootScope, CampusFactory) {
+ $scope.campusList = CampusFactory.all();
+ $scope.selectedCampus = $rootScope.selectedCampus;
+})
+
+.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
   };
 })
 
 
-.controller("HomeController", function($scope,$ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory) {
+.controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, campus) {
 
-	$scope.studentList = StudentFactory.all();
 
-	$scope.openUrl = function(val){
-		console.log(window.Connection);	
-		if(window.Connection) {
-			if(navigator.connection.type == Connection.NONE){
-				$ionicPopup.alert({
-					title: "Internet Disconnected",
-					content: "The internet is disconnected on your device."
-				})
-			}
-			else{
-				window.open(val, '_blank', 'location=yes');
-			}
-		}
-	}
+  $rootScope.selectedCampus = campus;
+  console.log(campus.name);
+  $scope.studentList = StudentFactory.all();
+  $scope.openUrl = function(val){
+    console.log(window.Connection); 
+    if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE){
+        $ionicPopup.alert({
+          title: "Internet Disconnected",
+          content: "The internet is disconnected on your device."
+        })
+      }
+      else{
+        window.open(val, '_blank', 'location=yes');
+      }
+    }
+  }
 
-	document.addEventListener("deviceready", function () {
+  document.addEventListener("deviceready", function () {
 
-		$scope.network = $cordovaNetwork.getNetwork();
-		$scope.isOnline = $cordovaNetwork.isOnline();
-		//$scope.$apply();
+    $scope.network = $cordovaNetwork.getNetwork();
+    $scope.isOnline = $cordovaNetwork.isOnline();
+    $scope.$apply();
 
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
-        	$scope.isOnline = true;
-        	$scope.network = $cordovaNetwork.getNetwork();
+          $scope.isOnline = true;
+          $scope.network = $cordovaNetwork.getNetwork();
 
-        	//$scope.$apply();
+          $scope.$apply();
         })
 
         // listen for Offline event
         $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
-        	console.log("got offline");
-        	$scope.isOnline = false;
-        	$scope.network = $cordovaNetwork.getNetwork();
+          console.log("got offline");
+          $scope.isOnline = false;
+          $scope.network = $cordovaNetwork.getNetwork();
 
-        	//$scope.$apply();
+          $scope.$apply();
         })
 
     }, false);
 
+
+
 })
 
-.controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http) {
+.controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup) {
 
  $scope.createEvent = function() {
   $cordovaCalendar.createEvent({
@@ -226,26 +255,16 @@
     startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
     endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
   }).then(function (result) {
-  	$ionicPopup.alert({
-					title: "Done",
-					content: "Your classes have been exported	."
-				})
+    $ionicPopup.alert({
+          title: "Done",
+          content: "Your classes have been exported ."
+        })
 
   }, function (err) {
     console.error("There was an error: " + err);
   });
-};
+}
 
-$scope.parse = function(){
-    //http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=7&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false
-    $http.get('http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false').then(function(resp) {
-      console.log('Success', resp);
-      console.log(resp.data);
-    }, function(err) {
-      console.error('ERR', err);
-    // err.status will contain the status code
-    })
-  };
 
 var disabledDates = [];
 var weekDaysList = ["Sun", "Mon", "Tue", "Wed", "thu", "Fri", "Sat"];
@@ -277,7 +296,7 @@ $scope.datepickerObject = {
       closeOnSelect: false, //Optional
     };
 
-var datePickerCallback = function (val) {
+    var datePickerCallback = function (val) {
         if (typeof(val) === 'undefined') {
           console.log('No date selected');
         } else {
@@ -294,6 +313,8 @@ var datePickerCallback = function (val) {
     templateUrl : "ionSettings.html"
   }
 })
+
+
 
 .directive('hideTabs', function($rootScope) {
   return {
