@@ -185,7 +185,7 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory,$ionicPlatform) {
+.controller('CampusSelectionController', function($scope, $rootScope, $state, CampusFactory,$ionicPlatform) {
    $scope.campusList = CampusFactory.all();
    $scope.selectedCampus = $rootScope.selectedCampus;
    $scope.data = {
@@ -200,7 +200,7 @@
     }
   }
   $ionicPlatform.registerBackButtonAction(function (event) {
-    
+    $state.go('app.home');
   }, 100);
 
 })
