@@ -53,7 +53,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
     },
     getClosestCampus: function() {
       var dfd = $q.defer();
-      var posOptions = {timeout: 10000, enableHighAccuracy: false};
+      var posOptions = {timeout: 3000, enableHighAccuracy: false};
       var t = this;
       $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
@@ -82,16 +82,16 @@ angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLit
     return {
       lectureHallList : [
       ],
-      all: function() {
+      all: function(selectedCampus) {
         var tempLHL = [];
-        var query = "SELECT * FROM poi WHERE TYPE = 'auditoire'";
-        $cordovaSQLite.execute(db, query, []).then(function(res) {
+        var query = "SELECT * FROM poi WHERE TYPE = 'auditoire' AND CAMPUS = ?";
+        $cordovaSQLite.execute(db, query, [selectedCampus.name]).then(function(res) {
             for(var i=0; i<res.rows.length; i++) {
               tempLHL[i]=res.rows.item(i);
             }
         }, function (err) {
             console.error(JSON.stringify(err));
-        });
+        }); 
         this.lectureHallList = tempLHL;
         return tempLHL;
       },
