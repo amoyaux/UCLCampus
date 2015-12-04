@@ -234,23 +234,23 @@
 
 		$scope.network = $cordovaNetwork.getNetwork();
 		$scope.isOnline = $cordovaNetwork.isOnline();
-		$scope.$apply();
+		//$scope.$apply();
 
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
-        	$scope.isOnline = true;
-        	$scope.network = $cordovaNetwork.getNetwork();
+          $scope.isOnline = true;
+          $scope.network = $cordovaNetwork.getNetwork();
 
-        	$scope.$apply();
+          //$scope.$apply();
         })
 
         // listen for Offline event
         $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
-        	console.log("got offline");
-        	$scope.isOnline = false;
-        	$scope.network = $cordovaNetwork.getNetwork();
+          console.log("got offline");
+          $scope.isOnline = false;
+          $scope.network = $cordovaNetwork.getNetwork();
 
-        	$scope.$apply();
+          //$scope.$apply();
         })
 
     }, false);
@@ -269,10 +269,10 @@
     startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
     endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
   }).then(function (result) {
-  	$ionicPopup.alert({
-					title: "Done",
-					content: "Your classes have been exported	."
-				})
+    $ionicPopup.alert({
+          title: "Done",
+          content: "Your classes have been exported ."
+        })
 
   }, function (err) {
     console.error("There was an error: " + err);
