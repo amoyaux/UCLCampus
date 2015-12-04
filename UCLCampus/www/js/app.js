@@ -70,6 +70,7 @@
   })
   .state('app.lectureHalls', {
     url: "/halls",
+    cache: false,
     views: {
       'student-tab' :{
         templateUrl: "halls.html",
@@ -168,6 +169,7 @@
 
 
 .controller('HallsController', function($scope, $rootScope, LectureHallsFactory) {
+  console.log($rootScope.selectedCampus.name);
   $scope.lectureHallList =  LectureHallsFactory.all($rootScope.selectedCampus);
 })
 
@@ -186,15 +188,8 @@
 .controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory) {
    $scope.campusList = CampusFactory.all();
    $scope.selectedCampus = $rootScope.selectedCampus;
-   var nameC;
-   if($scope.selectedCampus == undefined) {
-    nameC = 'Louvain-la-Neuve';
-   }
-   else {
-    nameC = $scope.selectedCampus.name;
-   }
    $scope.data = {
-    name: nameC
+    name: $scope.selectedCampus.name
    };
    $scope.changeCampus = function() {
     for(var i = 0; i<$scope.campusList.length; i++) {
@@ -218,12 +213,15 @@
 })
 
 
-.controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, campus) {
+.controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
 
   if($rootScope.selectedCampus == undefined) {
     $rootScope.selectedCampus = campus;
+    if($rootScope.selectedCampus == undefined) {
+      $rootScope.selectedCampus = CampusFactory.all()[0];
+    }
   }
-  
+  console.log($rootScope.selectedCampus.name);
 	$scope.studentList = StudentFactory.all();
 	$scope.openUrl = function(val){
 		console.log(window.Connection);	
