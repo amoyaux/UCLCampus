@@ -167,8 +167,8 @@
 })
 
 
-.controller('HallsController', function($scope, LectureHallsFactory) {
-  $scope.lectureHallList =  LectureHallsFactory.all();
+.controller('HallsController', function($scope, $rootScope, LectureHallsFactory) {
+  $scope.lectureHallList =  LectureHallsFactory.all($rootScope.selectedCampus);
 })
 
 .controller('LibrariesController', function($scope, LibraryFactory, libraries) {
@@ -183,9 +183,25 @@
   $scope.library= LibraryFactory.getLibraryById($stateParams.id);
 })
 
-.controller('CampusSelectionController', function($scope, $rootScope, CampusFactory) {
- $scope.campusList = CampusFactory.all();
- $scope.selectedCampus = $rootScope.selectedCampus;
+.controller('CampusSelectionController', function($scope, $rootScope, $location, CampusFactory) {
+   $scope.campusList = CampusFactory.all();
+   $scope.selectedCampus = $rootScope.selectedCampus;
+   console.log($scope.selectedCampus.name);
+   $scope.data = {
+    name: 'Louvain-la-Neuve'
+   };
+   $scope.changeCampus = function() {
+    for(var i = 0; i<$scope.campusList.length; i++) {
+      if($scope.data.name == $scope.campusList[i].name) {
+        $rootScope.selectedCampus = $scope.campusList[i];
+        $scope.selectedCampus = $scope.campusList[i];
+      }
+    }
+  }
+  $rootScope.$ionicGoBack = function() {
+    $location.path('app.home');
+  };
+
 })
 
 .controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
@@ -197,37 +213,39 @@
 
 .controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, campus) {
 
-
-  $rootScope.selectedCampus = campus;
-  console.log(campus.name);
-  $scope.studentList = StudentFactory.all();
-  $scope.openUrl = function(val){
-    console.log(window.Connection); 
-    if(window.Connection) {
-      if(navigator.connection.type == Connection.NONE){
-        $ionicPopup.alert({
-          title: "Internet Disconnected",
-          content: "The internet is disconnected on your device."
-        })
-      }
-      else{
-        window.open(val, '_blank', 'location=yes');
-      }
-    }
+  if($rootScope.selectedCampus == undefined) {
+    $rootScope.selectedCampus = campus;
   }
+  console.log($rootScope.selectedCampus.name);
+  
+	$scope.studentList = StudentFactory.all();
+	$scope.openUrl = function(val){
+		console.log(window.Connection);	
+		if(window.Connection) {
+			if(navigator.connection.type == Connection.NONE){
+				$ionicPopup.alert({
+					title: "Internet Disconnected",
+					content: "The internet is disconnected on your device."
+				})
+			}
+			else{
+				window.open(val, '_blank', 'location=yes');
+			}
+		}
+	}
 
-  document.addEventListener("deviceready", function () {
+	document.addEventListener("deviceready", function () {
 
-    $scope.network = $cordovaNetwork.getNetwork();
-    $scope.isOnline = $cordovaNetwork.isOnline();
-    $scope.$apply();
+		$scope.network = $cordovaNetwork.getNetwork();
+		$scope.isOnline = $cordovaNetwork.isOnline();
+		//$scope.$apply();
 
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
           $scope.isOnline = true;
           $scope.network = $cordovaNetwork.getNetwork();
 
-          $scope.$apply();
+          //$scope.$apply();
         })
 
         // listen for Offline event
@@ -236,7 +254,7 @@
           $scope.isOnline = false;
           $scope.network = $cordovaNetwork.getNetwork();
 
-          $scope.$apply();
+          //$scope.$apply();
         })
 
     }, false);
