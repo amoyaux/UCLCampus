@@ -3,4 +3,4 @@ Multi platform mobile application named "UCLCampus", developped for a master's t
 
 Framework : http://ionicframework.com/
 
-DashBoard : https://trello.com/b/UOn6HOIq
+DashBoard : You can use ZenHub in order to see the dashboard https://www.zenhub.io/
