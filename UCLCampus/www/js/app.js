@@ -5,6 +5,7 @@
  */
 
  var db = null;
+ var selectedCampus = null;
 
  angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
@@ -25,7 +26,8 @@
         controller : "HomeController",
         resolve:{
           campus: function(CampusFactory) {
-            return CampusFactory.getClosestCampus();
+            if(selectedCampus == null) return CampusFactory.getClosestCampus();
+            else return selectedCampus;
           }
         }
       }
@@ -39,7 +41,8 @@
         controller: "HomeController",
         resolve:{
           campus: function(CampusFactory) {
-            return CampusFactory.getClosestCampus();
+            if(selectedCampus == null) return CampusFactory.getClosestCampus();
+            else return selectedCampus;
           }
         }
       }
@@ -169,8 +172,8 @@
 
 
 .controller('HallsController', function($scope, $rootScope, LectureHallsFactory) {
-  console.log($rootScope.selectedCampus.name);
-  $scope.lectureHallList =  LectureHallsFactory.all($rootScope.selectedCampus);
+  console.log(selectedCampus);
+  $scope.lectureHallList =  LectureHallsFactory.all();
 })
 
 .controller('LibrariesController', function($scope, LibraryFactory, libraries) {
@@ -187,14 +190,14 @@
 
 .controller('CampusSelectionController', function($scope, $rootScope, $state, CampusFactory,$ionicPlatform) {
    $scope.campusList = CampusFactory.all();
-   $scope.selectedCampus = $rootScope.selectedCampus;
+   $scope.selectedCampus = selectedCampus;
    $scope.data = {
     name: $scope.selectedCampus.name
    };
    $scope.changeCampus = function() {
     for(var i = 0; i<$scope.campusList.length; i++) {
       if($scope.data.name == $scope.campusList[i].name) {
-        $rootScope.selectedCampus = $scope.campusList[i];
+        selectedCampus = $scope.campusList[i];
         $scope.selectedCampus = $scope.campusList[i];
       }
     }
@@ -214,13 +217,12 @@
 
 .controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
 
-  if($rootScope.selectedCampus == undefined) {
-    $rootScope.selectedCampus = campus;
-    if($rootScope.selectedCampus == undefined) {
-      $rootScope.selectedCampus = CampusFactory.all()[0];
+  if(selectedCampus == null) {
+    selectedCampus = campus;
+    if(selectedCampus == undefined) {
+      selectedCampus = CampusFactory.all()[0];
     }
   }
-  console.log($rootScope.selectedCampus.name);
 	$scope.studentList = StudentFactory.all();
 	$scope.openUrl = function(val){
 		console.log(window.Connection);	

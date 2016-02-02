@@ -1,7 +1,7 @@
 angular.module('ionicApp').factory('StudentFactory', function() {
   return {    
     studentList : [
-    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule'},
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
     { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.libraries'},
     { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be'},
@@ -55,6 +55,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
       var dfd = $q.defer();
       var posOptions = {timeout: 2000, enableHighAccuracy: false};
       var t = this;
+      console.log("test");
       $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
           var lat  = position.coords.latitude
@@ -70,7 +71,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
           }
           dfd.resolve(currentCampus);
         }, function(err) {
-          console.log("failed to get location");
+          console.log("failed to get location " + t.CampusList[0].name);
           dfd.resolve(undefined);
         });
         return dfd.promise;
@@ -82,7 +83,7 @@ angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLit
     return {
       lectureHallList : [
       ],
-      all: function(selectedCampus) {
+      all: function() {
         var tempLHL = [];
         var query = "SELECT * FROM poi WHERE TYPE = 'auditoire' AND CAMPUS = ?";
         $cordovaSQLite.execute(db, query, [selectedCampus.name]).then(function(res) {
