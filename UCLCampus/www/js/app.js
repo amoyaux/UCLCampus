@@ -301,7 +301,7 @@
 })
 
 
-.controller("HomeController", function($scope, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
+.controller("HomeController", function($scope, $state, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
 
   if(selectedCampus == null) {
     selectedCampus = campus;
@@ -309,6 +309,11 @@
       selectedCampus = CampusFactory.all()[0];
     }
   }
+
+  $scope.goHome = function(){
+  	$state.go('app.home');
+  }
+
 	$scope.studentList = StudentFactory.all();
 	$scope.openUrl = function(val){
 		console.log(window.Connection);	
