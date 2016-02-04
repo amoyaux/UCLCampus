@@ -7,7 +7,7 @@
  var db = null;
  var selectedCampus = null;
 
- angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
+ angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker', 'ngMockE2E']) //
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
@@ -30,6 +30,16 @@
             else return selectedCampus;
           }
         }
+      }
+    }
+  })
+  .state('app.login', {
+    url: '/login',
+    templateUrl: 'login.html',
+    views: {
+      'home-tab' :{
+        templateUrl: "login.html",
+        controller: "LoginController"
       }
     }
   })
@@ -139,9 +149,29 @@
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $httpBackend, $state, AuthService, AUTH_EVENTS) {
+
+    $httpBackend.whenGET(/templates\/\w+.*/).passThrough();
+    $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
+
+      if ('data' in next && 'authorizedRoles' in next.data) {
+        var authorizedRoles = next.data.authorizedRoles;
+        if (!AuthService.isAuthorized(authorizedRoles)) {
+          event.preventDefault();
+          $state.go($state.current, {}, {reload: true});
+          $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+        }
+      }
+
+      if (!AuthService.isAuthenticated()) {
+        if (next.name !== 'app.login') {
+          event.preventDefault();
+          $state.go('app.login');
+        }
+      }
+    })
+
     $ionicPlatform.ready(function() {
-      
       if(window.StatusBar) {
           StatusBar.styleDefault();
       }
@@ -160,8 +190,44 @@
     });
 })
 
+/*.run(function($httpBackend){
+  $httpBackend.whenGET('http://localhost:8100/valid')
+        .respond({message: 'This is my valid response!'});
+  $httpBackend.whenGET('http://localhost:8100/notauthenticated')
+        .respond(401, {message: "Not Authenticated"});
+  $httpBackend.whenGET('http://localhost:8100/notauthorized')
+        .respond(403, {message: "Not Authorized"});
+ 
+  
+ })*
 
-.controller('AppController', function($scope, $ionicSideMenuDelegate) {
+.run(function ($rootScope, $state, AuthService, AUTH_EVENTS) {
+  
+})*/
+
+
+.controller('AppController', function($scope, $ionicSideMenuDelegate, $state, $ionicPopup, AuthService, AUTH_EVENTS) { //, AuthService, AUTH_EVENTS
+  $scope.username = AuthService.username();
+ 
+  $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Unauthorized!',
+      template: 'You are not allowed to access this resource.'
+    });
+  });
+ 
+  $scope.$on(AUTH_EVENTS.notAuthenticated, function(event) {
+    AuthService.logout();
+    $state.go('login');
+    var alertPopup = $ionicPopup.alert({
+      title: 'Session Lost!',
+      template: 'Sorry, You have to login again.'
+    });
+  });
+ 
+  $scope.setCurrentUsername = function(name) {
+    $scope.username = name;
+  };
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
@@ -170,6 +236,22 @@
   };
 })
 
+.controller('LoginController', function($scope, $state, $ionicPopup, AuthService) {
+  console.log("login");
+  $scope.data = {};
+ 
+  $scope.login = function(data) {
+    AuthService.login(data.username, data.password).then(function(authenticated) {
+      $state.go('app.home', {}, {reload: true});
+      $scope.setCurrentUsername(data.username);
+    }, function(err) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Login failed!',
+        template: 'Please check your credentials!'
+      });
+    });
+  };
+})
 
 .controller('HallsController', function($scope, $rootScope, LectureHallsFactory) {
   console.log(selectedCampus);
@@ -208,10 +290,14 @@
 
 })
 
-.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, CampusFactory) {
+.controller('SettingsController', function($scope, $ionicSideMenuDelegate, $translate, $state, CampusFactory, AuthService) {
   $scope.ChangeLanguage = function(lang){
     $translate.use(lang);
   };
+  $scope.logout = function() {
+    AuthService.logout();
+    $state.go('app.login');
+  }
 })
 
 
@@ -361,3 +447,4 @@ $scope.datepickerObject = {
     }
   };
 });
+
