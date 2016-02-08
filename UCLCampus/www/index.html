@@ -13,6 +13,9 @@
 	<title>UCLCampus</title>
 	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
 <!-- ionic/angularjs js -->
 <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -28,6 +31,12 @@
 
 <script src="js/app.js"></script>
 <script src="js/factory.js"></script>
+    
+    <!-- maps module -->
+    <link href="css/maps.css" rel="stylesheet">
+    <script src="js/maps.js"></script>
+    <script src="js/geolocation.js"></script>
+    
 </head>
 <body>
 
@@ -55,12 +64,12 @@
         <ion-tab title="Student" icon="ion-university" href="#/app/student">
           <ion-nav-view name="student-tab"></ion-nav-view>
         </ion-tab>
+        <ion-tab title="Tools" icon="ion-wrench" href="#/app/tools">
+          <ion-nav-view name="tools-tab"></ion-nav-view>
+        </ion-tab>
         <!--
         <ion-tab title="Campus" icon="ion-earth" href="#/app/home">
           <ion-nav-view name="campus-tab"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Tools" icon="ion-wrench" href="#/app/home">
-          <ion-nav-view name="tools-tab"></ion-nav-view>
         </ion-tab>
         <ion-tab title="City" icon="ion-home" href="#/app/home">
           <ion-nav-view name="city-tab"></ion-nav-view>

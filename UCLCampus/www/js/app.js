@@ -7,7 +7,7 @@
  var db = null;
  var selectedCampus = null;
 
- angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
+ var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
@@ -107,6 +107,24 @@
       'student-tab' :{
         templateUrl: "campusSelection.html",
         controller: "CampusSelectionController"
+      }
+    }
+  })
+    .state('app.tools', {
+    url: "/tools",
+    views: {
+      'tools-tab' :{
+        templateUrl: "templates/tools.html",
+        controller: "ToolsController"
+      }
+    }
+  })
+      .state('app.maps', {
+    url: "/maps",
+    views: {
+      'tools-tab' :{
+        templateUrl: "templates/maps.html",
+        controller: "MapsController"
       }
     }
   })
@@ -224,7 +242,7 @@
     }
   }
 
-  $scope.goHome = function(){
+  $rootScope.goHome = function(){
   	$state.go('app.home');
   }
 
@@ -344,6 +362,11 @@ $scope.datepickerObject = {
         }
       };
     })
+ 
+ .controller("ToolsController", function($scope) {
+     
+ })
+ 
 
 
 .directive("ionSettings", function() {
