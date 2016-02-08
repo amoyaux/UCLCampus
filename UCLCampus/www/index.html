@@ -37,6 +37,12 @@
     <script src="js/maps.js"></script>
     <script src="js/geolocation.js"></script>
     
+<!-- authentication -->
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+<script src="js/constants.js"></script>
+<script src="lib/angular-mocks/angular-mocks.js"></script>
+
 </head>
 <body>
 
@@ -196,6 +202,18 @@
 </button>
 </ion-nav-buttons>  
 <ng-include src="'templates/campusSelection.html'"></ng-include>
+</ion-view>
+</script>
+
+<script id="login.html" type="text/ng-template">
+	<ion-view title="{{'Login' | translate}}">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>  
+<ng-include src="'templates/login.html'"></ng-include>
 </ion-view>
 </script>
 

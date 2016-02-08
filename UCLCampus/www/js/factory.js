@@ -71,7 +71,7 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
           }
           dfd.resolve(currentCampus);
         }, function(err) {
-          console.log("failed to get location " + t.CampusList[0].name);
+          console.log("failed to get location");
           dfd.resolve(undefined);
         });
         return dfd.promise;
