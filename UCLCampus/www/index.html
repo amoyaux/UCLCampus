@@ -37,12 +37,13 @@
 <script src="student/halls/js/halls.js"></script>
 <script src="student/schedule/js/schedule.js"></script>
 
-
+<!-- tools module -->
+<script src="tools/js/tools.js"></script>
 
 <!-- maps module -->
 <link href="css/maps.css" rel="stylesheet">
-<script src="js/maps.js"></script>
-<script src="js/geolocation.js"></script>
+<script src="tools/maps/js/maps.js"></script>
+<script src="tools/maps/js/geolocation.js"></script>
     
 
 <!-- authentication -->
@@ -121,74 +122,6 @@
 
 <script id="ionSettings.html" type="text/ng-template">
 	<ng-include src="'templates/settings.html'"></ng-include>
-</script>
-
-<script id="libraries.html" type="text/ng-template">
-  <ion-view title="{{'Libraries' | translate}}">
-</ion-nav-buttons>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-  <i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons>
-<ng-include src="'student/libraries/templates/libraries.html'"></ng-include>
-</ion-view>
-</script>
-
-<script id="libraryDetails.html" type="text/ng-template">
-  <ion-view title="{{library.NAME}}">
-</ion-nav-buttons>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-  <i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons>
-<ng-include src="'student/libraries/templates/libraryDetails.html'"></ng-include>
-</ion-view>
-</script>
-
-<script id="hallDetails.html" type="text/ng-template">
-	<ion-view title="{{lectureHall.NAME}}">
-</ion-nav-buttons>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-	<i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons>
-<ng-include src="'student/halls/templates/hallDetails.html'"></ng-include>
-</ion-view>
-</script>
-
-<script id="schedule.html" type="text/ng-template">
-	<ion-view title="{{'Schedule' | translate}}">
-</ion-nav-buttons>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-	<i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons>
-<ng-include src="'student/schedule/templates/schedule.html'"></ng-include>
-</ion-view>
 </script>
 
 <script id="campusSelection.html" type="text/ng-template">

@@ -62,7 +62,7 @@
     url: "/libraries",
     views: {
       'student-tab' :{
-        templateUrl: "libraries.html",
+        templateUrl: "student/libraries/templates/libraries.html",
         controller: "LibrariesController",
         resolve:{
           libraries: function(LibraryFactory) {
@@ -76,7 +76,7 @@
     url: "/libraries/:id",
     views: {
       'student-tab' :{
-        templateUrl: "libraryDetails.html",
+        templateUrl: "student/libraries/templates/libraryDetails.html",
         controller: "LibraryDetailsController"
       }
     }
@@ -96,7 +96,7 @@
     url: "/halls/:id",
     views: {
       'student-tab' :{
-        templateUrl: "hallDetails.html",
+        templateUrl: "student/halls/templates/hallDetails.html",
         controller: "HallDetailsController"
       }
     }
@@ -106,7 +106,7 @@
     url: "/schedule",
     views: {
       'student-tab' :{
-        templateUrl: "schedule.html",
+        templateUrl: "student/schedule/templates/schedule.html",
         controller: "ScheduleController"
       }
     }
@@ -124,7 +124,7 @@
     url: "/tools",
     views: {
       'tools-tab' :{
-        templateUrl: "templates/tools.html",
+        templateUrl: "tools/templates/tools.html",
         controller: "ToolsController"
       }
     }
@@ -133,7 +133,7 @@
     url: "/maps",
     views: {
       'tools-tab' :{
-        templateUrl: "templates/maps.html",
+        templateUrl: "tools/maps/templates/maps.html",
         controller: "MapsController"
       }
     }
@@ -341,12 +341,6 @@
 
 
 })
-
- .controller("ToolsController", function($scope) {
-     
- })
- 
-
 
 .directive("ionSettings", function() {
   return {
