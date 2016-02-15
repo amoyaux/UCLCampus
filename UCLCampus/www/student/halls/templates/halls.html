@@ -3,7 +3,18 @@
   
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
-
+<ion-view title="{{'LectureHalls' | translate}}">
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>
+<ion-nav-buttons side="left">
+<button class="button button-clear" ng-click="goHome()">
+	<i class="icon ion-home"></i>
+</button>
+</ion-nav-buttons> 
 <ion-content>
 	<ion-list>
 		<ion-item class="item item-thumbnail-left" ng-repeat="item in lectureHallList" ui-sref="app.lectureHallDetails({id:{{item.ID}}})">
@@ -13,3 +24,4 @@
 		</ion-item>
 	</ion-list>
 </ion-content>
+</ion-view>
