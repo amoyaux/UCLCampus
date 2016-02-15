@@ -169,6 +169,24 @@
 
 .run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $httpBackend, $state, AuthService, AUTH_EVENTS) {
 
+    $ionicPlatform.ready(function() {
+      if(window.StatusBar) {
+          StatusBar.styleDefault();
+      }
+      if (window.cordova) { //emulator/device
+        window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
+        window.plugins.sqlDB.copy("database.sqlite", 0, function() {
+          db = $cordovaSQLite.openDB("database.sqlite");
+        }, function(error) {
+            console.error("There was an error copying the database: " + error.code);
+            db = $cordovaSQLite.openDB("database.sqlite");
+        });
+      }
+      else{
+        db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
+      }
+    });
+
     $httpBackend.whenGET(/templates\/\w+.*/).passThrough();
     $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
 
@@ -188,24 +206,6 @@
         }
       }
     })
-
-    $ionicPlatform.ready(function() {
-      if(window.StatusBar) {
-          StatusBar.styleDefault();
-      }
-      if (window.cordova) { //emulator/device
-        window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
-        window.plugins.sqlDB.copy("database.sqlite", 0, function() {
-          db = $cordovaSQLite.openDB("database.sqlite");
-        }, function(error) {
-            console.error("There was an error copying the database: " + error.code);
-            db = $cordovaSQLite.openDB("database.sqlite");
-        });
-      }
-      else{
-        db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
-      }
-    });
 })
 
 /*.run(function($httpBackend){
@@ -314,7 +314,6 @@
   };
   $scope.logout = function() {
     AuthService.logout();
-    $state.go('app.login');
   }
 })
 
@@ -468,9 +467,18 @@ $scope.datepickerObject = {
   return {
     restrict: 'A',
     link: function($scope, $el) {
+      if($rootScope.hideTabs == 'tabs-item-hide') {
+        $rootScope.rehide = true;
+      }
       $rootScope.hideTabs = 'tabs-item-hide';
+
       $scope.$on('$destroy', function() {
-        $rootScope.hideTabs = '';
+        if($rootScope.rehide) {
+          $rootScope.rehide = false;
+        }
+        else {
+          $rootScope.hideTabs = '';
+        }
       });
     }
   };
