@@ -114,8 +114,8 @@
   .state('app.campusSelection', {
     url: "/campusselect",
     views: {
-      'student-tab' :{
-        templateUrl: "campusSelection.html",
+      'home-tab' :{
+        templateUrl: "templates/campusSelection.html",
         controller: "CampusSelectionController"
       }
     }

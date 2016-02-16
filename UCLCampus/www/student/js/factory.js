@@ -55,7 +55,6 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
       var dfd = $q.defer();
       var posOptions = {timeout: 2000, enableHighAccuracy: false};
       var t = this;
-      console.log("test");
       $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
           var lat  = position.coords.latitude
