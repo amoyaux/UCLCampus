@@ -30,6 +30,13 @@
 <!-- your app's js -->
 <script src="js/app.js"></script>
 <script src="js/login.js"></script>
+
+<!-- settings module -->
+<script src="settings/js/settings.js"></script>
+<script src="settings/campusSelection/js/campusSelection.js"></script>
+<script src="settings/login/js/constants.js"></script>
+<script src="settings/login/js/services.js"></script>
+<script src="settings/login/js/login.js"></script>
     
 <!-- study module -->
 <script src="student/js/factory.js"></script>
@@ -48,8 +55,6 @@
 
 <!-- authentication -->
 <script src="js/controllers.js"></script>
-<script src="js/services.js"></script>
-<script src="js/constants.js"></script>
 <script src="lib/angular-mocks/angular-mocks.js"></script>
 
 </head>
@@ -121,13 +126,7 @@
 </script>
 
 <script id="ionSettings.html" type="text/ng-template">
-	<ng-include src="'templates/settings.html'"></ng-include>
-</script>
-
-<script id="login.html" type="text/ng-template">
-	<ion-view title="{{'Login' | translate}}" cache-view="false" hide-tabs>
-<ng-include src="'templates/login.html'"></ng-include>
-</ion-view>
+	<ng-include src="'settings/templates/settings.html'"></ng-include>
 </script>
 
 </body>
