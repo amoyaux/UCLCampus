@@ -7,9 +7,9 @@
  var db = null;
  var selectedCampus = null;
 
- var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker', 'ngMockE2E'])
+ var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
 
- .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+ .config(function($stateProvider, $urlRouterProvider, $translateProvider, $httpProvider) {
 
   $stateProvider
   .state('app', {
@@ -22,7 +22,7 @@
     url: "/home",
     views: {
       'home-tab' :{
-        templateUrl: "home.html",
+        templateUrl: "templates/home.html",
         controller : "HomeController",
         resolve:{
           campus: function(CampusFactory) {
@@ -163,10 +163,14 @@
 
   $translateProvider.useSanitizeValueStrategy('escapeParameters');
 
+  //$httpProvider.defaults.useXDomain = true;
+  //$httpProvider.defaults.withCredentials = true;
+  //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $httpBackend, $state, AuthService, AUTH_EVENTS) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $state, AuthService, AUTH_EVENTS) {
 
     $ionicPlatform.ready(function() {
       if(window.StatusBar) {
@@ -186,7 +190,6 @@
       }
     });
 
-    $httpBackend.whenGET(/templates\/\w+.*/).passThrough();
     $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
 
       if ('data' in next && 'authorizedRoles' in next.data) {

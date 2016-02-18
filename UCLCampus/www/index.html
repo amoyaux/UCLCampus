@@ -29,7 +29,6 @@
 <script src="cordova.js"></script>
 <!-- your app's js -->
 <script src="js/app.js"></script>
-<script src="js/login.js"></script>
 
 <!-- settings module -->
 <script src="settings/js/settings.js"></script>
@@ -54,7 +53,6 @@
     
 
 <!-- authentication -->
-<script src="js/controllers.js"></script>
 <script src="lib/angular-mocks/angular-mocks.js"></script>
 
 </head>
@@ -66,6 +64,8 @@
 	</div>
 
 <script id="app.html" type="text/ng-template">
+	
+
 	<ion-side-menus>
 
 	<ion-side-menu-content>
@@ -109,20 +109,6 @@
 	</ion-side-menu>
 	</ion-side-menus>
 
-</script>
-
-
-
-<script id="home.html" type="text/ng-template">
-<ion-view title="UCLCampus" cache-view="false" hide-tabs>
-</ion-nav-buttons>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-	<i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ng-include src="'templates/home.html'"></ng-include>
-</ion-view>
 </script>
 
 <script id="ionSettings.html" type="text/ng-template">

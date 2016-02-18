@@ -1,7 +1,7 @@
 angular.module('ionicApp').factory('StudentFactory', function() {
   return {    
     studentList : [
-    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.home'},
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule'},
     { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.libraries'},
     { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be'},

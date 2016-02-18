@@ -1,4 +1,4 @@
-angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup) {
+angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http) {
 
  $scope.createEvent = function() {
   $cordovaCalendar.createEvent({
@@ -18,16 +18,21 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $co
   });
 }
 
-scope.parse = function(){
-    //http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=7&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false
-    $http.get('http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=1,2,3,4,5,6,7,8,9,10,11,12&code=lingi2145&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false').then(function(resp) {
-      console.log('Success', resp);
-      console.log(resp.data);
-    }, function(err) {
-      console.error('ERR', err);
-    // err.status will contain the status code
-    })
-  };
+$scope.parse = function(){
+  $http({
+  method: 'GET',
+  url: 'http://horairev6.uclouvain.be/direct/index.jsp?displayConfName=webEtudiant&showTree=false&showOptions=false&login=etudiant&password=student&projectId=16&code=LINGI2262'
+  }).then(function successCallback(response) {
+    console.log(response.cookie);
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(data,status) {
+    console.log(data);
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+}
+
 
 
 var disabledDates = [];
