@@ -112,6 +112,7 @@
   })
   .state('app.campusSelection', {
     url: "/campusselect",
+    cache: false,
     views: {
       'home-tab' :{
         templateUrl: "settings/campusSelection/templates/campusSelection.html",
@@ -266,6 +267,7 @@
   }
 
   $rootScope.goHome = function(){
+    $rootScope.currentTab=1;
   	$state.go('app.home');
   }
 
@@ -284,6 +286,23 @@
 			}
 		}
 	}
+
+  $rootScope.setTabStudent = function() {
+    $rootScope.currentTab=1;
+    $state.go('app.student');
+  }
+  $rootScope.setTabCampus = function() {
+    $rootScope.currentTab=2;
+    //$state.go('app.campus');
+  }
+  $rootScope.setTabTools = function() {
+    $rootScope.currentTab=3;
+    $state.go('app.tools');
+  }
+  $rootScope.setTabTown = function() {
+    $rootScope.currentTab=4;
+    //$state.go('app.town');
+  }
 
 	document.addEventListener("deviceready", function () {
 

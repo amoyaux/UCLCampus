@@ -75,16 +75,16 @@
 			<button class="" ng-click="toggleRight()">
 			</button>
 		</ion-nav-buttons>
-		<ion-tabs class="tabs-icon-top tabs-positive {{$root.hideTabs}}">
+		<ion-tabs class="tabs-icon-top {{$root.hideTabs}} tabs-positive" ng-class="{'tabs-positive':currentTab==1, 'tabs-energized':currentTab==2, 'tabs-royal':currentTab==3, 'tabs-balanced':currentTab==4}">
 
         <ion-tab title="Home" icon="ion-home" href="#/app/home" hidden="true">
           <ion-nav-view name="home-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Student" icon="ion-university" href="#/app/student">
+        <ion-tab title="Student" icon="ion-university" ng-click="setTabStudent()">
           <ion-nav-view name="student-tab"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="Tools" icon="ion-wrench" href="#/app/tools">
+        <ion-tab title="Tools" icon="ion-wrench" ng-click="setTabTools()">
           <ion-nav-view name="tools-tab"></ion-nav-view>
         </ion-tab>
         <!--
