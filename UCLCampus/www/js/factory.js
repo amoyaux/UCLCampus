@@ -22,7 +22,11 @@ angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeoloca
   return {    
     CampusList : [
     { name : 'Louvain-la-Neuve' , lat : 50.6697251, lon : 4.6127398},
-    { name : 'Woluwe', lat : 50.8528164, lon : 4.45053}
+    { name : 'Woluwe', lat : 50.8528164, lon : 4.45053},
+    { name : 'Mons' , lat : 50.452884, lon : 3.984310},
+    { name : 'Tournai', lat: 50.636785, lon : 3.351833},
+    { name : 'Bruxelles Saint-Gilles', lat: 50.821367, lon: 4.350055},
+    { name : 'Charleroi', lat: 50.408140, lon: 4.448352}
     ],
     toRadians: function(value) {
         /** Converts numeric degrees to radians */
