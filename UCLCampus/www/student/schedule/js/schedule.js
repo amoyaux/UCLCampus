@@ -1,22 +1,28 @@
 angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http, $cookies, $timeout, $state) {
 
  $scope.createEvent = function() {
-  
-  $cordovaCalendar.createEvent({
-    title: 'Space Race',
-    location: 'The Moon',
-    notes: 'Bring sandwiches',
-    startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
-    endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
-  }).then(function (result) {
-    $ionicPopup.alert({
-          title: "Done",
-          content: "Your classes have been exported ."
-        })
+  for(i = 0; i < $scope.Schedule.length;i++){
+  		var date = $scope.Schedule[i].date.split('/');
+  		var hours = $scope.Schedule[i].startDate.split('h');
+  		var hours2 =  $scope.Schedule[i].endDate.split('h');
 
-  }, function (err) {
-    console.error("There was an error: " + err);
-  });
+	  $cordovaCalendar.createEvent({
+	    title: $scope.Schedule[i].code,
+	    location: $scope.Schedule[i].local,
+	    notes: $scope.Schedule[i].professor,
+	    startDate: new Date(date[2], date[1]-1, date[0], hours[0], hours[1], 0, 0, 0),
+	    endDate: new Date(date[2], date[1]-1, date[0], hours2[0] , hours2[1], 0, 0, 0)
+	  }).then(function (result) {
+	    //
+	  }, function (err) {
+	    console.error("There was an error: " + err);
+	  });
+  }
+  $ionicPopup.alert({
+    title: "Done",
+  	content: "Your classes have been exported ."
+  })
+  
 }
 
 $scope.$on('$ionicView.enter', function() {
@@ -123,10 +129,15 @@ $scope.$on('$ionicView.enter', function() {
 	  				var code = frame;
 	  				table = skip(table);
 
+	  				var d = duration.split('h');
+	  				var da = startDate.split('h');
+	  				var endDate = (parseInt(d[0])+ parseInt(da[0])) + "h" + da[1]
+
 	  				var item = {
 	  					code: code,
 	  					date: date,
 	  					startDate : startDate,
+	  					endDate : endDate,
 	  					duration : duration,
 	  					professor : professor,
 	  					local :local,

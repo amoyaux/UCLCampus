@@ -1,7 +1,7 @@
 /*!
  * angular UCLCampus controler - v1 - 2015-11-24
  * 
- * Copyright (c) 2015 The angular-translate team, Pascal Precht; Licensed MIT
+ * Copyright (c) 2016 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
  */
 
  var db = null;
