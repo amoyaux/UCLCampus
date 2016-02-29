@@ -19,7 +19,7 @@
 </ion-nav-buttons> 
 <ion-content>
 	<ion-list>
-		<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: '!null'}" ui-sref={{item.url}}>
+		<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: '!null'}|filterCampus:selectedCampus" ui-sref={{item.url}}>
 			<a class={{item.icon}}></a>
 			{{item.title | translate}}
 		</ion-item>

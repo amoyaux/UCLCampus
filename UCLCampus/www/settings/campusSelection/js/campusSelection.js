@@ -1,4 +1,4 @@
-angular.module('ionicApp').controller('CampusSelectionController', function($scope, $rootScope, $state, CampusFactory,$ionicPlatform) {
+angular.module('ionicApp').controller('CampusSelectionController', function($scope, $rootScope, $state, CampusFactory, $ionicPlatform) {
    $scope.campusList = CampusFactory.all();
    $scope.selectedCampus = selectedCampus;
    $scope.data = {

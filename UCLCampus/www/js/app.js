@@ -44,16 +44,11 @@
   })
   .state('app.student', {
     url: "/student",
+    cache: false,
     views: {
       'student-tab' :{
         templateUrl: "student/templates/student.html",
-        controller: "HomeController",
-        resolve:{
-          campus: function(CampusFactory) {
-            if(selectedCampus == null) return CampusFactory.getClosestCampus();
-            else return selectedCampus;
-          }
-        }
+        controller: "StudentController"
       }
     }
   })
@@ -257,7 +252,7 @@
   };
 }) 
 
-.controller("HomeController", function($scope, $state, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
+.controller("HomeController", function($scope, $state, $rootScope, $cordovaNetwork, CampusFactory, campus) {
 
   if(selectedCampus == null) {
     selectedCampus = campus;
@@ -270,22 +265,6 @@
     $rootScope.currentTab=1;
   	$state.go('app.home');
   }
-
-	$scope.studentList = StudentFactory.all();
-	$scope.openUrl = function(val){
-		console.log(window.Connection);	
-		if(window.Connection) {
-			if(navigator.connection.type == Connection.NONE){
-				$ionicPopup.alert({
-					title: "Internet Disconnected",
-					content: "The internet is disconnected on your device."
-				})
-			}
-			else{
-				window.open(val, '_blank', 'location=yes');
-			}
-		}
-	}
 
   $rootScope.setTabStudent = function() {
     $rootScope.currentTab=1;
@@ -332,6 +311,7 @@
 
 
 })
+
 
 .directive("ionSettings", function() {
   return {
