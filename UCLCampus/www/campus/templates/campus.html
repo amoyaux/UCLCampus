@@ -5,7 +5,9 @@
 -->
 
 <!-- Modal content area -->
-<ion-view title="{{'Student' | translate}}">
+<ion-view title="{{'Campus' | translate}}">
+<ion-nav-bar align-title="center" class="bar bar-header bar-energized">    
+</ion-nav-bar>
 </ion-nav-buttons>        
 <ion-nav-buttons side="right">
 <button class="button button-clear" ng-click="toggleRight()">
@@ -19,11 +21,7 @@
 </ion-nav-buttons> 
 <ion-content>
 	<ion-list>
-		<ion-item class="item item-icon-left" ng-repeat="item in studentList|filter:{url: '!null'}|filterCampus:selectedCampus" ui-sref={{item.url}}>
-			<a class={{item.icon}}></a>
-			{{item.title | translate}}
-		</ion-item>
-		<ion-item class="item item-icon-left" href="#" ng-repeat="item in studentList|filter:{url: 'null'}" ng-click="openUrl(item.site)">
+		<ion-item class="item item-icon-left" ng-repeat="item in campusMenuList|filterCampus:selectedCampus" ui-sref={{item.url}}>
 			<a class={{item.icon}}></a>
 			{{item.title | translate}}
 		</ion-item>

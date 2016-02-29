@@ -44,16 +44,11 @@
   })
   .state('app.student', {
     url: "/student",
+    cache: false,
     views: {
       'student-tab' :{
         templateUrl: "student/templates/student.html",
-        controller: "HomeController",
-        resolve:{
-          campus: function(CampusFactory) {
-            if(selectedCampus == null) return CampusFactory.getClosestCampus();
-            else return selectedCampus;
-          }
-        }
+        controller: "StudentController"
       }
     }
   })
@@ -121,7 +116,17 @@
       }
     }
   })
-    .state('app.tools', {
+  .state('app.campus', {
+    url: "/campus",
+    cache:false,
+    views: {
+      'campus-tab' :{
+        templateUrl: "campus/templates/campus.html",
+        controller: "CampusController"
+      }
+    }
+  })
+  .state('app.tools', {
     url: "/tools",
     views: {
       'tools-tab' :{
@@ -130,7 +135,7 @@
       }
     }
   })
-      .state('app.maps', {
+  .state('app.maps', {
     url: "/maps",
     views: {
       'tools-tab' :{
@@ -258,7 +263,7 @@
   };
 }) 
 
-.controller("HomeController", function($scope, $state, $ionicModal, $ionicPopup, $rootScope, $cordovaNetwork, StudentFactory, CampusFactory, campus) {
+.controller("HomeController", function($scope, $state, $rootScope, $cordovaNetwork, CampusFactory, campus) {
 
   if(selectedCampus == null) {
     selectedCampus = campus;
@@ -272,29 +277,13 @@
   	$state.go('app.home');
   }
 
-	$scope.studentList = StudentFactory.all();
-	$scope.openUrl = function(val){
-		console.log(window.Connection);	
-		if(window.Connection) {
-			if(navigator.connection.type == Connection.NONE){
-				$ionicPopup.alert({
-					title: "Internet Disconnected",
-					content: "The internet is disconnected on your device."
-				})
-			}
-			else{
-				window.open(val, '_blank', 'location=yes');
-			}
-		}
-	}
-
   $rootScope.setTabStudent = function() {
     $rootScope.currentTab=1;
     $state.go('app.student');
   }
   $rootScope.setTabCampus = function() {
     $rootScope.currentTab=2;
-    //$state.go('app.campus');
+    $state.go('app.campus');
   }
   $rootScope.setTabTools = function() {
     $rootScope.currentTab=3;
@@ -333,6 +322,7 @@
 
 
 })
+
 
 .directive("ionSettings", function() {
   return {

@@ -1,11 +1,11 @@
 angular.module('ionicApp').factory('StudentFactory', function() {
   return {    
     studentList : [
-    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule'},
-    { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls'},
-    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.libraries'},
-    { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be'},
-    { title: 'UCLouvain.be', icon:'icon ion-help', url:'null',site:'http://uclouvain.be'}
+    { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule', campus:[]},
+    { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls', campus:[]},
+    { title: 'Libraries', icon:'icon ion-ios-book', url:'app.libraries', campus:[]},
+    { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be', campus:[]},
+    { title: 'UCLouvain.be', icon:'icon ion-help', url:'null',site:'http://uclouvain.be', campus:[]}
     ],
     all: function() {
       return this.studentList;
@@ -13,6 +13,26 @@ angular.module('ionicApp').factory('StudentFactory', function() {
     getItemById: function (id) {
       for(var i=0; i<this.studentList.length; i++) {
         if(this.studentList[i].id==id) return this.studentList[i];
+      }
+    }
+  }
+})
+
+angular.module('ionicApp').factory('CampusMenuFactory', function() {
+  return {    
+    campusMenuList : [
+    { title: 'Events (CarpeStudentem)' , icon:'icon ion-help', url:'app.home', campus:['Louvain-la-Neuve']},
+    { title: 'Cercles' , icon:'icon ion-help', url:'app.home', campus:[]},
+    { title: 'Restaurants universitaires', icon:'icon ion-help', url:'app.home', campus:[]},
+    { title: 'Kots à projets', icon:'icon ion-help', url: 'app.home', campus:[]},
+    { title: 'Sport', icon:'icon ion-help', url:'app.home', campus:[]}
+    ],
+    all: function() {
+      return this.campusMenuList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.campusMenuList.length; i++) {
+        if(this.campusMenuList[i].id==id) return this.campusMenuList[i];
       }
     }
   }
