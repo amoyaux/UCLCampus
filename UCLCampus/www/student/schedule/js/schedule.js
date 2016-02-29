@@ -1,6 +1,7 @@
-angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http) {
+angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http, $cookies, $timeout, $state) {
 
  $scope.createEvent = function() {
+  
   $cordovaCalendar.createEvent({
     title: 'Space Race',
     location: 'The Moon',
@@ -18,22 +19,149 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $co
   });
 }
 
-$scope.parse = function(){
-  $http({
-  method: 'GET',
-  url: 'http://horairev6.uclouvain.be/direct/index.jsp?displayConfName=webEtudiant&showTree=false&showOptions=false&login=etudiant&password=student&projectId=16&code=LINGI2262'
-  }).then(function successCallback(response) {
-    console.log(response.cookie);
-    // this callback will be called asynchronously
-    // when the response is available
-  }, function errorCallback(data,status) {
-    console.log(data);
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });
+$scope.$on('$ionicView.enter', function() {
+	function weeks(){
+		var res = "";
+		for(i = 0; i < 54; i++){
+			res = res + i + ",";
+		}
+		res = res + 54;
+		return res;
+	}
+
+	$http({
+	  method: 'GET',
+	  url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=' + weeks() + '&code='+'lingi2262,lingi2347'+'&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabDate=true&showTab=true&showTabWeek=false&showTabDay=false&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false'
+	  }).then(function successCallback(response) {
+	    $http({
+	  		method: 'GET',
+	  		url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/info.jsp?displayConfName=WEB&order=slot'
+	  		}).then(function successCallback(response) {
+	  			function skip(table){
+	  				a = table.indexOf('</td>');
+	  				b = table.lastIndexOf('</td>');
+	  				table = table.substring(a+5);
+	  				return table;
+	  			}
+
+	  			var doc = response.data;
+	  			var a = doc.indexOf('<table>');
+	  			var b = doc.indexOf('</table>');
+	  			var doc = doc.substring(a+7,b);
+	  			for(i = 0; i <2 ; i++){
+	  				var a = doc.indexOf('</tr>');
+	  				var doc = doc.substring(a+5,b);
+	  			}
+	  			var a = doc.indexOf('<tr');
+
+	  			var list_schedule = [];
+	  			while(a != -1){
+	  				//frame of the schedule for one lecture
+	  				b = doc.indexOf('</tr>');
+	  				var table = doc.substring(a+4,b);
+
+	  				//Date
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+	  				a = frame.indexOf('>');
+	  				b = frame.indexOf('</');
+	  				frame = frame.substring(a+1,b);
+
+	  				var date = frame;
+	  				var s = date.split('/');
+	  				date = s[1] + "/" + s[0] + "/" + s[2];
+
+	  				//Remove frame from table
+	  				table = skip(table);
+
+	  				//Skip
+	  				table = skip(table);
+	  				
+	  				//StartDate
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+
+	  				var startDate = frame;
+	  				table = skip(table);
+
+	  				//Duration
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+
+	  				var duration = frame;
+	  				table = skip(table);
+
+	  				//Skip
+	  				table = skip(table);
+	  				table = skip(table);
+	  				table = skip(table);
+
+	  				//Professor
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+
+	  				var professor = frame;
+	  				table = skip(table);
+
+	  				//Local
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+
+	  				var local = frame;
+	  				table = skip(table);
+
+	  				//Code cours
+	  				a = table.indexOf('<td');
+	  				b = table.indexOf('</td>');
+	  				var frame = table.substring(a+4,b);
+
+	  				var code = frame;
+	  				table = skip(table);
+
+	  				var item = {
+	  					code: code,
+	  					date: date,
+	  					startDate : startDate,
+	  					duration : duration,
+	  					professor : professor,
+	  					local :local,
+	  				};
+	  				list_schedule.push(item);
+
+	  				b = doc.indexOf('</tr>');
+	  				doc = doc.substring(b+5);
+	  				a = doc.indexOf('<tr');
+	  			}
+
+	  			$scope.Schedule = list_schedule;
+	  		}, function errorCallback(data,status) {
+	    		console.log(data);
+	  		});
+
+	    // this callback will be called asynchronously
+	    // when the response is available
+	  }, function errorCallback(data,status) {
+	    console.log(data);
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+})
+
+$scope.isToday = function(item){
+	var day = $scope.datepickerObject.inputDate.getDate();
+	var month = $scope.datepickerObject.inputDate.getMonth()+1;
+	if(month < 10){
+		month = "0" + month;
+	}
+	var year = $scope.datepickerObject.inputDate.getFullYear();
+	var selectedDate = day  + '/' + month + '/' + year;
+	return (item.date == selectedDate);
 }
-
-
 
 var disabledDates = [];
 var weekDaysList = ["Sun", "Mon", "Tue", "Wed", "thu", "Fri", "Sat"];

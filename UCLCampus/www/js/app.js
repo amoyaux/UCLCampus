@@ -7,7 +7,7 @@
  var db = null;
  var selectedCampus = null;
 
- var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker'])
+ var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker','ngCookies'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider, $httpProvider) {
 
@@ -98,6 +98,7 @@
 
   .state('app.schedule', {
     url: "/schedule",
+    cache: false,
     views: {
       'student-tab' :{
         templateUrl: "student/schedule/templates/schedule.html",
@@ -184,7 +185,7 @@
   $translateProvider.useSanitizeValueStrategy('escapeParameters');
 
   //$httpProvider.defaults.useXDomain = true;
-  //$httpProvider.defaults.withCredentials = true;
+  $httpProvider.defaults.withCredentials = true;
   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 

@@ -17,10 +17,23 @@
 </ion-nav-buttons>
 <ion-content>
 	
-	 <button class="button button-block button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
-	 <ionic-datepicker input-obj="datepickerObject">
-	  <button class="button button-block button-assertive"> {{datepickerObject.inputDate | date:'dd - MMMM - yyyy'}}</button>
+	<button class="button button-block button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
+	<ionic-datepicker input-obj="datepickerObject">
+	<button class="button button-block button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
 	</ionic-datepicker>
-		 <button class="button button-block button-positive" ng-click="parse()">Test</button>
+	<ion-list>
+        <ion-item class="animate-repeat" ng-repeat="i in Schedule|filter:isToday">
+          <div class="card">
+		  <div class="item item-divider">
+		  	{{i.code}} - {{i.professor}}
+		  </div>
+		  <div class="item item-text-wrap">
+		  	{{i.startDate}} - {{i.duration}}
+		  </div>
+		  <div class="item item-divider">
+		    {{i.local}}
+		  </div>
+		</div>
+
 </ion-content>
 </ion-view>	
