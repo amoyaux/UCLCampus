@@ -21,7 +21,7 @@ angular.module('ionicApp').factory('StudentFactory', function() {
 angular.module('ionicApp').factory('CampusMenuFactory', function() {
   return {    
     campusMenuList : [
-    { title: 'Events (CarpeStudentem)' , icon:'icon ion-help', url:'app.home', campus:['Louvain-la-Neuve']},
+    { title: 'Events (CarpeStudentem)' , icon:'icon ion-help', url:'app.events', campus:['Louvain-la-Neuve']},
     { title: 'Cercles' , icon:'icon ion-help', url:'app.home', campus:[]},
     { title: 'Restaurants universitaires', icon:'icon ion-help', url:'app.home', campus:[]},
     { title: 'Kots à projets', icon:'icon ion-help', url: 'app.home', campus:[]},
@@ -34,6 +34,27 @@ angular.module('ionicApp').factory('CampusMenuFactory', function() {
       for(var i=0; i<this.campusMenuList.length; i++) {
         if(this.campusMenuList[i].id==id) return this.campusMenuList[i];
       }
+    }
+  }
+})
+
+angular.module('ionicApp').factory('EventFactory', function($q, $http) {
+  return {
+    fixedEncodeURIComponent : function(str) {
+        return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A").replace(/\"/g, "%22");
+    },
+    all: function() {
+      var dfd = $q.defer();
+      var query = "select * from feednormalizer where url='http://louvainfo.be/evenements/feed/calendar/'";
+      var format = '&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK';
+      var url = "http://query.yahooapis.com/v1/public/yql?q="+ this.fixedEncodeURIComponent(query) + format;
+      $http.jsonp(url).success(function(json) {
+          dfd.resolve(json.query.results.rss.channel.item);
+      }).error(function(error) {
+          console.log("FAIL");
+          console.log(JSON.stringify(error));
+      });
+      return dfd.promise;
     }
   }
 })
