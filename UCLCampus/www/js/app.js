@@ -126,6 +126,20 @@
       }
     }
   })
+  .state('app.events', {
+    url: "/events",
+    views: {
+      'campus-tab': {
+        templateUrl: "campus/events/templates/events.html",
+        controller: "EventsController",
+        resolve:{
+          events: function(EventFactory) {
+            return EventFactory.all();
+          }
+        }
+      }
+    }
+  })
   .state('app.tools', {
     url: "/tools",
     views: {
