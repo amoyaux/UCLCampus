@@ -115,7 +115,17 @@
       }
     }
   })
-    .state('app.tools', {
+  .state('app.campus', {
+    url: "/campus",
+    cache:false,
+    views: {
+      'campus-tab' :{
+        templateUrl: "campus/templates/campus.html",
+        controller: "CampusController"
+      }
+    }
+  })
+  .state('app.tools', {
     url: "/tools",
     views: {
       'tools-tab' :{
@@ -124,7 +134,7 @@
       }
     }
   })
-      .state('app.maps', {
+  .state('app.maps', {
     url: "/maps",
     views: {
       'tools-tab' :{
@@ -272,7 +282,7 @@
   }
   $rootScope.setTabCampus = function() {
     $rootScope.currentTab=2;
-    //$state.go('app.campus');
+    $state.go('app.campus');
   }
   $rootScope.setTabTools = function() {
     $rootScope.currentTab=3;

@@ -44,6 +44,9 @@
 <script src="student/halls/js/halls.js"></script>
 <script src="student/schedule/js/schedule.js"></script>
 
+<!-- campus module -->
+<script src="campus/js/campus.js"></script>
+
 <!-- tools module -->
 <script src="tools/js/tools.js"></script>
 
@@ -85,13 +88,13 @@
         <ion-tab title="Student" icon="ion-university" ng-click="setTabStudent()">
           <ion-nav-view name="student-tab"></ion-nav-view>
         </ion-tab>
+        <ion-tab title="Campus" icon="ion-earth" ng-click="setTabCampus()">
+          <ion-nav-view name="campus-tab"></ion-nav-view>
+        </ion-tab>
         <ion-tab title="Tools" icon="ion-wrench" ng-click="setTabTools()">
           <ion-nav-view name="tools-tab"></ion-nav-view>
         </ion-tab>
         <!--
-        <ion-tab title="Campus" icon="ion-earth" href="#/app/home">
-          <ion-nav-view name="campus-tab"></ion-nav-view>
-        </ion-tab>
         <ion-tab title="City" icon="ion-home" href="#/app/home">
           <ion-nav-view name="city-tab"></ion-nav-view>
         </ion-tab>

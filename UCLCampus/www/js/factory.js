@@ -18,6 +18,26 @@ angular.module('ionicApp').factory('StudentFactory', function() {
   }
 })
 
+angular.module('ionicApp').factory('CampusMenuFactory', function() {
+  return {    
+    campusMenuList : [
+    { title: 'Events (CarpeStudentem)' , icon:'icon ion-help', url:'app.home', campus:['Louvain-la-Neuve']},
+    { title: 'Cercles' , icon:'icon ion-help', url:'app.home', campus:[]},
+    { title: 'Restaurants universitaires', icon:'icon ion-help', url:'app.home', campus:[]},
+    { title: 'Kots à projets', icon:'icon ion-help', url: 'app.home', campus:[]},
+    { title: 'Sport', icon:'icon ion-help', url:'app.home', campus:[]}
+    ],
+    all: function() {
+      return this.campusMenuList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.campusMenuList.length; i++) {
+        if(this.campusMenuList[i].id==id) return this.campusMenuList[i];
+      }
+    }
+  }
+})
+
 angular.module('ionicApp').factory('CampusFactory', function($q, $cordovaGeolocation) {
   return {    
     CampusList : [
