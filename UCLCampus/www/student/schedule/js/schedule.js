@@ -25,6 +25,18 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $co
   
 }
 
+$scope.toggleRight= function(){
+	var yesterday = new Date();
+	yesterday.setDate($scope.datepickerObject.inputDate.getDate()-1);
+	$scope.datepickerObject.inputDate = yesterday;
+}
+$scope.toggleLeft= function(){
+	var tomorrow = new Date();
+	tomorrow.setDate($scope.datepickerObject.inputDate.getDate()+1);
+	$scope.datepickerObject.inputDate = tomorrow;
+}
+
+
 $scope.$on('$ionicView.enter', function() {
 	function weeks(){
 		var res = "";
@@ -37,7 +49,7 @@ $scope.$on('$ionicView.enter', function() {
 
 	$http({
 	  method: 'GET',
-	  url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=' + weeks() + '&code='+'lingi2262,lingi2347'+'&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabDate=true&showTab=true&showTabWeek=false&showTabDay=false&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false'
+	  url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=' + weeks() + '&code='+'lingi2347,lingi2262'+'&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabDate=true&showTab=true&showTabWeek=false&showTabDay=false&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false'
 	  }).then(function successCallback(response) {
 	    $http({
 	  		method: 'GET',
@@ -49,6 +61,7 @@ $scope.$on('$ionicView.enter', function() {
 	  				table = table.substring(a+5);
 	  				return table;
 	  			}
+	  			console.log(response);
 
 	  			var doc = response.data;
 	  			var a = doc.indexOf('<table>');
@@ -165,6 +178,9 @@ $scope.$on('$ionicView.enter', function() {
 
 $scope.isToday = function(item){
 	var day = $scope.datepickerObject.inputDate.getDate();
+	if(day < 10){
+		day = "0" + day;
+	}
 	var month = $scope.datepickerObject.inputDate.getMonth()+1;
 	if(month < 10){
 		month = "0" + month;

@@ -3,7 +3,7 @@
   
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
-<ion-view title="{{'Schedule' | translate}}">
+<ion-view title="{{'Schedule' | translate}}" on-swipe-right="toggleRight()" on-swipe-left="toggleLeft()">
 </ion-nav-buttons>        
 <ion-nav-buttons side="right">
 <button class="button button-clear" ng-click="toggleRight()">
@@ -16,24 +16,25 @@
 </button>
 </ion-nav-buttons>
 <ion-content>
-	
 	<button class="button button-block button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
 	<ionic-datepicker input-obj="datepickerObject">
 	<button class="button button-block button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
 	</ionic-datepicker>
-	<ion-list>
-        <ion-item class="animate-repeat" ng-repeat="i in Schedule|filter:isToday">
-          <div class="card">
-		  <div class="item item-divider">
-		  	{{i.code}} - {{i.professor}}
-		  </div>
-		  <div class="item item-text-wrap">
-		  	{{i.startDate}} - {{i.endDate}}
-		  </div>
-		  <div class="item item-divider">
-		    {{i.local}}
-		  </div>
-		</div>
+         <div class="list" ng-repeat="i in Schedule|filter:isToday">
+
+ 			<div class="item item-divider">
+    			{{i.startDate}} - {{i.endDate}}
+  			</div>
+
+			  <a class="item" href="#">
+			    {{i.code}} - {{i.professor}}
+			  </a>
+			  <a class="item" href="#">
+			    {{i.local}}
+			  </a>
+
+
+</div>
 
 </ion-content>
 </ion-view>	
