@@ -202,12 +202,13 @@ button.button-icon.map-button.positive.activated {
   display:block !important;
 }
 
-.campus {
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
 .marge {
   margin-top: 55px !important;
+}
+
+.setting-button-bar{
+  width: 255px;
+  margin-left: 10px;
+  margin-bottom: 10px; !important;	
 }
 
