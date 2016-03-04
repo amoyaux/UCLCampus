@@ -209,5 +209,6 @@ button.button-icon.map-button.positive.activated {
 
 .marge {
   margin-top: 55px !important;
+
 }
 

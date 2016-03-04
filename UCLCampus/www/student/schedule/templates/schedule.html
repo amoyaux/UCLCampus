@@ -6,8 +6,8 @@
 <ion-view title="{{'Schedule' | translate}}" on-swipe-right="toggleRight()" on-swipe-left="toggleLeft()">
 </ion-nav-buttons>        
 <ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-	<i class="icon ion-navicon-round"></i>
+<button class="button button-clear" ng-click="refresh()">
+	<i class="icon ion-refresh"></i>
 </button>
 </ion-nav-buttons>
 <ion-nav-buttons side="left">
@@ -15,25 +15,26 @@
 	<i class="icon ion-home"></i>
 </button>
 </ion-nav-buttons>
-<ion-content>
-	<button class="button button-block button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
+<ion-header-bar class="bar bar-subheader">
+	<button class="button button-full button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
 	<ionic-datepicker input-obj="datepickerObject">
-	<button class="button button-block button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
+	<button class="button button-full button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
 	</ionic-datepicker>
-         <div class="list" ng-repeat="i in Schedule|filter:isToday">
+</ion-header-bar>
+<ion-content class="marge">
+	 	
+<div class="list" ng-repeat="i in Schedule|filter:isToday">
 
- 			<div class="item item-divider">
-    			{{i.startDate}} - {{i.endDate}}
-  			</div>
+	<div class="item item-divider">
+		{{i.startDate}} - {{i.endDate}}
+	</div>
 
-			  <a class="item" href="#">
-			    {{i.code}} - {{i.professor}}
-			  </a>
-			  <a class="item" href="#">
-			    {{i.local}}
-			  </a>
-
-
+	<a class="item">
+		{{i.code}} - {{i.professor}}
+	</a>
+	<a class="item">
+		{{i.local}}
+	</a>
 </div>
 
 </ion-content>
