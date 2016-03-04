@@ -207,3 +207,15 @@ button.button-icon.map-button.positive.activated {
   margin-bottom: 10px;
 }
 
+.text-card-event{
+  font-size:10px !important;
+  color: #A9A9A9;
+}
+
+.card-list-margin-top{
+  margin-top: 25px !important;
+}
+
+.no-margin-right{
+  margin-right: 155px !important;
+}
