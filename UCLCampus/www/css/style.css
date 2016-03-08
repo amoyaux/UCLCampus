@@ -202,6 +202,20 @@ button.button-icon.map-button.positive.activated {
   display:block !important;
 }
 
+.campus {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.text-card-event{
+  font-size:10px !important;
+  color: #A9A9A9;
+}
+
+.card-list-margin-top{
+  margin-top: 25px !important;
+}
+
 .marge {
   margin-top: 55px !important;
 }
@@ -211,4 +225,5 @@ button.button-icon.map-button.positive.activated {
   margin-left: 10px;
   margin-bottom: 10px; !important;	
 }
+
 

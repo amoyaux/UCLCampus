@@ -12,11 +12,32 @@
 	<i class="icon ion-home"></i>
 </button>
 </ion-nav-buttons> 
-<ion-content>
-	<ion-list>
-		<ion-item class="item item-icon-left" ng-repeat="item in eventList">
-			{{item.title | translate}}
+<div class="bar bar-subheader list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      {{"Category" | translate}}
+    </div>
+    <select ng-model="selectedCategory" ng-change="resetEventList()">
+      <option>{{"All categories" | translate}}</option>
+      <option ng-repeat="item in categories">{{item | translate}}</option>
+    </select>
+  </label>
+
+</div>
+<ion-content has-subheader="true" class="card-list-margin-top">
+	<ion-list class="list card">
+		<ion-item ng-repeat="item in eventList|filter:hasCategory">
+			<span>{{item.title}}</span>
+			<div class="text-card-event">{{item.date_begin}}</div>
+			<div class="text-card-event">{{item.location}}</div>
 		</ion-item>
 	</ion-list>
+	<ion-infinite-scroll
+	  ng-if="hasMoreEvents()"
+	  icon="ion-loading-c"
+	  on-infinite="loadMoreEvents()"
+	  distance="1%">
+	</ion-infinite-scroll>
 </ion-content>
 </ion-view>
