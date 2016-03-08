@@ -127,6 +127,7 @@
     }
   })
   .state('app.events', {
+    cache:false,
     url: "/events",
     views: {
       'campus-tab': {
@@ -191,7 +192,7 @@
 
 })
 
-.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $state, AuthService, AUTH_EVENTS) {
+.run(function($ionicPlatform, $cordovaSQLite, $ionicPopup, $rootScope, $cordovaGeolocation, $state, $ionicLoading, AuthService, AUTH_EVENTS) {
 
     $ionicPlatform.ready(function() {
       if(window.StatusBar) {
@@ -213,6 +214,9 @@
 
     $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
 
+      console.log('please wait...');
+      $rootScope.$broadcast('loading:show');
+
       if ('data' in next && 'authorizedRoles' in next.data) {
         var authorizedRoles = next.data.authorizedRoles;
         if (!AuthService.isAuthorized(authorizedRoles)) {
@@ -229,6 +233,27 @@
         }
       }
     })
+
+    $rootScope.$on('loading:show', function () {
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        })
+    });
+
+    $rootScope.$on('loading:hide', function () {
+        $ionicLoading.hide();
+    });
+
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+        console.log('done');
+        $rootScope.$broadcast('loading:hide');
+    });
+
 })
 
 /*.run(function($httpBackend){

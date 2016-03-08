@@ -18,8 +18,8 @@
     <div class="input-label">
       {{"Category" | translate}}
     </div>
-    <select>
-      <option selected>{{"All categories" | translate}}</option>
+    <select ng-model="selectedCategory" ng-change="resetEventList()">
+      <option>{{"All categories" | translate}}</option>
       <option ng-repeat="item in categories">{{item | translate}}</option>
     </select>
   </label>
@@ -27,11 +27,17 @@
 </div>
 <ion-content has-subheader="true" class="card-list-margin-top">
 	<ion-list class="list card">
-		<ion-item ng-repeat="item in eventList">
-			<div>{{item.title}}</div>
+		<ion-item ng-repeat="item in eventList|filter:hasCategory">
+			<span>{{item.title}}</span>
 			<div class="text-card-event">{{item.date_begin}}</div>
 			<div class="text-card-event">{{item.location}}</div>
 		</ion-item>
 	</ion-list>
+	<ion-infinite-scroll
+	  ng-if="hasMoreEvents()"
+	  icon="ion-loading-c"
+	  on-infinite="loadMoreEvents()"
+	  distance="1%">
+	</ion-infinite-scroll>
 </ion-content>
 </ion-view>
