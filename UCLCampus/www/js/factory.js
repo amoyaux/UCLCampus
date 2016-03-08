@@ -25,7 +25,7 @@ angular.module('ionicApp').factory('CampusMenuFactory', function() {
     { title: 'Cercles' , icon:'icon ion-help', url:'app.home', campus:[]},
     { title: 'Restaurants universitaires', icon:'icon ion-help', url:'app.home', campus:[]},
     { title: 'Kots à projets', icon:'icon ion-help', url: 'app.home', campus:[]},
-    { title: 'Sport', icon:'icon ion-help', url:'app.home', campus:[]}
+    { title: 'Sports', icon:'icon ion-help', url:'app.sports', campus:[]}
     ],
     all: function() {
       return this.campusMenuList;
@@ -53,6 +53,21 @@ angular.module('ionicApp').factory('EventFactory', function($q, $http) {
       }).error(function(error) {
           console.log("FAIL");
           console.log(JSON.stringify(error));
+      });
+      return dfd.promise;
+    }
+  }
+})
+
+angular.module('ionicApp').factory('SportsFactory', function($q, $http) {
+  return {
+    getPage: function(skip) {
+      var dfd = $q.defer();
+      var url = 'http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?-skip=' + skip;
+      $http.get(url).success(function(repsonse) {
+          dfd.resolve(repsonse);
+      }).error(function(error) {
+          console.log("FAIL");
       });
       return dfd.promise;
     }

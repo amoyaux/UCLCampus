@@ -9,7 +9,7 @@
 
  var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker','ngCookies'])
 
- .config(function($stateProvider, $urlRouterProvider, $translateProvider, $httpProvider) {
+ .config(function($stateProvider, $urlRouterProvider, $translateProvider, $httpProvider){
 
   $stateProvider
   .state('app', {
@@ -135,6 +135,20 @@
         resolve:{
           events: function(EventFactory) {
             return EventFactory.all();
+          }
+        }
+      }
+    }
+  })
+  .state('app.sports', {
+    url: "/sports",
+    views: {
+      'campus-tab': {
+        templateUrl: "campus/sports/templates/sports.html",
+        controller: "SportsController",
+        resolve:{
+          sports: function(SportsFactory) {
+            return $q.all({key1: SportsFactory.getPage(0), key2: SportsFactory.getPage(50)});
           }
         }
       }
