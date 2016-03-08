@@ -7,118 +7,136 @@
 
 <!DOCTYPE html>
 <html ng-app="ionicApp">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<title>UCLCampus</title>
-	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>UCLCampus</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
-<!-- ionic/angularjs js -->
-<script src="lib/ionic/js/ionic.bundle.js"></script>
-<script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
-<script src="js/angular-translate.min.js"></script>
-<script src="lib/angular-cookies/angular-cookies.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="js/angular-translate.min.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
 
 
-<!-- cordova script (this will be a 404 during development) -->
-<script src="js/ng-cordova.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
 
-<script src="cordova.js"></script>
-<!-- your app's js -->
-<script src="js/app.js"></script>
-<script src="js/factory.js"></script>
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
 
-<!-- settings module -->
-<script src="settings/js/settings.js"></script>
-<script src="settings/campusSelection/js/campusSelection.js"></script>
-<script src="settings/login/js/constants.js"></script>
-<script src="settings/login/js/services.js"></script>
-<script src="settings/login/js/login.js"></script>
-    
-<!-- study module -->
-<script src="student/js/student.js"></script>
-<script src="student/libraries/js/libraries.js"></script>
-<script src="student/halls/js/halls.js"></script>
-<script src="student/schedule/js/schedule.js"></script>
+    <!-- settings module -->
+    <script src="settings/js/settings.js"></script>
+    <script src="settings/campusSelection/js/campusSelection.js"></script>
+    <script src="settings/login/js/constants.js"></script>
+    <script src="settings/login/js/services.js"></script>
+    <script src="settings/login/js/login.js"></script>
 
-<!-- campus module -->
-<script src="campus/js/campus.js"></script>
-<script src="campus/events/js/events.js"></script>
+    <!-- study module -->
+    <script src="student/js/student.js"></script>
+    <script src="student/libraries/js/libraries.js"></script>
+    <script src="student/halls/js/halls.js"></script>
+    <script src="student/schedule/js/schedule.js"></script>
 
-<!-- tools module -->
-<script src="tools/js/tools.js"></script>
+    <!-- campus module -->
+    <script src="campus/js/campus.js"></script>
+    <script src="campus/events/js/events.js"></script>
 
-<!-- maps module -->
-<link href="css/maps.css" rel="stylesheet">
-<script src="tools/maps/js/maps.js"></script>
-<script src="tools/maps/js/geolocation.js"></script>
-    
+    <!-- tools module -->
+    <script src="tools/js/tools.js"></script>
 
-<!-- authentication -->
-<script src="lib/angular-mocks/angular-mocks.js"></script>
+    <!-- maps module -->
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet-plugins/layer/Marker.Rotate.js"></script>
+    <link rel="stylesheet" href="lib/leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
+    <script src="lib/leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+        <script src="lib/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" href="lib/leaflet.markercluster/dist/MarkerCluster.css">
+
+
+    <link href="css/maps.css" rel="stylesheet">
+    <script src="tools/maps/js/data/auditoriums.js"></script>
+    <script src="tools/maps/js/data/entertainment.js"></script>
+    <script src="tools/maps/js/data/transport.js"></script>
+    <script src="tools/maps/js/data/locations.js"></script>
+    <script src="tools/maps/js/maps.js"></script>
+    <script src="tools/maps/js/buildings.js"></script>
+    <script src="tools/maps/js/geolocation.js"></script>
+
+
+
+
+    <!-- authentication -->
+    <script src="lib/angular-mocks/angular-mocks.js"></script>
 
 </head>
+
 <body>
 
-	<div ng-controller="AppController">       
-		
-		<ion-nav-view></ion-nav-view>
-	</div>
+    <div ng-controller="AppController">
 
-<script id="app.html" type="text/ng-template">
-	
+        <ion-nav-view></ion-nav-view>
+    </div>
 
-	<ion-side-menus>
+    <script id="app.html" type="text/ng-template">
 
-	<ion-side-menu-content>
-		<ion-nav-bar align-title="center" class="bar bar-header bar-positive">
-		</ion-nav-bar>
-		<ion-nav-buttons side="right">
-			<button class="" ng-click="toggleRight()">
-			</button>
-		</ion-nav-buttons>
-		<ion-tabs class="tabs-icon-top {{$root.hideTabs}} tabs-positive" ng-class="{'tabs-positive':currentTab==1, 'tabs-energized':currentTab==2, 'tabs-royal':currentTab==3, 'tabs-balanced':currentTab==4}">
 
-        <ion-tab title="Home" icon="ion-home" href="#/app/home" hidden="true">
-          <ion-nav-view name="home-tab"></ion-nav-view>
-        </ion-tab>
+        <ion-side-menus>
 
-        <ion-tab title="Student" icon="ion-university" ng-click="setTabStudent()">
-          <ion-nav-view name="student-tab"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Campus" icon="ion-earth" ng-click="setTabCampus()">
-          <ion-nav-view name="campus-tab"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Tools" icon="ion-wrench" ng-click="setTabTools()">
-          <ion-nav-view name="tools-tab"></ion-nav-view>
-        </ion-tab>
-        <!--
+            <ion-side-menu-content>
+                <ion-nav-bar align-title="center" class="bar bar-header bar-positive">
+                </ion-nav-bar>
+                <ion-nav-buttons side="right">
+                    <button class="" ng-click="toggleRight()">
+                    </button>
+                </ion-nav-buttons>
+                <ion-tabs class="tabs-icon-top {{$root.hideTabs}} tabs-positive" ng-class="{'tabs-positive':currentTab==1, 'tabs-energized':currentTab==2, 'tabs-royal':currentTab==3, 'tabs-balanced':currentTab==4}">
+
+                    <ion-tab title="Home" icon="ion-home" href="#/app/home" hidden="true">
+                        <ion-nav-view name="home-tab"></ion-nav-view>
+                    </ion-tab>
+
+                    <ion-tab title="Student" icon="ion-university" ng-click="setTabStudent()">
+                        <ion-nav-view name="student-tab"></ion-nav-view>
+                    </ion-tab>
+                    <ion-tab title="Campus" icon="ion-earth" ng-click="setTabCampus()">
+                        <ion-nav-view name="campus-tab"></ion-nav-view>
+                    </ion-tab>
+                    <ion-tab title="Tools" icon="ion-wrench" ng-click="setTabTools()">
+                        <ion-nav-view name="tools-tab"></ion-nav-view>
+                    </ion-tab>
+                    <!--
         <ion-tab title="City" icon="ion-home" href="#/app/home">
           <ion-nav-view name="city-tab"></ion-nav-view>
         </ion-tab>
         -->
-      </ion-tabs>
-	</ion-side-menu-content> 
+                </ion-tabs>
+            </ion-side-menu-content>
 
-	<ion-side-menu side="right">
-	<ion-header-bar class="bar-assertive">
-	<h1 class="title">Settings</h1>
-	</ion-header-bar>
-	<ion-content>
+            <ion-side-menu side="right">
+                <ion-header-bar class="bar-assertive">
+                    <h1 class="title">Settings</h1>
+                </ion-header-bar>
+                <ion-content>
 
-		<ion-settings ng-controller='SettingsController'></ion-settings>
-	</ion-content>
-	</ion-side-menu>
-	</ion-side-menus>
+                    <ion-settings ng-controller='SettingsController'></ion-settings>
+                </ion-content>
+            </ion-side-menu>
+        </ion-side-menus>
 
-</script>
+    </script>
 
-<script id="ionSettings.html" type="text/ng-template">
-	<ng-include src="'settings/templates/settings.html'"></ng-include>
-</script>
+    <script id="ionSettings.html" type="text/ng-template">
+        <ng-include src="'settings/templates/settings.html'"></ng-include>
+    </script>
 
 </body>

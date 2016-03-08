@@ -1,12 +1,3 @@
-var weeks = function(){
-  var res = "";
-    for(i = 0; i < 54; i++){
-      res = res + i + ",";
-    }
-    res = res + 54;
-    return res;
-}
-
 angular.module('ionicApp').factory('StudentFactory', function() {
   return {    
     studentList : [
@@ -158,7 +149,6 @@ angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLit
 
   }
 })
-
 
 angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite) {
     return {

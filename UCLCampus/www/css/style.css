@@ -220,3 +220,9 @@ button.button-icon.map-button.positive.activated {
   margin-top: 55px !important;
 }
 
+.setting-button-bar{
+  width: 255px;
+  margin-left: 10px;
+  margin-bottom: 10px; !important;	
+}
+

@@ -4,16 +4,14 @@
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
 <br>
-<div class="button-bar">
+<div class="button-bar setting-button-bar" >
 	<a menu-close class="button button-positive" ng-click="ChangeLanguage('fr')">FR</a>
 	<a menu-close class="button button-positive" ng-click="ChangeLanguage('nl')">NL</a>
 	<a menu-close class="button button-positive" ng-click="ChangeLanguage('en')">EN</a>
 </div>
-
-<br>
 <div>
-<a menu-close class="button button-positive campus" ui-sref="app.campusSelection">Choose my campus</a>
+<a menu-close class="button button-positive setting-button-bar" ui-sref="app.campusSelection">Choose my campus</a>
 </div>
 <div>
-<a menu-close class="button button-positive campus" ng-click="logout()" ui-sref="app.login">Logout</a>
+<a menu-close class="button button-positive setting-button-bar" ng-click="logout()" ui-sref="app.login">Logout</a>
 </div>

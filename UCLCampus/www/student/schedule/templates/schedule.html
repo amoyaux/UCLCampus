@@ -3,11 +3,14 @@
   
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
-<ion-view title="{{'Schedule' | translate}}" on-swipe-right="toggleRight()" on-swipe-left="toggleLeft()">
+<ion-view title="{{'Schedule' | translate}}" on-swipe-right="tomorrow()" on-swipe-left="yesterday()">
 </ion-nav-buttons>        
 <ion-nav-buttons side="right">
 <button class="button button-clear" ng-click="refresh()">
 	<i class="icon ion-refresh"></i>
+</button>
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
 </button>
 </ion-nav-buttons>
 <ion-nav-buttons side="left">
@@ -16,7 +19,9 @@
 </button>
 </ion-nav-buttons>
 <ion-header-bar class="bar bar-subheader">
-	<button class="button button-full button-assertive" ng-click="createEvent()">{{"Export my classes into my agenda"| translate}}</button>
+	<button class="button button-full button-assertive" ng-click="createEvent()" ng-show="!agendaUpDated">{{"Export my classes into my agenda"| translate}}</button>
+	<button class="button button-full button-assertive" ng-click="deleteEvent()" ng-show="agendaUpDated">{{"Remove my classes from my agenda"| translate}}</button>
+
 	<ionic-datepicker input-obj="datepickerObject">
 	<button class="button button-full button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
 	</ionic-datepicker>
@@ -34,6 +39,9 @@
 	</a>
 	<a class="item">
 		{{i.local}}
+	</a>
+	<a class="item">
+		{{i.date}}
 	</a>
 </div>
 
