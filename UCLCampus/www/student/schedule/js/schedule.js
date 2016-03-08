@@ -1,22 +1,42 @@
 angular.module('ionicApp').controller('ScheduleController', function($scope, $cordovaCalendar, $ionicPopup, $http, $cookies, $timeout, $state) {
 
  $scope.createEvent = function() {
-  
-  $cordovaCalendar.createEvent({
-    title: 'Space Race',
-    location: 'The Moon',
-    notes: 'Bring sandwiches',
-    startDate: new Date(2015, 11, 15, 18, 30, 0, 0, 0),
-    endDate: new Date(2015, 11, 20, 12, 0, 0, 0, 0)
-  }).then(function (result) {
-    $ionicPopup.alert({
-          title: "Done",
-          content: "Your classes have been exported ."
-        })
+  for(i = 0; i < $scope.Schedule.length;i++){
+  		var date = $scope.Schedule[i].date.split('/');
+  		var hours = $scope.Schedule[i].startDate.split('h');
+  		var hours2 =  $scope.Schedule[i].endDate.split('h');
 
-  }, function (err) {
-    console.error("There was an error: " + err);
-  });
+	  $cordovaCalendar.createEvent({
+	    title: $scope.Schedule[i].code,
+	    location: $scope.Schedule[i].local,
+	    notes: $scope.Schedule[i].professor,
+	    startDate: new Date(date[2], date[1]-1, date[0], hours[0], hours[1], 0, 0, 0),
+	    endDate: new Date(date[2], date[1]-1, date[0], hours2[0] , hours2[1], 0, 0, 0)
+	  }).then(function (result) {
+	    //
+	  }, function (err) {
+	    console.error("There was an error: " + err);
+	  });
+  }
+  $ionicPopup.alert({
+    title: "Done",
+  	content: "Your classes have been exported ."
+  })
+  
+}
+
+$scope.toggleRight= function(){
+	var yesterday = new Date();
+	yesterday.setDate($scope.datepickerObject.inputDate.getDate()-1);
+	$scope.datepickerObject.inputDate = yesterday;
+}
+$scope.toggleLeft= function(){
+	var tomorrow = new Date();
+	tomorrow.setDate($scope.datepickerObject.inputDate.getDate()+1);
+	$scope.datepickerObject.inputDate = tomorrow;
+}
+$scope.refresh= function(){
+	$scope.refresh = 0;
 }
 
 $scope.$on('$ionicView.enter', function() {
@@ -28,143 +48,158 @@ $scope.$on('$ionicView.enter', function() {
 		res = res + 54;
 		return res;
 	}
+	var schedList = window.localStorage['schedule'] || 'fail';
+	if (schedList = 'fail'){
+		$http({
+		  method: 'GET',
+		  url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=' + weeks() + '&code='+'lingi2347,lingi2262'+'&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabDate=true&showTab=true&showTabWeek=false&showTabDay=false&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false'
+		  }).then(function successCallback(response) {
+		    $http({
+		  		method: 'GET',
+		  		url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/info.jsp?displayConfName=WEB&order=slot'
+		  		}).then(function successCallback(response) {
+		  			function skip(table){
+		  				a = table.indexOf('</td>');
+		  				b = table.lastIndexOf('</td>');
+		  				table = table.substring(a+5);
+		  				return table;
+		  			}
 
-	$http({
-	  method: 'GET',
-	  url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?weeks=' + weeks() + '&code='+'lingi2262,lingi2347'+'&login=etudiant&password=student&projectId=12&showTabDuration=true&showTabDate=true&showTab=true&showTabWeek=false&showTabDay=false&showTabStage=false&showTabResources=false&showTabCategory6=false&showTabCategory7=false&showTabCategory8=false'
-	  }).then(function successCallback(response) {
-	    $http({
-	  		method: 'GET',
-	  		url: 'http://horairev6.uclouvain.be/jsp/custom/modules/plannings/info.jsp?displayConfName=WEB&order=slot'
-	  		}).then(function successCallback(response) {
-	  			function skip(table){
-	  				a = table.indexOf('</td>');
-	  				b = table.lastIndexOf('</td>');
-	  				table = table.substring(a+5);
-	  				return table;
-	  			}
+		  			var doc = response.data;
+		  			var a = doc.indexOf('<table>');
+		  			var b = doc.indexOf('</table>');
+		  			var doc = doc.substring(a+7,b);
+		  			for(i = 0; i <2 ; i++){
+		  				var a = doc.indexOf('</tr>');
+		  				var doc = doc.substring(a+5,b);
+		  			}
+		  			var a = doc.indexOf('<tr');
 
-	  			var doc = response.data;
-	  			var a = doc.indexOf('<table>');
-	  			var b = doc.indexOf('</table>');
-	  			var doc = doc.substring(a+7,b);
-	  			for(i = 0; i <2 ; i++){
-	  				var a = doc.indexOf('</tr>');
-	  				var doc = doc.substring(a+5,b);
-	  			}
-	  			var a = doc.indexOf('<tr');
+		  			var list_schedule = [];
+		  			while(a != -1){
+		  				//frame of the schedule for one lecture
+		  				b = doc.indexOf('</tr>');
+		  				var table = doc.substring(a+4,b);
 
-	  			var list_schedule = [];
-	  			while(a != -1){
-	  				//frame of the schedule for one lecture
-	  				b = doc.indexOf('</tr>');
-	  				var table = doc.substring(a+4,b);
+		  				//Date
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
+		  				a = frame.indexOf('>');
+		  				b = frame.indexOf('</');
+		  				frame = frame.substring(a+1,b);
 
-	  				//Date
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
-	  				a = frame.indexOf('>');
-	  				b = frame.indexOf('</');
-	  				frame = frame.substring(a+1,b);
+		  				var date = frame;
+		  				var s = date.split('/');
+		  				date = s[1] + "/" + s[0] + "/" + s[2];
 
-	  				var date = frame;
-	  				var s = date.split('/');
-	  				date = s[1] + "/" + s[0] + "/" + s[2];
+		  				//Remove frame from table
+		  				table = skip(table);
 
-	  				//Remove frame from table
-	  				table = skip(table);
+		  				//Skip
+		  				table = skip(table);
+		  				
+		  				//StartDate
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
 
-	  				//Skip
-	  				table = skip(table);
-	  				
-	  				//StartDate
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
+		  				var startDate = frame;
+		  				table = skip(table);
 
-	  				var startDate = frame;
-	  				table = skip(table);
+		  				//Duration
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
 
-	  				//Duration
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
+		  				var duration = frame;
+		  				table = skip(table);
 
-	  				var duration = frame;
-	  				table = skip(table);
+		  				//Skip
+		  				table = skip(table);
+		  				table = skip(table);
+		  				table = skip(table);
 
-	  				//Skip
-	  				table = skip(table);
-	  				table = skip(table);
-	  				table = skip(table);
+		  				//Professor
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
 
-	  				//Professor
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
+		  				var professor = frame;
+		  				table = skip(table);
 
-	  				var professor = frame;
-	  				table = skip(table);
+		  				//Local
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
 
-	  				//Local
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
+		  				var local = frame;
+		  				table = skip(table);
 
-	  				var local = frame;
-	  				table = skip(table);
+		  				//Code cours
+		  				a = table.indexOf('<td');
+		  				b = table.indexOf('</td>');
+		  				var frame = table.substring(a+4,b);
 
-	  				//Code cours
-	  				a = table.indexOf('<td');
-	  				b = table.indexOf('</td>');
-	  				var frame = table.substring(a+4,b);
+		  				var code = frame;
+		  				table = skip(table);
 
-	  				var code = frame;
-	  				table = skip(table);
+		  				var d = duration.split('h');
+		  				var da = startDate.split('h');
+		  				var endDate = (parseInt(d[0])+ parseInt(da[0])) + "h" + da[1]
 
-	  				var item = {
-	  					code: code,
-	  					date: date,
-	  					startDate : startDate,
-	  					duration : duration,
-	  					professor : professor,
-	  					local :local,
-	  				};
-	  				list_schedule.push(item);
+		  				var item = {
+		  					code: code,
+		  					date: date,
+		  					startDate : startDate,
+		  					endDate : endDate,
+		  					duration : duration,
+		  					professor : professor,
+		  					local :local,
+		  				};
+		  				list_schedule.push(item);
 
-	  				b = doc.indexOf('</tr>');
-	  				doc = doc.substring(b+5);
-	  				a = doc.indexOf('<tr');
-	  			}
+		  				b = doc.indexOf('</tr>');
+		  				doc = doc.substring(b+5);
+		  				a = doc.indexOf('<tr');
+		  			}
+		  			window.localStorage['schedule'] = list_schedule;
+		  			$scope.Schedule = list_schedule;
+		  		}, function errorCallback(data,status) {
+		    		console.log('fail schedule network load ' + status);
+		  		});
 
-	  			$scope.Schedule = list_schedule;
-	  		}, function errorCallback(data,status) {
-	    		console.log(data);
-	  		});
+		    // this callback will be called asynchronously
+		    // when the response is available
+		  }, function errorCallback(data,status) {
+		    console.log('fail schedule network load ' + status);
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		  });
 
-	    // this callback will be called asynchronously
-	    // when the response is available
-	  }, function errorCallback(data,status) {
-	    console.log(data);
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	  });
+	}
+	else{
+		$scope.schedule = schedList;
+	}
+	
 })
 
 $scope.isToday = function(item){
 	var day = $scope.datepickerObject.inputDate.getDate();
+	if(day < 10){
+		day = "0" + day;
+	}
 	var month = $scope.datepickerObject.inputDate.getMonth()+1;
 	if(month < 10){
 		month = "0" + month;
 	}
 	var year = $scope.datepickerObject.inputDate.getFullYear();
-	var selectedDate = day  + '/' + month + '/' + year;
+	var selectedDate = month  + '/' + day + '/' + year;
 	return (item.date == selectedDate);
 }
 
 var disabledDates = [];
-var weekDaysList = ["Sun", "Mon", "Tue", "Wed", "thu", "Fri", "Sat"];
+var weekDaysList = ["Su", "Mo", "Tu", "We", "th", "Fr", "Sa"];
 var monthList = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 $scope.datepickerObject = {
