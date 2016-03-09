@@ -53,6 +53,7 @@ angular.module('ionicApp').factory('EventFactory', function($q, $http) {
       }).error(function(error) {
           console.log("FAIL");
           console.log(JSON.stringify(error));
+          dfd.reject(error);
       });
       return dfd.promise;
     }
@@ -68,6 +69,7 @@ angular.module('ionicApp').factory('SportsFactory', function($q, $http) {
           dfd.resolve(repsonse);
       }).error(function(error) {
           console.log("FAIL");
+          dfd.reject(error);
       });
       return dfd.promise;
     }

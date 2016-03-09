@@ -106,7 +106,7 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 				local : local,
 				day : day,
 				startHour : startHour,
-				EndHour : EndHour,
+				endHour : EndHour,
 			};
 
 			if(sportList.length == 0){
@@ -123,6 +123,8 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 		skip = skip + 1;
 	}
 	$scope.sports = sportList;
+	$scope.sportList = sportList;
+
 
 	$scope.categories = [];
 	for(var k = 0; k<$scope.sports.length; k++) {
@@ -132,4 +134,13 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 	}
 	$scope.categories.sort();
 	$scope.selectedCategory = "All sports";
+
+	$scope.resetSportList = function() {
+		$scope.sportList = [];
+		for(i = 0; i< $scope.sports.length ; i++) {
+			if(($scope.sports[i].sport.indexOf($scope.selectedCategory)>-1) || $scope.selectedCategory == "All sports") {
+				$scope.sportList.push($scope.sports[i]);
+			}
+		}
+	}
 });

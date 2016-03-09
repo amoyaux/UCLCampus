@@ -23,14 +23,20 @@
     <div class="input-label">
       {{"Sport" | translate}}
     </div>
-    <select ng-model="selectedCategory" ng-change="resetEventList()">
+    <select ng-model="selectedCategory" ng-change="resetSportList()">
       <option>{{"All sports" | translate}}</option>
       <option ng-repeat="item in categories">{{item | translate}}</option>
     </select>
   </label>
 
 </div>
-<ion-content>
-
+<ion-content has-subheader="true" class="card-list-margin-top">
+	<ion-list class="list card">
+		<ion-item ng-repeat="item in sportList">
+			<span>{{item.sport}}</span>
+			<div class="text-card-event">{{item.day}} {{item.startHour}}-{{item.endHour}}</div>
+			<div class="text-card-event">{{item.place}} {{item.local}}</div>
+		</ion-item>
+	</ion-list>
 </ion-content>
 </ion-view>
