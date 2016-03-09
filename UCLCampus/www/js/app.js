@@ -148,8 +148,12 @@
         templateUrl: "campus/sports/templates/sports.html",
         controller: "SportsController",
         resolve:{
-          sports: function(SportsFactory) {
-            return $q.all({key1: SportsFactory.getPage(0), key2: SportsFactory.getPage(50)});
+          sports: function(SportsFactory, $q) {
+            var list = [];
+            for (i = 0; i < 10; i++) { 
+              list.push(SportsFactory.getPage(50*i));
+            }
+            return $q.all(list);
           }
         }
       }

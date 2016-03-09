@@ -16,8 +16,21 @@
 <button class="button button-clear" ng-click="goHome()">
 	<i class="icon ion-home"></i>
 </button>
-</ion-nav-buttons> 
+</ion-nav-buttons>
+<div class="bar bar-subheader list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      {{"Sport" | translate}}
+    </div>
+    <select ng-model="selectedCategory" ng-change="resetEventList()">
+      <option>{{"All sports" | translate}}</option>
+      <option ng-repeat="item in categories">{{item | translate}}</option>
+    </select>
+  </label>
+
+</div>
 <ion-content>
-{{doc}}
+
 </ion-content>
 </ion-view>
