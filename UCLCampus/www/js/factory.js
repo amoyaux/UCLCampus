@@ -4,8 +4,8 @@ angular.module('ionicApp').factory('StudentFactory', function() {
     { title: 'Schedule' , icon:'icon ion-calendar', url:'app.schedule', campus:[]},
     { title: 'LectureHalls' , icon:'icon ion-android-pin', url:'app.lectureHalls', campus:[]},
     { title: 'Libraries', icon:'icon ion-ios-book', url:'app.libraries', campus:[]},
-    { title: 'Moodle', icon:'icon ion-help', url: 'null',site:'http://moodleucl.uclouvain.be', campus:[]},
-    { title: 'UCLouvain.be', icon:'icon ion-help', url:'null',site:'http://uclouvain.be', campus:[]}
+    { title: 'Moodle', icon:'icon ion-ios-world-outline', url: 'null',site:'http://moodleucl.uclouvain.be', campus:[]},
+    { title: 'UCLouvain.be', icon:'icon ion-ios-world-outline', url:'null',site:'http://uclouvain.be', campus:[]}
     ],
     all: function() {
       return this.studentList;
@@ -21,11 +21,11 @@ angular.module('ionicApp').factory('StudentFactory', function() {
 angular.module('ionicApp').factory('CampusMenuFactory', function() {
   return {    
     campusMenuList : [
-    { title: 'Events (CarpeStudentem)' , icon:'icon ion-help', url:'app.events', campus:['Louvain-la-Neuve']},
-    { title: 'Cercles' , icon:'icon ion-help', url:'app.home', campus:[]},
-    { title: 'Restaurants universitaires', icon:'icon ion-help', url:'app.home', campus:[]},
-    { title: 'Kots à projets', icon:'icon ion-help', url: 'app.home', campus:[]},
-    { title: 'Sports', icon:'icon ion-help', url:'app.sports', campus:[]}
+    { title: 'Events (CarpeStudentem)' , icon:'icon ion-calendar energized', url:'app.events', campus:['Louvain-la-Neuve']},
+    { title: 'Cercles' , icon:'icon ion-help', icon:'icon ion-beer energized', url:'app.home', campus:[]},
+    { title: 'Restaurants universitaires', icon:'icon ion-fork energized', url:'app.home', campus:[]},
+    { title: 'Kots à projets', icon:'icon ion-image energized', url: 'app.home', campus:[]},
+    { title: 'Sports', icon:'icon ion-ios-football energized', url:'app.sports', campus:[]}
     ],
     all: function() {
       return this.campusMenuList;
