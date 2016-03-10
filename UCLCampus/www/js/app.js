@@ -149,11 +149,18 @@
         controller: "SportsController",
         resolve:{
           sports: function(SportsFactory, $q) {
-            var list = [];
-            for (i = 0; i < 10; i++) { 
-              list.push(SportsFactory.getPage(50*i));
+            var sp = SportsFactory.getSports();
+              if(sp == 'fail'){
+              
+              var list = [];
+              for (i = 0; i < 10; i++) { 
+                list.push(SportsFactory.getPage(50*i));
+              }
+              return $q.all(list);
             }
-            return $q.all(list);
+             else{
+               return {succes : true, val : sp};
+            }
           }
         }
       }

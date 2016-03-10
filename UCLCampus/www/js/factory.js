@@ -51,9 +51,7 @@ angular.module('ionicApp').factory('EventFactory', function($q, $http) {
       $http.jsonp(url).success(function(json) {
           dfd.resolve(json.query.results.rss.channel.item);
       }).error(function(error) {
-          console.log("FAIL");
-          console.log(JSON.stringify(error));
-          dfd.reject(error);
+          dfd.resolve(-1);
       });
       return dfd.promise;
     }
@@ -69,9 +67,12 @@ angular.module('ionicApp').factory('SportsFactory', function($q, $http) {
           dfd.resolve(repsonse);
       }).error(function(error) {
           console.log("FAIL");
-          dfd.reject(error);
+          dfd.resolve(-1);
       });
       return dfd.promise;
+    },
+    getSports: function(){
+      return JSON.parse(localStorage.getItem('sports')) || 'fail';
     }
   }
 })

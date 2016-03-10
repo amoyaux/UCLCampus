@@ -33,10 +33,18 @@
 <ion-content has-subheader="true" class="card-list-margin-top">
 	<ion-list class="list card">
 		<ion-item ng-repeat="item in sportList">
-			<span>{{item.sport}}</span>
-			<div class="text-card-event">{{item.day}} {{item.startHour}}-{{item.endHour}}</div>
+			<span ng-show="selectedCategory == 'All sports'">{{item.sport}}</span>
+			<span ng-show="selectedCategory != 'All sports'">{{item.day}} {{item.startHour}}-{{item.endHour}}</span>
+
+			<div class="text-card-event" ng-show="selectedCategory == 'All sports'">{{item.day}} {{item.startHour}}-{{item.endHour}}</div>
 			<div class="text-card-event">{{item.place}} {{item.local}}</div>
 		</ion-item>
 	</ion-list>
+	<ion-infinite-scroll
+	  ng-if="hasMoreEvents()"
+	  icon="ion-loading-c"
+	  on-infinite="loadMoreEvents()"
+	  distance="1%">
+	</ion-infinite-scroll>
 </ion-content>
 </ion-view>
