@@ -49,17 +49,28 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 		return [res,doc];
 	}
 	if(sports.succes){
+		//Affiche d'abors les sports du jours.
+		var date  = new Date();
+		var day = date.getDay();
+		var counter = sports.length;
+		var i = 0;
+		var matcher = ["Dimanche","Lunid","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+		while(matcher[day] != sports.val[0].day.replace(/\s/g, '') || (i < counter)){
+			var x = sports.pop();
+			sports.push(x);
+			i++;
+		}
 	 	$scope.sports = sports.val;
 	}
 	else{
 		var doc = '';
-		var sday = '';
+		var date = 1;
+		var nextWeek = 0;
 		var day = '';
-		var nextday = false;
 		var skip = 0;
 		var sportList = [];
 
-		while(day != sday || nextday==false){
+		while(nextWeek < date){
 			
 			doc = sports[skip];
 			if(doc == -1 && skip == 0){
@@ -101,14 +112,20 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 				var day = res[0];
 				doc = res[1];
 
-				//DATE - SKIPPED - NOT NEEDED
+				//DATE
 				var res = parse2(doc);
+				var sdate  = res[0].split('/');
+				date = new Date(sdate[2], sdate[1]-1, sdate[0]);
 				doc = res[1];
 
 				//STARTHOUR
 				var res = parse2(doc);
 				var startHour = res[0];
 				doc = res[1];
+
+				date.setHours(startHour.split(':')[0]);
+				date.setMinutes(startHour.split(':')[1]);
+				date.setSeconds(0);
 
 				//ENDHOUR
 				var res = parse2(doc);
@@ -121,17 +138,21 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 					place: place,
 					local : local,
 					day : day,
+					date : date,
 					startHour : startHour,
 					endHour : EndHour,
 				};
 
+
 				if(sportList.length == 0){
 					sday = day;
+					nextWeek = new Date();
+					nextWeek.setDate(date.getDate()+7);
+					nextWeek.setHours(startHour.split(':')[0]);
+					nextWeek.setMinutes(startHour.split(':')[1]);
+					nextWeek.setSeconds(0);
 				}
-				if((nextday==false) && (day != sday)){
-					nextday = true;
-				}
-				if((nextday==true) && (sday == day)){
+				if(nextWeek < date){
 					break;
 				}
 				sportList.push(item);

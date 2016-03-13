@@ -315,7 +315,7 @@
       template: 'Sorry, You have to login again.'
     });
   });
- 
+
   $scope.setCurrentUsername = function(name) {
     $scope.username = name;
   };
