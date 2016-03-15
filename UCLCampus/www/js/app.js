@@ -142,6 +142,7 @@
     }
   })
   .state('app.sports', {
+    cache:false,
     url: "/sports",
     views: {
       'campus-tab': {

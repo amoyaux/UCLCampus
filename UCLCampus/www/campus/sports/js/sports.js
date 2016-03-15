@@ -3,7 +3,7 @@ String.prototype.replaceAll = function(search, replacement) {
 	return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-angular.module('ionicApp').controller('SportsController', function($scope, $http, $q, $ionicPopup, sports, SportsFactory, $ionicLoading, $ionicScrollDelegate, $ionicPopup, $ionicHistory) {	
+angular.module('ionicApp').controller('SportsController', function($scope, $http, $state, $q, $ionicPopup, sports, SportsFactory, $ionicLoading, $ionicScrollDelegate, $ionicPopup, $ionicHistory) {	
 	var i = 0;
 
 	function parse(doc){
@@ -52,26 +52,25 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 		//Affiche d'abors les sports du jours.
 		var date  = new Date();
 		var day = date.getDay();
-		var counter = sports.length;
+		var counter = sports.val.length;
 		var i = 0;
-		var matcher = ["Dimanche","Lunid","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-		while(matcher[day] != sports.val[0].day.replace(/\s/g, '') || (i < counter)){
-			var x = sports.pop();
-			sports.push(x);
+		var matcher = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+		while(matcher[day] != sports.val[0].day.replace(/\s/g, '') && (i < counter)){
+			var x = sports.val.shift();
+			sports.val.push(x);
 			i++;
 		}
 	 	$scope.sports = sports.val;
 	}
 	else{
 		var doc = '';
-		var date = 1;
-		var nextWeek = 0;
-		var day = '';
+		var date = 0;
+		var nextWeek = 1;
+		var hour = false
 		var skip = 0;
 		var sportList = [];
 
-		while(nextWeek < date){
-			
+		while(date < nextWeek){
 			doc = sports[skip];
 			if(doc == -1 && skip == 0){
 				$ionicPopup.alert({
@@ -145,13 +144,23 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 
 
 				if(sportList.length == 0){
-					sday = day;
 					nextWeek = new Date();
-					nextWeek.setDate(date.getDate()+7);
-					nextWeek.setHours(startHour.split(':')[0]);
-					nextWeek.setMinutes(startHour.split(':')[1]);
+					nextWeek.setDate(nextWeek.getDate()+7);
+					if(startHour.split(':')[0].replace(/\s/g, '') != ''){
+						nextWeek.setHours(startHour.split(':')[0]);
+						nextWeek.setMinutes(startHour.split(':')[1]);
+						hour = true;
+					}
 					nextWeek.setSeconds(0);
 				}
+				if(! hour){
+					if(startHour.split(':')[0].replace(/\s/g, '') != ''){
+						nextWeek.setHours(startHour.split(':')[0]);
+						nextWeek.setMinutes(startHour.split(':')[1]);
+						hour = true;
+					}
+				}
+
 				if(nextWeek < date){
 					break;
 				}
@@ -159,9 +168,10 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 			}
 			skip = skip + 1;
 		}
+
 		$scope.sports = sportList;
-		window.localStorage.removeItem('sports');
-		window.localStorage['sports'] = JSON.stringify(sportList);
+		window.localStorage.removeItem('sports' + ' ' + selectedCampus.name);
+		window.localStorage['sports' + ' ' + selectedCampus.name] = JSON.stringify(sportList);
 	}
 
 	$scope.categories = [];

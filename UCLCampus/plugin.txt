@@ -1,8 +1,11 @@
 cordova plugin add cordova-plugin-device
-cordovq add cordova-plugin-console
+cordova add cordova-plugin-console
+cordova plugin add cordova-plugin-whitelist
 cordova plugin add org.apache.cordova.network-information
 cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
+cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
 cordova plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
 cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
 cordova plugin add cordova-plugin-geolocation
-
+cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
+cordova plugin add https://github.com/an-rahulpandey/cordova-plugin-dbcopy.git
