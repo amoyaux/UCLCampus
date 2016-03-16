@@ -63,7 +63,7 @@ angular.module('ionicApp').factory('SportsFactory', function($q, $http) {
     getPage: function(skip) {
       var dfd = $q.defer();
       var url = '';
-      if(selectedCampus.name=='Louvain-la-Neuve') url = 'http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?-action=t2&-skip=' + skip;
+      if(selectedCampus.name=='Louvain-la-Neuve') url = 'http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?-action=t1&-skip=' + skip;
       if(selectedCampus.name=='Woluwe') url = 'http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?-action=t4&-skip=' + skip;
       $http.get(url).success(function(repsonse) {
           dfd.resolve(repsonse);
@@ -181,8 +181,8 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
         var m = d.getMinutes(); //CURRENT MINUTE
         var dfd = $q.defer();
         var t = this;
-        var query = "SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ?";
-        $cordovaSQLite.execute(db, query, [n]).then(function(res) {
+        var query = "SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ? AND CAMPUS = ?";
+        $cordovaSQLite.execute(db, query, [n, selectedCampus.name]).then(function(res) {
             for(var i=0; i<res.rows.length; i++) {
               t.libraryList[i] = res.rows.item(i);
               var begin = res.rows.item(i).BEGIN_TIME;
@@ -208,5 +208,29 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
       }
 
 
+  }
+})
+
+angular.module('ionicApp').factory('RestaurantFactory', function($q, $cordovaSQLite) {
+  return{
+    restoList : [],
+    all: function() {
+       var tempRL = [];
+       var query = "SELECT * FROM restaurant_universitaire WHERE CAMPUS = ?";
+       $cordovaSQLite.execute(db, query, [selectedCampus.name]).then(function(res) {
+           for(var i=0; i<res.rows.length; i++) {
+              tempRL[i]=res.rows.item(i);
+            }
+        }, function (err) {
+            console.error(JSON.stringify(err));
+        }); 
+        this.restoList = tempRL;
+        return tempRL;
+    },
+    getRestoById: function (id) {
+        for(var i=0; i<this.restoList.length; i++) {
+          if(this.restoList[i].ID==id) return this.restoList[i];
+        }
+      }
   }
 })
