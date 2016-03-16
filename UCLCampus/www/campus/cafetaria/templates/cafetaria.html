@@ -20,7 +20,7 @@
 	<ion-list>
 		<ion-item class="item item-thumbnail-left" ng-repeat="item in restoList">
 			<img ng-src={{item.IMG}}>
-			<h2>{{item.NOM}}</h2>
+			<h2>{{item.NAME}}</h2>
 		<p>{{item.ADDR}}</p>
 		<div ng-if="!item.OPEN" class="closed-p">Closed</div>
 		<div ng-if="item.OPEN" class="open-p">Open</div>
