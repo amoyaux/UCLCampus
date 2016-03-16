@@ -141,6 +141,21 @@
       }
     }
   })
+  .state('app.cafetaria', {
+    cache: false,
+    url: "/cafetaria",
+    views: {
+      'campus-tab': {
+        templateUrl: "campus/cafetaria/templates/cafetaria.html",
+        controller: "CafetariaController",
+        resolve:{
+          resto: function(CafetariaFactory) {
+            return CafetariaFactory.all();
+          }
+        }
+      }
+    }
+  })
   .state('app.sports', {
     cache:false,
     url: "/sports",

@@ -23,9 +23,9 @@ angular.module('ionicApp').factory('CampusMenuFactory', function() {
     campusMenuList : [
     { title: 'Events (CarpeStudentem)' , icon:'icon ion-calendar energized', url:'app.events', campus:['Louvain-la-Neuve']},
     { title: 'Cercles' , icon:'icon ion-help', icon:'icon ion-beer energized', url:'app.home', campus:[]},
-    { title: 'Restaurants universitaires', icon:'icon ion-fork energized', url:'app.home', campus:[]},
+    { title: 'Restaurants universitaires', icon:'icon ion-fork energized', url:'app.cafetaria', campus:['Louvain-la-Neuve','Woluwe','Mons']},
     { title: 'Kots à projets', icon:'icon ion-image energized', url: 'app.home', campus:[]},
-    { title: 'Sports', icon:'icon ion-ios-football energized', url:'app.sports', campus:[]}
+    { title: 'Sports', icon:'icon ion-ios-football energized', url:'app.sports', campus:['Louvain-la-Neuve','Woluwe']}
     ],
     all: function() {
       return this.campusMenuList;
@@ -210,22 +210,26 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
 
   }
 })
-
-angular.module('ionicApp').factory('RestaurantFactory', function($q, $cordovaSQLite) {
+//Obligation d'avoir une entrée entre max dimanche a samedi
+angular.module('ionicApp').factory('CafetariaFactory', function($q, $cordovaSQLite) {
   return{
-    restoList : [],
+    restoList : [
+    ],
     all: function() {
-       var tempRL = [];
-       var query = "SELECT * FROM restaurant_universitaire WHERE CAMPUS = ?";
+       var dfd = $q.defer();
+       var query = "SELECT * FROM Restaurant WHERE CAMPUS = ?";
+       var t = this;
        $cordovaSQLite.execute(db, query, [selectedCampus.name]).then(function(res) {
+           t.restoList = [];
            for(var i=0; i<res.rows.length; i++) {
-              tempRL[i]=res.rows.item(i);
+              t.restoList[i]=res.rows.item(i);
+              t.restoList[i].OPEN = openOrClose(t.restoList[i].MID_DAY,t.restoList[i].EVE_DAY,t.restoList[i].MID_HOURS,t.restoList[i].EVE_HOURS);
             }
+            dfd.resolve(t.restoList);
         }, function (err) {
             console.error(JSON.stringify(err));
-        }); 
-        this.restoList = tempRL;
-        return tempRL;
+        });
+        return dfd.promise;
     },
     getRestoById: function (id) {
         for(var i=0; i<this.restoList.length; i++) {

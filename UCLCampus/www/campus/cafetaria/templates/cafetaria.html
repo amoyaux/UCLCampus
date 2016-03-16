@@ -1,0 +1,33 @@
+<!-- 
+ cafetaria - v1 - 2015-11-24
+  
+ Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+-->
+<ion-view title="{{'Cafetaria' | translate}}">
+<ion-nav-bar align-title="center" class="bar bar-header bar-energized">    
+</ion-nav-bar>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+	<i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>
+<ion-nav-buttons side="left">
+<button class="button button-clear" ng-click="goHome()">
+	<i class="icon ion-home"></i>
+</button>
+</ion-nav-buttons> 
+<ion-content>
+	<ion-list>
+		<ion-item class="item item-thumbnail-left" ng-repeat="item in restoList">
+			<img ng-src={{item.IMG}}>
+			<h2>{{item.NOM}}</h2>
+		<p>{{item.ADDR}}</p>
+		<div ng-if="!item.OPEN" class="closed-p">Closed</div>
+		<div ng-if="item.OPEN" class="open-p">Open</div>
+		<p></p>
+		<p>{{item.MID_DAY}} de {{item.MID_HOURS}}</p>
+		<div ng-show="item.EVE_DAY!=undefined"><p>{{item.EVE_DAY}} de {{item.EVE_HOURS}}</p></div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>
