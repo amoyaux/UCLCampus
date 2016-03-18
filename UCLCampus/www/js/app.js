@@ -7,7 +7,7 @@
  var db = null;
  var selectedCampus = null;
 
- var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'ionic-datepicker','ngCookies'])
+ var app = angular.module('ionicApp', ['ionic', 'pascalprecht.translate','ngCordova', 'onezone-datepicker','ngCookies'])
 
  .config(function($stateProvider, $urlRouterProvider, $translateProvider, $httpProvider){
 

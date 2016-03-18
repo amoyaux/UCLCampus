@@ -22,9 +22,11 @@
 	<button class="button button-full button-assertive" ng-click="createEvent()" ng-show="!agendaUpDated">{{"Export my classes into my agenda"| translate}}</button>
 	<button class="button button-full button-assertive" ng-click="deleteEvent()" ng-show="agendaUpDated">{{"Remove my classes from my agenda"| translate}}</button>
 
-	<ionic-datepicker input-obj="datepickerObject">
-	<button class="button button-full button-assertive"> {{datepickerObject.inputDate | date:'dd - MM - yyyy'}}</button>
-	</ionic-datepicker>
+	<onezone-datepicker datepicker-object="onezoneDatepicker">
+	    <button class="button button-full button-assertive show-onezone-datepicker">
+	        {{onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
+	    </button>
+	</onezone-datepicker>
 </ion-header-bar>
 <ion-content class="marge">
 	 	
