@@ -18,7 +18,7 @@
 </ion-nav-buttons> 
 <ion-content>
 	<ion-list>
-		<ion-item class="item item-thumbnail-left" ng-repeat="item in restoList">
+		<ion-item class="item item-thumbnail-left" ng-repeat="item in restoList" ui-sref="app.cafetariaDetails({id:{{item.ID}}})">
 			<img ng-src={{item.IMG}}>
 			<h2>{{item.NAME}}</h2>
 		<p>{{item.ADDR}}</p>

@@ -156,6 +156,15 @@
       }
     }
   })
+  .state('app.cafetariaDetails', {
+    url: "/cafetaria/:id",
+    views: {
+      'campus-tab' :{
+        templateUrl: "campus/cafetaria/templates/cafetariaDetails.html",
+        controller: "CafetariaDetailsController"
+      }
+    }
+  })
   .state('app.sports', {
     cache:false,
     url: "/sports",

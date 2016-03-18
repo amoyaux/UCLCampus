@@ -22,9 +22,9 @@
       if(n > associativeArray[mid_day[0]] && n < associativeArray[mid_day[1]]){
         var hours = hours1.split('à');
         var minutes = [];
-        minutes[0] = hours[0].match(/\d+/)[1]; 
+        minutes[0] = hours[0].split('h')[1]; 
         hours[0] = hours[0].match(/\d+/)[0];
-        minutes[1] = hours[1].match(/\d+/)[1];
+        minutes[1] = hours[1].split('h')[1];
         hours[1] = hours[1].match(/\d+/)[0];
 
         date1 = new Date();
