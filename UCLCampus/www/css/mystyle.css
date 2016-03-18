@@ -269,7 +269,7 @@ button.button-icon.map-button.positive.activated {
 }
 
 .item-expand.active {
-  max-height: 200px;
+  max-height: 600px;
   transition: max-height 0.3s ease-out;
 }
 

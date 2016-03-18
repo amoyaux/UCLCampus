@@ -19,7 +19,7 @@
         mid_day[1] = mid_day[1].replace(/\s/g, '');
       }
 
-      if(n > associativeArray[mid_day[0]] && n < associativeArray[mid_day[1]]){
+      if(n >= associativeArray[mid_day[0]] && n <= associativeArray[mid_day[1]]){
         var hours = hours1.split('à');
         var minutes = [];
         minutes[0] = hours[0].split('h')[1]; 
@@ -36,7 +36,7 @@
         date2.setHours(hours[1]);
         if(minutes[1] != undefined)date2.setMinutes(minutes[1]);
 
-        if(d > date1 && d < date2){
+        if(d >= date1 && d <= date2){
           return true;
         }
       }
@@ -46,7 +46,7 @@
         eve_day[0] = eve_day[0].replace(/\s/g, '');
         eve_day[1] = eve_day[1].replace(/\s/g, ''); 
 
-        if(n > associativeArray[eve_day[0]] && n < associativeArray[eve_day[1]]){
+        if(n >= associativeArray[eve_day[0]] && n <= associativeArray[eve_day[1]]){
         var hours = hours2.split('à');
         var minutes = [];
         minutes[0] = hours[0].match(/\d+/)[1]; 
@@ -63,7 +63,7 @@
         date2.setHours(hours[1]);
         if(minutes[1] != undefined)date2.setMinutes(minutes[1]);
 
-        if(d > date1 && d < date2){
+        if(d >= date1 && d <= date2){
           return true;
         }
        }

@@ -17,3 +17,7 @@ angular.module('ionicApp').controller('CafetariaDetailsController', function($sc
     return $scope.shownItem === item;
   };
 })
+
+angular.module('ionicApp').controller('MenuController', function($scope) {
+
+})

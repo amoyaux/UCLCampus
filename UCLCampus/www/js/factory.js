@@ -235,6 +235,12 @@ angular.module('ionicApp').factory('CafetariaFactory', function($q, $cordovaSQLi
         for(var i=0; i<this.restoList.length; i++) {
           if(this.restoList[i].ID==id) return this.restoList[i];
         }
-      }
+    },
+    getMenuById: function (id) {
+      var url = '';
+      for(var i=0; i<this.restoList.length; i++) {
+          if(this.restoList[i].ID==id) return this.restoList[i];
+        }
+    }
   }
 })

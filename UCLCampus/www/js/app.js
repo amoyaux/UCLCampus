@@ -165,6 +165,20 @@
       }
     }
   })
+  .state('app.menu', {
+    url: "/cafetaria/menu/:id",
+    views: {
+      'campus-tab' :{
+        templateUrl: "campus/cafetaria/templates/menu.html",
+        controller: "MenuController"
+        // resolve:{
+        //   menu: function(CafetariaFactory, $stateParams) {
+        //     return CafetariaFactory.getMenuById($stateParams.id);
+        //   }
+        // }
+      }
+    }
+  })
   .state('app.sports', {
     cache:false,
     url: "/sports",
