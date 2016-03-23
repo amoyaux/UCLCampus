@@ -4,7 +4,7 @@ angular.module('ionicApp').controller('CafetariaController', function($scope, Ca
 
 angular.module('ionicApp').controller('CafetariaDetailsController', function($scope, $stateParams, CafetariaFactory) {
   $scope.resto = CafetariaFactory.getRestoById($stateParams.id);
-  $scope.item = {title: 'Desciption', text : $scope.resto.DES};
+  $scope.item = {title: 'Desrciption', text : $scope.resto.DES};
 
   $scope.toggleItem= function(item) {
     if ($scope.isItemShown(item)) {
@@ -16,8 +16,4 @@ angular.module('ionicApp').controller('CafetariaDetailsController', function($sc
   $scope.isItemShown = function(item) {
     return $scope.shownItem === item;
   };
-})
-
-angular.module('ionicApp').controller('MenuController', function($scope) {
-
 })

@@ -11,7 +11,7 @@ angular.module('ionicApp').controller("StudentController", function($scope, $sta
         })
       }
       else{
-        window.open(val, '_blank', 'location=yes');
+        window.open(val, '_blank', 'location=no');
       }
     }
   }

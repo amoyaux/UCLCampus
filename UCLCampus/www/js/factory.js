@@ -184,6 +184,7 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
         var query = "SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ? AND CAMPUS = ?";
         $cordovaSQLite.execute(db, query, [n, selectedCampus.name]).then(function(res) {
             for(var i=0; i<res.rows.length; i++) {
+              console.log(i);
               t.libraryList[i] = res.rows.item(i);
               var begin = res.rows.item(i).BEGIN_TIME;
               var end = res.rows.item(i).END_TIME;
@@ -211,7 +212,7 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
   }
 })
 //Obligation d'avoir une entrée entre max dimanche a samedi
-angular.module('ionicApp').factory('CafetariaFactory', function($q, $cordovaSQLite) {
+angular.module('ionicApp').factory('CafetariaFactory', function($q, $http, $cordovaSQLite) {
   return{
     restoList : [
     ],
@@ -235,12 +236,20 @@ angular.module('ionicApp').factory('CafetariaFactory', function($q, $cordovaSQLi
         for(var i=0; i<this.restoList.length; i++) {
           if(this.restoList[i].ID==id) return this.restoList[i];
         }
-    },
-    getMenuById: function (id) {
-      var url = '';
-      for(var i=0; i<this.restoList.length; i++) {
-          if(this.restoList[i].ID==id) return this.restoList[i];
-        }
     }
+    // getMenuById: function (id) {
+    //   var url = '';
+    //   for(var i=0; i<this.restoList.length; i++) {
+    //       if(this.restoList[i].ID==id) url = this.restoList[i].WEB;
+    //   }
+    //   var dfd = $q.defer();
+    //   $http.get(url).success(function(repsonse) {
+    //       dfd.resolve(repsonse);
+    //   }).error(function(error) {
+    //       console.log("FAIL");
+    //       dfd.resolve(-1);
+    //   });
+    //   return dfd.promise;
+    // }
   }
 })

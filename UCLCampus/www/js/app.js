@@ -170,12 +170,12 @@
     views: {
       'campus-tab' :{
         templateUrl: "campus/cafetaria/templates/menu.html",
-        controller: "MenuController"
-        // resolve:{
-        //   menu: function(CafetariaFactory, $stateParams) {
-        //     return CafetariaFactory.getMenuById($stateParams.id);
-        //   }
-        // }
+        controller: "MenuController",
+        resolve:{
+          menu: function(CafetariaFactory, $stateParams, $q) {
+            return CafetariaFactory.getMenuById($stateParams.id);
+          }
+        }
       }
     }
   })
