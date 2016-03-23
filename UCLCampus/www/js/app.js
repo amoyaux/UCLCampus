@@ -141,6 +141,15 @@
       }
     }
   })
+  .state('app.eventsDetails', {
+    url: "/events/:id",
+    views: {
+      'campus-tab' :{
+        templateUrl: "campus/events/events_details/templates/events_details.html",
+        controller: "EventsDetailsController"
+      }
+    }
+  })
   .state('app.cafetaria', {
     cache: false,
     url: "/cafetaria",
@@ -336,7 +345,7 @@
 })*/
 
 
-.controller('AppController', function($scope, $ionicSideMenuDelegate, $state, $ionicPopup, AuthService, AUTH_EVENTS) { //, AuthService, AUTH_EVENTS
+.controller('AppController', function($rootScope, $scope, $ionicSideMenuDelegate, $state, $ionicPopup, AuthService, AUTH_EVENTS) { //, AuthService, AUTH_EVENTS
   $scope.username = AuthService.username();
  
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
@@ -364,6 +373,22 @@
   $scope.toggleRight = function() {
     $ionicSideMenuDelegate.toggleRight();
   };
+
+  $rootScope.openUrl = function(val){
+    console.log("open url");
+    console.log(window.Connection); 
+    if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE){
+        $ionicPopup.alert({
+          title: "Internet Disconnected",
+          content: "The internet is disconnected on your device."
+        })
+      }
+      else{
+        window.open(val, '_blank', 'location=no');
+      }
+    }
+  }
 }) 
 
 .controller("HomeController", function($scope, $state, $rootScope, $cordovaNetwork, CampusFactory, campus) {
