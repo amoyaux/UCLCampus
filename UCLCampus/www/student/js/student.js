@@ -1,7 +1,8 @@
 angular.module('ionicApp').controller("StudentController", function($scope, $state, $cordovaNetwork, $rootScope, StudentFactory) {
   $scope.studentList = StudentFactory.all();
   $scope.selectedCampus = selectedCampus;
-  $scope.openUrl = function(val){
+  $rootScope.openUrl = function(val){
+    console.log("open url");
     console.log(window.Connection); 
     if(window.Connection) {
       if(navigator.connection.type == Connection.NONE){
