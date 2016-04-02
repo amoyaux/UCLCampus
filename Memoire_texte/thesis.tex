@@ -1,0 +1,235 @@
+
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\restylefloat{table}
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % load a font with all the characters
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+
+\textsc{\LARGE Université Catholique de Louvain}\\[1.5cm] %
+\vspace{3cm}
+\textsc{\Large UCLCampus: a moblie application for UCL students}\\[0.5cm]
+\textsc{\large Master's Thesis}\\[0.5cm] 
+\vspace{3cm}
+
+\textsc{\large\emph{Authors:} }\\[0.5cm] 
+\textsc{\large Arnold \textsc{Moyaux}}\\[0.5cm] 
+\textsc{\large Baptiste \textsc{Lacasse}}\\[0.5cm] 
+\vspace{1cm}
+\textsc{\large\emph{Supervisor:} }\\[0.5cm]
+\textsc{\large Pr. Yves \textsc{Devilles}}\\[0.5cm]
+
+\vspace{2cm}
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+
+\vfill 
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Include a table of contents
+
+\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+
+\section{Introduction} % Major section
+
+Brief introduction of the project, the goals and the contents of the rest of the thesis.
+
+
+\section{Preliminary analysis}
+
+In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. // TODO
+
+\subsection{Cross-platform mobile development tools}
+
+In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
+\subsubsection{The native approach}
+
+The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Best achievable performance\par
+Always up-to-date with the latest API\par
+Can use any platform\par
+
+&
+
+Low maintainability\par
+Harder to find contributors fluent in all technologies\par
+Can lead to different versions of the application\par
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the native approach}
+\end{table}
+
+\subsubsection{The web approach}
+A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform.
+
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Can be used on any mobile platform\par
+Easy to find contributors fluent in HTML5\par
+Easy to maintain\par
+
+&
+
+Doesn't have access to native platform features\par
+Harder to implement local storage/security (//TODO NEED BETTER SOURCE)\par
+Not as performant as native\par
+
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the web approach}
+\end{table}
+\subsubsection{The hybrid approach}
+
+The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Can be used on any mobile platform\par
+Easy to find contributors fluent in HTML5 and JavaScript\par
+Easy to maintain\par
+
+&
+
+Not as performant as native\par
+
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the hybrid approach}
+\end{table}
+
+\subsubsection{Our choice}
+
+\subsection{Open-source project and code sharing}
+
+In this section, we will explain the choices we made concerning the code sharing platforms we used as well as the licenses we used to protect our work.
+
+\subsection{Project Management Methodologies}
+
+Here we detail the choices we made as to how we were going to manage de different parts of the project.
+
+\section{Project definition}
+
+In this part, we will show how we defined the relevant functionalities of our application as well as the user interface.
+
+\subsection{Choice of functionalities and sections}
+
+\subsection{User interface}
+
+\section{Project implementation}
+
+Here we will explain the overall architecture of the application. We will also explain some aspects we considered when implementing the application.
+
+\subsection{Architecture}
+
+\subsection{Coding standards}
+
+\subsection{Security}
+
+\subsection{Information retrieval}
+\newpage
+
+\section{The application}
+
+In this section we will present the application as we implemented it.
+
+\subsection{Functionalities}
+
+\subsubsection{Studies}
+
+\subsubsection{Campus}
+
+\subsubsection{City}
+
+\subsubsection{Tools}
+
+\subsubsection{Others}
+
+
+\subsection{Modularity and how to add a new functionality}
+
+\subsection{Future functionalities and possible improvements}
+
+\section{Post-implementation analysis}
+
+Here we will reflect about the many choices we made and try to decide wether they were the right ones or not.
+
+\subsection{Ionic framework}
+
+\subsection{GitHub}
+
+\subsection{Project Management}
+
+
+\section{Conclusion} 
+
+\section{Bibliography}
+
+
+
+\end{document}

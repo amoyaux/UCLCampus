@@ -1,0 +1,60 @@
+<!-- 
+ cafetariaDetails - v1 - 2016-03-17
+  
+ Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+-->
+<head>
+<meta charset="UTF-8">
+</head>
+
+<ion-view title="{{event.title}}">
+<ion-nav-bar align-title="center" class="bar bar-header bar-energized">    
+</ion-nav-bar>        
+</ion-nav-buttons>        
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="toggleRight()">
+  <i class="icon ion-navicon-round"></i>
+</button>
+</ion-nav-buttons>
+<ion-nav-buttons side="left">
+<button class="button button-clear" ng-click="goHome()">
+	<i class="icon ion-home"></i>
+</button>
+</ion-nav-buttons>
+<ion-content>
+
+<div style="text-align:center" class="lecture-hall-detail-title">
+	
+</div>
+
+<div style="text-align:center">
+	<img ng-src={{event.photo}} style="width:200px;height:142px;">
+</div>
+
+<div style="text-align:center;margin-bottom:20px">
+	{{'Starts' | translate}}: {{event.date_begin}} <br>
+	{{'Ends' | translate}}: {{event.date_end}} <br>
+</div>
+<div style="text-align:center;margin-bottom:20px">
+	{{'Address' | translate}}: {{event.location}}
+</div>
+<div style="text-align:center;margin:20px 10px 0px 10px">
+	<div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+		{{ item.title }}
+		<p>{{ item.text }}</p>
+	</div>
+	<div ng-click="toggleItem(item)" class="item-expand-footer">
+		<i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+		{{ isItemShown(item) ? 'Less' : 'More' }}
+	</div>
+</div>
+<button class="button button-energized see-on-map-button" ng-click="openUrl(event.link)">
+	<p2>{{'See on Louvainfo.be' | translate}}</p2>
+</button>
+<button class="button button-energized see-on-map-button">
+	<p2>{{'See on map' | translate}}</p2>
+</button>
+<p></p>
+<div style="clear:both; height:50px"></div>
+</ion-content>
+</ion-view>	
