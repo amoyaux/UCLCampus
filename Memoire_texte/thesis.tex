@@ -1,22 +1,18 @@
+\documentclass[11pt, a4paper]{report}
 
-
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
-
-\usepackage{geometry} % Required to change the page size to A4
-\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 
 \usepackage{graphicx} % Required for including pictures
-
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 \usepackage{booktabs}
 \usepackage{tabularx}
-\usepackage{float}
 \restylefloat{table}
 
-\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{lmodern} % load a font with all the characters
 
 \linespread{1.2} % Line spacing
@@ -25,40 +21,73 @@
 
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
+\renewcommand{\baselinestretch}{1.3}
+\headsep = 10.mm
+%%%% CHOOSE MARGINS %%%%
+
+\geometry{hmargin=2.5cm,top=3cm,bottom=2.3cm}
+%%%% COMMANDS %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%
+\renewcommand\title{UCLCampus: a moblie application for UCL students}
+\newcommand\nameone{Arnold \textsc{Moyaux}}
+\newcommand\nametwo{Baptiste \textsc{Lacasse}}
+\newcommand\options{}
+\newcommand\supervisor{Yves \textsc{Deville}}
+\newcommand\readerone{Kim \textsc{Mens}}
+\newcommand\readertwo{hildeberto \textsc{mendonça}}
+\newcommand\readerthree{Mathieu \textsc{Zen}}
+\newcommand\readerfour{Jorge \textsc{PEREZ MEDINA}}
+\newcommand\years{2015-2016}
+%%%% BEGIN %%%%
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{titlepage}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-
-\center % Center everything on the page
-
-
-\textsc{\LARGE Université Catholique de Louvain}\\[1.5cm] %
-\vspace{3cm}
-\textsc{\Large UCLCampus: a moblie application for UCL students}\\[0.5cm]
-\textsc{\large Master's Thesis}\\[0.5cm] 
-\vspace{3cm}
-
-\textsc{\large\emph{Authors:} }\\[0.5cm] 
-\textsc{\large Arnold \textsc{Moyaux}}\\[0.5cm] 
-\textsc{\large Baptiste \textsc{Lacasse}}\\[0.5cm] 
-\vspace{1cm}
-\textsc{\large\emph{Supervisor:} }\\[0.5cm]
-\textsc{\large Pr. Yves \textsc{Devilles}}\\[0.5cm]
-
-\vspace{2cm}
-{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
-
-
-\vfill 
-
-\end{titlepage}
-
+%%%% COVER %%%%
+\thispagestyle{empty}
+\noindent\begin{minipage}{.25\textwidth}
+\noindent\includegraphics[width=3.6cm]{Images/ucl.jpg}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\begin{center}
+UNIVERSITE CATHOLIQUE DE LOUVAIN
+\\~\\~
+ECOLE POLYTECHNIQUE DE LOUVAIN
+\\~\\~\\~\\~\\~
+\end{center}
+\end{minipage}
+\begin{minipage}{.25\textwidth}
+\hfill\includegraphics[width=3.6cm]{Images/epl.jpg}
+\\~\\~\\~\\~
+\end{minipage}
+\vspace{4.5cm}
+\begin{center}
+\bfseries{\scshape{\Huge{\title}}}
+\end{center}
+\vspace{4.5cm}
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{ll}
+Supervisor: & \supervisor
+\\ Readers: & \readerone 
+\\          & \readertwo 
+\\          & \readerthree
+\\          & \readerfour
+\end{tabular} 
+\\~\\~
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{l}
+Thesis submitted for the Master's degree
+\\ in computer science and engineering
+\\ options: \
+\\ by : \nameone
+\\ 	   \nametwo
+\end{tabular}
+\end{minipage}
+\vfill
+\begin{center}
+Louvain-la-Neuve
+\\ Academic year \years
+\end{center}
+%%%% END COVER %%%%
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
@@ -68,19 +97,19 @@
 \newpage % Begins the essay on a new page instead of on the same page as the table of contents 
 
 
-\section{Introduction} % Major section
+\chapter{Introduction} % Major section
 
 Brief introduction of the project, the goals and the contents of the rest of the thesis.
 
 
-\section{Preliminary analysis}
+\chapter{Background}
 
 In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. // TODO
 
-\subsection{Cross-platform mobile development tools}
+\section{Cross-platform mobile development tools}
 
 In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
-\subsubsection{The native approach}
+\subsection{The native approach}
 
 The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
 
@@ -108,7 +137,7 @@ Can lead to different versions of the application\par
 \caption{Pros and cons of the native approach}
 \end{table}
 
-\subsubsection{The web approach}
+\subsection{The web approach}
 A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform.
 
 
@@ -136,7 +165,7 @@ Not as performant as native\par
 \end{tabularx}
 \caption{Pros and cons of the web approach}
 \end{table}
-\subsubsection{The hybrid approach}
+\subsection{The hybrid approach}
 
 The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
 
@@ -163,72 +192,72 @@ Not as performant as native\par
 \caption{Pros and cons of the hybrid approach}
 \end{table}
 
-\subsubsection{Our choice}
+\subsection{Our choice}
 
-\subsection{Open-source project and code sharing}
+\section{Open-source project and code sharing}
 
 In this section, we will explain the choices we made concerning the code sharing platforms we used as well as the licenses we used to protect our work.
 
-\subsection{Project Management Methodologies}
+\section{Project Management Methodologies}
 
 Here we detail the choices we made as to how we were going to manage de different parts of the project.
 
-\section{Project definition}
+\chapter{Functionalities of UCLCampus}
 
 In this part, we will show how we defined the relevant functionalities of our application as well as the user interface.
 
-\subsection{Choice of functionalities and sections}
+\section{Choice of functionalities and sections}
 
-\subsection{User interface}
+\section{User interface}
 
-\section{Project implementation}
+\chapter{Implementation}
 
 Here we will explain the overall architecture of the application. We will also explain some aspects we considered when implementing the application.
 
-\subsection{Architecture}
+\section{Architecture}
 
-\subsection{Coding standards}
+\section{Coding standards}
 
-\subsection{Security}
+\section{Security}
 
-\subsection{Information retrieval}
+\section{Information retrieval}
 \newpage
 
-\section{The application}
+\chapter{The application}
 
 In this section we will present the application as we implemented it.
 
-\subsection{Functionalities}
+\section{The application UCLCampus}
 
-\subsubsection{Studies}
+\subsection{Studies}
 
-\subsubsection{Campus}
+\subsection{Campus}
 
-\subsubsection{City}
+\subsection{City}
 
-\subsubsection{Tools}
+\subsection{Tools}
 
-\subsubsection{Others}
+\subsection{Others}
 
 
-\subsection{Modularity and how to add a new functionality}
+\section{Modularity and how to add a new functionality}
 
-\subsection{Future functionalities and possible improvements}
+\section{Future functionalities and possible improvements}
 
-\section{Post-implementation analysis}
+\chapter{Analysis}
 
 Here we will reflect about the many choices we made and try to decide wether they were the right ones or not.
 
-\subsection{Ionic framework}
+\section{Ionic framework}
 
-\subsection{GitHub}
+\section{GitHub}
 
-\subsection{Project Management}
+\section{Project Management}
 
 
-\section{Conclusion} 
+\chapter{Conclusion} 
 
-\section{Bibliography}
+\chapter{Bibliography}
 
 
 
