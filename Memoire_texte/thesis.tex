@@ -208,6 +208,145 @@ In this part, we will show how we defined the relevant functionalities of our ap
 
 \section{Choice of functionalities and sections}
 
+
+
+In order to define what kind of functionalities we wanted to be part of our application, we needed to know what the students needed. The first step was to define a number of user stories that we would then translate into functionalities.\\ 
+We split our user stories into several categories:
+
+\begin{itemize}
+
+\item Studies: anything directly related to a user's studies, for instance his classes, the lecture halls or the libraries.
+\item Campus: anything related to student life in the campus but not related to the user's studies. For instance "Kot à Projets" or "Cercles".
+\item City: anything related to the city the user is in but not related to the university. For instance a cinema or restaurants.
+\item Tools: the tools offered by the application that might relate to several other categories. For example the map.
+\item Settings: the settings of the application. For example the language or the currently selected campus.
+
+\end{itemize}
+
+We also define two types of users:
+
+\begin{itemize}
+
+\item Students: students can access all the functionalities of the application using their UCL login information. Indeed, some functionalities are student specific. For instance, it wouldn't make sense for a person who isn't a student to try to access his or her schedule.
+
+\item Users: users are people who aren't students but might still be interested in some functionalities the application has to offer. 
+
+\end{itemize}
+
+In our user stories, any story starting by 'as a student' cannot be used by users while any story starting by 'as a user' can be used by both users and students.\\
+
+We will now give a list of the different user stories we thought of for each of our categories.
+
+\subsubsection{Studies}
+
+\begin{itemize}
+
+\item Schedule
+\begin{itemize}
+\item As a student, I can access my schedule in order to know when my courses are given.
+\item As a student, I want to know where a course is given.
+\item As a student, I want to know the name of a teacher giving a certain course of my schedule.
+\item As a student, I can export my schedule to my phone's agenda so that I don't need Internet access to see it.
+\end{itemize}
+
+\item Libraries
+\begin{itemize}
+\item As a user, I can see whether a library is open or closed.
+\item As a user, I can display the address of any library.
+\item As a user, I can have a GPS guide to access libraries from my location.
+\end{itemize}
+
+\item Lecture halls
+\begin{itemize}
+\item As a user, I can check the address of any lecture hall.
+\item As a user, I can have a GPS guide to access lecture halls from my location.
+\end{itemize}
+
+\item Websites
+\begin{itemize}
+\item As a user, I can quickly access the moodle website through the application.
+\item As a user, I can quickly access the UCL website through the application.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{Campus}
+
+\begin{itemize}
+
+\item{Events}
+\begin{itemize} 
+\item As a user, I can see a list of events taking place in my campus.
+\item As a user, I can sort the events by category.
+\end{itemize}
+
+\item{Kots à Projet}
+\begin{itemize}
+\item As a user, I can check Kots à Projet to know their address and projects.
+\item As a user, I can have a GPS guide to access Kots à Projet from my location.
+\end{itemize}
+
+\item{Cercles}
+\begin{itemize}
+\item As a user, I can check "Cercles" to know their address.
+\item As a user, I can have a GPS guide to access "Cercles" from my location.
+\end{itemize}
+
+\item{Restaurants Universitaires}
+\begin{itemize}
+\item As a user, I can see the different "Restaurants Universitaires" in my campus.
+\item As a user, I can check the menu of the "Restaurants Universitaires".
+\item As a user, I can have a GPS guide to access "Restaurant Universitaires" from my location.
+\end{itemize}
+
+\item{Sports}
+\begin{itemize}
+\item As a user, I can see a list of sports organized in my campus.
+\item As a user, I can sort the sports by day or by sport.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{City}
+
+\begin{itemize}
+
+\item Tourism
+\begin{itemize} 
+\item As a user, I can see the address of the city's information center.
+\item As a user, I can see a list of the museums of the city I'm in.
+\item As a user, I can see whether a museum is opened or closed.
+\end{itemize}
+
+\item Activities
+\begin{itemize} 
+\item As a user, I can see the address of the city's cinema in order to access it with the help of a GPS guide.
+\item As a user, I can see several activities I can do in the city I'm in.
+
+\end{itemize}
+
+\item Restaurants and bars
+\begin{itemize} 
+\item As a user, I can see a list of the restaurants of the city I'm in.
+\item As a user, I can see a list of the bars of the city I'm in.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{Tools}
+
+\begin{itemize}
+\item As a user, I can access a map of the city I'm in in order to check points of interests.
+\item As a user, I can receive help from a GPS guide in order to access a location of my choice on the map.
+\end{itemize}
+
+\subsubsection{Settings}
+
+\begin{itemize}
+\item As a user, I can change the application's language to French, English or Dutch.
+\item As a user, I can select my campus.
+\end{itemize}
+
 \section{User interface}
 
 \chapter{Implementation}
