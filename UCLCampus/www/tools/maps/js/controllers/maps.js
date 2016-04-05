@@ -4,25 +4,20 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
     var station = L.marker([50.669591, 4.615706]);
 
     $rootScope.target = false;
+
     
     L.AwesomeMarkers.Icon.prototype.options.prefix = 'ion';
 
     //stateparams updated on url change
     $scope.$on('$locationChangeSuccess', function (event) {
-        if ($ionicSideMenuDelegate.$getByHandle('search').isOpen()) {
-            fromSearch = true;
-            $ionicSideMenuDelegate.$getByHandle('search').toggleRight(false);
-        }
-        $stateParams = urlmatcher.getParams();
-        $rootScope.activeMarker = buildings.getMarker($stateParams.id);
         $rootScope.target = true;
-        $rootScope.map.setView($rootScope.activeMarker[0]._latlng, 18, {
-            animate: true
-        });
+        $ionicSideMenuDelegate.$getByHandle("search").toggleRight(false);
+        $stateParams = urlmatcher.getParams();
+        $rootScope.activeMarker = buildings.getMarker($stateParams.id)[0];
+        $rootScope.map.setView( $rootScope.activeMarker._latlng,18);
         $rootScope.map.on('moveend', function (e) {
-            console.log("moved");
-            if ($rootScope.target) {
-                $rootScope.activeMarker[0].openPopup();
+            if(!$rootScope.activeMarker.getPopup()._isOpen && $rootScope.target){
+                $rootScope.activeMarker.openPopup();
                 $rootScope.target = false;
             }
         });
@@ -61,11 +56,11 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
     }).setView(station.getLatLng(), 14);
 
     $rootScope.map.on('popupopen', function (centerMarker) {
-            var cM = $rootScope.map.project(centerMarker.popup._latlng);
-            cM.y -= centerMarker.popup._container.clientHeight / 2
-            $rootScope.map.setView($rootScope.map.unproject(cM), 18, {
-                animate: true
-            });
+        var cM = $rootScope.map.project(centerMarker.popup._latlng);
+        cM.y -= centerMarker.popup._container.clientHeight / 2
+        $rootScope.map.setView($rootScope.map.unproject(cM), $rootScope.map.getZoom(), {
+            animate: true
+        });
     });
 
     $rootScope.map.addLayer($rootScope.markers);
