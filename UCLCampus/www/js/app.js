@@ -224,11 +224,13 @@
     }
   })
   .state('app.maps', {
-    url: "/maps",
+    url: "/maps/{id}/:go",
+    reloadOnSearch: false,
     views: {
       'tools-tab' :{
         templateUrl: "tools/maps/templates/maps.html",
-        controller: "MapsController"
+        controller: "MapsController",
+        persist: true
       }
     }
   })
