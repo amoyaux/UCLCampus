@@ -7,10 +7,15 @@
 
 \usepackage{graphicx} % Required for including pictures
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{pdfpages}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \restylefloat{table}
 
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{lmodern} % load a font with all the characters
@@ -34,9 +39,9 @@
 \newcommand\options{}
 \newcommand\supervisor{Yves \textsc{Deville}}
 \newcommand\readerone{Kim \textsc{Mens}}
-\newcommand\readertwo{hildeberto \textsc{mendonça}}
+\newcommand\readertwo{hildeberto \textsc{Mendonça}}
 \newcommand\readerthree{Mathieu \textsc{Zen}}
-\newcommand\readerfour{Jorge \textsc{PEREZ MEDINA}}
+\newcommand\readerfour{Jorge \textsc{Perez Medina}}
 \newcommand\years{2015-2016}
 %%%% BEGIN %%%%
 \begin{document}
@@ -216,6 +221,50 @@ Here we will explain the overall architecture of the application. We will also e
 
 \section{Architecture}
 
+The purpose of the application is to be extensible and easily maintainable. We wanted a programmer can add its functionalities at each level to the application.
+For this we thought our implementation as a tree. At the top level we have the application with the settings menu and base configuration after it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
+
+\begin{forest}
+[Application, for tree = {ellipse, draw}, fill = green
+	[Settings]
+	[Studies]
+	[Campus
+		[Events]
+		[Cafeteria
+			[Menu]		
+		]
+		[Cercles]
+		[Sports]
+	]
+	[Tools]
+	[City]
+]
+\end{forest} 
+
+Each node having his own javascript,html and css (if needed) code.
+
+\subsection{Folder}
+We wanted to keep the same state of mind for the file organisation. The ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(maybe having more than one js and html). We modify it to respect the tree architecture we want. With our folder system a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
+1 is a summary of the change, red folder are those we modify.
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=.4\linewidth]{Images/folder_before.jpg}
+  \caption{Before}
+  \label{fig:before}
+\end{subfigure}%
+\begin{subfigure}[b]{.5\textwidth}
+  \includegraphics[width=.4\linewidth]{Images/folder_after.jpg}
+  \caption{After}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Folder evolution}
+\label{fig:test}
+\end{figure}
+
+\subsection{State provider}
+
+
 \section{Coding standards}
 
 \section{Security}
@@ -241,6 +290,7 @@ In this section we will present the application as we implemented it.
 
 
 \section{Modularity and how to add a new functionality}
+
 
 \section{Future functionalities and possible improvements}
 
