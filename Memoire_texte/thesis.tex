@@ -5,6 +5,8 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 
+\usepackage{dirtytalk}
+
 \usepackage{graphicx} % Required for including pictures
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
 \usepackage{booktabs}
@@ -34,9 +36,9 @@
 \newcommand\options{}
 \newcommand\supervisor{Yves \textsc{Deville}}
 \newcommand\readerone{Kim \textsc{Mens}}
-\newcommand\readertwo{hildeberto \textsc{mendonça}}
+\newcommand\readertwo{Hildeberto \textsc{Mendonça}}
 \newcommand\readerthree{Mathieu \textsc{Zen}}
-\newcommand\readerfour{Jorge \textsc{PEREZ MEDINA}}
+\newcommand\readerfour{Jorge \textsc{Perez Medina}}
 \newcommand\years{2015-2016}
 %%%% BEGIN %%%%
 \begin{document}
@@ -208,7 +210,7 @@ In this part, we will show how we defined the relevant functionalities of our ap
 
 \section{Choice of functionalities and sections}
 
-
+//TODO ajouter les trucs qu'on a pas intégré au final (mail, aide, ...)
 
 In order to define what kind of functionalities we wanted to be part of our application, we needed to know what the students needed. The first step was to define a number of user stories that we would then translate into functionalities.\\ 
 We split our user stories into several categories:
@@ -349,7 +351,30 @@ We will now give a list of the different user stories we thought of for each of 
 
 \section{User interface}
 
+Once we determined the different features we wanted in our application, we needed to organize them in a way that makes sense for users. In order to do so, we made sketches of what the application might look like using InVision. InVision is a website that lets people design and style mobile applications prototypes. It allows us to get an idea of what the finished product might look like without having to dive into any code. The sketches we made are available in the annex.\\
+
+In these sketches, we can see that we decided to have one menu per category we defined in the previous section. Each menu has an associated color, allowing the user to always have visual clues to help them know where they are.\\
+
+Once the sketches were done, we shared the link to our prototype to over 1000 students, mostly student in their first year, as they represent the future users of this application. They were able to browse through the application using the buttons, as if it were already working, and leave comments and feedback wherever they wanted to.\\
+
+While we didn't receive as much feedback as we would have hoped, the one we received was constructive and helpful. Most people were satisfied with our 3 first categories, Studies, Campus and City. The fourth category, however, was more criticized. Here are some comments we received concerning the Tools category.\\
+
+\say{[...]\\ 
+Quelques remarques:
+\begin{itemize}
+\item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
+\item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
+\item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
+\end{itemize}
+[...]}\\\\
+\say{[...] \\
+2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
+3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
+
+After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
 \chapter{Implementation}
+
+
 
 Here we will explain the overall architecture of the application. We will also explain some aspects we considered when implementing the application.
 
