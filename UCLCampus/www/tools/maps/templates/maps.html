@@ -1,8 +1,46 @@
 <ion-view title="Maps">
-    <ion-nav-bar align-title="center" class="bar bar-header bar-royal">
-  <ion-nav-back-button>
-  </ion-nav-back-button>
-</ion-nav-bar>
-<ion-content scroll="false" data-tap-disabled="true" id="map" class="has-header">
-</ion-content>
+    <ion-side-menus delegate-handle="search" ng-controller="SearchCtrl">
+        <ion-side-menu-content>
+            <ion-nav-bar align-title="center" class="bar bar-header bar-royal">
+                <ion-nav-back-button>
+                </ion-nav-back-button>
+                <ion-nav-buttons side="right">
+                    <button class="button button-icon icon ion-search" ng-click="searchPanel()">
+                    </button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-content scroll="false" data-tap-disabled="true" id="map" class="has-header">
+            </ion-content>
+        </ion-side-menu-content>
+        <ion-side-menu side="right">
+            <ion-header-bar class="bar-royal">
+                <div class="divbar">
+                    <label class="item item-input search">
+                        <input class="searchLabel" type="search" ng-focus="showSearch()" placeholder="{{ &apos;search&apos; | translate }}" ng-change="search()" ng-model="data.search">
+                    </label>
+                    <i id="searchIcon" class="icon placeholder-icon" ng-class="icon" ng-click="hideSearch()"></i>
+                </div>
+            </ion-header-bar>
+            <ion-content ng-class="fadeInOut" id="results">
+                <ion-list>
+                    <ion-item class="searchItem" ng-click="hideSearch()" href="#/app/maps/{{building.id}}/0" nav-clear="" close-menu="" ng-repeat="building in results">
+                        <div class="info">
+                            <div class="id">{{::building.id}}</div>
+                            <div class="name">{{::building.name}}</div>
+                            <div class="address">{{::building.address}}</div>
+                        </div>
+                        <img class="miniature" ng-src="img/buildings/{{::building.id}}.jpg">
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            <ion-content id="tree">
+                <ion-list>
+                    <building type="auditoriums" title="{{ &apos;auditoria&apos; | translate }}" color="lightblue" icon="university"></building>
+                    <building type="entertainment" title="{{ &apos;entertainment&apos; | translate }}" color="red" icon="happy"></building>
+                    <building type="transport" title="{{ &apos;transport&apos; | translate }}" color="orange" icon="android-bus"></building>
+
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
 </ion-view>

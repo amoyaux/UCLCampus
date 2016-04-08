@@ -11,6 +11,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \restylefloat{table}
+\usepackage{listings}
+\usepackage{dirtytalk}
 
 \usepackage{tikz}
 \usepackage{forest}
@@ -39,7 +41,7 @@
 \newcommand\options{}
 \newcommand\supervisor{Yves \textsc{Deville}}
 \newcommand\readerone{Kim \textsc{Mens}}
-\newcommand\readertwo{hildeberto \textsc{Mendonça}}
+\newcommand\readertwo{Hildeberto \textsc{Mendonça}}
 \newcommand\readerthree{Mathieu \textsc{Zen}}
 \newcommand\readerfour{Jorge \textsc{Perez Medina}}
 \newcommand\years{2015-2016}
@@ -213,9 +215,170 @@ In this part, we will show how we defined the relevant functionalities of our ap
 
 \section{Choice of functionalities and sections}
 
+//TODO ajouter les trucs qu'on a pas intégré au final (mail, aide, ...)
+
+In order to define what kind of functionalities we wanted to be part of our application, we needed to know what the students needed. The first step was to define a number of user stories that we would then translate into functionalities.\\ 
+We split our user stories into several categories:
+
+\begin{itemize}
+
+\item Studies: anything directly related to a user's studies, for instance his classes, the lecture halls or the libraries.
+\item Campus: anything related to student life in the campus but not related to the user's studies. For instance "Kot à Projets" or "Cercles".
+\item City: anything related to the city the user is in but not related to the university. For instance a cinema or restaurants.
+\item Tools: the tools offered by the application that might relate to several other categories. For example the map.
+\item Settings: the settings of the application. For example the language or the currently selected campus.
+
+\end{itemize}
+
+We also define two types of users:
+
+\begin{itemize}
+
+\item Students: students can access all the functionalities of the application using their UCL login information. Indeed, some functionalities are student specific. For instance, it wouldn't make sense for a person who isn't a student to try to access his or her schedule.
+
+\item Users: users are people who aren't students but might still be interested in some functionalities the application has to offer. 
+
+\end{itemize}
+
+In our user stories, any story starting by 'as a student' cannot be used by users while any story starting by 'as a user' can be used by both users and students.\\
+
+We will now give a list of the different user stories we thought of for each of our categories.
+
+\subsubsection{Studies}
+
+\begin{itemize}
+
+\item Schedule
+\begin{itemize}
+\item As a student, I can access my schedule in order to know when my courses are given.
+\item As a student, I want to know where a course is given.
+\item As a student, I want to know the name of a teacher giving a certain course of my schedule.
+\item As a student, I can export my schedule to my phone's agenda so that I don't need Internet access to see it.
+\end{itemize}
+
+\item Libraries
+\begin{itemize}
+\item As a user, I can see whether a library is open or closed.
+\item As a user, I can display the address of any library.
+\item As a user, I can have a GPS guide to access libraries from my location.
+\end{itemize}
+
+\item Lecture halls
+\begin{itemize}
+\item As a user, I can check the address of any lecture hall.
+\item As a user, I can have a GPS guide to access lecture halls from my location.
+\end{itemize}
+
+\item Websites
+\begin{itemize}
+\item As a user, I can quickly access the moodle website through the application.
+\item As a user, I can quickly access the UCL website through the application.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{Campus}
+
+\begin{itemize}
+
+\item{Events}
+\begin{itemize} 
+\item As a user, I can see a list of events taking place in my campus.
+\item As a user, I can sort the events by category.
+\end{itemize}
+
+\item{Kots à Projet}
+\begin{itemize}
+\item As a user, I can check Kots à Projet to know their address and projects.
+\item As a user, I can have a GPS guide to access Kots à Projet from my location.
+\end{itemize}
+
+\item{Cercles}
+\begin{itemize}
+\item As a user, I can check "Cercles" to know their address.
+\item As a user, I can have a GPS guide to access "Cercles" from my location.
+\end{itemize}
+
+\item{Restaurants Universitaires}
+\begin{itemize}
+\item As a user, I can see the different "Restaurants Universitaires" in my campus.
+\item As a user, I can check the menu of the "Restaurants Universitaires".
+\item As a user, I can have a GPS guide to access "Restaurant Universitaires" from my location.
+\end{itemize}
+
+\item{Sports}
+\begin{itemize}
+\item As a user, I can see a list of sports organized in my campus.
+\item As a user, I can sort the sports by day or by sport.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{City}
+
+\begin{itemize}
+
+\item Tourism
+\begin{itemize} 
+\item As a user, I can see the address of the city's information center.
+\item As a user, I can see a list of the museums of the city I'm in.
+\item As a user, I can see whether a museum is opened or closed.
+\end{itemize}
+
+\item Activities
+\begin{itemize} 
+\item As a user, I can see the address of the city's cinema in order to access it with the help of a GPS guide.
+\item As a user, I can see several activities I can do in the city I'm in.
+
+\end{itemize}
+
+\item Restaurants and bars
+\begin{itemize} 
+\item As a user, I can see a list of the restaurants of the city I'm in.
+\item As a user, I can see a list of the bars of the city I'm in.
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection{Tools}
+
+\begin{itemize}
+\item As a user, I can access a map of the city I'm in in order to check points of interests.
+\item As a user, I can receive help from a GPS guide in order to access a location of my choice on the map.
+\end{itemize}
+
+\subsubsection{Settings}
+
+\begin{itemize}
+\item As a user, I can change the application's language to French, English or Dutch.
+\item As a user, I can select my campus.
+\end{itemize}
+
 \section{User interface}
 
+Once we determined the different features we wanted in our application, we needed to organize them in a way that makes sense for users. In order to do so, we made sketches of what the application might look like using InVision. InVision is a website that lets people design and style mobile applications prototypes. It allows us to get an idea of what the finished product might look like without having to dive into any code. The sketches we made are available in the annex.\\
+
+In these sketches, we can see that we decided to have one menu per category we defined in the previous section. Each menu has an associated color, allowing the user to always have visual clues to help them know where they are.\\
+
+Once the sketches were done, we shared the link to our prototype to over 1000 students, mostly student in their first year, as they represent the future users of this application. They were able to browse through the application using the buttons, as if it were already working, and leave comments and feedback wherever they wanted to.\\
+
+While we didn't receive as much feedback as we would have hoped, the one we received was constructive and helpful. Most people were satisfied with our 3 first categories, Studies, Campus and City. The fourth category, however, was more criticized. Here are some comments we received concerning the Tools category.\\
+
+\say{[...]\\ 
+Quelques remarques:
+\begin{itemize}
+\item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
+\item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
+\item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
+\end{itemize}
+[...]}\\\\
+\say{[...] \\
+2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
+3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
+
+After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
 \chapter{Implementation}
+
 
 Here we will explain the overall architecture of the application. We will also explain some aspects we considered when implementing the application.
 
@@ -262,7 +425,68 @@ We wanted to keep the same state of mind for the file organisation. The ionic ba
 \label{fig:test}
 \end{figure}
 
-\subsection{State provider}
+\subsection{Information processing}
+
+Here I just explain how we treat the informations processing from an architecture's design point of view. The section 4.4 explain in detail how we did it for each specific parts.
+There is a lot of external informations to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). We have two possible ways to import them.
+
+\subsubsection{Database}
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Always available\par
+Easy information retrieval(query)\par
+Easy to modify\par
+Fast\par
+
+&
+
+Need someone to update\par
+Takes memory \par
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of database}
+\end{table}
+
+\subsubsection{Web parsing}
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Automatic update\par
+Easy information retrieval with web services(query)\par
+No hardware memory consumption\par
+
+&
+
+Need an internet connexion and an operational server side\par
+Horrible information retrieval without web services\par
+If the web server change, maybe you will need to recode all the parsing method\par
+Slow\par
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of web parsing}
+\end{table}
+
+\iffalse
+An important limitation is the need of someone in order to update database or creating new parsing system. The dream would be web services everywhere.
+\fi
+\subsection{Front-end and back-end}
 
 
 \section{Coding standards}
