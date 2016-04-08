@@ -44,15 +44,9 @@ app.service('buildings', function ($rootScope, $filter) {
             marker.bindPopup(popup, {
                 keepInView: false
             });
-
+            marker.off('click');
             marker.on('click', function (e) {
-                e.originalEvent.preventDefault();
-                $rootScope.target = false;
-                $rootScope.map.setView(this._latlng, 18, {
-                    animate: true
-                });
                 location = "#/app/maps/" + id + "/0";
-                return false;
             });
 
             marker.on('popupopen', function () {

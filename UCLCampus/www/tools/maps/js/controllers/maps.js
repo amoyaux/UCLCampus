@@ -10,22 +10,14 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
 
     //stateparams updated on url change
     $scope.$on('$locationChangeSuccess', function (event) {
-        if ($ionicSideMenuDelegate.$getByHandle('search').isOpen()) {
-            fromSearch = true;
-            $rootScope.target = true;
-            $ionicSideMenuDelegate.$getByHandle('search').toggleRight(false);
-        }
+        $rootScope.target = true;
+        $ionicSideMenuDelegate.$getByHandle("search").toggleRight(false);
         $stateParams = urlmatcher.getParams();
-        $rootScope.activeMarker = buildings.getMarker($stateParams.id);
-        if ($rootScope.activeMarker[0] != undefined) {
-            $rootScope.map.setView($rootScope.activeMarker[0]._latlng, 18, {
-                animate: true
-            });
-        }
+        $rootScope.activeMarker = buildings.getMarker($stateParams.id)[0];
+        $rootScope.map.setView( $rootScope.activeMarker._latlng,18);
         $rootScope.map.on('moveend', function (e) {
-            console.log("moved");
-            if ($rootScope.target) {
-                $rootScope.activeMarker[0].openPopup();
+            if(!$rootScope.activeMarker.getPopup()._isOpen && $rootScope.target){
+                $rootScope.activeMarker.openPopup();
                 $rootScope.target = false;
             }
         });
@@ -66,7 +58,7 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
     $rootScope.map.on('popupopen', function (centerMarker) {
         var cM = $rootScope.map.project(centerMarker.popup._latlng);
         cM.y -= centerMarker.popup._container.clientHeight / 2
-        $rootScope.map.setView($rootScope.map.unproject(cM), 18, {
+        $rootScope.map.setView($rootScope.map.unproject(cM), $rootScope.map.getZoom(), {
             animate: true
         });
     });
