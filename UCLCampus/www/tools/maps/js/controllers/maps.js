@@ -1,24 +1,27 @@
 app.controller("MapsController", function ($scope, $rootScope, $stateParams, $ionicSideMenuDelegate, $timeout, geolocation, buildings, urlmatcher) {
 
     //default location to center on if no user plotted 
-    var station = L.marker([50.669591, 4.615706]);
+    var defaultLocation = L.marker([selectedCampus.lat, selectedCampus.lon]);
+    var maxZoom = selectedCampus.maxzoom;
 
     $rootScope.target = false;
-    
+
     L.AwesomeMarkers.Icon.prototype.options.prefix = 'ion';
 
     //stateparams updated on url change
     $scope.$on('$locationChangeSuccess', function (event) {
         if ($ionicSideMenuDelegate.$getByHandle('search').isOpen()) {
             fromSearch = true;
+            $rootScope.target = true;
             $ionicSideMenuDelegate.$getByHandle('search').toggleRight(false);
         }
         $stateParams = urlmatcher.getParams();
         $rootScope.activeMarker = buildings.getMarker($stateParams.id);
-        $rootScope.target = true;
-        $rootScope.map.setView($rootScope.activeMarker[0]._latlng, 18, {
-            animate: true
-        });
+        if ($rootScope.activeMarker[0] != undefined) {
+            $rootScope.map.setView($rootScope.activeMarker[0]._latlng, 18, {
+                animate: true
+            });
+        }
         $rootScope.map.on('moveend', function (e) {
             console.log("moved");
             if ($rootScope.target) {
@@ -58,14 +61,14 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
         zoomAnimation: true,
         markerZoomAnimation: true,
         maxZoom: 18
-    }).setView(station.getLatLng(), 14);
+    }).setView(defaultLocation.getLatLng(), maxZoom);
 
     $rootScope.map.on('popupopen', function (centerMarker) {
-            var cM = $rootScope.map.project(centerMarker.popup._latlng);
-            cM.y -= centerMarker.popup._container.clientHeight / 2
-            $rootScope.map.setView($rootScope.map.unproject(cM), 18, {
-                animate: true
-            });
+        var cM = $rootScope.map.project(centerMarker.popup._latlng);
+        cM.y -= centerMarker.popup._container.clientHeight / 2
+        $rootScope.map.setView($rootScope.map.unproject(cM), 18, {
+            animate: true
+        });
     });
 
     $rootScope.map.addLayer($rootScope.markers);
@@ -78,7 +81,7 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
     L.tileLayer('img/maps/tiles/{z}/{x}/{y}.jpg', {
         attribution: '<span>&copy; <a href="http://osm.org/copyright">OpenStreetMap</a></span>',
         maxZoom: 18,
-        minZoom: 13,
+        minZoom: maxZoom-1,
         unloadInvisibleTiles: false,
     }).addTo($rootScope.map);
 
