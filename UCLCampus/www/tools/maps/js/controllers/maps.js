@@ -1,11 +1,11 @@
 app.controller("MapsController", function ($scope, $rootScope, $stateParams, $ionicSideMenuDelegate, $timeout, geolocation, buildings, urlmatcher) {
 
     //default location to center on if no user plotted 
-    var station = L.marker([50.669591, 4.615706]);
+    var defaultLocation = L.marker([selectedCampus.lat, selectedCampus.lon]);
+    var maxZoom = selectedCampus.maxzoom;
 
     $rootScope.target = false;
 
-    
     L.AwesomeMarkers.Icon.prototype.options.prefix = 'ion';
 
     //stateparams updated on url change
@@ -53,7 +53,7 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
         zoomAnimation: true,
         markerZoomAnimation: true,
         maxZoom: 18
-    }).setView(station.getLatLng(), 14);
+    }).setView(defaultLocation.getLatLng(), maxZoom);
 
     $rootScope.map.on('popupopen', function (centerMarker) {
         var cM = $rootScope.map.project(centerMarker.popup._latlng);
@@ -73,7 +73,7 @@ app.controller("MapsController", function ($scope, $rootScope, $stateParams, $io
     L.tileLayer('img/maps/tiles/{z}/{x}/{y}.jpg', {
         attribution: '<span>&copy; <a href="http://osm.org/copyright">OpenStreetMap</a></span>',
         maxZoom: 18,
-        minZoom: 13,
+        minZoom: maxZoom-1,
         unloadInvisibleTiles: false,
     }).addTo($rootScope.map);
 

@@ -1,4 +1,4 @@
-app.service('buildings', function ($rootScope, $filter) {
+app.service('buildings', function ($rootScope, $window, $filter) {
 
     var markersList = [];
 
@@ -25,6 +25,8 @@ app.service('buildings', function ($rootScope, $filter) {
                 keepInView: true
             });
 
+            console.log($window.innerHeight-88);
+            
             var div = document.createElement("div");
             src = "'img/buildings/" + id + ".jpg'";
             div.innerHTML = '<p class="popupID">' + id + '</p><img style=\'width:200px;\' src=' + src + '/>' +
