@@ -669,14 +669,6 @@ color: white;
     text-align: left !important;
 }
 
-.custom-popup .leaflet-popup-close-button{
-    color: white !important;
-    font-weight: bolder !important;
-    font-size: 30px !important;
-    top: 14px !important;
-    right: 20px !important;
-}
-
 .custom-popup .popupID{
     font-weight: bolder;
     color: white;

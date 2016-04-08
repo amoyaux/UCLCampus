@@ -1,3 +1,7 @@
+.leaflet-popup-content p {
+    margin: 8px 0 !important;
+}
+
 #map {
     top: 0px;
     width: 100%;
@@ -666,7 +670,7 @@ color: white;
     color: white !important;
     font-weight: bolder !important;
     font-size: 30px !important;
-    top: 14px !important;
+    top: 10px !important;
     right: 20px !important;
 }
 
