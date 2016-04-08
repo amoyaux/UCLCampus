@@ -54,6 +54,7 @@
   })
   .state('app.libraries', {
     url: "/libraries",
+    cache: false,
     views: {
       'student-tab' :{
         templateUrl: "student/libraries/templates/libraries.html",
@@ -174,20 +175,6 @@
       }
     }
   })
-  .state('app.menu', {
-    url: "/cafetaria/menu/:id",
-    views: {
-      'campus-tab' :{
-        templateUrl: "campus/cafetaria/templates/menu.html",
-        controller: "MenuController",
-        resolve:{
-          menu: function(CafetariaFactory, $stateParams, $q) {
-            return CafetariaFactory.getMenuById($stateParams.id);
-          }
-        }
-      }
-    }
-  })
   .state('app.sports', {
     cache:false,
     url: "/sports",
@@ -201,7 +188,7 @@
               if(sp == 'fail'){
               
               var list = [];
-              for (i = 0; i < 10; i++) { 
+              for (i = 0; i < 6; i++) { 
                 list.push(SportsFactory.getPage(50*i));
               }
               return $q.all(list);
@@ -281,7 +268,8 @@
         });
       }
       else{
-        db = window.openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
+        db = openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
+        console.log(db);
       }
     });
 
@@ -345,7 +333,7 @@
 })*/
 
 
-.controller('AppController', function($rootScope, $scope, $ionicSideMenuDelegate, $state, $ionicPopup, AuthService, AUTH_EVENTS) { //, AuthService, AUTH_EVENTS
+.controller('AppController', function($rootScope, $scope, $ionicSideMenuDelegate, $state, $ionicPopup, AuthService, AUTH_EVENTS, $ionicNavBarDelegate) { //, AuthService, AUTH_EVENTS
   $scope.username = AuthService.username();
  
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
@@ -373,6 +361,12 @@
   $scope.toggleRight = function() {
     $ionicSideMenuDelegate.toggleRight();
   };
+
+  $scope.options = $scope.options || {};
+  var isIOS = ionic.Platform.isIOS();
+  $scope.options.hideBackButton = isIOS;
+  $scope.options.hideHomeButton = !isIOS;
+
 
   $rootScope.openUrl = function(val){
     console.log("open url");

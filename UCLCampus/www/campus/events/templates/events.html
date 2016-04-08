@@ -27,7 +27,7 @@
 </div>
 <ion-content has-subheader="true" class="card-list-margin-top">
 	<ion-list class="list card">
-		<ion-item ng-repeat="item in eventList|filter:hasCategory" ui-sref="app.eventsDetails({id:{{item.guid}}})">
+		<ion-item ng-repeat="item in eventList|filter:hasCategory">
 			<span>{{item.title}}</span>
 			<div class="text-card-event">{{item.date_begin}}</div>
 			<div class="text-card-event">{{item.location}}</div>
