@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  8 APR 2016 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  10 APR 2016 10:46
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1503,7 +1503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--365
 [11]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--377
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
@@ -1511,19 +1511,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 375--377
 File: Images/folder_before.jpg Graphic file (type jpg)
 
 <use Images/folder_before.jpg>
-Package pdftex.def Info: Images/folder_before.jpg used on input line 403.
+Package pdftex.def Info: Images/folder_before.jpg used on input line 416.
 (pdftex.def)             Requested size: 91.04742pt x 104.786pt.
 
 <Images/folder_after.jpg, id=49, 309.40594pt x 770.12718pt>
 File: Images/folder_after.jpg Graphic file (type jpg)
 
 <use Images/folder_after.jpg>
-Package pdftex.def Info: Images/folder_after.jpg used on input line 408.
+Package pdftex.def Info: Images/folder_after.jpg used on input line 421.
 (pdftex.def)             Requested size: 91.04742pt x 226.62149pt.
  [12
 
 ] [13 <./Images/folder_before.jpg> <./Images/folder_after.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 488--489
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
@@ -1531,7 +1531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--489
 File: Images/factory_arch.png Graphic file (type png)
 
 <use Images/factory_arch.png>
-Package pdftex.def Info: Images/factory_arch.png used on input line 492.
+Package pdftex.def Info: Images/factory_arch.png used on input line 505.
 (pdftex.def)             Requested size: 276.66072pt x 156.73677pt.
  [14] [15 <./Images/factory_arch.png>]
 Chapter 5.
@@ -1570,7 +1570,7 @@ lic/lm/lmbx12.pfb><C:/Users/Arnold/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/lm/lmcsc10.pfb><C:/Users/Arnold/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/lm/lmr10.pfb><C:/Users/Arnold/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/lm/lmsy10.pfb>
-Output written on thesis.pdf (19 pages, 355140 bytes).
+Output written on thesis.pdf (19 pages, 355807 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

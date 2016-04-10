@@ -363,6 +363,19 @@ Once the sketches were done, we shared the link to our prototype to over 1000 st
 
 While we didn't receive as much feedback as we would have hoped, the one we received was constructive and helpful. Most people were satisfied with our 3 first categories, Studies, Campus and City. The fourth category, however, was more criticized. Here are some comments we received concerning the Tools category.\\
 
+\iffalse
+\say{[...]\\ 
+ -Quelques remarques:
+ -\begin{itemize}
+ -\item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
+ -\item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
+ -\item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
+ -\end{itemize}
+ -[...]}\\\\
+ -\say{[...] \\
+ -2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
+ -3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
+ \fi
 
 After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
 \chapter{Implementation}
@@ -392,10 +405,10 @@ For this we thought our implementation as a tree. At the top level we have the a
 ]
 \end{forest} 
 
-Each node having his own javascript,html and css (if needed) code.
+Each node having his own JavaScript,html and css (if needed) code.
 
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. The ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(maybe having more than one js and html). We modify it to respect the tree architecture we want. With our folder system a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
+We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(maybe having more than one js and html). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
 1 is a summary of the change, red folder are those we modify.
 \begin{figure}
 \centering
@@ -415,8 +428,8 @@ We wanted to keep the same state of mind for the file organisation. The ionic ba
 
 \subsection{Information processing}
 
-Here I just explain how we treat the informations processing from an architecture's design point of view. The section 4.4 explain in detail how we did it for each specific parts.
-There is a lot of external informations to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). We have two possible ways to import them.
+Here I just explain how we deal with the information processing from an architecture's design point of view. The section 4.4 explains in detail how we did it for each specific part.
+There is a lot of external information to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). We have two possible ways to import them.
 
 \subsubsection{Database}
 
@@ -441,7 +454,7 @@ Takes memory \par
 
 \\\bottomrule
 \end{tabularx}
-\caption{Pros and cons of database}
+\caption{Pros and cons of a database}
 \end{table}
 
 \subsubsection{Web parsing}
@@ -460,7 +473,7 @@ No hardware memory consumption\par
 
 &
 
-Need an internet connexion and an operational server side\par
+Need an Internet connexion and an operational server side\par
 Horrible information retrieval without web services\par
 If the web server change, maybe you will need to recode all the parsing method\par
 Slow\par
@@ -468,24 +481,24 @@ Slow\par
 
 \\\bottomrule
 \end{tabularx}
-\caption{Pros and cons of web parsing}
+\caption{Pros and cons of the web parsing}
 \end{table}
 
 
-An important limitation is the need of someone in order to update database or creating new parsing system. We have no workforce for it, so if we have the choice between the two method, we will select the one needing less modification in the future.
+An considerable limitation is the need for someone in order to update the database or creating new parsing system. We have no workforce for it, so if we have the choice between the two methods, we will select the one needing less modification in the future.
 
 \subsection{Front-end and back-end}
 
 \begin{itemize}
-\item Front-end: A part on the user interface, can be slitted in two fields. First is design and the second is html, css and javascipt development.
+\item Front-end: Part of the user interface that can be separated in two fields. First is design and the second is html, css and JavaScript development.
 \item Back-end: Is the hidden part of the iceberg, what you can't see. For example: the database, the parsing function, ...
 \end{itemize}
 
-We create a front-end and a back-end system in our application. It's help a lot for the maintain because you can modify a part without involve the other. For example, actually we parse ADE html response for the schedule. Imagine ADE create web services which are a lot better and you want to use them instead. You can do it in a specific part that is totally isolated from the code for the user interface.
+We create a front-end and a back-end system in our application. It helps a lot for the maintain because you can modify part without involving the other. For example, we store lecture halls in the database but the UCL create a new website with web services providing all lecture halls and their information. It's better than the database because it automatically updates and so you want to use them instead. You can do it in a specific part that is totally isolated from the code for the user interface.	
 
 \subsection{Factory}
 
-Factory is a functionality from angularjs which we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end.\\
+Factory is a functionality from angularjs which we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.2 illustrates this.\\
 
 \begin{figure}
 \centering
@@ -493,7 +506,10 @@ Factory is a functionality from angularjs which we used as a back-end service. T
 \caption{Factory operation}
 \end{figure}
 
+For example, we open the page for the schedule. (1)the system notifies the schedule factory in order to get his data. (2) the factory create a custom HTTP request and send it to the ADE domain. (3) Server sends a response. (4) Data in the response are not easy to manipulate (long string with html tags inside), so the factory pick the important element in the response(with a parsing algorithm) and put them in a JavaScript object where data are easy to handle. (5) Send new data to front-end.
+
 \subsection{State provider}
+
 
 
 \section{Coding standards}
