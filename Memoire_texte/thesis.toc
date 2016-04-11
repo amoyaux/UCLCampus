@@ -16,13 +16,15 @@
 \contentsline {subsubsection}{Tools}{10}
 \contentsline {subsubsection}{Settings}{11}
 \contentsline {section}{\numberline {3.2}User interface}{11}
-\contentsline {chapter}{\numberline {4}Implementation}{13}
-\contentsline {section}{\numberline {4.1}Architecture}{13}
-\contentsline {subsection}{\numberline {4.1.1}Folder}{13}
-\contentsline {subsection}{\numberline {4.1.2}Information processing}{14}
-\contentsline {subsubsection}{Database}{14}
-\contentsline {subsubsection}{Web parsing}{15}
-\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{15}
+\contentsline {chapter}{\numberline {4}Implementation}{12}
+\contentsline {section}{\numberline {4.1}Architecture}{12}
+\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{12}
+\contentsline {subsection}{\numberline {4.1.2}Information processing}{13}
+\contentsline {subsubsection}{Database}{13}
+\contentsline {subsubsection}{Web parsing}{14}
+\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{14}
+\contentsline {subsection}{\numberline {4.1.4}Factory}{14}
+\contentsline {subsection}{\numberline {4.1.5}State provider}{15}
 \contentsline {section}{\numberline {4.2}Coding standards}{15}
 \contentsline {section}{\numberline {4.3}Security}{15}
 \contentsline {section}{\numberline {4.4}Information retrieval}{15}
