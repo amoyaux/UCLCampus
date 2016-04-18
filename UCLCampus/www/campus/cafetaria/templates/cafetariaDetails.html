@@ -34,22 +34,23 @@
 	{{'Address' | translate}}: {{resto.ADDR}}
 </div>
 <div style="text-align:center;margin-bottom:20px">
-<div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
-            {{ item.title }}
-            <p>{{ item.text }}</p>
-          </div>
-          <div ng-click="toggleItem(item)" class="item-expand-footer">
-            <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
-            {{ isItemShown(item) ? 'Less' : 'More' }}
-          </div>
-          </div>
-<button class="button button-energized see-on-map-button">
-	<p2>{{'See on map' | translate}}</p2>
-</button>
-<p></p>
-<button class="button button-energized see-on-map-button" ng-click="openUrl(resto.WEB)">
-	<p2>{{'Menu' | translate}}</p2>
-</button>
+	<div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+		{{ item.title }}
+		<p>{{ item.text }}</p>
+	</div>
+	<div ng-click="toggleItem(item)" class="item-expand-footer">
+		<i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+        {{ isItemShown(item) ? 'Less' : 'More' }}
+	</div>
+</div>
+<div style="text-align:center;">
+	<button class="button button-energized see-on-map-button">
+		<p2>{{'See on map' | translate}}</p2>
+	</button>
+	<button class="button button-energized see-on-map-button" ng-click="openUrl(resto.WEB)">
+		<p2>{{'Menu' | translate}}</p2>
+	</button>
+</div>
 <div style="clear:both; height:50px"></div>
 </ion-content>
 </ion-view>	
