@@ -48,12 +48,14 @@
 		{{ isItemShown(item) ? 'Less' : 'More' }}
 	</div>
 </div>
-<button class="button button-energized see-on-map-button" ng-click="openUrl(event.link)">
-	<p2>{{'See on Louvainfo.be' | translate}}</p2>
-</button>
-<button class="button button-energized see-on-map-button">
-	<p2>{{'See on map' | translate}}</p2>
-</button>
+<div style="text-align:center;margin:20px 10px 0px 10px">
+	<button class="button button-energized see-on-map-button" ng-click="openUrl(event.link)">
+		<p2>{{'See on Louvainfo.be' | translate}}</p2>
+	</button>
+	<button style="text-align:center;" class="button button-energized see-on-map-button">
+		<p2>{{'See on map' | translate}}</p2>
+	</button>
+</div>
 <p></p>
 <div style="clear:both; height:50px"></div>
 </ion-content>
