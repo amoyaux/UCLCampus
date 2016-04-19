@@ -38,6 +38,38 @@ angular.module('ionicApp').factory('CampusMenuFactory', function() {
   }
 })
 
+angular.module('ionicApp').factory('ToolsMenuFactory', function() {
+  return {    
+    toolsMenuList : [
+    { title: 'Maps' , icon:'icon ion-map royal', url:'app.maps', campus:['Louvain-la-Neuve']}
+    ],
+    all: function() {
+      return this.toolsMenuList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.toolsMenuList.length; i++) {
+        if(this.toolsMenuList[i].id==id) return this.toolsMenuList[i];
+      }
+    }
+  }
+})
+
+angular.module('ionicApp').factory('TownMenuFactory', function() {
+  return {    
+    townMenuList : [
+    { title: 'Cinema' , icon:'icon ion-videocamera balanced', url:'app.home', campus:[]}
+    ],
+    all: function() {
+      return this.townMenuList;
+    },
+    getItemById: function (id) {
+      for(var i=0; i<this.townMenuList.length; i++) {
+        if(this.townMenuList[i].id==id) return this.townMenuList[i];
+      }
+    }
+  }
+})
+
 angular.module('ionicApp').factory('EventFactory', function($q, $http) {
   return {
     eventList : [],

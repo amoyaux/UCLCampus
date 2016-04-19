@@ -4,21 +4,12 @@
  Copyright (c) 2015 UCL, Moyaux Arnold, Baptise Lacasse; Licensed  GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 -->
 
-<!-- Modal content area -->
-
-<ion-view title="Tools">
-<ion-nav-bar align-title="center" class="bar bar-header bar-royal">    
-</ion-nav-bar>
-    <ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons>
-<ion-content class="has-header">
+<ion-view title="{{'Tools' | translate}}">
+<ion-content>
 	<ion-list>
-		<ion-item class="item item-icon-left" ui-sref="app.maps">
-    <i class="icon ion-map"></i>
-    Maps
+		<ion-item class="item item-icon-left" ng-repeat="item in toolsMenuList|filterCampus:selectedCampus" ui-sref={{item.url}}>
+			<a class={{item.icon}}></a>
+			{{item.title | translate}}
 		</ion-item>
 	</ion-list>
 </ion-content>
