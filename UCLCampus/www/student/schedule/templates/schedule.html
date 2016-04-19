@@ -5,6 +5,9 @@
 -->
 <ion-view title="{{'Schedule' | translate}}" on-swipe-right="tomorrow()" on-swipe-left="yesterday()">
 	<ion-nav-buttons side="right">
+	<button class="button button-clear" ng-click="toggleRight()">
+        <i class="icon ion-navicon-round"></i>
+    </button>
 	<button class="button button-clear" ng-click="refresh()">
 		<i class="icon ion-refresh"></i>
 	</button>

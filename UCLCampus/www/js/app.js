@@ -221,6 +221,15 @@
       }
     }
   })
+  .state('app.town', {
+    url: "/town",
+    views: {
+      'town-tab' :{
+        templateUrl: "town/templates/town.html",
+        controller: "TownController"
+      }
+    }
+  })
   
   $urlRouterProvider.otherwise("/app/home");
 
@@ -316,6 +325,7 @@
         console.log('done');
         $rootScope.$broadcast('loading:hide');
     });
+    $rootScope.currentTab=1;
 })
 
 /*.run(function($httpBackend){
@@ -394,7 +404,7 @@
       selectedCampus = CampusFactory.all()[0];
     }
   }
-
+  $rootScope.currentTab=1;
   $rootScope.goHome = function(){
     $rootScope.currentTab=1;
   	$state.go('app.home');
@@ -414,7 +424,7 @@
   }
   $rootScope.setTabTown = function() {
     $rootScope.currentTab=4;
-    //$state.go('app.town');
+    $state.go('app.town');
   }
 
 	document.addEventListener("deviceready", function () {

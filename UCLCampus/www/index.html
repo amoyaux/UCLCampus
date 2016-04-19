@@ -83,6 +83,8 @@
         <script src="tools/maps/js/services/urlmatcher.js"></script>
 
 
+    <!-- town module -->
+    <script src="town/js/town.js"></script>
 
 
 
@@ -105,7 +107,7 @@
         <ion-side-menus delegate-handle="settings">
 
             <ion-side-menu-content>
-                <ion-nav-bar align-title="center" class="bar-positive" ng-class="{'bar-positive':currentTab==1, 'bar-energized':currentTab==2, 'bar-royal':currentTab==3, 'bar-balanced':currentTab==4}">
+                <ion-nav-bar align-title="center" class="bar-positive" ng-class="{'bar-custom-positive':currentTab==1, 'bar-custom-energized':currentTab==2, 'bar-custom-royal':currentTab==3, 'bar-custom-balanced':currentTab==4}">
                     <ion-nav-back-button>
                     </ion-nav-back-button>
                     </ion-nav-buttons>        
@@ -130,16 +132,14 @@
                     <ion-tab title="Tools" icon="ion-wrench" ng-click="setTabTools()">
                         <ion-nav-view name="tools-tab"></ion-nav-view>
                     </ion-tab>
-                    <!--
-                    <ion-tab title="City" icon="ion-home" href="#/app/home">
-                      <ion-nav-view name="city-tab"></ion-nav-view>
+                    <ion-tab title="Town" icon="ion-home" ng-click="setTabTown()">
+                      <ion-nav-view name="town-tab"></ion-nav-view>
                     </ion-tab>
-                    -->
                 </ion-tabs>
             </ion-side-menu-content>
 
             <ion-side-menu ng-hide="hideSettings" side="right">
-                <ion-header-bar class="bar-assertive">
+                <ion-header-bar class="bar-assertive"  ng-style="{'background-color': 'red'}">
                     <h1 class="title">Settings</h1>
                 </ion-header-bar>
                 <ion-content>
