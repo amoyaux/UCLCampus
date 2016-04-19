@@ -1,4 +1,7 @@
-angular.module('ionicApp').controller("StudentController", function($scope, $state, $cordovaNetwork, $rootScope, StudentFactory) {
+angular.module('ionicApp').controller("StudentController", function($scope, $state, $cordovaNetwork, $rootScope, StudentFactory, $ionicHistory) {
+  // $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+  //   viewData.enableBack = true;
+  // }); 
   $scope.studentList = StudentFactory.all();
   $scope.selectedCampus = selectedCampus;
   $rootScope.openUrl = function(val){

@@ -5,17 +5,7 @@
 -->
 <ion-view title="{{'Cafetaria' | translate}}">
 <ion-nav-bar align-title="center" class="bar bar-header bar-energized">    
-</ion-nav-bar>        
-<ion-nav-buttons side="right">
-<button class="button button-clear" ng-click="toggleRight()">
-	<i class="icon ion-navicon-round"></i>
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="left">
-<button class="button button-clear" ng-click="goHome()">
-	<i class="icon ion-home"></i>
-</button>
-</ion-nav-buttons> 
+</ion-nav-bar>
 <ion-content>
 	<ion-list>
 		<ion-item class="item item-thumbnail-left" ng-repeat="item in restoList" ui-sref="app.cafetariaDetails({id:{{item.ID}}})">

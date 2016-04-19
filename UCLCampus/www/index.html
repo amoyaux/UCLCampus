@@ -105,12 +105,16 @@
         <ion-side-menus delegate-handle="settings">
 
             <ion-side-menu-content>
-                <ion-nav-bar align-title="center" class="bar bar-header bar-positive">    
+                <ion-nav-bar align-title="center" class="bar-positive" ng-class="{'bar-positive':currentTab==1, 'bar-energized':currentTab==2, 'bar-royal':currentTab==3, 'bar-balanced':currentTab==4}">
+                    <ion-nav-back-button>
+                    </ion-nav-back-button>
+                    </ion-nav-buttons>        
+                    <ion-nav-buttons side="right">
+                        <button class="button button-clear" ng-click="toggleRight()">
+                          <i class="icon ion-navicon-round"></i>
+                        </button>
+                    </ion-nav-buttons>
                 </ion-nav-bar>
-                <ion-nav-buttons side="right">
-                    <button class="" ng-click="toggleRight()">
-                    </button>
-                </ion-nav-buttons>
                 <ion-tabs class="tabs-icon-top {{$root.hideTabs}} tabs-positive" ng-class="{'tabs-positive':currentTab==1, 'tabs-energized':currentTab==2, 'tabs-royal':currentTab==3, 'tabs-balanced':currentTab==4}">
 
                     <ion-tab title="Home" icon="ion-home" href="#/app/home" hidden="true">

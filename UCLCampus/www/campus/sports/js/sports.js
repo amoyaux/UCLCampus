@@ -75,13 +75,14 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 			if(doc == -1 && skip == 0){
 				$ionicPopup.alert({
 				    title: "Fail",
-				  	content: "You need an internet connexion."
+				  	content: "You need an internet connexion or the website of sport can't be reach actually."
 				});
 				$ionicHistory.nextViewOptions({
 	              disableAnimate: true,
 	              disableBack: true
 	            });
 				$state.go('app.campus');
+				break;
 			}
 			var i = doc.indexOf('<tbody');
 			var j = doc.indexOf('</tbody');
@@ -173,46 +174,47 @@ angular.module('ionicApp').controller('SportsController', function($scope, $http
 		window.localStorage.removeItem('sports' + ' ' + selectedCampus.name);
 		window.localStorage['sports' + ' ' + selectedCampus.name] = JSON.stringify(sportList);
 	}
-
-	$scope.categories = [];
-	for(var k = 0; k<$scope.sports.length; k++) {
-		if($scope.categories.indexOf($scope.sports[k].sport)==-1) {
-			$scope.categories.push($scope.sports[k].sport);
+	if($scope.sports != undefined){
+		$scope.categories = [];
+		for(var k = 0; k<$scope.sports.length; k++) {
+			if($scope.categories.indexOf($scope.sports[k].sport)==-1) {
+				$scope.categories.push($scope.sports[k].sport);
+			}
 		}
-	}
-	$scope.categories.sort();
-	$scope.selectedCategory = "All sports";
+		$scope.categories.sort();
+		$scope.selectedCategory = "All sports";
 
-	$scope.sportList = [];
-	for(i = 0; $scope.sportList.length < 10 ; i++) {
-		if(($scope.sports[i].sport.replace(/\s+/g, '') == $scope.selectedCategory.replace(/\s+/g, '')) || ($scope.selectedCategory == "All sports")) {
-			$scope.sportList.push($scope.sports[i]);
-		}
-	}
-
-	$scope.resetSportList = function() {
-		$ionicScrollDelegate.scrollTop();
 		$scope.sportList = [];
 		for(i = 0; $scope.sportList.length < 10 ; i++) {
 			if(($scope.sports[i].sport.replace(/\s+/g, '') == $scope.selectedCategory.replace(/\s+/g, '')) || ($scope.selectedCategory == "All sports")) {
 				$scope.sportList.push($scope.sports[i]);
 			}
 		}
-	}
 
-	$scope.loadMoreEvents = function() {
-		var length = $scope.sportList.length + 10;
-		for(var j = i; $scope.sportList.length < length && j<$scope.sports.length; j++) {
-			if(($scope.sports[j].sport.replace(/\s+/g, '') == $scope.selectedCategory.replace(/\s+/g, '')) || ($scope.selectedCategory == "All sports")) {
-				$scope.sportList.push($scope.sports[j]);
+		$scope.resetSportList = function() {
+			$ionicScrollDelegate.scrollTop();
+			$scope.sportList = [];
+			for(i = 0; $scope.sportList.length < 10 ; i++) {
+				if(($scope.sports[i].sport.replace(/\s+/g, '') == $scope.selectedCategory.replace(/\s+/g, '')) || ($scope.selectedCategory == "All sports")) {
+					$scope.sportList.push($scope.sports[i]);
+				}
 			}
 		}
-		i=j;
-		$scope.$broadcast('scroll.infiniteScrollComplete');
-	};
 
-	$scope.hasMoreEvents = function(item) {
-		return i<$scope.sports.length;
+		$scope.loadMoreEvents = function() {
+			var length = $scope.sportList.length + 10;
+			for(var j = i; $scope.sportList.length < length && j<$scope.sports.length; j++) {
+				if(($scope.sports[j].sport.replace(/\s+/g, '') == $scope.selectedCategory.replace(/\s+/g, '')) || ($scope.selectedCategory == "All sports")) {
+					$scope.sportList.push($scope.sports[j]);
+				}
+			}
+			i=j;
+			$scope.$broadcast('scroll.infiniteScrollComplete');
+		};
+
+		$scope.hasMoreEvents = function(item) {
+			return i<$scope.sports.length;
+		}
 	}
 
 });
