@@ -9,7 +9,11 @@ angular.module('ionicApp').controller('EventsDetailsController', function($scope
 
   console.log($stateParams.id);
   $scope.event = EventFactory.getEventById($stateParams.id);
-  $scope.item = {title: 'Description', text : $scope.formatString($scope.event.description)};
+  var desc = $scope.formatString($scope.event.description);
+  if(desc.length>300) {
+    desc+="...";
+  }
+  $scope.item = {title: 'Description', text : desc};
 
   
   $scope.toggleItem = function(item) {

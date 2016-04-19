@@ -3,6 +3,7 @@ angular.module('ionicApp').controller('HallsController', function($scope, $rootS
   $scope.lectureHallList =  LectureHallsFactory.all();
 })
 
-angular.module('ionicApp').controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory) {
+angular.module('ionicApp').controller('HallDetailsController', function($scope, $stateParams, LectureHallsFactory, $state, $rootScope) {
   $scope.lectureHall= LectureHallsFactory.getLectureHallById($stateParams.id);
+
 })
