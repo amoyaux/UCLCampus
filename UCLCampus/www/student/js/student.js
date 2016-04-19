@@ -15,7 +15,12 @@ angular.module('ionicApp').controller("StudentController", function($scope, $sta
         })
       }
       else{
-        window.open(val, '_blank', 'location=no');
+      	if(ionic.Platform.isIOS()){
+      		window.open(val, '_system', 'location=yes');
+      	}
+      	else{
+        	window.open(val, '_blank', 'location=no');
+      	}
       }
     }
   }
