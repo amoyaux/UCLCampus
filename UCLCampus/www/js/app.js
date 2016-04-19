@@ -316,7 +316,6 @@
         console.log('done');
         $rootScope.$broadcast('loading:hide');
     });
-
 })
 
 /*.run(function($httpBackend){

@@ -8,14 +8,10 @@
 	<button class="button button-clear" ng-click="refresh()">
 		<i class="icon ion-refresh"></i>
 	</button>
-	<button class="button button-clear" ng-click="toggleRight()">
-		<i class="icon ion-navicon-round"></i>
-	</button>
 	</ion-nav-buttons>
 <ion-header-bar class="bar bar-subheader">
 	<button class="button button-full button-assertive" ng-click="createEvent()" ng-show="!agendaUpDated">{{"Export my classes into my agenda"| translate}}</button>
 	<button class="button button-full button-assertive" ng-click="deleteEvent()" ng-show="agendaUpDated">{{"Remove my classes from my agenda"| translate}}</button>
-
 	<onezone-datepicker datepicker-object="onezoneDatepicker">
 	    <button class="button button-full button-assertive show-onezone-datepicker">
 	        {{onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
