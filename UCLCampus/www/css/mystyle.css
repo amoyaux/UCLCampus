@@ -293,17 +293,17 @@ bar.bar-custom, bar.bar-custom .bar.bar-positive, .bar-custom-positive .nav-bar-
 bar.bar-custom2, bar.bar-custom2 .bar.bar-positive, .bar-custom-energized .nav-bar-block ion-header-bar {
     border-color: #f29400;
     background-color: #f29400;
-    background-image: linear-gradient(0deg, #FF7148, #FF7148 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #f29400, #f29400 50%, transparent 50%);
 }
 
 bar.bar-custom, bar.bar-custom .bar.bar-positive, .bar-custom-royal .nav-bar-block ion-header-bar {
     border-color: #88005d;
     background-color: #88005d;
-    background-image: linear-gradient(0deg, #FF7148, #FF7148 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #88005d, #88005d 50%, transparent 50%);
 }
 
 bar.bar-custom, bar.bar-custom .bar.bar-positive, .bar-custom-balanced .nav-bar-block ion-header-bar {
     border-color: #33cd5f;
     background-color: #33cd5f;
-    background-image: linear-gradient(0deg, #FF7148, #FF7148 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #33cd5f, #33cd5f 50%, transparent 50%);
 }
