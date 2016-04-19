@@ -203,7 +203,10 @@ angular.module('ionicApp').factory('LectureHallsFactory', function($cordovaSQLit
       },
       getLectureHallById: function (id) {
         for(var i=0; i<this.lectureHallList.length; i++) {
-          if(this.lectureHallList[i].ID==id) return this.lectureHallList[i];
+          if(this.lectureHallList[i].ID==id){
+            console.log(this.lectureHallList[i].ABBR);
+            return this.lectureHallList[i];
+          } 
         }
       }
 
