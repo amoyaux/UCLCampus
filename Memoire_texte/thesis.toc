@@ -16,30 +16,30 @@
 \contentsline {subsubsection}{Tools}{10}
 \contentsline {subsubsection}{Settings}{11}
 \contentsline {section}{\numberline {3.2}User interface}{11}
-\contentsline {chapter}{\numberline {4}Implementation}{12}
-\contentsline {section}{\numberline {4.1}Architecture}{12}
-\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{12}
-\contentsline {subsection}{\numberline {4.1.2}Information processing}{13}
-\contentsline {subsubsection}{Database}{13}
-\contentsline {subsubsection}{Web parsing}{14}
-\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{14}
-\contentsline {subsection}{\numberline {4.1.4}Factory}{14}
-\contentsline {subsection}{\numberline {4.1.5}State provider}{15}
-\contentsline {section}{\numberline {4.2}Coding standards}{15}
-\contentsline {section}{\numberline {4.3}Security}{15}
-\contentsline {section}{\numberline {4.4}Information retrieval}{15}
-\contentsline {chapter}{\numberline {5}The application}{16}
-\contentsline {section}{\numberline {5.1}The application UCLCampus}{16}
-\contentsline {subsection}{\numberline {5.1.1}Studies}{16}
-\contentsline {subsection}{\numberline {5.1.2}Campus}{16}
-\contentsline {subsection}{\numberline {5.1.3}City}{16}
-\contentsline {subsection}{\numberline {5.1.4}Tools}{16}
-\contentsline {subsection}{\numberline {5.1.5}Others}{16}
-\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{16}
-\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{16}
-\contentsline {chapter}{\numberline {6}Analysis}{17}
-\contentsline {section}{\numberline {6.1}Ionic framework}{17}
-\contentsline {section}{\numberline {6.2}GitHub}{17}
-\contentsline {section}{\numberline {6.3}Project Management}{17}
-\contentsline {chapter}{\numberline {7}Conclusion}{18}
-\contentsline {chapter}{\numberline {8}Bibliography}{19}
+\contentsline {chapter}{\numberline {4}Implementation}{13}
+\contentsline {section}{\numberline {4.1}Architecture}{13}
+\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{13}
+\contentsline {subsection}{\numberline {4.1.2}Information processing}{14}
+\contentsline {subsubsection}{Database}{14}
+\contentsline {subsubsection}{Web parsing}{15}
+\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{15}
+\contentsline {subsection}{\numberline {4.1.4}Factory}{15}
+\contentsline {subsection}{\numberline {4.1.5}State provider}{16}
+\contentsline {section}{\numberline {4.2}Coding standards}{16}
+\contentsline {section}{\numberline {4.3}Security}{16}
+\contentsline {section}{\numberline {4.4}Information retrieval}{16}
+\contentsline {chapter}{\numberline {5}The application}{17}
+\contentsline {section}{\numberline {5.1}The application UCLCampus}{17}
+\contentsline {subsection}{\numberline {5.1.1}Studies}{17}
+\contentsline {subsection}{\numberline {5.1.2}Campus}{17}
+\contentsline {subsection}{\numberline {5.1.3}City}{17}
+\contentsline {subsection}{\numberline {5.1.4}Tools}{17}
+\contentsline {subsection}{\numberline {5.1.5}Others}{17}
+\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{17}
+\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{17}
+\contentsline {chapter}{\numberline {6}Analysis}{18}
+\contentsline {section}{\numberline {6.1}Ionic framework}{18}
+\contentsline {section}{\numberline {6.2}GitHub}{18}
+\contentsline {section}{\numberline {6.3}Project Management}{18}
+\contentsline {chapter}{\numberline {7}Conclusion}{19}
+\contentsline {chapter}{\numberline {8}Bibliography}{20}
