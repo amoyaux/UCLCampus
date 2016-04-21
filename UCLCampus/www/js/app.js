@@ -396,7 +396,7 @@
   }
 }) 
 
-.controller("HomeController", function($scope, $state, $rootScope, $cordovaNetwork, CampusFactory, campus) {
+.controller("HomeController", function($scope, $state, $rootScope, $ionicHistory, $cordovaNetwork, CampusFactory, campus) {
 
   if(selectedCampus == null) {
     selectedCampus = campus;
@@ -405,7 +405,12 @@
     }
   }
   $rootScope.currentTab=1;
+  $ionicHistory.clearHistory();
   $rootScope.goHome = function(){
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
     $rootScope.currentTab=1;
   	$state.go('app.home');
   }
