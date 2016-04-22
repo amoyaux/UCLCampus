@@ -523,10 +523,50 @@ For example, we open the page for the schedule. (1)the system notifies the sched
 
 \subsection{State provider}
 
-
-
+The state provider is a functionality of angularjs. It allow you to define the configuration of a page (if it's cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.3 illustrate the operation of the state provider. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.3]{Images/stateProvider_arch.png}
+\caption{State provider operation}
+\end{figure}
+First the application ask for a page. The state provider contain a list of specific state(one state by page), it will search for the state relative to the asked page. The state will contain information of the page:
+\begin{itemize}
+\item The location of the html template
+\item The associate controller(js)
+\item A flag for cache memory(true or false)
+\item The tab membership(for example student if we are in the subtree student)
+\end{itemize}. For back end data(optional), the state will call the needed factory and wait its response before launching the template and the controller for the user interface.
+\iffalse
+\begin{lstlisting}
+.state('app.name', {
+    cache:{true or false},
+    url: "/url name",
+    views: {
+      'appropriate-tab': {
+        templateUrl: "html file",
+        controller: "page controller(javaScript)",
+        resolve:{
+          facotry: function(Factory) {
+            return Factory.neededData();
+          }
+        }
+      }
+    }
+  })
+\end{lstlisting}
+\fi
 \section{Coding standards}
-
+\subsection{Header and footer}
+We managed our code to create automatically a default new footer and header when you start new html template. The footer and header have a specific color for each tab-section (blue for student, yellow for campus, purple for tools and green for town). We allow developers to overwrite the default header but under two condition
+\begin{itemize}
+\item The title have to keep the same font and have to be center.
+\item The header color must respect the section color
+\end{itemize}
+Footer must not be overwrite or be hidden. If developers need to insert their specific header or footer, Ionic provide a css in order to add subfooter and subheader.
+\subsection{Tree hierarchy}
+We want developers to keep the tree hierarchy we created for the state and for the folder. For css and extra JavaScript, html, we chose to not impose any rules as long as it stay in the relative module.
+\subsection{Colors}
+We used the colors code of the UCL\footnote{https://www.uclouvain.be/459461.html}. For this we modified the sass theme of Ionic so module developed with basic ionic css should update to application color instantly. 
 \section{Security}
 
 \section{Information retrieval}
