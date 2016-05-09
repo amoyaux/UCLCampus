@@ -12,7 +12,7 @@
 \usepackage{tabularx}
 \restylefloat{table}
 \usepackage{listings}
-
+\usepackage{hyperref}
 \usepackage{tikz,pgf}
 \usepackage{forest}
 \usepackage{caption}
@@ -20,6 +20,7 @@
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{lmodern} % load a font with all the characters
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
 
 \linespread{1.2} % Line spacing
 
@@ -99,7 +100,6 @@ Louvain-la-Neuve
 %----------------------------------------------------------------------------------------
 
 \tableofcontents % Include a table of contents
-
 \newpage % Begins the essay on a new page instead of on the same page as the table of contents 
 
 
@@ -364,6 +364,8 @@ We will now give a list of the different user stories we thought of for each of 
 \begin{itemize}
 \item As a user, I can change the application's language to French, English or Dutch.
 \item As a user, I can select my campus.
+\item As a student, I can login on my UCLouvain.be account.
+\item As a student, I can log out from my UCLouvain.be account. 
 \end{itemize}
 
 \section{User interface}
@@ -523,19 +525,19 @@ For example, we open the page for the schedule. (1)the system notifies the sched
 
 \subsection{State provider}
 
-The state provider is a functionality of angularjs. It allow you to define the configuration of a page (if it's cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.3 illustrate the operation of the state provider. 
+The state provider is a functionality of angularjs. It allow you to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.3 illustrate the operation of the state provider. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/stateProvider_arch.png}
 \caption{State provider operation}
 \end{figure}
-First the application ask for a page. The state provider contain a list of specific state(one state by page), it will search for the state relative to the asked page. The state will contain information of the page:
+First the application ask for a page. The state provider contain a list of specific state(one state by page), it will return the state relative to the asked page. The state will contain information about the page:
 \begin{itemize}
 \item The location of the html template
 \item The associate controller(js)
 \item A flag for cache memory(true or false)
 \item The tab membership(for example student if we are in the subtree student)
-\end{itemize}. For back end data(optional), the state will call the needed factory and wait its response before launching the template and the controller for the user interface.
+\end{itemize}. For back end data(optional), the state will call the needed factory and wait its response before launching the template and the controller for the user interface. JavaScript(controller) and Html can exchange informations and sent it to back end in some cases.
 \iffalse
 \begin{lstlisting}
 .state('app.name', {
@@ -564,9 +566,9 @@ We managed our code to create automatically a default new footer and header when
 \end{itemize}
 Footer must not be overwrite or be hidden. If developers need to insert their specific header or footer, Ionic provide a css in order to add subfooter and subheader.
 \subsection{Tree hierarchy}
-We want developers to keep the tree hierarchy we created for the state and for the folder. For css and extra JavaScript, html, we chose to not impose any rules as long as it stay in the relative module.
+We want developers to keep the tree hierarchy we created for the state and for the folder. For css and extra JavaScript, html, we don't enforce any rules as long as it stay in the relative module.
 \subsection{Colors}
-We used the colors code of the UCL\footnote{https://www.uclouvain.be/459461.html}. For this we modified the sass theme of Ionic so module developed with basic ionic css component should update to the application color instantly and automatically. The main color of UCLCampus is the blue "UCL".
+We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For this we modified the sass theme of Ionic. This allow module developed with basic ionic css component to update with the application color instantly and automatically. The main color of UCLCampus is the blue "UCL".
 
 \begin{center}
     \begin{tabular}{ | c | c | c |}
@@ -649,10 +651,57 @@ select * from feednormalizer where url='http://louvainfo.be/evenements/feed/cale
 \end{verbatim}
 The result is then parsed and stored in a JavaScript array. 
 
-\subsection{Sports}
 
 \subsection{Schedule}
+For the schedule we had no choice between database or web parsing. The ADE dump database for all courses(of all the students) has a size of 70mb which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customize url in order to extract specific informations. It's a bit worse than web services because you need a parsing technique.
+\subsubsection{ADE custom URL}
+The request always start with \url{http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?}. After it we can add some query parameters.
+\begin{itemize}
+\item code : The course code we want to see on the schedule. We picked the logged student courses codes for it.
+\item weeks : The weeks we want to see. It's a number per weeks. We wanted to get all the year so we used a suite from 1 to 52 (1,2,3,...).
+\item projectID : A number defining the academic year we want to see(16 for 2015-2016). This number need to be manually updated each year. We couldn't update it automatically because it seems to be a random number chosen each year(7 and 16 for the last two years).
+\item password and username : Require for ADE connexion.
+\item page configuration : There are multiple parameters that I won't explain. Their purpose is to custom the ADE web page we access. We used it to get a tabular summarizing the schedule that is easier to parse than the original web site. 
+\end{itemize}
 
+\subsubsection{Parsing}
+Http response contain an html code. The tabular is really useful here in the parsing because it provides a block of informations easy to extract. It contain information about each lecture of the year. Here is the syntax of the tabular in the response.\\
+<tbody>\\
+\tab <tr>\\
+\tab \tab <td>Date</td>\\
+\tab \tab <td>Course Code</td>\\
+\tab \tab <td>Hours:Minutes</td>\\
+\tab \tab <td>Date</td>\\
+\tab \tab <td></td>\\
+\tab \tab <td>Useless information</td>\\
+\tab \tab <td>Eleves</td>\\
+\tab \tab <td>Professors</td>\\
+\tab \tab <td>Place</td>\\
+\tab \tab <td>Course Code again</td>\\
+\tab </tr>\\
+\tab <tr> an other lecture </tr>\\
+\tab ...\\
+</tbody>\\
+We used a string parsing based on regular expression in order to extract information from tags and place it into a JavaScript object with field easily accessible. At the end the back end sent a list of lecture object to the front end.
+
+\subsubsection{Local storage}
+We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student access the page we load it from local storage instead of parsing it again. That allow us a better performance because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
+
+\subsection{University canteen}
+We choose to store the main informations(name, place, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modification are needed. We encode the 6 restaurants present on the ucl website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. About the menu we couldn't store it in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had his own syntax(even if they have the same rendering) ant thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
+\subsection{Sports}
+We couldn't store the sports in a database because the planning undergoes changes every year and we don't have manpower to update it. The sports department don't have web services either so the only solution we had was to parse the website. On a positive note, the Louvain-la-Neuve and Woluwe sites share the same website and thus the parsing is effective for both. 
+\subsubsection{URL}
+The base url for the two sites is the same \footnote{\url{http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?}}. There exist two main query parameters possible
+\begin{itemize}
+\item The campus: A number (1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
+\item The skip: The sport web site response contains only 50 sports time slots. The skip argument permit to access the other sports instances after the first fifty.
+\end{itemize}
+It is a bit more difficult and slower than the other request because in this case we need to create a request by 50 sports time slots(for example if we have 132 sports we need three request. The first taking 0-50 instances, the second 51-100 and 101-132 for the last). Moreover the website is not 100\% available some times, we couldn't access it because it was off line so we added a time-out method in order to prevent the user that the website is probably off-line.
+\subsubsection{Parsing}
+For the parsing the sport has quite close structure than with the schedule except different tag name so we used an other string parsing method based on regular expression. The sport website create a page that contain the sport closer than the day and the time we are. For example if we Friday 14 hours, it will show the Friday sports time slots after 14 hours first. Thus we iterate over all the time slots until we are sure that we capture all the sport for a week. We stocked the result in an other list of JavaScript object that we store and send to the front end.
+\subsubsection{Local storage}
+Exactly the same reasoning than for the schedule. Here we saved the result for both Louvain-la-Neuve and Woluwe in different table so we have them both in memory once they has been accessed at least once. Moreover each time the page is requested the software will reorganize the list in order to have the closer time slots first which are in general more suitable for the user. 
 
 \newpage
 

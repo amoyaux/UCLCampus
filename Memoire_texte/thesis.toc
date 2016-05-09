@@ -1,55 +1,62 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{4}
-\contentsline {chapter}{\numberline {2}Background}{5}
-\contentsline {section}{\numberline {2.1}Cross-platform mobile development tools}{5}
-\contentsline {subsection}{\numberline {2.1.1}The native approach}{5}
-\contentsline {subsection}{\numberline {2.1.2}The web approach}{6}
-\contentsline {subsection}{\numberline {2.1.3}The hybrid approach}{6}
-\contentsline {subsection}{\numberline {2.1.4}Our choice}{6}
-\contentsline {section}{\numberline {2.2}Open-source project and code sharing}{6}
-\contentsline {section}{\numberline {2.3}Project Management Methodologies}{7}
-\contentsline {chapter}{\numberline {3}Functionalities of UCLCampus}{8}
-\contentsline {section}{\numberline {3.1}Choice of functionalities and sections}{8}
-\contentsline {subsubsection}{Studies}{9}
-\contentsline {subsubsection}{Campus}{9}
-\contentsline {subsubsection}{City}{10}
-\contentsline {subsubsection}{Tools}{10}
-\contentsline {subsubsection}{Settings}{11}
-\contentsline {section}{\numberline {3.2}User interface}{11}
-\contentsline {chapter}{\numberline {4}Implementation}{13}
-\contentsline {section}{\numberline {4.1}Architecture}{13}
-\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{13}
-\contentsline {subsection}{\numberline {4.1.2}Information processing}{14}
-\contentsline {subsubsection}{Database}{14}
-\contentsline {subsubsection}{Web parsing}{15}
-\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{15}
-\contentsline {subsection}{\numberline {4.1.4}Factory}{15}
-\contentsline {subsection}{\numberline {4.1.5}State provider}{16}
-\contentsline {section}{\numberline {4.2}Coding standards}{17}
-\contentsline {subsection}{\numberline {4.2.1}Header and footer}{17}
-\contentsline {subsection}{\numberline {4.2.2}Tree hierarchy}{17}
-\contentsline {subsection}{\numberline {4.2.3}Colors}{17}
-\contentsline {section}{\numberline {4.3}Security}{18}
-\contentsline {section}{\numberline {4.4}Information retrieval}{18}
-\contentsline {subsection}{\numberline {4.4.1}Libraries and lecture halls}{18}
-\contentsline {subsubsection}{Database structure}{18}
-\contentsline {subsubsection}{Retrieving lecture halls}{19}
-\contentsline {subsubsection}{Retrieving libraries}{19}
-\contentsline {subsection}{\numberline {4.4.2}Events}{19}
-\contentsline {subsection}{\numberline {4.4.3}Sports}{20}
-\contentsline {subsection}{\numberline {4.4.4}Schedule}{20}
-\contentsline {chapter}{\numberline {5}The application}{21}
-\contentsline {section}{\numberline {5.1}The application UCLCampus}{21}
-\contentsline {subsection}{\numberline {5.1.1}Studies}{21}
-\contentsline {subsection}{\numberline {5.1.2}Campus}{21}
-\contentsline {subsection}{\numberline {5.1.3}City}{21}
-\contentsline {subsection}{\numberline {5.1.4}Tools}{21}
-\contentsline {subsection}{\numberline {5.1.5}Others}{21}
-\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{21}
-\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{21}
-\contentsline {chapter}{\numberline {6}Analysis}{22}
-\contentsline {section}{\numberline {6.1}Ionic framework}{22}
-\contentsline {section}{\numberline {6.2}GitHub}{22}
-\contentsline {section}{\numberline {6.3}Project Management}{22}
-\contentsline {chapter}{\numberline {7}Conclusion}{23}
-\contentsline {chapter}{\numberline {8}Bibliography}{24}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Cross-platform mobile development tools}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}The native approach}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}The web approach}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}The hybrid approach}{6}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Our choice}{6}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Open-source project and code sharing}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Project Management Methodologies}{7}{section.2.3}
+\contentsline {chapter}{\numberline {3}Functionalities of UCLCampus}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Choice of functionalities and sections}{8}{section.3.1}
+\contentsline {subsubsection}{Studies}{9}{section*.2}
+\contentsline {subsubsection}{Campus}{9}{section*.3}
+\contentsline {subsubsection}{City}{10}{section*.4}
+\contentsline {subsubsection}{Tools}{10}{section*.5}
+\contentsline {subsubsection}{Settings}{11}{section*.6}
+\contentsline {section}{\numberline {3.2}User interface}{11}{section.3.2}
+\contentsline {chapter}{\numberline {4}Implementation}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Architecture}{13}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{13}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Information processing}{14}{subsection.4.1.2}
+\contentsline {subsubsection}{Database}{14}{section*.8}
+\contentsline {subsubsection}{Web parsing}{15}{section*.9}
+\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{15}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Factory}{15}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}State provider}{16}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Coding standards}{17}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Header and footer}{17}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Tree hierarchy}{17}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Colors}{17}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Security}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Information retrieval}{18}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Libraries and lecture halls}{18}{subsection.4.4.1}
+\contentsline {subsubsection}{Database structure}{18}{section*.12}
+\contentsline {subsubsection}{Retrieving lecture halls}{19}{section*.13}
+\contentsline {subsubsection}{Retrieving libraries}{19}{section*.14}
+\contentsline {subsection}{\numberline {4.4.2}Events}{19}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Schedule}{20}{subsection.4.4.3}
+\contentsline {subsubsection}{ADE custom URL}{20}{section*.15}
+\contentsline {subsubsection}{Parsing}{20}{section*.16}
+\contentsline {subsubsection}{Local storage}{21}{section*.17}
+\contentsline {subsection}{\numberline {4.4.4}University canteen}{21}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Sports}{22}{subsection.4.4.5}
+\contentsline {subsubsection}{URL}{22}{section*.18}
+\contentsline {subsubsection}{Parsing}{22}{section*.19}
+\contentsline {subsubsection}{Local storage}{22}{section*.20}
+\contentsline {chapter}{\numberline {5}The application}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}The application UCLCampus}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Studies}{23}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Campus}{23}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}City}{23}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Tools}{23}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Others}{23}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{23}{section.5.3}
+\contentsline {chapter}{\numberline {6}Analysis}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Ionic framework}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}GitHub}{24}{section.6.2}
+\contentsline {section}{\numberline {6.3}Project Management}{24}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusion}{25}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{26}{chapter.8}
