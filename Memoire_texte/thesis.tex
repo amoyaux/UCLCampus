@@ -582,6 +582,78 @@ We used the colors code of the UCL\footnote{https://www.uclouvain.be/459461.html
 \section{Security}
 
 \section{Information retrieval}
+
+In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
+
+\subsection{Libraries and lecture halls}
+
+In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus //TODO parler de LLNCampus avant// managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
+
+\subsubsection{Database structure}
+ 
+//TODO include er diagram ? useful ?
+The database is an SQLite database. The table we use for the most part is called "poi" (point of interest) and has the following fields:
+
+\begin{itemize}
+\item ID (integer): used to identify the item
+\item Name (text): name of the point of interest
+\item Latitude (real): latitude of the point of interest
+\item Longitude (real): longitude of the point of interest
+\item Type (text): type of the point of interest, can be "auditoire", "kap",   "bibliotheque", ...
+\item Address (text): address of the point of interest
+\item Img (text): path to the image linked to the poi
+\end{itemize}
+
+To these fields we added the following two:
+\begin{itemize}
+\item Campus (text): campus where the poi is located
+\item Abbr (text): abbreviated version of the poi. For instance "BARB" for the Ste-Barbe lecture hall
+\end{itemize}
+
+The first field is useful if we want to have different campuses (//TODO check orthographe) while the second is used to find the poi on the map.
+
+\subsubsection{Retrieving lecture halls}
+
+Once we had the completed the database, we had to connect it to our application. In order to do so, we used the cordovaSQLite plugin. Once connected, we were able to retrieve the lecture halls using the following SQL query: 
+\begin{verbatim}
+SELECT * FROM poi WHERE TYPE = 'auditoire' AND CAMPUS = ?
+\end{verbatim}
+
+This query will retrieve all the fields from the poi table we discussed earlier which have the type "auditoire" and are located in the desired campus. The "?" character is used as a placeholder for an argument we can pass to the function. We will then store the result of the query in a JavaScript array and used that array to display the information to the user.
+
+\subsubsection{Retrieving libraries}
+
+In order to retrieve all the information concerning libraries, the poi table was not enough. Indeed, we wanted the users to be able to know whether a library was opened or closed and the schedule was not available in the poi table. Thankfully this information was available in another table, called "bibliotheque\textunderscore horaire". This table only has 4 fields:
+
+\begin{itemize}
+\item Building\textunderscore ID (integer): identifies the library. Same id as the one used in the poi table.
+\item Day (integer): Day of the week (0 for monday, 1 for tuesday, ...)
+\item Begin\textunderscore time (integer): Time of the day when the library opens. Given in minutes elapsed since midnight
+\item End\textunderscore time (integer): Time of the day when the library closes. Given in minutes elapsed since midnight
+\end{itemize}
+
+Given this new table we were able to retrieve all the information we needed using the following SQL query:
+\begin{verbatim}
+SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' 
+AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ? AND CAMPUS = ?
+\end{verbatim}
+
+This query retrieves all poi with type "bibliotheque" and finds their respective schedule for a given day, all that for a given campus. The result in then stored in a JavaScript array.
+
+\subsection{Events}
+
+In order to find events taking place in Louvain-la-Neuve, we used the www.louvainfo.be website. This website provides a schedule of all upcoming events in the city. It is however specific to Louvain-la-Neuve and we would need to find equivalent websites for the other campuses. \\ The website provides an Atom RSS feed of the events. We decided to use Yahoo Query Language to parse the RSS feed and retrieve the information. The reason we used the Yahoo Query language was that it was the only way we found to perform such an operation. Indeed, the more widely used Google Feed API has been deprecated. We therefore had no other choice but thankfully we haven't encountered any issue with YQL.\\
+\\We used the following query to retrieve the feed:
+\begin{verbatim}
+select * from feednormalizer where url='http://louvainfo.be/evenements/feed/calendar/'
+\end{verbatim}
+The result is then parsed and stored in a JavaScript array. 
+
+\subsection{Sports}
+
+\subsection{Schedule}
+
+
 \newpage
 
 \chapter{The application}
