@@ -36,8 +36,8 @@
 %%%% COMMANDS %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%
 \renewcommand\title{UCLCampus: a moblie application for UCL students}
-\newcommand\nameone{Arnold \textsc{Moyaux}}
-\newcommand\nametwo{Baptiste \textsc{Lacasse}}
+\newcommand\nametwo{Arnold \textsc{Moyaux}}
+\newcommand\nameone{Baptiste \textsc{Lacasse}}
 \newcommand\options{}
 \newcommand\supervisor{Yves \textsc{Deville}}
 \newcommand\readerone{Kim \textsc{Mens}}
@@ -84,7 +84,6 @@ Supervisor: & \supervisor
 \begin{tabular}{l}
 Thesis submitted for the Master's degree
 \\ in computer science and engineering
-\\ options: \
 \\ by : \nameone
 \\ 	   \nametwo
 \end{tabular}
@@ -400,7 +399,7 @@ Here we will explain the overall architecture of the application. We will also e
 
 \section{Architecture}
 
-The purpose of the application is to be extensible and easily maintainable. We wanted a programmer can add its functionalities at each level to the application.
+The purpose of the application is to be extensible and easily maintainable. We wanted a programmer to have the possibility to add his functionalities at each level of the application.
 For this we thought our implementation as a tree. At the top level we have the application with the settings menu and base configuration after it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
 
 \begin{forest}
@@ -423,7 +422,7 @@ For this we thought our implementation as a tree. At the top level we have the a
 Each node having his own JavaScript,html and css (if needed) code.
 
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(maybe having more than one js and html). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
+We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lotof files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
 1 is a summary of the change, red folder are those we modify.
 \begin{figure}
 \centering
@@ -630,7 +629,7 @@ We couldn't store the sports in a database because the planning undergoes change
 \subsubsection{URL}
 The base url for the two sites is the same \footnote{\url{http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?}}. There exist two main query parameters possible
 \begin{itemize}
-\item The campus: A number (1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
+\item The campus: A number defining the campus for which we want to show the sports schedule(1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
 \item The skip: The sport web site response contains only 50 sports time slots. The skip argument permit to access the other sports instances after the first fifty.
 \end{itemize}
 It is a bit more difficult and slower than the other request because in this case we need to create a request by 50 sports time slots(for example if we have 132 sports we need three request. The first taking 0-50 instances, the second 51-100 and 101-132 for the last). Moreover the website is not 100\% available some times, we couldn't access it because it was off line so we added a time-out method in order to prevent the user that the website is probably off-line.
