@@ -1,0 +1,46 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Cross-platform mobile development tools}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{The native approach}{section.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.1.2}{The web approach}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.3}{The hybrid approach}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.4}{Our choice}{section.2.1}% 7
+\BOOKMARK [1][-]{section.2.2}{Open-source project and code sharing}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Project Management Methodologies}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Functionalities of UCLCampus}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Choice of functionalities and sections}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{User interface}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Architecture}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.1.1}{Folder organisation}{section.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.1.2}{Information processing}{section.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.1.3}{Front-end and back-end}{section.4.1}% 17
+\BOOKMARK [2][-]{subsection.4.1.4}{Factory}{section.4.1}% 18
+\BOOKMARK [2][-]{subsection.4.1.5}{State provider}{section.4.1}% 19
+\BOOKMARK [1][-]{section.4.2}{Coding standards}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.2.1}{Header and footer}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.2}{Tree hierarchy}{section.4.2}% 22
+\BOOKMARK [2][-]{subsection.4.2.3}{Colors}{section.4.2}% 23
+\BOOKMARK [1][-]{section.4.3}{Security}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Information retrieval}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.4.1}{Schedule}{section.4.4}% 26
+\BOOKMARK [2][-]{subsection.4.4.2}{Library}{section.4.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.3}{Lecture halls}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.4}{Events}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.5}{University canteen}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.6}{Sports}{section.4.4}% 31
+\BOOKMARK [0][-]{chapter.5}{The application}{}% 32
+\BOOKMARK [1][-]{section.5.1}{The application UCLCampus}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.1.1}{Studies}{section.5.1}% 34
+\BOOKMARK [2][-]{subsection.5.1.2}{Campus}{section.5.1}% 35
+\BOOKMARK [2][-]{subsection.5.1.3}{City}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.4}{Tools}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.5}{Others}{section.5.1}% 38
+\BOOKMARK [1][-]{section.5.2}{Modularity and how to add a new functionality}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{Future functionalities and possible improvements}{chapter.5}% 40
+\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 41
+\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 44
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 45
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 46
