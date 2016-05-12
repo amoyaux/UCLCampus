@@ -203,6 +203,7 @@
   })
   .state('app.tools', {
     url: "/tools",
+    cache : false,
     views: {
       'tools-tab' :{
         templateUrl: "tools/templates/tools.html",
@@ -223,6 +224,7 @@
   })
   .state('app.town', {
     url: "/town",
+    cache: false,
     views: {
       'town-tab' :{
         templateUrl: "town/templates/town.html",
@@ -275,7 +277,7 @@
           db = $cordovaSQLite.openDB("database.sqlite");
         }, function(error) {
             console.error("There was an error copying the database: " + error.code);
-            db = $cordovaSQLite.openDB("database.sqlite");
+            db = $cordovaSQLite.openDB({name:"database.sqlite", location:"database.sqlite"});
         });
       }
       else{
