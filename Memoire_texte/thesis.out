@@ -23,24 +23,27 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{Colors}{section.4.2}% 23
 \BOOKMARK [1][-]{section.4.3}{Security}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.4}{Information retrieval}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.4.1}{Schedule}{section.4.4}% 26
-\BOOKMARK [2][-]{subsection.4.4.2}{Library}{section.4.4}% 27
-\BOOKMARK [2][-]{subsection.4.4.3}{Lecture halls}{section.4.4}% 28
-\BOOKMARK [2][-]{subsection.4.4.4}{Events}{section.4.4}% 29
-\BOOKMARK [2][-]{subsection.4.4.5}{University canteen}{section.4.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.6}{Sports}{section.4.4}% 31
-\BOOKMARK [0][-]{chapter.5}{The application}{}% 32
-\BOOKMARK [1][-]{section.5.1}{The application UCLCampus}{chapter.5}% 33
-\BOOKMARK [2][-]{subsection.5.1.1}{Studies}{section.5.1}% 34
-\BOOKMARK [2][-]{subsection.5.1.2}{Campus}{section.5.1}% 35
-\BOOKMARK [2][-]{subsection.5.1.3}{City}{section.5.1}% 36
-\BOOKMARK [2][-]{subsection.5.1.4}{Tools}{section.5.1}% 37
-\BOOKMARK [2][-]{subsection.5.1.5}{Others}{section.5.1}% 38
-\BOOKMARK [1][-]{section.5.2}{Modularity and how to add a new functionality}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.3}{Future functionalities and possible improvements}{chapter.5}% 40
-\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 41
-\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 44
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 45
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 46
+\BOOKMARK [2][-]{subsection.4.4.1}{Libraries and lecture halls}{section.4.4}% 26
+\BOOKMARK [2][-]{subsection.4.4.2}{Events}{section.4.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.3}{Schedule}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.4}{University canteen}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.5}{Sports}{section.4.4}% 30
+\BOOKMARK [0][-]{chapter.5}{The application}{}% 31
+\BOOKMARK [1][-]{section.5.1}{The application UCLCampus}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.1.1}{The main menu}{section.5.1}% 33
+\BOOKMARK [2][-]{subsection.5.1.2}{Header}{section.5.1}% 34
+\BOOKMARK [2][-]{subsection.5.1.3}{Footer}{section.5.1}% 35
+\BOOKMARK [2][-]{subsection.5.1.4}{The student/campus/tools/city menus}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.5}{Studies}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.6}{Campus}{section.5.1}% 38
+\BOOKMARK [2][-]{subsection.5.1.7}{City}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.8}{Tools}{section.5.1}% 40
+\BOOKMARK [2][-]{subsection.5.1.9}{Others}{section.5.1}% 41
+\BOOKMARK [1][-]{section.5.2}{Modularity and how to add a new functionality}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.3}{Future functionalities and possible improvements}{chapter.5}% 43
+\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 44
+\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 47
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 48
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 49

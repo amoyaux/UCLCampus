@@ -400,7 +400,7 @@ Here we will explain the overall architecture of the application. We will also e
 \section{Architecture}
 
 The purpose of the application is to be extensible and easily maintainable. We wanted a programmer to have the possibility to add his functionalities at each level of the application.
-For this we thought our implementation as a tree. At the top level we have the application with the settings menu and base configuration after it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
+For this we thought our implementation as a tree. At the top level we have the generic parts and configurations that will be everywhere in the application under it we have the settings menu and next to it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
 
 \begin{forest}
 [Application, for tree = {ellipse, draw}, fill = green
@@ -419,10 +419,8 @@ For this we thought our implementation as a tree. At the top level we have the a
 ]
 \end{forest} 
 
-Each node having his own JavaScript,html and css (if needed) code.
-
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lotof files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
+We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lot of files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
 1 is a summary of the change, red folder are those we modify.
 \begin{figure}
 \centering
@@ -582,7 +580,76 @@ We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For 
 
 \section{Security}
 
+
+
 \section{Information retrieval}
+
+In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
+
+\subsection{Libraries and lecture halls}
+
+In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus //TODO parler de LLNCampus avant// managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
+
+\subsubsection{Database structure}
+ 
+//TODO include er diagram ? useful ?
+The database is an SQLite database. The table we use for the most part is called "poi" (point of interest) and has the following fields:
+
+\begin{itemize}
+\item ID (integer): used to identify the item
+\item Name (text): name of the point of interest
+\item Latitude (real): latitude of the point of interest
+\item Longitude (real): longitude of the point of interest
+\item Type (text): type of the point of interest, can be "auditoire", "kap",   "bibliotheque", ...
+\item Address (text): address of the point of interest
+\item Img (text): path to the image linked to the poi
+\end{itemize}
+
+To these fields we added the following two:
+\begin{itemize}
+\item Campus (text): campus where the poi is located
+\item Abbr (text): abbreviated version of the poi. For instance "BARB" for the Ste-Barbe lecture hall
+\end{itemize}
+
+The first field is useful if we want to have different campuses (//TODO check orthographe) while the second is used to find the poi on the map.
+
+\subsubsection{Retrieving lecture halls}
+
+Once we had the completed the database, we had to connect it to our application. In order to do so, we used the cordovaSQLite plugin. Once connected, we were able to retrieve the lecture halls using the following SQL query: 
+\begin{verbatim}
+SELECT * FROM poi WHERE TYPE = 'auditoire' AND CAMPUS = ?
+\end{verbatim}
+
+This query will retrieve all the fields from the poi table we discussed earlier which have the type "auditoire" and are located in the desired campus. The "?" character is used as a placeholder for an argument we can pass to the function. We will then store the result of the query in a JavaScript array and used that array to display the information to the user.
+
+\subsubsection{Retrieving libraries}
+
+In order to retrieve all the information concerning libraries, the poi table was not enough. Indeed, we wanted the users to be able to know whether a library was opened or closed and the schedule was not available in the poi table. Thankfully this information was available in another table, called "bibliotheque\textunderscore horaire". This table only has 4 fields:
+
+\begin{itemize}
+\item Building\textunderscore ID (integer): identifies the library. Same id as the one used in the poi table.
+\item Day (integer): Day of the week (0 for monday, 1 for tuesday, ...)
+\item Begin\textunderscore time (integer): Time of the day when the library opens. Given in minutes elapsed since midnight
+\item End\textunderscore time (integer): Time of the day when the library closes. Given in minutes elapsed since midnight
+\end{itemize}
+
+Given this new table we were able to retrieve all the information we needed using the following SQL query:
+\begin{verbatim}
+SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' 
+AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ? AND CAMPUS = ?
+\end{verbatim}
+
+This query retrieves all poi with type "bibliotheque" and finds their respective schedule for a given day, all that for a given campus. The result in then stored in a JavaScript array.
+
+\subsection{Events}
+
+In order to find events taking place in Louvain-la-Neuve, we used the www.louvainfo.be website. This website provides a schedule of all upcoming events in the city. It is however specific to Louvain-la-Neuve and we would need to find equivalent websites for the other campuses. \\ The website provides an Atom RSS feed of the events. We decided to use Yahoo Query Language to parse the RSS feed and retrieve the information. The reason we used the Yahoo Query language was that it was the only way we found to perform such an operation. Indeed, the more widely used Google Feed API has been deprecated. We therefore had no other choice but thankfully we haven't encountered any issue with YQL.\\
+\\We used the following query to retrieve the feed:
+\begin{verbatim}
+select * from feednormalizer where url='http://louvainfo.be/evenements/feed/calendar/'
+\end{verbatim}
+The result is then parsed and stored in a JavaScript array. 
+
 
 \subsection{Schedule}
 For the schedule we had no choice between database or web parsing. The ADE dump database for all courses(of all the students) has a size of 70mb which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customize url in order to extract specific informations. It's a bit worse than web services because you need a parsing technique.
@@ -619,9 +686,6 @@ We used a string parsing based on regular expression in order to extract informa
 \subsubsection{Local storage}
 We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student access the page we load it from local storage instead of parsing it again. That allow us a better performance because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
 
-\subsection{Library}
-\subsection{Lecture halls}
-\subsection{Events}
 \subsection{University canteen}
 We choose to store the main informations(name, place, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modification are needed. We encode the 6 restaurants present on the ucl website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. About the menu we couldn't store it in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had his own syntax(even if they have the same rendering) ant thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
 \subsection{Sports}
@@ -642,13 +706,54 @@ Exactly the same reasoning than for the schedule. Here we saved the result for b
 
 \chapter{The application}
 
-In this section we will present the application as we implemented it.
+In this section we will present the application as we implemented it. In a first time we will explain you the design. In the second time, we will explain how it work from a technical point of view. 
 
 \section{The application UCLCampus}
+\subsection{The main menu}
+\subsection{Header}
+We create a global header for all the application. The header has different color depending the section where we are(chap 4.2.3). Otherwise, it has three component, the first is the name of the page we are using(for example "Sainte-Barbe" if we are looking the detail of this one). Two buttons, the first is the back button, it allow you to back to the previous page. The second button open the setting menu. This header is by default enable on all the page of the application but the programmer can overwrite it if he want to add something on it(new buttons for example).
+\paragraph{}
+
+
+\subsection{Footer}
+\subsection{The student/campus/tools/city menus}
+Once the user connect on our application, he has to make a choice between the four main sections studies, campus, tools and city. Each of this section present a menu with a list containing the different functionalities(See chapter 3.1). They have all the same design and  use the same skeleton code.  
+\subsubsection{Design}
+We chose a sleek style for each item of the list with just the name of the functionality and an icon representing it on the left. We choose to remove the back button of the header because it was useless to go back to the main menu(the user can use the footer in order to chose a new section).
+\subsubsection{Implementation}
 
 \subsection{Studies}
 
+\subsubsection{Schedule}
+For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. Nevertheless we implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
+\begin{itemize}
+\item TODO complèter
+\item Course code
+\item Time slot
+\item Local
+\end{itemize}
+To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can pick date. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
+To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student need it. 
+
+\subsubsection{Lecture Halls}
+We implemented it in two phases. The first an overview of all the halls. For this the controller call a first time the factory method to have all the lecture halls in a list where we can access details efficiently (for example lectureHall.addr,...), in order to display them in the html. This menu use the general header and footer, and just display a list of auditoriums with
+\begin{itemize}
+\item A picture of it on the left side
+\item The name
+\item The address
+\end{itemize}
+If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture halls, the address and a button linking to the map with the position and gps preconfigure for it(reference to a custom url). 
+From a technical point of view, we call a first time the back end to have the list of all lecture halls and once the user select one, we redirect to a new url with the id as query parameter and we ask the factory again but only for the selected hall details.
+
+\subsubsection{Libraries}
+We used the same process than for the lecture halls except for one detail. The libraries have opening time, we found that display directly in the list if the library is closed or not a cool feature. We add it under the address as a small green section with the word open in it if it is open else we add a red section with closed. If the user want to see the opening time, we add it in the detail. 
+Technically, it was just the same than for lecture hall with small modifications in order to include the opening times. A small add is a JavaScript function that takes as parameter the opening time and return true or false.
+
+\subsubsection{Uclouvain.be}
+\subsubsection{Moodle}
 \subsection{Campus}
+
+
 
 \subsection{City}
 
