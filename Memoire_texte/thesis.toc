@@ -49,17 +49,18 @@
 \contentsline {section}{\numberline {5.1}The application UCLCampus}{23}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}The main menu}{23}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Header}{23}{subsection.5.1.2}
-\contentsline {paragraph}{}{23}{section*.21}
+\contentsline {subsubsection}{Design}{23}{section*.21}
+\contentsline {subsubsection}{Implementation}{23}{section*.22}
 \contentsline {subsection}{\numberline {5.1.3}Footer}{23}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}The student/campus/tools/city menus}{23}{subsection.5.1.4}
-\contentsline {subsubsection}{Design}{23}{section*.22}
-\contentsline {subsubsection}{Implementation}{24}{section*.23}
+\contentsline {subsubsection}{Design}{24}{section*.23}
+\contentsline {subsubsection}{Implementation}{24}{section*.24}
 \contentsline {subsection}{\numberline {5.1.5}Studies}{24}{subsection.5.1.5}
-\contentsline {subsubsection}{Schedule}{24}{section*.24}
-\contentsline {subsubsection}{Lecture Halls}{24}{section*.25}
-\contentsline {subsubsection}{Libraries}{25}{section*.26}
-\contentsline {subsubsection}{Uclouvain.be}{25}{section*.27}
-\contentsline {subsubsection}{Moodle}{25}{section*.28}
+\contentsline {subsubsection}{Schedule}{24}{section*.25}
+\contentsline {subsubsection}{Lecture Halls}{24}{section*.26}
+\contentsline {subsubsection}{Libraries}{25}{section*.27}
+\contentsline {subsubsection}{Uclouvain.be}{25}{section*.28}
+\contentsline {subsubsection}{Moodle}{25}{section*.29}
 \contentsline {subsection}{\numberline {5.1.6}Campus}{25}{subsection.5.1.6}
 \contentsline {subsection}{\numberline {5.1.7}City}{25}{subsection.5.1.7}
 \contentsline {subsection}{\numberline {5.1.8}Tools}{25}{subsection.5.1.8}
