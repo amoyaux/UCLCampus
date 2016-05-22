@@ -229,6 +229,7 @@ angular.module('ionicApp').factory('LibraryFactory', function($q, $cordovaSQLite
         var query = "SELECT * FROM poi, bibliotheque_horaire WHERE poi.TYPE = 'bibliotheque' AND poi.ID == bibliotheque_horaire.BUILDING_ID AND DAY = ? AND CAMPUS = ?";
         $cordovaSQLite.execute(db, query, [n, selectedCampus.name]).then(function(res) {
             t.libraryList = [];
+            console.log(res.rows.length);
             for(var i=0; i<res.rows.length; i++) {
               t.libraryList[i] = res.rows.item(i);
               var begin = res.rows.item(i).BEGIN_TIME;
