@@ -533,7 +533,7 @@ First the application ask for a page. The state provider contain a list of speci
 \item The location of the html template
 \item The associate controller(js)
 \item A flag for cache memory(true or false)
-\item The tab membership(for example student if we are in the subtree student)
+\item The section membership(for example student if we are in the student tab)
 \end{itemize}. For back end data(optional), the state will call the needed factory and wait its response before launching the template and the controller for the user interface. JavaScript(controller) and Html can exchange informations and sent it to back end in some cases.
 \iffalse
 \begin{lstlisting}
@@ -580,12 +580,13 @@ We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For 
 
 \section{Security}
 
-
+TODO
 
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
-
+\subsection{Student data(OSIS)}
+TODO
 \subsection{Libraries and lecture halls}
 
 In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus //TODO parler de LLNCampus avant// managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
@@ -687,7 +688,7 @@ We used a string parsing based on regular expression in order to extract informa
 We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student access the page we load it from local storage instead of parsing it again. That allow us a better performance because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
 
 \subsection{University canteen}
-We choose to store the main informations(name, place, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modification are needed. We encode the 6 restaurants present on the ucl website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. About the menu we couldn't store it in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had his own syntax(even if they have the same rendering) ant thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
+We choose to store the main informations(name, place, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modification are needed. We encode the 6 restaurants present on the ucl website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. For the database we created a new table and encoded data manually. About the menu we couldn't store it in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had his own syntax(even if they have the same rendering) ant thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
 \subsection{Sports}
 We couldn't store the sports in a database because the planning undergoes changes every year and we don't have manpower to update it. The sports department don't have web services either so the only solution we had was to parse the website. On a positive note, the Louvain-la-Neuve and Woluwe sites share the same website and thus the parsing is effective for both. 
 \subsubsection{URL}
@@ -706,35 +707,52 @@ Exactly the same reasoning than for the schedule. Here we saved the result for b
 
 \chapter{The application}
 
-In this section we will present the application as we implemented it. In a first time we will explain you the design. In the second time, we will explain how it work from a technical point of view. 
+In this section we will present the application as we implemented it. In a first time we will explain the design. In the second time, we will explain how it work from a technical point of view. 
 
 \section{The application UCLCampus}
-\subsection{The main menu}
+
 \subsection{Header}
 \subsubsection{Design}
 We create a global header for the application. The header has different color depending the section where we are(chap 4.2.3 for more details). Otherwise, it has three component, the first is the name of the page we are using(for example "Sainte-Barbe" if we are looking the detail of this one). Two buttons, the first is the back button, it allow you to back to the previous page. The second button open the setting menu. This header is by default enable on all the page of the application but the programmer can overwrite it if he want to add something on it(new buttons, search bar,... for example).
 \subsubsection{Implementation}
-
-
-
+Ionic framework provide a file index.html in its architecture. This file has two purposes. The first is to list all the JavaScript present in the application in order to run them. The second is to create a user interface that will be everywhere in the application but that can be overwrite. We used it to create the header, the footer and the setting menu. It's a good point for the maintainability because here we have only code common for all the header except if they have been overwrite(thus it can be modify quickly and efficiently). I will not describe precisely how we implemented the header because it's just some html tags and css components that ionic framework provide
 \subsection{Footer}
+\subsubsection{Design}
+The footer is a bar with buttons bellow the screen. As the header, the footer color change depending the section. There is four buttons on the footer, the four main sections(student, campus, tools, city). We though it was more user friendly to do that because you don't need to click on previous page until you reach the main menu if you want to explore an other section. For example if you are looking at the detail of a lecture hall and you want to see the events of the week, without footer you need to click three times on back button then select campus and events it is five manipulations. With footer, you can click on the campus button and then event, it is only two steps. The footer point out in which section you are, it will greyed out all the button except the one representing that one.  
+\subsubsection{Implementation}
+Ionic provide all the components and an extended architecture for the tabs(buttons in the footer). When we create a page, we create a state associated to it(see chapter 4.1.5). In this state, we can set an argument specifying the section it belongs. Once it is done, Ionic manage automatically the tabs function. For more details\footnote{\url{http://ionicframework.com/docs/api/directive/ionNavView/}} see figure 5.1, it create a tree structure of states(called tabs) where each state hold a list of view(pages)and his own navigation history stack (important for back button). For example, if we are on the libraries page, there exist a state associate to it, informing that this page belongs to the student state and thus it manage automatically to highlight the student button in the footer in order to show the user that he is in the student section.
+\begin{figure}
+\centering
+\includegraphics[scale = 0.3]{Images/tabs-nav-stack.png}
+\caption{Tabs diagram}
+\end{figure}
+
+\subsection{The homepage}
+When the user launch UCLCampus on his smartphone, he arrive on the homepage. This page contains the header and four buttons(student, campus, tools, city). The purpose of this page is to not force the user to be in a menu once he open the application. An other choice could be to put in the student section and let him use the footer button if he want to change, we found this solution a bit sad and so we choose to create the homepage. We remove footer from the homepage because it's redundant to have the sub menu button at the same time as the content of the page and in the footer. I will not give technical detail for this part because there is nothing interesting, except that we created some css for the button.  
 \subsection{The student/campus/tools/city menus}
-Once the user connect on our application, he has to make a choice between the four main sections studies, campus, tools and city. Each of this section present a menu with a list containing the different functionalities(See chapter 3.1). They have all the same design and  use the same skeleton code.  
+This four sub menus have the same design and work the same way. For the design, they display a list of buttons where each button is composed with the name of its functionality and an picture representing it. \\TODO lien vers l'annexe des screens ou alors importer l'image. 
 \subsubsection{Design}
 We chose a sleek style for each item of the list with just the name of the functionality and an icon representing it on the left. We choose to remove the back button of the header because it was useless to go back to the main menu(the user can use the footer in order to chose a new section).
 \subsubsection{Implementation}
-
+The four menu have the same code skeleton. The principle is simple, each menu has his own factory. This factory hold a list where item represents a button. This items have different parameters: 
+\begin{itemize}
+\item title: The name of the functionality the button is pointing to.
+\item icon: An icon representing the functionality
+\item url: The technical link to the new page. If this is set, website should be null
+\item website: The application can open an external website, in this case this field is the url. If this field is set, url should be null
+\item campus: A list of campus where the functionality is implemented. For example if we set it to ['Louvain-la-Neuve','Woluwe']. If the user's selected campus is one of this, he will see the button in the menu, if not the button will not be present. The list can be empty([]), this case is equivalent to write all the campus (more efficient for the programmer). 
+\end{itemize}
+Then this list is simply pass to html and JavaScript controller that use it in order to create the user interface. 
 \subsection{Studies}
-
+The student menu contains all information relevant to the academic year. All the functionality except libraries and lecture halls are available for every campus. We have libraries and lecture halls informations in database only for Louvain-la-Neuve and Woluwe. 
 \subsubsection{Schedule}
 For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. Nevertheless we implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
 \begin{itemize}
-\item TODO complèter
-\item Course code
 \item Time slot
+\item Course code - Professor
 \item Local
 \end{itemize}
-To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can pick date. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
+To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can select the day you want. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
 To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student need it. 
 
 \subsubsection{Lecture Halls}
@@ -744,19 +762,85 @@ We implemented it in two phases. The first an overview of all the halls. For thi
 \item The name
 \item The address
 \end{itemize}
-If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture halls, the address and a button linking to the map with the position and gps preconfigure for it(reference to a custom url). 
+If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture halls, the address and a button linking to the map with the position and gps preconfigure for it.
 From a technical point of view, we call a first time the back end to have the list of all lecture halls and once the user select one, we redirect to a new url with the id as query parameter and we ask the factory again but only for the selected hall details.
 
 \subsubsection{Libraries}
-We used the same process than for the lecture halls except for one detail. The libraries have opening time, we found that display directly in the list if the library is closed or not a cool feature. We add it under the address as a small green section with the word open in it if it is open else we add a red section with closed. If the user want to see the opening time, we add it in the detail. 
-Technically, it was just the same than for lecture hall with small modifications in order to include the opening times. A small add is a JavaScript function that takes as parameter the opening time and return true or false.
+We used the same process than for the lecture halls except for one detail. The libraries have opening time, we found that display directly in the list if the library is closed or open a cool feature. We add it under the address as a small green section with the word open if it is or a red section with closed otherwise. If the user want to see the opening time, we add it in the detail. 
+Technically, it was just the same process than for lecture hall with small modifications in order to include the opening times. For this, we add a JavaScript function that takes as parameter the opening time and return true or false.
 
-\subsubsection{Uclouvain.be}
-\subsubsection{Moodle}
+\subsubsection{Uclouvain.be and Moodle}
+
+Uclouvain.be and moodle are just link to the website in a first time, we think that it is possible to parse both but the Moodle website is already smartphone responsive and has a good display. The website uclouvain.be is too big to parse all informations, so we put a link in our application if the user want to search for specific informations. We choose the browser icon for the button with the aim to inform the user that it open a website and not a functionality we implemented. 
+\subsubsection{Implementation}
+As explained in chapter 5.1.4 about the sub menus, we set the variable website for uclouvain.be and Moodle. Due to that when the user click on the button we call a function openUrl that we created. In order to open external URLs in Ionic we used the InAppBrowser plugin \footnote{\url{http://cordova.apache.org/docs/en/3.0.0/cordova/inappbrowser/inappbrowser.html}} which allow you to open it in application browser, system browser or Cordova webview. The plugin provide a navigation bar but this one has a poor design, so we choose to remove it for android because the user can go back to the application with the physical back button. However, we had to keep it for ios because there is the only way to have a way back to the application. 
+
 \subsection{Campus}
+The campus section contains elements relative to live on the campus and that haven't direct link to the academic year. 
 
-
-
+\subsection{Events}
+The events section is only available for the Louvain-la-Neuve campus. All the events informations (including pictures) come from the website \url{http://louvainfo.be/}.
+\subsubsection{Design}
+The events page can be break down in two parts. The first page with the list of all events sorted by starting date and the second part when you click an event in order to obtain its details. 
+\paragraph{Events list}
+The events list keep the classical header and footer. Each item of the list represent a event with three informations:
+\begin{itemize}
+\item The name of the event
+\item The starting date (date + time)
+\item The place
+\end{itemize}
+Moreover, each event has a category. We create a sub header where the user can open a combobox and select a specific category. Once a category is selected, the list is filter and shows only the relevant events. When a user click on an event in the list, it will open the page details.
+\paragraph{Event details} This page has the classic header and footer, the title in the header is the event name. I will describe the element in order of appearance from top to bottom.
+\begin{itemize}
+\item A picture of the event
+\item Start date and time 
+\item End date and time
+\item The place
+\item The description of the event
+\item A first button opening the event page on \url{louvainfo.be}
+\item A second button opening the place on the map
+\end{itemize}
+We faced two problem with the description The first is that the RSS only send a text with a max length fixed, thus sometime we are no able to get all the description. In this case, we detect and add "..." to the end of the text so the user now the description is not complete and they can look at it on the website. Second problem, the description is a huge text and it take a lot of place on screen(the user need to scroll down a lot to access the button, it is not user friendly at all). To face it, we created an expandable text. At the beginning we only show the first two lines to the user and bellow then we add a button "$\oplus$ more" once the user click on this button, the full text appear with at the end a new button "$\ominus$ less"(his button reduce the text to the first two line). This allow us to show the user the description and the two buttons bellow it without a scroll need.
+\subsubsection{Implementation}
+For the implementation, it work the same way than for the libraries and lectures halls. The factory find and parse all the data in list(of JavaScript object) that is sent to the JavaScript controller. The controller prepare data for the HTML which display it in order to create the user interface. Same for the details, the factory send the details as a JavaScript object to the controller that send it to the HTML. The list of category that the user can select is create automatically by the application, it look at all event and their category and create a list with them. 
+\subsection{University restaurants}
+As explained in chapter 4.4.5 we only include the restaurants listed on \url{https://www.uclouvain.be/restaurants-universitaires.html}. Thus this functionality is only operational on the Louvain-la-Neuve, Woluwe and Mons campus.
+\subsubsection{Design}
+The design of the restaurants is really close to the libraries, we first have a list of all restaurants in the campus with the following informations.
+\begin{itemize}
+\item A picture of the restaurant on the left
+\item The restaurant name
+\item The place
+\item Label "open" or "close"
+\item Opening on lunch time
+\item If exist, evening opening
+\end{itemize}
+The opening time have always the same format: date - date, time - time (for example Monday to Saturday, from 12h to 14h)
+The user can select a restaurant in order to see the details. The details are in order of appearance from top to bottom (the restaurant name is the header title). 
+\begin{itemize}
+\item A picture of the restaurant
+\item Noon time opening 
+\item If exist evening opening time 
+\item Address
+\item Description
+\item Button "See on map"
+\item Button "Menu"
+\end{itemize}
+For the description, we used the same way for events and restaurants(an expandable text, see more details in the events section). The button "Menu" open the specific menu url for the restaurant. The button see on map open the map functionality with the restaurant preselect in order to start the gps guide.
+\subsubsection{Implementation}
+The factory retrieve all the database informations to the restaurant controller(js). The controller send the data to the html that is seen by users. We couldn't reuse the javaScript code that detect if a library is open or close because the restaurant could possibly have an evening opening, so we created a new JavaScript file with all utility functions and place it in the folder for restaurants. 
+\subsection{Sports}
+The sport section is available for two campus: Louvain-la-Neuve and Woluwe. 
+\subsubsection{Design}
+There is only one page for the sport. First, we introduce a sub header where the user can select to see only one specific sport or the global schedule with all available sports. Under header, the sports are display into a list. Each sport in the list contain the following details:
+\begin{itemize}
+\item The name of the sport (for example Badminton). If the user select a specific sport, this information become useless, in this case we remove this field.
+\item Day and time (ex: Saturday 20:00 - 21:30)
+\item Place 
+\end{itemize}
+The list is ordered by date and time. The first sport instances in the list are the one of the day. Then it follow a classic order. For example if we look at the sport list a Wednesday, the first sport time slot we will see are those of the day, then those of Thursday and so on. 
+\subsubsection{Implementation}
+The factory retrieve data from website or from database if it has already been parsed. The special trick is that we want the factory to return a list of sport 
 \subsection{City}
 
 \subsection{Tools}
