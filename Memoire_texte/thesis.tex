@@ -17,6 +17,7 @@
 \usepackage{forest}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{dirtytalk}
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{lmodern} % load a font with all the characters
@@ -110,99 +111,15 @@ Brief introduction of the project, the goals and the contents of the rest of the
 
 \chapter{Background}
 
-In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. // TODO
+In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. 
 
 \section{Cross-platform mobile development tools}
 
-In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
 \subsection{The native approach}
-
-The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Best achievable performance\par
-Always up-to-date with the latest API\par
-Can use any platform\par
-
-&
-
-Low maintainability\par
-Harder to find contributors fluent in all technologies\par
-Can lead to different versions of the application\par
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the native approach}
-\end{table}
-
-\subsection{The web approach}
-A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform.
-
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Can be used on any mobile platform\par
-Easy to find contributors fluent in HTML5\par
-Easy to maintain\par
-
-&
-
-Doesn't have access to native platform features\par
-Harder to implement local storage/security (//TODO NEED BETTER SOURCE)\par
-Not as performant as native\par
-
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the web approach}
-\end{table}
-\subsection{The hybrid approach}
-
-The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Can be used on any mobile platform\par
-Easy to find contributors fluent in HTML5 and JavaScript\par
-Easy to maintain\par
-
-&
-
-Not as performant as native\par
-
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the hybrid approach}
-\end{table}
 
 \subsection{Our choice}
 
 \section{Open-source project and code sharing}
-
-In this section, we will explain the choices we made concerning the code sharing platforms we used as well as the licenses we used to protect our work.
 
 \section{Project Management Methodologies}
 
@@ -378,21 +295,19 @@ Once the sketches were done, we shared the link to our prototype to over 1000 st
 
 While we didn't receive as much feedback as we would have hoped, the one we received was constructive and helpful. Most people were satisfied with our 3 first categories, Studies, Campus and City. The fourth category, however, was more criticized. Here are some comments we received concerning the Tools category.\\
 
-\iffalse
-\say{[...]\\ 
- -Quelques remarques:
- -\begin{itemize}
- -\item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
- -\item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
- -\item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
- -\end{itemize}
- -[...]}\\\\
- -\say{[...] \\
- -2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
- -3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
- \fi
+\say{[...] \\ 
+ Quelques remarques:
+ \begin{itemize}
+ \item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
+ \item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
+ \item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
+ \end{itemize}
+ [...]}\\\\
+ \say{[...] 2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
+ 3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
 
 After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
+
 \chapter{Implementation}
 
 
@@ -589,11 +504,10 @@ In this section we will detail the different sources of information we used in o
 
 \subsection{Libraries and lecture halls}
 
-In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus //TODO parler de LLNCampus avant// managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
+In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
 
 \subsubsection{Database structure}
  
-//TODO include er diagram ? useful ?
 The database is an SQLite database. The table we use for the most part is called "poi" (point of interest) and has the following fields:
 
 \begin{itemize}
@@ -612,7 +526,7 @@ To these fields we added the following two:
 \item Abbr (text): abbreviated version of the poi. For instance "BARB" for the Ste-Barbe lecture hall
 \end{itemize}
 
-The first field is useful if we want to have different campuses (//TODO check orthographe) while the second is used to find the poi on the map.
+The first field is useful if we want to have different campuses while the second is used to find the poi on the map.
 
 \subsubsection{Retrieving lecture halls}
 
