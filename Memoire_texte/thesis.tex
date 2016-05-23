@@ -37,8 +37,8 @@
 %%%% COMMANDS %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%
 \renewcommand\title{UCLCampus: a moblie application for UCL students}
-\newcommand\nameone{Arnold \textsc{Moyaux}}
-\newcommand\nametwo{Baptiste \textsc{Lacasse}}
+\newcommand\nametwo{Arnold \textsc{Moyaux}}
+\newcommand\nameone{Baptiste \textsc{Lacasse}}
 \newcommand\options{}
 \newcommand\supervisor{Yves \textsc{Deville}}
 \newcommand\readerone{Kim \textsc{Mens}}
@@ -85,7 +85,6 @@ Supervisor: & \supervisor
 \begin{tabular}{l}
 Thesis submitted for the Master's degree
 \\ in computer science and engineering
-\\ options: \
 \\ by : \nameone
 \\ 	   \nametwo
 \end{tabular}
@@ -315,8 +314,8 @@ Here we will explain the overall architecture of the application. We will also e
 
 \section{Architecture}
 
-The purpose of the application is to be extensible and easily maintainable. We wanted a programmer can add its functionalities at each level to the application.
-For this we thought our implementation as a tree. At the top level we have the application with the settings menu and base configuration after it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
+The purpose of the application is to be extensible and easily maintainable. We wanted a programmer to have the possibility to add his functionalities at each level of the application.
+For this we thought our implementation as a tree. At the top level we have the generic parts and configurations that will be everywhere in the application under it we have the settings menu and next to it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
 
 \begin{forest}
 [Application, for tree = {ellipse, draw}, fill = green
@@ -335,10 +334,8 @@ For this we thought our implementation as a tree. At the top level we have the a
 ]
 \end{forest} 
 
-Each node having his own JavaScript,html and css (if needed) code.
-
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(maybe having more than one js and html). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
+We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lot of files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
 1 is a summary of the change, red folder are those we modify.
 \begin{figure}
 \centering
@@ -498,6 +495,8 @@ We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For 
 
 \section{Security}
 
+
+
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
@@ -608,7 +607,7 @@ We couldn't store the sports in a database because the planning undergoes change
 \subsubsection{URL}
 The base url for the two sites is the same \footnote{\url{http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?}}. There exist two main query parameters possible
 \begin{itemize}
-\item The campus: A number (1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
+\item The campus: A number defining the campus for which we want to show the sports schedule(1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
 \item The skip: The sport web site response contains only 50 sports time slots. The skip argument permit to access the other sports instances after the first fifty.
 \end{itemize}
 It is a bit more difficult and slower than the other request because in this case we need to create a request by 50 sports time slots(for example if we have 132 sports we need three request. The first taking 0-50 instances, the second 51-100 and 101-132 for the last). Moreover the website is not 100\% available some times, we couldn't access it because it was off line so we added a time-out method in order to prevent the user that the website is probably off-line.
@@ -621,13 +620,56 @@ Exactly the same reasoning than for the schedule. Here we saved the result for b
 
 \chapter{The application}
 
-In this section we will present the application as we implemented it.
+In this section we will present the application as we implemented it. In a first time we will explain you the design. In the second time, we will explain how it work from a technical point of view. 
 
 \section{The application UCLCampus}
+\subsection{The main menu}
+\subsection{Header}
+\subsubsection{Design}
+We create a global header for the application. The header has different color depending the section where we are(chap 4.2.3 for more details). Otherwise, it has three component, the first is the name of the page we are using(for example "Sainte-Barbe" if we are looking the detail of this one). Two buttons, the first is the back button, it allow you to back to the previous page. The second button open the setting menu. This header is by default enable on all the page of the application but the programmer can overwrite it if he want to add something on it(new buttons, search bar,... for example).
+\subsubsection{Implementation}
+
+
+
+\subsection{Footer}
+\subsection{The student/campus/tools/city menus}
+Once the user connect on our application, he has to make a choice between the four main sections studies, campus, tools and city. Each of this section present a menu with a list containing the different functionalities(See chapter 3.1). They have all the same design and  use the same skeleton code.  
+\subsubsection{Design}
+We chose a sleek style for each item of the list with just the name of the functionality and an icon representing it on the left. We choose to remove the back button of the header because it was useless to go back to the main menu(the user can use the footer in order to chose a new section).
+\subsubsection{Implementation}
 
 \subsection{Studies}
 
+\subsubsection{Schedule}
+For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. Nevertheless we implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
+\begin{itemize}
+\item TODO complèter
+\item Course code
+\item Time slot
+\item Local
+\end{itemize}
+To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can pick date. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
+To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student need it. 
+
+\subsubsection{Lecture Halls}
+We implemented it in two phases. The first an overview of all the halls. For this the controller call a first time the factory method to have all the lecture halls in a list where we can access details efficiently (for example lectureHall.addr,...), in order to display them in the html. This menu use the general header and footer, and just display a list of auditoriums with
+\begin{itemize}
+\item A picture of it on the left side
+\item The name
+\item The address
+\end{itemize}
+If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture halls, the address and a button linking to the map with the position and gps preconfigure for it(reference to a custom url). 
+From a technical point of view, we call a first time the back end to have the list of all lecture halls and once the user select one, we redirect to a new url with the id as query parameter and we ask the factory again but only for the selected hall details.
+
+\subsubsection{Libraries}
+We used the same process than for the lecture halls except for one detail. The libraries have opening time, we found that display directly in the list if the library is closed or not a cool feature. We add it under the address as a small green section with the word open in it if it is open else we add a red section with closed. If the user want to see the opening time, we add it in the detail. 
+Technically, it was just the same than for lecture hall with small modifications in order to include the opening times. A small add is a JavaScript function that takes as parameter the opening time and return true or false.
+
+\subsubsection{Uclouvain.be}
+\subsubsection{Moodle}
 \subsection{Campus}
+
+
 
 \subsection{City}
 
