@@ -10,6 +10,7 @@
 \usepackage{pdfpages}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{verbatim}
 \restylefloat{table}
 \usepackage{listings}
 \usepackage{hyperref}
@@ -17,6 +18,9 @@
 \usepackage{forest}
 \usepackage{caption}
 \usepackage{subcaption}
+\iffalse
+\usepackage{dirtytalk}
+\fi
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{lmodern} % load a font with all the characters
@@ -35,7 +39,7 @@
 \geometry{hmargin=2.5cm,top=3cm,bottom=2.3cm}
 %%%% COMMANDS %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%
-\renewcommand\title{UCLCampus: a moblie application for UCL students}
+\renewcommand\title{UCLCampus: a mobile application for UCL students}
 \newcommand\nametwo{Arnold \textsc{Moyaux}}
 \newcommand\nameone{Baptiste \textsc{Lacasse}}
 \newcommand\options{}
@@ -109,99 +113,15 @@ Brief introduction of the project, the goals and the contents of the rest of the
 
 \chapter{Background}
 
-In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. // TODO
+In this section, we will look at the different existing technologies relating to the different aspects of our project and will explain the choices we made. 
 
 \section{Cross-platform mobile development tools}
 
-In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
 \subsection{The native approach}
-
-The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Best achievable performance\par
-Always up-to-date with the latest API\par
-Can use any platform\par
-
-&
-
-Low maintainability\par
-Harder to find contributors fluent in all technologies\par
-Can lead to different versions of the application\par
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the native approach}
-\end{table}
-
-\subsection{The web approach}
-A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform.
-
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Can be used on any mobile platform\par
-Easy to find contributors fluent in HTML5\par
-Easy to maintain\par
-
-&
-
-Doesn't have access to native platform features\par
-Harder to implement local storage/security (//TODO NEED BETTER SOURCE)\par
-Not as performant as native\par
-
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the web approach}
-\end{table}
-\subsection{The hybrid approach}
-
-The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
-
-\begin{table}[H]
-\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-\toprule
-\hfil\bfseries Pros
-&
-\hfil\bfseries Cons
-\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-
-Can be used on any mobile platform\par
-Easy to find contributors fluent in HTML5 and JavaScript\par
-Easy to maintain\par
-
-&
-
-Not as performant as native\par
-
-
-
-\\\bottomrule
-\end{tabularx}
-\caption{Pros and cons of the hybrid approach}
-\end{table}
 
 \subsection{Our choice}
 
 \section{Open-source project and code sharing}
-
-In this section, we will explain the choices we made concerning the code sharing platforms we used as well as the licenses we used to protect our work.
 
 \section{Project Management Methodologies}
 
@@ -378,20 +298,19 @@ Once the sketches were done, we shared the link to our prototype to over 1000 st
 While we didn't receive as much feedback as we would have hoped, the one we received was constructive and helpful. Most people were satisfied with our 3 first categories, Studies, Campus and City. The fourth category, however, was more criticized. Here are some comments we received concerning the Tools category.\\
 
 \iffalse
-\say{[...]\\ 
- -Quelques remarques:
- -\begin{itemize}
- -\item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
- -\item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
- -\item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
- -\end{itemize}
- -[...]}\\\\
- -\say{[...] \\
- -2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
- -3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
- \fi
-
+\say{[...] \\ 
+ Quelques remarques:
+ \begin{itemize}
+ \item L'icône "Outils" du menu principal pourrait être renommer par soucis de clarté, on s'attend à tomber sur les "outils" ou paramètres de l'application et non pas du campus/ de la ville.
+ \item Je ne vois pas trop l’intérêt de l'onglet mail étant donné que la plupart des étudiants possédant un smartphone ont déjà leur boite mail étudiant connectée. 
+ \item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
+ \end{itemize}
+ [...]}\\\\
+ \say{[...] 2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
+ 3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
+\fi
 After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
+
 \chapter{Implementation}
 
 
@@ -589,11 +508,10 @@ In this section we will detail the different sources of information we used in o
 TODO
 \subsection{Libraries and lecture halls}
 
-In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus //TODO parler de LLNCampus avant// managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
+In order to retrieve a list of all libraries and lecture halls in the university, we contacted the UCL to ask them if such a database existed. Sadly, it appeared that no database of this kind exists. We then wondered how LLNCampus managed to obtain all the information they had on lecture halls and libraries. Since their application is also open-source, we were able to find the database they used. Since it was very complete and was the only database available, we decided to re-use this database. However, since their database was built with only one campus in mind, we had to change it a bit.
 
 \subsubsection{Database structure}
  
-//TODO include er diagram ? useful ?
 The database is an SQLite database. The table we use for the most part is called "poi" (point of interest) and has the following fields:
 
 \begin{itemize}
@@ -612,7 +530,7 @@ To these fields we added the following two:
 \item Abbr (text): abbreviated version of the poi. For instance "BARB" for the Ste-Barbe lecture hall
 \end{itemize}
 
-The first field is useful if we want to have different campuses (//TODO check orthographe) while the second is used to find the poi on the map.
+The first field is useful if we want to have different campuses while the second is used to find the poi on the map.
 
 \subsubsection{Retrieving lecture halls}
 
@@ -707,19 +625,19 @@ Exactly the same reasoning than for the schedule. Here we saved the result for b
 
 \chapter{The application}
 
-In this section we will present the application as we implemented it. In a first time we will explain the design. In the second time, we will explain how it work from a technical point of view. 
+In this section we will present the application as we implemented it. In a first time we will explain the design. In the second time, we will explain how it work from a technical point of view. All the page screen described in this section can be found in the annexe X.
 
 \section{The application UCLCampus}
 
 \subsection{Header}
-\subsubsection{Design}
-We create a global header for the application. The header has different color depending the section where we are(chap 4.2.3 for more details). Otherwise, it has three component, the first is the name of the page we are using(for example "Sainte-Barbe" if we are looking the detail of this one). Two buttons, the first is the back button, it allow you to back to the previous page. The second button open the setting menu. This header is by default enable on all the page of the application but the programmer can overwrite it if he want to add something on it(new buttons, search bar,... for example).
-\subsubsection{Implementation}
-Ionic framework provide a file index.html in its architecture. This file has two purposes. The first is to list all the JavaScript present in the application in order to run them. The second is to create a user interface that will be everywhere in the application but that can be overwrite. We used it to create the header, the footer and the setting menu. It's a good point for the maintainability because here we have only code common for all the header except if they have been overwrite(thus it can be modify quickly and efficiently). I will not describe precisely how we implemented the header because it's just some html tags and css components that ionic framework provide
+\paragraph{design}
+We create a global header for the application. The header has different color depending the section where we are(chap 4.2.3 for more details). Otherwise, it has three component, the first is the name of the page we are using(for example "Sainte-Barbe" if we are looking the detail of this one). Two buttons, the first is the back button, it allow you to back to the previous page. The second button open the settings menu. This header is by default enable on all the page of the application but the programmer can overwrite it if he want to add something on it(new buttons, search bar,... for example).
+\paragraph{Implementation}
+Ionic framework provide a file index.html in its architecture. This file has two purposes. The first is to list all the JavaScript present in the application in order to run them. The second is to create a user interface that will be everywhere in the application but that can be overwrite. We used it to create the header, the footer and the settings menu. It's a good point for the maintainability because here we have only code common for all the header except if they have been overwrite(thus it can be modify quickly and efficiently). I will not describe precisely how we implemented the header because it's just some html tags and css components that ionic framework provide
 \subsection{Footer}
-\subsubsection{Design}
+\paragraph{design}
 The footer is a bar with buttons bellow the screen. As the header, the footer color change depending the section. There is four buttons on the footer, the four main sections(student, campus, tools, city). We though it was more user friendly to do that because you don't need to click on previous page until you reach the main menu if you want to explore an other section. For example if you are looking at the detail of a lecture hall and you want to see the events of the week, without footer you need to click three times on back button then select campus and events it is five manipulations. With footer, you can click on the campus button and then event, it is only two steps. The footer point out in which section you are, it will greyed out all the button except the one representing that one.  
-\subsubsection{Implementation}
+\paragraph{Implementation}
 Ionic provide all the components and an extended architecture for the tabs(buttons in the footer). When we create a page, we create a state associated to it(see chapter 4.1.5). In this state, we can set an argument specifying the section it belongs. Once it is done, Ionic manage automatically the tabs function. For more details\footnote{\url{http://ionicframework.com/docs/api/directive/ionNavView/}} see figure 5.1, it create a tree structure of states(called tabs) where each state hold a list of view(pages)and his own navigation history stack (important for back button). For example, if we are on the libraries page, there exist a state associate to it, informing that this page belongs to the student state and thus it manage automatically to highlight the student button in the footer in order to show the user that he is in the student section.
 \begin{figure}
 \centering
@@ -731,9 +649,9 @@ Ionic provide all the components and an extended architecture for the tabs(butto
 When the user launch UCLCampus on his smartphone, he arrive on the homepage. This page contains the header and four buttons(student, campus, tools, city). The purpose of this page is to not force the user to be in a menu once he open the application. An other choice could be to put in the student section and let him use the footer button if he want to change, we found this solution a bit sad and so we choose to create the homepage. We remove footer from the homepage because it's redundant to have the sub menu button at the same time as the content of the page and in the footer. I will not give technical detail for this part because there is nothing interesting, except that we created some css for the button.  
 \subsection{The student/campus/tools/city menus}
 This four sub menus have the same design and work the same way. For the design, they display a list of buttons where each button is composed with the name of its functionality and an picture representing it. \\TODO lien vers l'annexe des screens ou alors importer l'image. 
-\subsubsection{Design}
+\paragraph{design}
 We chose a sleek style for each item of the list with just the name of the functionality and an icon representing it on the left. We choose to remove the back button of the header because it was useless to go back to the main menu(the user can use the footer in order to chose a new section).
-\subsubsection{Implementation}
+\paragraph{Implementation}
 The four menu have the same code skeleton. The principle is simple, each menu has his own factory. This factory hold a list where item represents a button. This items have different parameters: 
 \begin{itemize}
 \item title: The name of the functionality the button is pointing to.
@@ -778,9 +696,9 @@ As explained in chapter 5.1.4 about the sub menus, we set the variable website f
 \subsection{Campus}
 The campus section contains elements relative to live on the campus and that haven't direct link to the academic year. 
 
-\subsection{Events}
+\subsubsection{Events}
 The events section is only available for the Louvain-la-Neuve campus. All the events informations (including pictures) come from the website \url{http://louvainfo.be/}.
-\subsubsection{Design}
+\paragraph{design}
 The events page can be break down in two parts. The first page with the list of all events sorted by starting date and the second part when you click an event in order to obtain its details. 
 \paragraph{Events list}
 The events list keep the classical header and footer. Each item of the list represent a event with three informations:
@@ -801,11 +719,11 @@ Moreover, each event has a category. We create a sub header where the user can o
 \item A second button opening the place on the map
 \end{itemize}
 We faced two problem with the description The first is that the RSS only send a text with a max length fixed, thus sometime we are no able to get all the description. In this case, we detect and add "..." to the end of the text so the user now the description is not complete and they can look at it on the website. Second problem, the description is a huge text and it take a lot of place on screen(the user need to scroll down a lot to access the button, it is not user friendly at all). To face it, we created an expandable text. At the beginning we only show the first two lines to the user and bellow then we add a button "$\oplus$ more" once the user click on this button, the full text appear with at the end a new button "$\ominus$ less"(his button reduce the text to the first two line). This allow us to show the user the description and the two buttons bellow it without a scroll need.
-\subsubsection{Implementation}
+\paragraph{Implementation}
 For the implementation, it work the same way than for the libraries and lectures halls. The factory find and parse all the data in list(of JavaScript object) that is sent to the JavaScript controller. The controller prepare data for the HTML which display it in order to create the user interface. Same for the details, the factory send the details as a JavaScript object to the controller that send it to the HTML. The list of category that the user can select is create automatically by the application, it look at all event and their category and create a list with them. 
-\subsection{University restaurants}
+\subsubsection{University restaurants}
 As explained in chapter 4.4.5 we only include the restaurants listed on \url{https://www.uclouvain.be/restaurants-universitaires.html}. Thus this functionality is only operational on the Louvain-la-Neuve, Woluwe and Mons campus.
-\subsubsection{Design}
+\paragraph{design}
 The design of the restaurants is really close to the libraries, we first have a list of all restaurants in the campus with the following informations.
 \begin{itemize}
 \item A picture of the restaurant on the left
@@ -827,11 +745,11 @@ The user can select a restaurant in order to see the details. The details are in
 \item Button "Menu"
 \end{itemize}
 For the description, we used the same way for events and restaurants(an expandable text, see more details in the events section). The button "Menu" open the specific menu url for the restaurant. The button see on map open the map functionality with the restaurant preselect in order to start the gps guide.
-\subsubsection{Implementation}
+\paragraph{Implementation}
 The factory retrieve all the database informations to the restaurant controller(js). The controller send the data to the html that is seen by users. We couldn't reuse the javaScript code that detect if a library is open or close because the restaurant could possibly have an evening opening, so we created a new JavaScript file with all utility functions and place it in the folder for restaurants. 
-\subsection{Sports}
+\subsubsection{Sports}
 The sport section is available for two campus: Louvain-la-Neuve and Woluwe. 
-\subsubsection{Design}
+\paragraph{design}
 There is only one page for the sport. First, we introduce a sub header where the user can select to see only one specific sport or the global schedule with all available sports. Under header, the sports are display into a list. Each sport in the list contain the following details:
 \begin{itemize}
 \item The name of the sport (for example Badminton). If the user select a specific sport, this information become useless, in this case we remove this field.
@@ -839,13 +757,57 @@ There is only one page for the sport. First, we introduce a sub header where the
 \item Place 
 \end{itemize}
 The list is ordered by date and time. The first sport instances in the list are the one of the day. Then it follow a classic order. For example if we look at the sport list a Wednesday, the first sport time slot we will see are those of the day, then those of Thursday and so on. 
-\subsubsection{Implementation}
-The factory retrieve data from website or from database if it has already been parsed. The special trick is that we want the factory to return a list of sport 
-\subsection{City}
-
+\paragraph{Implementation}
+The factory retrieve data from website or from database if it has already been parsed. The special trick is that we want the factory to return a list of sport ordered by day starting from the day we are. The UCL sport website already order the sport by date, so we just kept their order while parsing. When the user connect a new day, we will pop the block of sport of the day before it and put them at the end of the list as show in figure 5.2.
+\begin{figure}
+\centering
+\includegraphics[scale = 0.3]{Images/sportsorting.png}
+\caption{Sorting day operation}
+\end{figure}
+The list of sport type(that the user can select in the combo box) is created in the controller. This one automatically update and display sport in alphabetical order. Then the controller communicate all the sport time slots and the list of distinct sports to the HTML that is seen by the user. 
 \subsection{Tools}
-
+The actual only functionality of tools are lln maps \footnote{\url{https://github.com/mathieuzen/llnmaps}} . We created the menu in order to introduce new functionalities later. 
+\subsubsection{LLN Maps}
+\paragraph{Design}
+lln maps has its own header and footer so we discuss with our contributors about the way to merge them to our application. First, they have a search side menu so we decide to overwrite our settings side menu that is unreachable from the maps. Therefore, the settings button in the header is replaced by a search button. In their footer, they have a compass or map mode. Actually, we didn't fix a choice, There exist a lot of alternatives.
+\begin{itemize}
+\item Put the compass button in the header
+\item Add it in our footer
+\item Create a sub footer
+\item Create a sub header
+\item Put it on the map page (not in a footer or header) 
+\end{itemize}
+\paragraph{Implementation}
+We do not pretend to discuss about the implementation of lln maps that is not the purpose of this section. We will discuss the technical points useful for our application. The main interactions with lln maps are the buttons "See on maps" placed throughout UCLCampus. They inform us that we could use url in order to open a preselected place and have the gps ready to be launched. Though lln maps is not fully integrated and thus our button not linked yet, we saw that some abbreviations of lln maps and UCLCampus (for lecture halls,...) are different so we created a database table in order to gather them. 
+\subsection{City}
+For the city section, we only created the menu in order to add new functionalities later. However, this section is more sensitive than other because it add external business in the application and it is a kind of advertising, so more advanced discussion should take place when adding a functionality.
 \subsection{Others}
+\subsubsection{Settings menu}
+The settings menu can be open everywhere in the application except for the map.
+\paragraph{Design}
+This menu is a side menu, that mean when the user open it, it does not take all the screen as a new page. Instead it cut the screen in two parts (cut vertically). The part on the left is the page where the user opened the settings menu, the second part is the settings menu. That allows the user to change a setting without being perturbed in its actual task.
+The settings menu offers three items:
+\begin{itemize}
+\item The language
+\item The campus
+\item Logout
+\end{itemize}
+\paragraph{Language} We introduced three different languages, French, Dutch and English. The student can select one of this three languages and all the application will directly been translated into it. Actually the translation in Dutch is not done (though it is implemented). \\
+For the implementation, we used a plugin called "angular-translate" \footnote{\url{https://github.com/angular-translate/angular-translate}}(MIT). This plugin allows to create a configuration where you define the application languages, and for each languages it hold a kind of dictionary with the variable and his translation.\\
+Here is an example of the code for translation:
+\begin{verbatim}
+        $translateProvider.translations('en', {
+            hello_message: "Hello",
+            goodbye_message: "Goodbye"
+        });
+\end{verbatim}
+In this example, we create an English translation and the variable "hello\_message" is translated by "Hello" in the user interface (same for goodbye). Our application has more variables to translate but the process is exactly the same. One more step is needed to translate the variable, at each time we want a variable in the html to be translated we need to apply a translation filter onto it. For example 
+\begin{verbatim}
+		<html tag>{{"hello_message" | translate}}</html tag> 
+\end{verbatim}
+The plugin allows to set a preferred language that will be preselected at the application launch. Actually it is English.
+\paragraph{Campus selection} The user can select a campus with the button named "Choose my campus" in the settings menu. This button open a page with the list of all possible campus, the user has to choose one and validate his choice. As explained earlier the campus selection influences the available functionalities in application. A pre selection based on the geolocation happens when the user open UCLCampus and the nearest campus is chosen per default.\\
+For the implementation, we created a campus factory that hold a list of campus. The items of this list have three attributes, the name of the campus, longitude and latitude. In order to select per default the closest campus, we created a JavaScript function that just return the campus minimising the distance between it and the actual position of the user. Thus it is easy to add a new campus to the application or remove one, but the programmers should care about the compatibility between the new campus and all the functionalities enable for all sites. 
 
 
 \section{Modularity and how to add a new functionality}
