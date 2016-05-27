@@ -907,13 +907,17 @@ Then, install Ionic:
 
 Now that you've set everything up, it's time to fetch the source code of the application from GitHub. 
 
-\subsubsection{Step 1: Cloning the project}
+\subsubsection{Step 1: Forking the project}
 
-First, open a terminal into the repository of your choice. Then, enter the following command:
+First, navigate to https://github.com/amoyaux/UCLCampus. Click the Fork button in the top right corner. Note that in order to fork the project, you will need a GitHub account.
+
+Once you have forked the project, open a terminal into the repository of your choice. Then, enter the following command:
 
 \begin{lstlisting}[language=bash]
-   $ git clone https://github.com/amoyaux/UCLCampus.git
+   $ git clone https://github.com/<your username>/UCLCampus.git
 \end{lstlisting}
+
+This will clone the project files into the chosen repository.
 
 \subsubsection{Step 2: Installing the required packages}
 
@@ -1082,7 +1086,59 @@ The campus field in each item is used if you want to create functionalities spec
 
 You can now access the new functionality from the tools menu of the application. You can now start editing the JavaScript and HTML files to create a more complicated function.
 
+\subsection{Step 5: submitting your functionality}
+
+Once you have completed a functionality and believe it is ready to be integrated into the application, you can send a pull request to the project owner. The pull request will then be reviewed and will be added to the application if it is accepted. For more information about forks and pull requests, please refer to: https://help.github.com/articles/using-pull-requests/ and https://help.github.com/articles/fork-a-repo/.
+
 \section{Future functionalities and possible improvements}
+
+In this section, we will review the functionalities we couldn't add to the current application for various reasons, as well as looking at ways we could improve the existing functionalities.
+
+\subsection{Future functionalities}
+
+\subsubsection{The "City" module}
+
+In chapter 3, we described the "City" module where a user could find information about museums, cinemas, restaurants and so on. This module was not implemented yet for different reasons. The challenging part about such a module is that some restaurants might not want to be listed in the application. Another challenge is the lack of any database concerning the restaurants of a given campus. It would therefore be necessary to list all restaurants, museums and other activity centers of all campuses and possibly ask them whether they want to appear in the application or not.
+
+While this module would certainly be interesting for the user, it would also be hard to keep the information up to date without having someone responsible to update the application every year or so.
+
+\subsubsection{"Cercles" and "Kot à Projets"}
+
+The "Cercles" and "Kot à projets" functionalities were also supposed to be implemented but weren't for reasons similar to the city module. It would also be necessary to list them and ask them if they want to be listed in the application, as well as maintaining the database up to date since "Kot à Projets" change almost every year.
+
+\subsubsection{Integrating OSIS}
+
+At the time  of writing the UCL was changing its infrastructure. Integrating OSIS, the new architecture, into the application was scheduled but sadly couldn't be achieved. OSIS was going to be used to fetch the courses a student is enrolled in at a given time and displaying information about said courses. 
+
+For now the information is given by a dummy server and doesn't correspond to the reality. An interesting thing to do would therefore be to integrate OSIS to the application as soon as possible.  It is indeed our belief that this functionality is of paramount importance if we want the application to be successful. 
+
+\subsubsection{Tools}
+
+The "Tools" module currently only contains the "Maps" functionality. Other functionalities could be added to this module, such as a functionality regarding how to reach a campus using common transportation, or how to park in the city.
+
+\subsection{Possible improvements of existing functionalities}
+
+\subsubsection{Adding support for all campuses}
+
+A lot of functionalities are only supported by a few campuses so far. We list here the functionalities that would benefit from being supported by multiple campuses:
+
+\begin{itemize}
+\item Lecture halls
+\item Libraries
+\item Events
+\item Sports
+\item University restaurants
+\item Cercles
+\item Kot à projets
+\item The entire "City" module
+\item Maps
+\end{itemize}
+
+\subsection{Other improvements}
+
+This project currently uses the 1.3 version of Ionic. It is however already possible to use Ionic 2 and migrating the application to this new version could be interesting. At the time of writing Ionic 2 was only available as a beta release, which is why we didn't use it immediately. 
+
+
 
 \chapter{Analysis}
 
