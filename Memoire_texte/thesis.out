@@ -39,10 +39,15 @@
 \BOOKMARK [2][-]{subsection.5.1.8}{City}{section.5.1}% 39
 \BOOKMARK [2][-]{subsection.5.1.9}{Others}{section.5.1}% 40
 \BOOKMARK [1][-]{section.5.2}{Modularity and how to add a new functionality}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.3}{Future functionalities and possible improvements}{chapter.5}% 42
-\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 43
-\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 46
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 47
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 48
+\BOOKMARK [2][-]{subsection.5.2.1}{Setting up the framework}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Installing UCLCampus}{section.5.2}% 43
+\BOOKMARK [2][-]{subsection.5.2.3}{Running the application}{section.5.2}% 44
+\BOOKMARK [2][-]{subsection.5.2.4}{Running the application on a device or emulator}{section.5.2}% 45
+\BOOKMARK [2][-]{subsection.5.2.5}{Adding a new functionality}{section.5.2}% 46
+\BOOKMARK [1][-]{section.5.3}{Future functionalities and possible improvements}{chapter.5}% 47
+\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 48
+\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 52
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 53

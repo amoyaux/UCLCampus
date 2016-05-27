@@ -49,6 +49,38 @@
 \newcommand\readerthree{Mathieu \textsc{Zen}}
 \newcommand\readerfour{Jorge \textsc{Perez Medina}}
 \newcommand\years{2015-2016}
+
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
 %%%% BEGIN %%%%
 \begin{document}
 
@@ -811,7 +843,244 @@ For the implementation, we created a campus factory that hold a list of campus. 
 
 
 \section{Modularity and how to add a new functionality}
+This application was built with the idea that other contributors would have to add functionalities themselves or even take over the project in the future. It was therefore important to be able to add modules to the application without having to understand the whole code. 
 
+This section will present a user manual on how to get the application to run from scratch and how to add new functionalities.  It must be noted that in order to deploy the application on iOS, one must user OS X as his operating system.  The following steps will however work for any operating system and the user will be able to deploy the application on Android regardless of the OS used.
+
+\subsection{Setting up the framework}
+
+\subsubsection{Step 1: Installing Git}
+
+First,  we need to install Git.\\
+
+\textbf{For Windows users}: \\
+Go to https://git-scm.com/download/win, download and install Git for Windows. Any further commands in this guide can be executed in either the Git Bash. 
+
+\textbf{For Linux users}: \\
+Type the following line of code into your terminal:
+\begin{lstlisting}[language=bash]
+  $ sudo apt-get install git
+\end{lstlisting}
+
+
+\subsubsection{Step 2: Installing Node.js}
+
+Node.js is a JavaScript runtime that is required to install the other things one needs to install the application. This step slightly differs depending on your OS.\\
+
+\textbf{For Windows users}: \\
+Windows users can download an installer from the Node.js website: https://nodejs.org/en/ .\\
+
+\textbf{For Linux users}: \\
+First, install Node.js by typing the following command line in your terminal:
+\begin{lstlisting}[language=bash]
+  $ sudo apt-get install nodejs
+\end{lstlisting}
+Then, install npm:
+\begin{lstlisting}[language=bash]
+  $ sudo apt-get install npm
+\end{lstlisting}
+Finally, create a symbolic link for node:
+\begin{lstlisting}[language=bash]
+  $ sudo ln -s /usr/bin/nodejs /usr/bin/node
+\end{lstlisting}
+You can now test that the installation worked properly by running these two commands:
+\begin{lstlisting}[language=bash]
+  $ node -v
+  v0.10.25
+  $ npm -v
+  1.3.10
+\end{lstlisting}
+
+\subsubsection{Step 3: Installing Ionic and its dependencies}
+
+If you are on Windows, drop sudo from the following commands.
+\\First, install Cordova:
+\begin{lstlisting}[language=bash]
+   $ sudo npm install -g cordova
+\end{lstlisting}
+Then, install Ionic:
+\begin{lstlisting}[language=bash]
+   $ sudo npm install -g ionic
+\end{lstlisting}
+
+\subsection{Installing UCLCampus}
+
+Now that you've set everything up, it's time to fetch the source code of the application from GitHub. 
+
+\subsubsection{Step 1: Cloning the project}
+
+First, open a terminal into the repository of your choice. Then, enter the following command:
+
+\begin{lstlisting}[language=bash]
+   $ git clone https://github.com/amoyaux/UCLCampus.git
+\end{lstlisting}
+
+\subsubsection{Step 2: Installing the required packages}
+
+Now you will need to install some packages before running the application. To do so, move to the right directory:
+
+\begin{lstlisting}[language=bash]
+   $ cd UCLCampus/UCLCampus/
+\end{lstlisting}
+
+Then run the following commands. These commands, except for the first one, can be found in the plugin.txt file.
+
+\begin{lstlisting}[language=bash]
+   $ npm install
+   $ cordova plugin add cordova-plugin-device
+   $ cordova plugin add cordova-plugin-console
+   $ cordova plugin add cordova-plugin-whitelist
+   $ cordova plugin add org.apache.cordova.network-information
+   $ cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
+   $ cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
+   $ cordova plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
+   $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+   $ cordova plugin add cordova-plugin-geolocation
+   $ cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
+   $ cordova plugin add https://github.com/an-rahulpandey/cordova-plugin-dbcopy.git
+   $ cordova plugin add cordova-plugin-network-information
+\end{lstlisting}
+
+\subsection{Running the application}
+
+There are several ways to run the application now that it is installed. Note that in order to run it on emulators, you will need to install said emulators and their required dependencies (programming languages, ...). This aspect is not covered in this guide.
+
+\subsubsection{Running the application in an Internet browser}
+
+Since Ionic is an hybrid framework, the application can easily be run in a browser. Simply open a terminal in the UCLCampus/UCLCampus/ folder and run the following command:
+
+\begin{lstlisting}[language=bash]
+   $ ionic serve
+\end{lstlisting} 
+
+The application is now running on http://localhost:8100/ . However, some functionalities may not work properly, namely the ones that need access to the SQLite database. This is due to the fact that opening the database is not done in the same way for a browser or a mobile device. It would be possible to add support for the database in this case, but this was not a priority as the focus of the application is not to be run in a browser.
+
+\subsection{Running the application on a device or emulator}
+
+Once you have installed the emulator or connected the device to your computer, you need to add the corresponding platform to Ionic using the following command:
+
+\begin{lstlisting}[language=bash]
+   $ ionic platform add android
+\end{lstlisting} 
+
+or
+
+\begin{lstlisting}[language=bash]
+   $ ionic platform add ios
+\end{lstlisting} 
+
+Note that to run the application on an IOS device, you will need a Mac computer. Now that the device is connected and the platform is added, simply run the following the run the application:
+
+\begin{lstlisting}[language=bash]
+   $ ionic run android
+\end{lstlisting} 
+
+or 
+
+\begin{lstlisting}[language=bash]
+   $ ionic run ios
+\end{lstlisting} 
+
+For more options on the launch command, please refer to http://ionicframework.com/docs/cli/run.html.
+
+\subsection{Adding a new functionality}
+
+Now that everything is up and running, new functionalities can be added. This guide will explain how to add a new functionality to the Tools section. The same steps can be repeated to add new functionalities to any section of the application.
+
+\subsubsection{Step 1: Creating the required files}
+
+First, you will need to create the required files for your functionality. Navigate to the UCLCampus/UCLCampus/www folder. In this folder, we can see the architecture of the project. It contains one folder for each section of the application. Now, since we want to add a functionality to the Tools section, navigate to the tools folder. Here you can see 3 folders: ''js'', ''templates'' and ''maps''. ''js'' and ''templates'' are the folders that handle the tools menu in the application while ''maps'' is a functionality. So to create a new functionality, you will need to create a new folder.
+
+Create a new folder named ''my\_functionality''. Now navigate to this folder and create two new folders, ''js'' and ''templates''. ''js'' will contain your JavaScript while templates will contain your html code. In the ''js'' folder, create a ''my\_functionality.js'' file and create a ''my\_functionality.html'' file in the ''templates'' folder.
+
+\subsubsection{Step 2: Writing the JavaScript code}
+
+Open your favorite text editor and open the ''my\_functionality.js'' file. In this file, paste the following code:
+
+\begin{lstlisting}[language=JavaScript]
+   angular.module('ionicApp').controller("MyFunctionalityController", function($scope) {
+      $scope.textToDisplay = "This is the text we want to display."
+   });
+\end{lstlisting} 
+
+\subsubsection{Step 3: Writing the HTML code}
+
+Open the ''my\_functionality.html'' file.   In this file, paste the following code:
+
+\begin{lstlisting}[language=HTML]
+   <ion-view title="Title">
+      <ion-content>
+         <div>
+            {textToDisplay}
+         </div>
+      </ion-content>
+   </ion-view>	
+\end{lstlisting} 
+
+\subsubsection{Step 4: Adding your functionality to the application}
+
+To add the functionality to the application you will first need to create a state for it. To do so, open the UCLCampus/UCLCampus/www/js/app.js file. In this file, you will find the state provider. It contains a list of all the states the application can be in. You need to add a state for your functionality. Find this state in the list:
+
+
+\begin{lstlisting}[language=JavaScript]
+.state('app.tools', {
+    url: "/tools",
+    cache : false,
+    views: {
+      'tools-tab' :{
+        templateUrl: "tools/templates/tools.html",
+        controller: "ToolsController"
+      }
+    }
+  })
+\end{lstlisting} 
+This state corresponds to the tools menu. Below this state, add the following new state:
+
+\begin{lstlisting}[language=JavaScript]
+.state('app.myfunctionality', {
+    url: "/myfunctionality",
+    views: {
+      'tools-tab' :{
+        templateUrl: "tools/my\_functionality/templates/my\_functionality.html",
+        controller: "MyFunctionalityController"
+      }
+    }
+  })
+\end{lstlisting} 
+
+Once this is done, open the UCLCampus/UCLCampus/www/index.html file. In this file, find the following lines:
+
+\begin{lstlisting}[language=HTML]
+   <!-- tools module -->
+   <script src="tools/js/tools.js"></script>
+\end{lstlisting}
+
+Below these lines, add the following:
+
+\begin{lstlisting}[language=HTML]
+   <script src="tools/my_functionality/js/my_functionality.js"></script>
+\end{lstlisting}
+
+Your functionality has now been added to the application ! However, we don't have a way to access it yet. We will therefore add a button in the tools menu to access it. Open the UCLCampus/UCLCampus/www/js/factory.js file. This file handles, among other things, the buttons we can see in the different menus of the application. Find the function called "ToolsMenuFactory".  In this function you can see the following code:
+
+\begin{lstlisting}[language=JavaScript]
+   toolsMenuList : [
+       { title: 'Maps' , icon:'icon ion-map royal', url:'app.maps', campus:['Louvain-la-Neuve']}
+   ], 
+\end{lstlisting}
+
+Change it to the following:
+
+\begin{lstlisting}[language=JavaScript]
+   toolsMenuList : [
+      { title: 'Maps' , icon:'icon ion-map royal', url:'app.maps', campus:['Louvain-la-Neuve']},
+      { title: 'My functionality' , icon:'icon ion-help royal', url:'app.myfunctionality', campus:[]}
+    ],
+\end{lstlisting}
+
+The campus field in each item is used if you want to create functionalities specific to one or several, but not all, campuses. For instance, the maps functionality is currently only available for the Louvain-La-Neuve campus. An empty campus field means that we can access the function from all campuses.
+
+You can now access the new functionality from the tools menu of the application. You can now start editing the JavaScript and HTML files to create a more complicated function.
 
 \section{Future functionalities and possible improvements}
 
