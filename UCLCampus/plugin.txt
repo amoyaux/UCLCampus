@@ -1,5 +1,5 @@
 cordova plugin add cordova-plugin-device
-cordova add cordova-plugin-console
+cordova plugin add cordova-plugin-console
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add org.apache.cordova.network-information
 cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
