@@ -148,25 +148,135 @@ In this section, we will look at the different existing technologies relating to
 
 \section{Cross-platform mobile development tools}
 
+In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
 \subsection{The native approach}
+
+The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Best achievable performance\par
+Always up-to-date with the latest API\par
+Can use any platform\par
+
+&
+
+Low maintainability\par
+Harder to find contributors fluent in all technologies\par
+Can lead to different versions of the application\par
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the native approach}
+\end{table}
+
+\subsection{The web approach}
+A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform.
+
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Can be used on any mobile platform\par
+Easy to find contributors fluent in HTML5\par
+Easy to maintain\par
+
+&
+
+Doesn't have access to native platform features\par
+Harder to implement local storage/security (//TODO NEED BETTER SOURCE)\par
+Not as performant as native\par
+
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the web approach}
+\end{table}
+\subsection{The hybrid approach}
+
+The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Can be used on any mobile platform\par
+Easy to find contributors fluent in HTML5 and JavaScript\par
+Easy to maintain\par
+
+&
+
+Not as performant as native\par
+
+
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the hybrid approach}
+\end{table}
 
 \subsection{Our choice}
 
 \section{Open-source project and code sharing}
 
-\subsection{Github}
+\subsection{GitHub}
+GitHub is the state of the art for code sharing and project management on open source project.
+\subsection{Open Source And Free Software}
+A free software ensure three freedom:
+\begin{itemize}
+\item The usage freedom, commercial or not. This allows to use the software for any purpose.
+\item The modification freedom. This allows to modify the source code.
+\item Distribution freedom. The right to spread the software in any way.   	 
+\end{itemize} 
+An open source software want less strict criteria. For example an open source license can prevent a user to sell a source code or prohibit his modification. The source code for free software meet the open source criteria, not the opposite. A lot of software are free and open source at the same time.
 
 \subsection{License}
-The license are important in every project but even more in an open source project. Licenses restricts the use of the code by 
+The license are important in every project but even more in an open source project. Licenses restricts the use of the code by other programmers and companies. This section has three parts.
+\begin{itemize}
+\item Well know licenses in software development and their purpose.
+\item The license chosen for UCLCampus and why.
+\item The licenses of plugins involved in the application.
+\end{itemize}
+\subsubsection{Most Common Licenses}
+The three licenses GPL(2.0 and 3.0),MIT and ASF represents 72\% of the free software licenses\footnote{\url{https://www.blackducksoftware.com/top-open-source-licenses}}
+\paragraph{MIT}
+The MIT license allows the right to every person having the source code to use, modify, merge, publish, sell it and change the license. The only restriction is to have the name of the authors with it and the copyright notice.
+\paragraph{ASF}
+The Apache software foundation allows to use their code the same way than MIT. It only forbid three points\footnote{This three quotes come from their FAQ \url{http://www.apache.org/foundation/license-faq.html\#WhatDoesItMEAN}}.
+\begin{itemize}
+\item "Redistribute any piece of Apache-originated software without proper attribution."
+\item "Use any marks owned by The Apache Software Foundation in any way that might state or imply that the Foundation endorses your distribution."
+\item "Use any marks owned by The Apache Software Foundation in any way that might state or imply that you created the Apache software in question."
+\end{itemize}
+The source code has to have a reference to the license instead of being written in every files. 
+\paragraph{GPL}
+or GNU general public license, this license 
+\subsubsection{UCLCampus License}
+\subsubsection{Plugins Licenses}
 
 \section{Existing Student Application}
 
 \section{Project Management Methodologies}
 
 Here we detail the choices we made as to how we were going to manage the different parts of the project.
-\subsection{GitHub}
-GitHub is the state of the art for code sharing and project management on open source project.
-\paragraph{Issues in GitHub}
+
 
 \subsection{ZenHub}
 
@@ -1110,6 +1220,6 @@ Here we will reflect about the many choices we made and try to decide wether the
 
 \chapter{Bibliography}
 
-
+\url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}
 
 \end{document}
