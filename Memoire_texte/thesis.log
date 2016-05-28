@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  24 MAY 2016 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  28 MAY 2016 11:19
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1479,7 +1479,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-<Images/ucl.jpg, id=198, 205.76875pt x 284.06125pt>
+<Images/ucl.jpg, id=218, 205.76875pt x 284.06125pt>
 File: Images/ucl.jpg Graphic file (type jpg)
  <use Images/ucl.jpg>
 Package pdftex.def Info: Images/ucl.jpg used on input line 58.
@@ -1513,7 +1513,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 59.
 
-<Images/epl.jpg, id=199, 205.76875pt x 126.4725pt>
+<Images/epl.jpg, id=219, 205.76875pt x 126.4725pt>
 File: Images/epl.jpg Graphic file (type jpg)
  <use Images/epl.jpg>
 Package pdftex.def Info: Images/epl.jpg used on input line 69.
@@ -1581,131 +1581,125 @@ Chapter 2.
 
 ]
 Chapter 3.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 142.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 152.
 
 ("C:\Users\Arnold\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 142.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 152.
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 [6
 
 ] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 [9] [10]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 331--333
 
  []
 
-<Images/folder_before.jpg, id=303, 648.17157pt x 746.03719pt>
+<Images/folder_before.jpg, id=328, 648.17157pt x 746.03719pt>
 File: Images/folder_before.jpg Graphic file (type jpg)
 
 <use Images/folder_before.jpg>
-Package pdftex.def Info: Images/folder_before.jpg used on input line 347.
+Package pdftex.def Info: Images/folder_before.jpg used on input line 357.
 (pdftex.def)             Requested size: 91.04742pt x 104.786pt.
 
-<Images/folder_after.jpg, id=304, 309.40594pt x 770.12718pt>
+<Images/folder_after.jpg, id=329, 309.40594pt x 770.12718pt>
 File: Images/folder_after.jpg Graphic file (type jpg)
 
 <use Images/folder_after.jpg>
-Package pdftex.def Info: Images/folder_after.jpg used on input line 352.
+Package pdftex.def Info: Images/folder_after.jpg used on input line 362.
 (pdftex.def)             Requested size: 91.04742pt x 226.62149pt.
  [11
 
 ] [12 <./Images/folder_before.jpg> <./Images/folder_after.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-<Images/factory_arch.png, id=316, 961.34157pt x 560.8453pt>
+<Images/factory_arch.png, id=341, 961.34157pt x 560.8453pt>
 File: Images/factory_arch.png Graphic file (type png)
 
 <use Images/factory_arch.png>
-Package pdftex.def Info: Images/factory_arch.png used on input line 436.
+Package pdftex.def Info: Images/factory_arch.png used on input line 446.
 (pdftex.def)             Requested size: 288.4047pt x 168.25488pt.
  [13]
-<Images/stateProvider_arch.png, id=324, 806.26219pt x 672.26157pt>
+<Images/stateProvider_arch.png, id=349, 806.26219pt x 672.26157pt>
 File: Images/stateProvider_arch.png Graphic file (type png)
 
 <use Images/stateProvider_arch.png>
-Package pdftex.def Info: Images/stateProvider_arch.png used on input line 447.
+Package pdftex.def Info: Images/stateProvider_arch.png used on input line 457.
 (pdftex.def)             Requested size: 241.88052pt x 201.68002pt.
  [14 <./Images/factory_arch.png> <./Images/stateProvider_arch.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 487.
+(Font)              <9> on input line 497.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 487.
- [15] [16]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 538.
+(Font)              <5> on input line 497.
+ [15] [16] [17]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 558.
 
 
 ("C:\Users\Arnold\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 565--567
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
 
  []
 
-[17]
-Overfull \hbox (39.14697pt too wide) in paragraph at lines 568--568
+[18]
+Overfull \hbox (39.14697pt too wide) in paragraph at lines 588--588
 []\T1/lmtt/m/n/10.95 select * from feednormalizer where url='http://louvainfo.b
 e/evenements/feed/calendar/' 
  []
 
 
-Overfull \hbox (24.69966pt too wide) in paragraph at lines 576--577
+Overfull \hbox (24.69966pt too wide) in paragraph at lines 596--597
 \T1/lmr/m/n/10.95 The re-quest al-ways start with []$\T1/lmtt/m/n/10.95 http : 
 / / horairev6 . uclouvain . be / jsp / custom / modules / plannings /$
  []
 
-[18] [19] [20] [21]
+[19] [20] [21]
 Chapter 5.
-
-Overfull \hbox (1.02563pt too wide) in paragraph at lines 639--640
-\T1/lmr/m/n/10.95 change de-pend-ing the sec-tion. There is four but-tons on th
-e footer, the four main sec-tions(student,
- []
-
 [22
 
-] <Images/tabs-nav-stack.png, id=392, 540.0175pt x 804.00375pt>
+] <Images/tabs-nav-stack.png, id=420, 540.0175pt x 804.00375pt>
 File: Images/tabs-nav-stack.png Graphic file (type png)
 
 <use Images/tabs-nav-stack.png>
-Package pdftex.def Info: Images/tabs-nav-stack.png used on input line 644.
+Package pdftex.def Info: Images/tabs-nav-stack.png used on input line 666.
 (pdftex.def)             Requested size: 162.0065pt x 241.20299pt.
  [23 <./Images/tabs-nav-stack.png>] [24]
 [25] [26] [27] [28]
-<Images/sportsorting.png, id=449, 918.43124pt x 402.75468pt>
+<Images/sportsorting.png, id=477, 918.43124pt x 402.75468pt>
 File: Images/sportsorting.png Graphic file (type png)
 
 <use Images/sportsorting.png>
-Package pdftex.def Info: Images/sportsorting.png used on input line 764.
+Package pdftex.def Info: Images/sportsorting.png used on input line 787.
 (pdftex.def)             Requested size: 275.5315pt x 120.82733pt.
  [29 <./Images/sportsorting.png>] [30] [31]
 [32]
@@ -1721,24 +1715,24 @@ Chapter 8.
 [35
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 835.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 835.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 858.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 858.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 835.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 835.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 858.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 858.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B5BABC4208FAA47F602045B7B7D4F6FD;3186.
+(rerunfilecheck)             Checksum: 0D233B4AEBFAD67549B78BB263B29DC6;3507.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 835.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 858.
  ) 
 Here is how much of TeX's memory you used:
- 38292 strings out of 493622
- 839771 string characters out of 3134732
- 811587 words of memory out of 3000000
- 41059 multiletter control sequences out of 15000+200000
+ 38305 strings out of 493622
+ 839964 string characters out of 3134732
+ 811593 words of memory out of 3000000
+ 41064 multiletter control sequences out of 15000+200000
  68322 words of font info for 49 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  131i,10n,158p,10380b,3283s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1755,9 +1749,9 @@ X 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Users/Arnold/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Arnold/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Arnold/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on thesis.pdf (35 pages, 695639 bytes).
+Output written on thesis.pdf (35 pages, 701623 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
- 437 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 593 PDF objects out of 1000 (max. 8388607)
+ 154 named destinations out of 1000 (max. 500000)
+ 477 words of extra memory for PDF output out of 10000 (max. 10000000)
 
