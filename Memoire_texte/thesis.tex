@@ -236,16 +236,25 @@ Not as performant as native\par
 
 \section{Open-source project and code sharing}
 
-\subsection{GitHub}
-GitHub is the state of the art for code sharing and project management on open source project.
+
 \subsection{Open Source And Free Software}
+\paragraph{What is an open source, free software?\\}
 A free software ensure three freedom:
 \begin{itemize}
 \item The usage freedom, commercial or not. This allows to use the software for any purpose.
 \item The modification freedom. This allows to modify the source code.
-\item Distribution freedom. The right to spread the software in any way.   	 
+\item Distribution freedom. The right to spread the software in every possible way.   	 
 \end{itemize} 
 An open source software want less strict criteria. For example an open source license can prevent a user to sell a source code or prohibit his modification. The source code for free software meet the open source criteria, not the opposite. A lot of software are free and open source at the same time.
+
+\paragraph{Create an open source project\\}
+To create an open source software, you need two conditions:
+\begin{itemize}
+\item A project
+\item A community
+\end{itemize}
+
+This thesis has for purpose to create a solid foundation for the project. The project exist, it is the UCLCampus application and it is available on mobile. There is no community at this moment, Create a community around the project could be another thesis. A community doesn't mean only programmers, it can be translation student that can help or designer to create logo and icons. 
 
 \subsection{License}
 The license are important in every project but even more in an open source project. Licenses restricts the use of the code by other programmers and companies. This section has three parts.
@@ -255,10 +264,10 @@ The license are important in every project but even more in an open source proje
 \item The licenses of plugins involved in the application.
 \end{itemize}
 \subsubsection{Most Common Licenses}
-The three licenses GPL(2.0 and 3.0),MIT and ASF represents 72\% of the free software licenses\footnote{\url{https://www.blackducksoftware.com/top-open-source-licenses}}
+The three licenses GPL(2.0 and 3.0),MIT and Apache represents 72\% of the free software licenses\footnote{\url{https://www.blackducksoftware.com/top-open-source-licenses}}
 \paragraph{MIT}
 The MIT license allows the right to every person having the source code to use, modify, merge, publish, sell it and change the license. The only restriction is to have the name of the authors with it and the copyright notice.
-\paragraph{ASF}
+\paragraph{Apache}
 The Apache software foundation allows to use their code the same way than MIT. It only forbid three points\footnote{This three quotes come from their FAQ \url{http://www.apache.org/foundation/license-faq.html\#WhatDoesItMEAN}}.
 \begin{itemize}
 \item "Redistribute any piece of Apache-originated software without proper attribution."
@@ -267,19 +276,115 @@ The Apache software foundation allows to use their code the same way than MIT. I
 \end{itemize}
 The source code has to have a reference to the license instead of being written in every files. 
 \paragraph{GPL}
-or GNU general public license, this license 
+or GNU general public license. This license ensure the right of a free software. Moreover this license is copyleft. Copyleft mean that derived work have to be distributed under the same license. This ensure that the freedom will be preserved whenever the work is distributed.\\
+The most used version is the 2 but there exist a new version 3. The two versions have the same goal but the version 3 add some conditions against companies that found tricks to cheat on the version 2\footnote{Tivoization, Laws prohibiting, Discriminatory patent deals \url{http://www.gnu.org/licenses/quick-guide-gplv3.en.html}}
 \subsubsection{UCLCampus License}
+UCLCampus has the license GNU GPL v3.0. These are the justification of this choice:
+\begin{itemize}
+\item This license ensure that derived work will keep this license. This prevent companies to take our code, add some features, add advertisements and make money on it.
+\item A lot of Ionic plugins use the license Apache 2.0. This license is only compatible with the version 3.0 of GPL.
+\item UCL can change it to a more strict license.
+\end{itemize}
+
 \subsubsection{Plugins Licenses}
+Figure 2.1 show the list of the plugin and their licenses. There is a majority of Apache 2.0 and some MIT. About the compatibility between license, Apache 2.0 and MIT can both be used in GPL 3.0 project. The opposite is not true, GPL 3.0 can not be used in Apache 2.0 and MIT project. Apache 2.0 and GPL 2.0 are not compatible. 
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{c|c}
+Plugins & License\\
+\hline
+cordova-plugin-device & Apache 2.0\\
+cordova-plugin-console & Apache 2.0\\
+cordova-plugin-whitelist & Apache 2.0\\
+cordova-plugin-network-information & Apache 2.0\\
+Cordova/PhoneGap sqlite storage adapter & MIT or Apache 2.0\\
+PhoneGap Calendar plugin & MIT\\
+Cordova-plugin-inappbrowser & Apache 2.0\\
+cordova-plugin-geolocation & Apache 2.0\\
+cordova-plugin-dbcopy & Apache 2.0\\
+Angular-translate & MIT \\
+\end{tabular}
+\end{center}
+\caption{Plugins and their associated license}
+\end{figure}
+\subsection{GitHub}
+GitHub is the state of the art for code sharing and project management on open source project. It have a lot of benefits:
+\begin{itemize}
+\item People can easily copy the code to their own computer and start a derived work. 
+\item People can submit their local new features to the project owners as "pull request". The owner can accept or reject them.
+\item People can create issues if they found a bug or ask for new functionalities. 
+\item There exist plugin to create a forum linked to the git repository. A forum is useful when other programmers has questions about your code or want to discuss new functionalities.
+\item There are plugins to test or deploy automatically your project\footnote{Jenkins for example}
+\end{itemize}
 
 \section{Existing Student Application}
 
+The number of university application on Google Play is huge. They often offer a schedule, libraries, lecture halls and maps features. However some application are more interesting in the UCLCampus case because they are close or can be directly related to our project.  
+
+\subsubsection{LLN Campus}
+LLN Campus was a project developed by 3rd years UCL computer sciences students. This project aims to help the the UCL student in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, map and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing if they are open or not. Their project is available on GitHub. They created a database for Louvain-la-Neuve that we reused in our application. 
+\begin{figure}
+\centering
+\includegraphics[scale = 0.2]{Images/llncampus.png}
+\caption{LLN Campus home menu}
+\end{figure}
+
+\subsubsection{LLN Maps}
+LLN Maps developed to the LSM, is an application based on maps. It is implemented with Ionic. It contains various informations as lecture halls, libraries or train station. This informations are available as markers on a map. A gps guidance with time calculation is possible from the actual position to each points of interest. There is a search bar if a specific information is required. Moreover a compass mode is possible. See figure 2.3 for a visual.  
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{Images/llnmaps1.jpg}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{Images/llnmaps2.jpg}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{LLN maps}
+\label{fig:test}
+\end{figure}
+LLN Maps will be integrated in UCLCampus. 
+
+
+
+\subsubsection{Quivr}
+Quivr \footnote{\url{https://quivr.be/home/}} is the KUL application. It is not open source. This application is developed by 22 members and have 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friends system, libraries, university restaurants and news. They have really impressive features as a system that tell which library is open and how many places are used. An other feature is to share schedule with friends in order to meet up easily. 
+
+
 \section{Project Management Methodologies}
 
-Here we detail the choices we made as to how we were going to manage the different parts of the project.
+Here we detail the choices we made as to how we were going to manage the different parts of the project. We worked on an agile approach with a sprint system. 
 
 
 \subsection{ZenHub}
+ZenHub is a GitHub extension. It is integrated in the GitHub interface and add functionalities as a tasks board and a velocity management.  
 
+\paragraph{Tasks board}
+Figure 2.4 shows the UCLCampus board. It contains the following column
+\begin{itemize}
+\item Student. All the tasks relative to the student section. This section only contains the tasks that are not done and that are not in the actual milestone.
+\item Campus. Same than student but for the tasks relative to the campus section
+\item Tools. Same than student but for the tasks relative to the tools section
+\item City. Same than student but for the tasks relative to the city section
+\item To Do. The task to finish for the milestone.
+\item In Progress. The task that are actually in progress.
+\item Done. The finished task during the current milestone.
+\item Closed. All the tasks done during the past milestone.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[scale = 0.5, angle = 90]{Images/dashboard.png}
+\caption{Tasks board}
+\end{figure}
+
+\paragraph{Issues to tasks}
+
+\paragraph{Milestone}
 
 \chapter{Functionalities of UCLCampus}
 
@@ -657,7 +762,7 @@ This section is not implemented yet because the web services from OSIS wasn't re
 Three steps are needed for the security. First what do I need to protect? Second what are the threats and how the opponent can exploit them? Last, what do we need to implement in order to make it impossible? 
 
 \subsubsection{Data to protect}
-The only data the hacker can be interest in, are the personal data of the user that means his password and username. He couldn't stole data of the database because the application his open source and they are so available on Github. An other thread would be the opponent to modify the data of the database but this is impossible because the database is replicated on local storage and the functionalities only communicate with that one (thus, the only database he can modify, is the local database on his smartphone). About our code, it's available on Github due to open source project and it's protected by a license. Therefore the only data that hacker could be interested to steal are the personal data of the user.
+The only data the hacker can be interest in, are the personal data of the user that means his password and username. He couldn't stole data of the database because the application his open source and they are so available on GitHub. An other thread would be the opponent to modify the data of the database but this is impossible because the database is replicated on local storage and the functionalities only communicate with that one (thus, the only database he can modify, is the local database on his smartphone). About our code, it's available on GitHub due to open source project and it's protected by a license. Therefore the only data that hacker could be interested to steal are the personal data of the user.
 
 \subsubsection{Possible breaks}
 There exist two possible way to steal data. The first is if the opponent manage to get the hardware device, in this case, the opponent could try to access and steal data in the local storage. The second threat is to sniff the traffic between the application and OSIS, in this case he could intercept the package containing the request with the password and the username as parameters. 
@@ -1215,11 +1320,13 @@ Here we will reflect about the many choices we made and try to decide wether the
 
 \section{Project Management}
 
+\section{Testing}
+
 
 \chapter{Conclusion} 
 
 \chapter{Bibliography}
 
-\url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}
-
+\url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}\\
+\url{https://en.wikipedia.org/wiki/GNU_General_Public_License}\\
 \end{document}
