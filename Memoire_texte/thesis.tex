@@ -353,7 +353,7 @@ GitHub is the state of the art for code sharing and project management on open s
 
 The number of university application on Google Play is huge. They often offer a schedule, libraries, lecture halls and maps features. However some application are more interesting in the UCLCampus case because they are close or can be directly related to our project.  
 
-\subsection{LLN Campus}
+\subsubsection{LLN Campus}
 LLN Campus was a project developed by 3rd years UCL computer sciences students. This project aims to help the the UCL student in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, map and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing if they are open or not. Their project is available on GitHub. They created a database for Louvain-la-Neuve that we reused in our application. 
 \begin{figure}
 \centering
@@ -361,7 +361,7 @@ LLN Campus was a project developed by 3rd years UCL computer sciences students. 
 \caption{LLN Campus home menu}
 \end{figure}
 
-\subsection{LLN Maps}
+\subsubsection{LLN Maps}
 LLN Maps developed to the LSM, is an application based on maps. It is implemented with Ionic. It contains various informations as lecture halls, libraries or train station. This informations are available as markers on a map. A gps guidance with time calculation is possible from the actual position to each points of interest. There is a search bar if a specific information is required. Moreover a compass mode is possible. See figure 2.3 for a visual.  
 \begin{figure}
 \centering
@@ -382,7 +382,7 @@ LLN Maps will be integrated in UCLCampus.
 
 
 
-\subsection{Quivr}
+\subsubsection{Quivr}
 Quivr \footnote{\url{https://quivr.be/home/}} is the KUL application. It is not open source. This application is developed by 22 members and have 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friends system, libraries, university restaurants and news. They have really impressive features as a system that tell which library is open and how many places are used. An other feature is to share schedule with friends in order to meet up easily. 
 
 
@@ -413,12 +413,9 @@ Figure 2.4 shows the UCLCampus board. It contains the following column
 \caption{Tasks board}
 \end{figure}
 
-\subsubsection{Issues To Tasks}
+\subsubsection{Issues to tasks}
 
-
-
-\subsubsection{Milestones}
-
+\subsubsection{Milestone}
 
 \chapter{Functionalities of UCLCampus}
 
@@ -1114,9 +1111,6 @@ In this example, we create an English translation and the variable "hello\_messa
 The plugin allows to set a preferred language that will be preselected at the application launch. Actually it is English.
 \paragraph{Campus selection} The user can select a campus with the button named "Choose my campus" in the settings menu. This button open a page with the list of all possible campus, the user has to choose one and validate his choice. As explained earlier the campus selection influences the available functionalities in application. A pre selection based on the geolocation happens when the user open UCLCampus and the nearest campus is chosen per default.\\
 For the implementation, we created a campus factory that hold a list of campus. The items of this list have three attributes, the name of the campus, longitude and latitude. In order to select per default the closest campus, we created a JavaScript function that just return the campus minimising the distance between it and the actual position of the user. Thus it is easy to add a new campus to the application or remove one, but the programmers should care about the compatibility between the new campus and all the functionalities enable for all sites. 
-
-
-
 \section{Modularity and how to add a new functionality}
 This application was built with the idea that other contributors would have to add functionalities themselves or even take over the project in the future. It was therefore important to be able to add modules to the application without having to understand the whole code. 
 This section will present a user manual on how to get the application to run from scratch and how to add new functionalities.  It must be noted that in order to deploy the application on iOS, one must user OS X as his operating system.  The following steps will however work for any operating system and the user will be able to deploy the application on Android regardless of the OS used.
@@ -1342,25 +1336,14 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 \end{itemize}
 \subsection{Other improvements}
 This project currently uses the 1.3 version of Ionic. It is however already possible to use Ionic 2 and migrating the application to this new version could be interesting. At the time of writing Ionic 2 was only available as a beta release, which is why we didn't use it immediately. 
-
-
 \chapter{Analysis}
-
 Here we will reflect about the many choices we made and try to decide wether they were the right ones or not.
-
 \section{Ionic framework}
-
 \section{GitHub}
-
 \section{Project Management}
-
 \section{Testing}
-
-
 \chapter{Conclusion} 
-
 \chapter{Bibliography}
-
 \url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}\\
 \url{https://en.wikipedia.org/wiki/GNU_General_Public_License}\\
 \end{document}
