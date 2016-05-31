@@ -18,6 +18,7 @@
 \usepackage{forest}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage[english]{babel}
 \iffalse
 \usepackage{dirtytalk}
 \fi
@@ -148,7 +149,7 @@ In this section, we will look at the different existing technologies relating to
 
 \section{Cross-platform mobile development tools}
 
-In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. //TODO
+In each of these sections, we will detail the different approaches one could choose to develop a cross-platform moblie applications. We will also present several frameworks using these approaches. We will then compare them and choose one of those approaches for the rest of the project. 
 \subsection{The native approach}
 
 The first approach we considered for our project was what we call a native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS.  
@@ -196,7 +197,6 @@ Easy to maintain\par
 &
 
 Doesn't have access to native platform features\par
-Harder to implement local storage/security (//TODO NEED BETTER SOURCE)\par
 Not as performant as native\par
 
 
@@ -218,6 +218,7 @@ The last approach to develop a mobile application is called the hybrid approach.
 \\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
 
 Can be used on any mobile platform\par
+Easier to update\par
 Easy to find contributors fluent in HTML5 and JavaScript\par
 Easy to maintain\par
 
@@ -234,6 +235,36 @@ Not as performant as native\par
 
 \subsection{Our choice}
 
+There isn't one approach that is inherently better than the other two ones, the best one depends on what you are trying to accomplish.
+
+The native approach is best suited when accessing native features of each platform is very important for the application. It is also the choice to be made if you can afford separate budgets for developers in iOS and Android.
+
+The web approach is the best choice if your application is mostly a support for your main web application.
+
+Finally, the hybrid approach is best used when you want a quick result and need to make frequent updates to your application. It is also useful if you want to include outsiders to the project who aren't fluent in all native technologies.
+
+
+In the context of this thesis, there is no budget therefore choosing the native approach will only depend on the importance of accessing native features. There also won't be a web application, meaning the web approach is probably a bad choice. We believe that making it easier for outsiders to contribute is more important than accessing native features. Indeed, we don't think we will need any feature that would be supported by one platform but not the other and will mainly use generic features. Furthermore, the application will be updated every year (new lecture halls, libraries, ...). We therefore decided to go with an hybrid approach for this thesis.
+
+
+\subsection{Choosing the best hybrid framework}
+There are many different hybrid frameworks and choosing one was no easy task. We were indeed disappointed in the lack of any benchmark regarding their respective performance and realized most people chose base on their personal preference. We were however able to find the following comparison of the most popular frameworks (source http://tutorialzine.com/2015/10/comparing-the-top-frameworks-for-building-hybrid-mobile-apps/)
+
+\begin{center}
+    \begin{tabular}{ | l | p{2cm} | l | l | l | p{3cm} |}
+    \hline
+    Framework & Native look and feel & Prerequisites  & Community & Docs & Tools\\ \hline
+    Ionic & 7/10 & AngularJS & 9/10 & 8/10 & Powerful CLI, Ionic SDK\\ \hline
+    Onsen UI & 6/10 & AngularJS & 4/10 & 9/10 & Monaca Could IDE \\ \hline
+    Framework 7 & 8/10 & HTML, CSS and JS & 6/10 & 8/10 & None \\ \hline
+    React Native & 8/10 & React & 8/10 & 5/10 & React Developer Tools extension for Chrome \\ \hline
+    jQuery Mobile & 3/10 & jQuery & 8/10 & 5/10 & None \\ \hline
+   Native Script & 8/10 & JavaScript & 5/10 & 9/10 & Free CLI, other paid options \\ \hline
+   Famous & 7/10 & WebGL, AngularJS & 3/10 & 5/10 & None \\ \hline
+    \end{tabular}
+\end{center}
+
+This table seems to be the most complete comparison of hybrid frameworks existing at the moment and it shows that Ionic is the most balanced and that it doesn't have any prominent weaknesses. Despite the lack of objectivity of the measurements used, this table seemed to reflect the opinion of other authors comparing hybrid frameworks. Since realizing benchmarks for all those frameworks would represent a tremendous amount of work that would go well beyond the scope of this thesis, we decided to trust the advice of the aforementioned reviews. We thus decided to use the Ionic framework in the context of this thesis.
 \section{Open-source project and code sharing}
 
 
