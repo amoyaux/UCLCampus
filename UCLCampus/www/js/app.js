@@ -188,7 +188,7 @@
               if(sp == 'fail'){
               
               var list = [];
-              for (i = 0; i < 6; i++) { 
+              for (i = 0; i < 4; i++) { 
                 list.push(SportsFactory.getPage(50*i));
               }
               return $q.all(list);
@@ -274,7 +274,7 @@
       if (window.cordova) { //emulator/device
         window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
         window.plugins.sqlDB.copy("database.sqlite", 0, function() {
-          db = $cordovaSQLite.openDB("database.sqlite");
+          db = $cordovaSQLite.openDB({name:"database.sqlite", location:"database.sqlite"});
         }, function(error) {
             console.error("There was an error copying the database: " + error.code);
             db = $cordovaSQLite.openDB({name:"database.sqlite", location:"database.sqlite"});
