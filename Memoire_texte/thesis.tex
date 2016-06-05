@@ -85,19 +85,17 @@
 
 
 \begin{document}
-\renewcommand\thepage{}
 \maketitle					% To create front cover page
 \thispagestyle{empty}		% To suppress header and footer on the back of the cover page
 \tableofcontents % Include a table of contents
 \newpage % Begins the essay on a new page instead of on the same page as the table of contents 
 \linespread{1.2} % Line spacing
-\renewcommand\thepage{\arabic{page}}
 
 \chapter{Introduction} % Major section
 
 The goal of this thesis was to develop an open-source, multi-platform mobile application for UCL students. The application would be used by students to help them with their everyday student life in a town they might not know much about. It would, for example, guide them to their lecture halls or libraries and show them the many activities the town has to offer. The application in itself, while useful, does not constitute this thesis.\\
 
-The difference between a master's thesis and other assignments is that the goal of the thesis is not limited to evaluation and self-improvement. Indeed, a thesis should contribute to the field it is related to, providing insight for other researchers. For some thesis, the contribution is clear and does not need to be discussed any further. This was not the case for this thesis. Indeed, the title, "UCLCampus, a mobile application for UCL students", doesn't indicate what contribution we will be making.\\
+The difference between a master's thesis and other assignments is that the goal of the thesis is not limited to evaluation and self-improvement. Indeed, a thesis should contribute to the field it is related to, providing insight for other researchers. For some theses, the contribution is clear and does not need to be discussed any further. This was not the case for this thesis. Indeed, the title, "UCLCampus, a mobile application for UCL students", doesn't indicate what contribution we will be making.\\
 
  We therefore defined two different contributions we wanted to make and decided to model this paper around them. Each of them will define a type of researcher or student that might be interested in reading this thesis.\\
 
@@ -128,7 +126,7 @@ The first challenge of this project was choosing the best technique to develop o
 
 The first approach we considered for our project was what is known as the native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS. \\
 
-Using the native environment means you will of course have access to every feature and achieve the best performance possible. However, this also means that you will need to maintain one version of your code for each platform you decide to support, thus decreasing maintainability and making harder for anyone to contribute to the project. Table 2.1 summarizes the pros and cons of this approach.
+Using the native environment means you will of course have access to every feature and achieve the best performance possible. However, this also means that you will need to maintain one version of your code for each platform you decide to support, thus decreasing maintainability and making it harder for anyone to contribute to the project. Table 2.1 summarizes the pros and cons of this approach.
 
 \begin{table}[H]
 \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
@@ -247,59 +245,61 @@ This table seems to be the most complete comparison of hybrid frameworks existin
 \section{Open-source project and code sharing}
 
 
-\subsection{Open Source And Free Software}
-\paragraph{What is an open source, free software?\\}
-A free software ensure three freedom:
+\subsection{Open-source And Free Software}
+\subsubsection{What is an open-source, free software?}
+The denominations "free software" and "open-source" are often used interchangeably but actually bear some differences. Indeed, a free software ensures three freedoms:
 \begin{itemize}
 \item The usage freedom, commercial or not. This allows to use the software for any purpose.
 \item The modification freedom. This allows to modify the source code.
-\item Distribution freedom. The right to spread the software in every possible way.   	 
+\item The distribution freedom. The right to spread the software in every possible way.   	 
 \end{itemize} 
-An open source software want less strict criteria. For example an open source license can prevent a user to sell a source code or prohibit his modification. The source code for free software meet the open source criteria, not the opposite. A lot of software are free and open source at the same time.
+An open-source software, on the other hand, has less strict criteria. For example an open-source license can prevent a user to sell a source code or prohibit its modification. The source code of a free software meets the open-source criteria while the opposite is not necessarily true. Non-free open-source software is however not the norm and most of them are both free and open-source.\\
 
-\paragraph{Create an open source project\\}
-To create an open source software, you need two conditions:
+This project is both free and open-source as we enforce no special restriction to the aforementioned liberties.
+
+\subsubsection{Creating an open-source project}
+Creating an open-source project implies two important parts:
 \begin{itemize}
-\item A project
-\item A community
+\item The creation of a project
+\item The creation of a community
 \end{itemize}
 
-This thesis has for purpose to create a solid foundation for the project. The project exist, it is the UCLCampus application and it is available on mobile. There is no community at this moment, Create a community around the project could be another thesis. A community doesn't mean only programmers, it can be translation student that can help or designer to create logo and icons. 
+Indeed, an open-source project is not complete without an active community working on the project. This implies having a leader able to give the project a clear direction as well as giving the community the means to communicate to each other. Creating such a community is outside the scope of this thesis. We however included outside contributors to the project to prove that the open-source part of our project was working as intended. In this thesis, we will limit ourselves to an exposition of the different licenses and tools one would need to create an open-source application as well as an explanation of our choices. 
 
 \subsection{License}
-The license are important in every project but even more in an open source project. Licenses restricts the use of the code by other programmers and companies. This section has three parts.
+Licenses are important in every project but even more so in an open-source project. Licenses restricts the use of the code by other programmers and companies. This section has three parts.
 \begin{itemize}
 \item Well know licenses in software development and their purpose.
-\item The license chosen for UCLCampus and why.
+\item The license chosen for UCLCampus and the reasoning behind this choice.
 \item The licenses of plugins involved in the application.
 \end{itemize}
 \subsubsection{Most Common Licenses}
-The three licenses GPL(2.0 and 3.0),MIT and Apache represents 72\% of the free software licenses\footnote{\url{https://www.blackducksoftware.com/top-open-source-licenses}}
+The three licenses GPL(2.0 and 3.0), MIT and Apache represents 72\% of the free software licenses\footnote{\url{https://www.blackducksoftware.com/top-open-source-licenses}}
 \paragraph{MIT}
-The MIT license allows the right to every person having the source code to use, modify, merge, publish, sell it and change the license. The only restriction is to have the name of the authors with it and the copyright notice.
+The MIT license gives the right to every person having the source code to use it, modify it, merge it, publish it, sell it and change the license. The only restriction is to have the name of the authors with it and the copyright notice.
 \paragraph{Apache}
-The Apache software foundation allows to use their code the same way than MIT. It only forbid three points\footnote{This three quotes come from their FAQ \url{http://www.apache.org/foundation/license-faq.html\#WhatDoesItMEAN}}.
+The Apache software foundation allows to use their code  in the same way than the MIT license would. It only forbids three points\footnote{This three quotes come from their FAQ \url{http://www.apache.org/foundation/license-faq.html\#WhatDoesItMEAN}}.
 \begin{itemize}
-\item "Redistribute any piece of Apache-originated software without proper attribution."
-\item "Use any marks owned by The Apache Software Foundation in any way that might state or imply that the Foundation endorses your distribution."
-\item "Use any marks owned by The Apache Software Foundation in any way that might state or imply that you created the Apache software in question."
+\item "\textit{Redistribute any piece of Apache-originated software without proper attribution.}"
+\item \textit{"Use any marks owned by The Apache Software Foundation in any way that might state or imply that the Foundation endorses your distribution.}"
+\item "\textit{Use any marks owned by The Apache Software Foundation in any way that might state or imply that you created the Apache software in question.}"
 \end{itemize}
 The source code has to have a reference to the license instead of being written in every files. 
 \paragraph{GPL}
-or GNU general public license. This license ensure the right of a free software. Moreover this license is copyleft. Copyleft mean that derived work have to be distributed under the same license. This ensure that the freedom will be preserved whenever the work is distributed.\\
-The most used version is the 2 but there exist a new version 3. The two versions have the same goal but the version 3 add some conditions against companies that found tricks to cheat on the version 2\footnote{Tivoization, Laws prohibiting, Discriminatory patent deals \url{http://www.gnu.org/licenses/quick-guide-gplv3.en.html}}
+or GNU general public license. This license gives the same rights a free software gives. Moreover this license is copyleft. Copyleft mean that derived work have to be distributed under the same license. This ensure that the freedom will be preserved whenever the work is distributed.\\
+The most used version is version 2 but there exists a new version 3. The two versions have the same goal but the version 3 adds some conditions to stop companies from using loopholes they found in version 2. \footnote{Tivoization, Laws prohibiting, Discriminatory patent deals \url{http://www.gnu.org/licenses/quick-guide-gplv3.en.html}}
 \subsubsection{UCLCampus License}
-UCLCampus has the license GNU GPL v3.0. These are the justification of this choice:
+UCLCampus uses the GNU GPL v3.0 license. We made this choice for the following reasons:
 \begin{itemize}
-\item This license ensure that derived work will keep this license. This prevent companies to take our code, add some features, add advertisements and make money on it.
+\item This license ensures that derived work will keep this license. This prevents companies from taking our code, adding some features, adding advertisements and making money out of it.
 \item A lot of Ionic plugins use the license Apache 2.0. This license is only compatible with the version 3.0 of GPL.
-\item UCL can change it to a more strict license.
+\item UCL can change it to a stricter license.
 \end{itemize}
 
 \subsubsection{Plugins Licenses}
-Figure 2.1 show the list of the plugin and their licenses. There is a majority of Apache 2.0 and some MIT. About the compatibility between license, Apache 2.0 and MIT can both be used in GPL 3.0 project. The opposite is not true, GPL 3.0 can not be used in Apache 2.0 and MIT project. Apache 2.0 and GPL 2.0 are not compatible. 
+Figure 2.1 shows the list of the plugins the application uses and their respective licenses. There is a majority of Apache 2.0 and some MIT. Regarding the compatibility between licenses, Apache 2.0 and MIT can both be used in a GPL 3.0 project. The opposite is not true, GPL 3.0 can not be used in Apache 2.0 and MIT project. Apache 2.0 and GPL 2.0 are not compatible. 
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \begin{tabular}{c|c}
 Plugins & License\\
@@ -319,90 +319,101 @@ Angular-translate & MIT \\
 \caption{Plugins and their associated license}
 \end{figure}
 \subsection{GitHub}
-GitHub is the state of the art for code sharing and project management on open source project. It have a lot of benefits:
+GitHub is the state of the art for code sharing and project management on open-source projects. It has a lot of benefits:
 \begin{itemize}
 \item People can easily copy the code to their own computer and start a derived work. 
-\item People can submit their local new features to the project owners as "pull request". The owner can accept or reject them.
+\item People can submit their local new features to the project owners as a "pull request". The owner can accept or reject them.
 \item People can create issues if they found bugs or want new functionalities. 
-\item There exist plugin to create a forum linked to the git repository. A forum is useful when other programmers has questions about your code or want to discuss new features.
+\item There are plugins to create a forum linked to the git repository. A forum is useful when other programmers have questions about your code or want to discuss new features.
 \item There are plugins to test or deploy automatically your project.
-\item Create a wiki for the repository.
-\footnote{Jenkins for example}
+\item Creating a wiki for the repository is easy.
+\footnote{Jenkins for example //TODO DETAILLER}
 \end{itemize}
-The actual GitHub repository for the project is \url{https://github.com/amoyaux/UCLCampus}.
-\section{Existing Student Application}
 
-The number of university application on Google Play is huge. They often offer a schedule, libraries, lecture halls and maps features. However some application are more interesting in the UCLCampus case because they are close or can be directly related to our project.  
+We therefore decided to use GitHub as our sharing platform as it is by far the most used platform nowadays.
+The actual GitHub repository for the project is available at \url{https://github.com/amoyaux/UCLCampus}.
+
+
+\section{Existing Student Applications}
+
+The number of university application on Google Play is huge. They often offer a schedule, libraries, lecture halls and maps features. However some applications are more interesting in the UCLCampus case because they are close or can be directly related to our project.  
 
 \subsubsection{LLN Campus}
-LLN Campus was a project developed by 3rd years UCL computer sciences students. This project aims to help the the UCL student in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, map and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing if they are open or not. Their project is available on GitHub. They created a database for Louvain-la-Neuve that we reused in our application. 
-\begin{figure}
+LLN Campus was a project developed by 3rd years UCL computer science students. This project's goal was to help the the UCL students in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, maps and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing whether they are open or not. Their project is available on GitHub. //TODO ADD LINK They also created an extensive database for university buildings in Louvain-la-Neuve that we reused in our application with their authorization. 
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.2]{Images/llncampus.png}
 \caption{LLN Campus home menu}
 \end{figure}
 
+\newpage
+
 \subsubsection{LLN Maps}
-LLN Maps developed to the LSM, is an application based on maps. It is implemented with Ionic. It contains various informations as lecture halls, libraries or train station. This informations are available as markers on a map. A gps guidance with time calculation is possible from the actual position to each points of interest. There is a search bar if a specific information is required. Moreover a compass mode is possible. See figure 2.3 for a visual.  
-\begin{figure}
+LLN Maps is an application showing maps of Louvain-La-Neuve with relevant information and is developed by researchers of the Louvain School of Management. It is implemented using the Ionic framework. It contains various information such as the locations of lecture halls, libraries or train stations. This information is available as markers on a map. A GPS guidance with time calculation is possible from the user's position to each points of interest. There is a search bar if a specific information is required. Moreover a compass mode is available. See figure 2.3 for a visual.
+
+
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.5\linewidth]{Images/llnmaps1.jpg}
+  \includegraphics[width=.6\linewidth]{Images/llnmaps1.jpg}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.5\linewidth]{Images/llnmaps2.jpg}
+  \includegraphics[width=.55\linewidth]{Images/llnmaps2.jpg}
   \label{fig:sub2}
 \end{subfigure}
 \caption{LLN maps}
 \label{fig:test}
 \end{figure}
-LLN Maps will be integrated in UCLCampus. 
+We contacted the researchers that implemented the LLN Maps application and asked them to integrate their application into ours as outside contributors. Integration was made easier by the fact that both projects use the same framework.
 
 
 
 \subsubsection{Quivr}
-Quivr \footnote{\url{https://quivr.be/home/}} is the KUL application. It is not open source. This application is developed by 22 members and have 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friends system, libraries, university restaurants and news. They have really impressive features as a system that tell which library is open and how many places are used. An other feature is to share schedule with friends in order to meet up easily. 
+Quivr \footnote{\url{https://quivr.be/home/}} is the application developed by the Katholieke Universiteit Leuven. It is not open-source. This application is developed by 22 members and has over 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friend system, libraries, university restaurants and news. The list of features is impressive but the lack of available source code made it impossible for us to use this application as a basis for ours in any way.
 
 
 \section{Project Management Methodologies}
 
-Here we detail the choices we made as to how we were going to manage the different parts of the project. We worked on an agile approach with a sprint system. 
+Here we detail the choices we made as to how we were going to manage the different parts of the project. We worked with an agile approach with a sprint system. 
+
+\newpage
 
 \subsection{Agile Development}
 An agile method has a good compatibility with the project. Agile development is based on different principles, the most interesting in our case are:
+
 \begin{itemize}
 \item A fast and continuous delivery to the customer, fast feedback.
 \item Flexible requirements, even in development.
-\item Weeks delivery rather than months.
+\item Weekly delivery rather than monthly.
 \end{itemize}
 
 \subsection{The Project Step By Step}
 
 Firstly, the steps required before the project implementation:
 \begin{enumerate}
-\item Define the functionalities of the application. This functionalities are defined under the form of user stories. Example, "As a student, I want to be able to export my ADE schedule into my agenda". The details of this step are in section 3.1.
-\item Create the application frames. An application preview allow us to discuss the functionalities and the design with people that are not related to the project. The details are in section 3.2.
-\item Think about an architecture. The code should be easy to maintain, learn and handle. The architecture is explained in chapter 4.1
-\item Create tasks from user stories. Each task has complexity points. Often, more the complexity is high, more time it takes.
-\item Initialise the tasks board.
+\item Define the functionalities of the application. These functionalities are defined under the form of user stories. For example, "As a student, I want to be able to export my ADE schedule into my agenda". The details of this step are in section 3.1.
+\item Create the application frames. An application preview allows us to discuss the functionalities and the design with people that are not related to the project. The details can be found in section 3.2.
+\item Think about an architecture. The code should be easy to maintain, learn and handle. The architecture is explained in chapter 4..1
+\item Create tasks from user stories. Each task has complexity points. Most of the time, the higher the complexity is, the more time it takes.
+\item Initialize the task board.\\
 \end{enumerate}
 
 During the development, the process is :
 
 \begin{enumerate}
-\item Create a new milestone. A milestone define a date for which a set of tasks should be done.
+\item Create a new milestone. A milestone defines a date for which a set of tasks should be done.
 \item Select the tasks to do for this milestone. 
-\item At the milestone date, analyse the work done and return to point 1. The analyse consist to sum the weight of each task done during the milestone. This sum represent the team velocity. This is useful for the next iteration, it allows to select a right number of tasks with a weight equals to this velocity.
+\item At the milestone date, analyse the work done and return to point 1. The analysis consists in summing the weight of each task the team was able to accomplish during the milestone. This sum represents the team velocity. This is useful for the next iteration, it allows to select a right number of tasks with a weight equals to this velocity.
 \end{enumerate}
 
 \subsection{ZenHub}
-ZenHub is a GitHub extension. It is integrated in the GitHub interface and add functionalities as a tasks board and a velocity management.  
+ZenHub is a GitHub extension. It is integrated in the GitHub interface and add functionalities such as a task board and a velocity management.  
 
 \subsubsection{Create A Task}
-A strength of ZenHub is that it allows to transform an issue into a task. Figure 2.4 show the creation of an issue, it allows the following parameters:
+One of the strengths of ZenHub is that it allows to transform an issue into a task. Figure 2.4 show the creation of an issue, it takes the following parameters:
 \begin{itemize}
 \item A title
 \item A description
@@ -410,37 +421,43 @@ A strength of ZenHub is that it allows to transform an issue into a task. Figure
 \item A label. Example, a bug, a question,...
 \item A milestone.
 \item An estimate. It is a value representing the task complexity.
-\item Assignees. It assign one or more developer(s) to the task.
+\item Assignees. It assigns one or more developer(s) to the task.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[scale = 0.65]{Images/issue.png}
+\includegraphics[scale = .65]{Images/issue.png}
 \caption{Issue details}
 \end{figure}
 
-\subsubsection{Tasks Board}
-Figure 2.5 shows the UCLCampus board. It contains the following column
+\subsubsection{Task Board}
+Figure 2.5 shows the UCLCampus board. It contains the following columns:
 \begin{itemize}
-\item Student. All the tasks relative to the student section. This section only contains the tasks that are not done and that are not in the actual milestone.
-\item Campus. Same than student but for the tasks relative to the campus section
-\item Tools. Same than student but for the tasks relative to the tools section
-\item City. Same than student but for the tasks relative to the city section
-\item To Do. The task to finish for the milestone.
-\item In Progress. The task that are actually in progress.
-\item Done. The finished task during the current milestone.
-\item Closed. All the tasks done during the past milestone.
+\item Student. All the tasks relative to the student section. This section only contains the tasks that are not done and that are not in the current milestone.
+\item Campus. Same as student but for the tasks relative to the campus section.
+\item Tools. Same as student but for the tasks relative to the tools section.
+\item City. Same as student but for the tasks relative to the city section.
+\item To Do. The tasks to finish for the current milestone.
+\item In Progress. The task that are currently in progress.
+\item Done. The finished tasks during the current milestone.
+\item Closed. All the tasks done during the past milestones.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[scale = 0.5, angle = 90]{Images/dashboard.png}
+\includegraphics[scale = 0.45, angle = 90]{Images/dashboard.png}
 \caption{Tasks board}
 \end{figure}
 
 \subsubsection{Milestone}
 
-The milestone creation take three parameters, A title, a start date and an end date. To put a task in the milestone, select the issue and set the milestone parameter on it. The milestone menu provide the list of tasks to do for the deadline. It provide an analyse about complexity point.
+The milestone creation take three parameters:
+\begin{itemize}
+\item A title
+\item A starting date
+\item An end date
+\end{itemize} 
+To put a task in a given milestone, select the issue and set the milestone parameter on it. The milestone menu provides the list of tasks to do for the deadline. It provides an analysis about complexity point.
 
 \chapter{Functionalities of UCLCampus}
 
@@ -640,9 +657,11 @@ Once we had a clear idea of what the application was going to look like, we were
 
 \section{Architecture}
 
-The purpose of the application is to be extensible and easily maintainable. We wanted a programmer to have the possibility to add his functionalities at each level of the application.
-For this we thought our implementation as a tree. At the top level we have the generic parts and configurations that will be everywhere in the application under it we have the settings menu and next to it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
+The purpose of the application is to be extensible and easily maintainable. A programmer have the possibility to add his own functionalities at each level of the application.
+The UCLCampus architecture can be seen as a tree. At the top level there are the generic parts and configurations that will be present everywhere in the application. Under it there are the settings menu and four other nodes representing the global sections. These sections are pointing to their functionalities and so on. Here is a part of the tree in order to give the idea.\\
 
+\begin{figure}
+\centering
 \begin{forest}
 [Application, for tree = {ellipse, draw}, fill = green
 	[Settings]
@@ -650,7 +669,12 @@ For this we thought our implementation as a tree. At the top level we have the g
 	[Campus
 		[Events]
 		[Cafeteria
-			[Menu]		
+			[Cafeteria details
+				[Templates]
+				[JavaScript]			
+			]
+			[Templates]
+			[JavaScript]
 		]
 		[Cercles]
 		[Sports]
@@ -658,11 +682,12 @@ For this we thought our implementation as a tree. At the top level we have the g
 	[Tools]
 	[City]
 ]
-\end{forest} 
+\end{forest}
+\caption{Tree Architecture} 
+\end{figure}
 
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lot of files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
-1 is a summary of the change, red folder are those we modify.
+To be consistent with our architecture, the folders and files organisation also follows a tree structure. Ionic base architecture is to group all html file in a folder named templates, all js in a JS folder, ... This design become messy once there are a lot of functionalities and a lot of files. We modify it to respect the same tree architecture that the implementation has. This folders organisation allows programmers to efficiency find a code they need. For example, a programmer want to change the cafeteria details user interface, he can follow the logic patch campus/cafeteria/cafeteriaDetails/templates. This folder path follows the tree implementation as it can be seen on figure 4.1. Figure 4.2 is a summary of the change compare to the base Ionic design. Red folders are those that have been modified. 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
@@ -681,8 +706,8 @@ We wanted to keep the same state of mind for the file organisation. Ionic base a
 
 \subsection{Information processing}
 
-Here I just explain how we deal with the information processing from an architecture's design point of view. The section 4.4 explains in detail how we did it for each specific part.
-There is a lot of external information to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). We have two possible ways to import them.
+This section explains how to deal with informations processing from an architecture point of view. The section 4.4 explains in details how each specific part is retrieved.
+There is a lot of informations to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). It exists three ways to import them. The first way is to use a database, the informations are encoded under table form and it can be retrieve due to query call. The two other methods are web parsing and web services. Web services are always better than web parsing. Web services consist to send a request to a server and receive a response that contains directly the informations. Web parsing send a request to a server but there is a need to search for the informations inside the response. The three methods are used in the application depending the case.\\ For example, the ADE schedule has no web services. It remains web parsing or database. Encode the schedule for all student in the database take 80Mo, it is more than the actual application size and it is too much for a mobile application. In this case, web parsing seems to be the right choice.\\ An other example, the events. Events are updated each day, there is not human resources to update the database each day. It remains web services and web parsing, web services are always better than web parsing and the louvainfo.be (website that contains events) provides it. So we selected web services.
 
 \subsubsection{Database}
 
@@ -701,7 +726,7 @@ Fast\par
 
 &
 
-Need someone to update\par
+Need human resources to update informations\par
 Takes memory \par
 
 
@@ -710,7 +735,7 @@ Takes memory \par
 \caption{Pros and cons of a database}
 \end{table}
 
-\subsubsection{Web parsing}
+\subsubsection{Web Services}
 
 \begin{table}[H]
 \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
@@ -721,15 +746,38 @@ Takes memory \par
 \\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
 
 Automatic update\par
-Easy information retrieval with web services(query)\par
+Easy information retrieval with query\par
 No hardware memory consumption\par
 
 &
 
 Need an Internet connexion and an operational server side\par
-Horrible information retrieval without web services\par
-If the web server change, maybe you will need to recode all the parsing method\par
-Slow\par
+Impossible if not implement on the server\par
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the web services}
+\end{table}
+
+\subsubsection{Web Parsing}
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Automatic update\par
+No hardware memory consumption\par
+
+&
+
+Need an Internet connexion and an operational server side\par
+Need one more step than web services. This step is to find the required data inside the server response\par
+If the web server change its response, the parsing method also needs to be modified\par
+Slow compare to web services and database\par
 
 
 \\\bottomrule
@@ -737,21 +785,20 @@ Slow\par
 \caption{Pros and cons of the web parsing}
 \end{table}
 
-
-An considerable limitation is the need for someone in order to update the database or creating new parsing system. We have no workforce for it, so if we have the choice between the two methods, we will select the one needing less modification in the future.
-
+\newpage
 \subsection{Front-end and back-end}
 
 \begin{itemize}
 \item Front-end: Part of the user interface that can be separated in two fields. First is design and the second is html, css and JavaScript development.
-\item Back-end: Is the hidden part of the iceberg, what you can't see. For example: the database, the parsing function, ...
+\item Back-end: Everything that is not part of user interface. Storage system, information retrieval.
 \end{itemize}
 
-We create a front-end and a back-end system in our application. It helps a lot for the maintain because you can modify part without involving the other. For example, we store lecture halls in the database but the UCL create a new website with web services providing all lecture halls and their information. It's better than the database because it automatically updates and so you want to use them instead. You can do it in a specific part that is totally isolated from the code for the user interface.	
+The UCLCampus architecture contains a back-end/front-end system. It helps a lot for the modularity. For a functionality, the code for the user interface is totally isolated from the code for storage. That means, it is possible to change a user interface without seeing the code for storage. Inversely, it is possible to change the code for the storage without touching the user interface.\\
+For example, it is possible to pass from a database storage to a web parsing for libraries without consider an impact on the user interface.
 
 \subsection{Factory}
 
-Factory is a functionality from angularjs which we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.2 illustrates this.\\
+Factory is a functionality from angularJS that we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.3 illustrates this.\\
 
 \begin{figure}
 \centering
@@ -763,7 +810,7 @@ For example, we open the page for the schedule. (1)the system notifies the sched
 
 \subsection{State provider}
 
-The state provider is a functionality of angularjs. It allow you to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.3 illustrate the operation of the state provider. 
+The state provider is a functionality of angularjs. It allows to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.4 illustrate the operation of the state provider. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/stateProvider_arch.png}
@@ -825,14 +872,14 @@ This section is not implemented yet because the web services from OSIS wasn't re
 Three steps are needed for the security. First what do I need to protect? Second what are the threats and how the opponent can exploit them? Last, what do we need to implement in order to make it impossible? 
 
 \subsubsection{Data to protect}
-The only data the hacker can be interest in, are the personal data of the user that means his password and username. He couldn't stole data of the database because the application his open source and they are so available on GitHub. An other thread would be the opponent to modify the data of the database but this is impossible because the database is replicated on local storage and the functionalities only communicate with that one (thus, the only database he can modify, is the local database on his smartphone). About our code, it's available on GitHub due to open source project and it's protected by a license. Therefore the only data that hacker could be interested to steal are the personal data of the user.
+The only data the hacker can be interest in, are the personal data of the user that means his password and username. He couldn't stole data of the database because the application his open-source and they are so available on GitHub. An other thread would be the opponent to modify the data of the database but this is impossible because the database is replicated on local storage and the functionalities only communicate with that one (thus, the only database he can modify, is the local database on his smartphone). About our code, it's available on GitHub due to open-source project and it's protected by a license. Therefore the only data that hacker could be interested to steal are the personal data of the user.
 
 \subsubsection{Possible breaks}
 There exist two possible way to steal data. The first is if the opponent manage to get the hardware device, in this case, the opponent could try to access and steal data in the local storage. The second threat is to sniff the traffic between the application and OSIS, in this case he could intercept the package containing the request with the password and the username as parameters. 
 
 \subsubsection{Protections}
 For the first thread, the password and the username should not be stored on the device (even if they are encrypted). So the solution to this problem would be to create the OSIS request directly when the user insert his credentials. With this procedure, we only store the student courses list and forget the credentials once the response is back. The courses list should not be accessible by an other person than the user but it is less critical than credentials, so in this case, it should be encrypted on the local device. \\
-For the traffic sniffing, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public from OSIS, encrypt the request with it, send it back to OSIS which can decrypt it with the secret key. Due to this procedure, the opponent can catch the packets between OSIS and UCLCampus but can't read or do anything with them (except create false request and brute force password and username but this can be done on the website uclouvain.be).
+For the traffic sniffing, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public from OSIS, encrypt the request with it, send it back to OSIS that can decrypt it with the secret key. Due to this procedure, the opponent can catch the packets between OSIS and UCLCampus but can't read or do anything with them (except create false request and brute force password and username but this can be done on the website uclouvain.be).
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
@@ -1030,7 +1077,7 @@ For the schedule we didn't want to implement a fresh new calendar algorithm with
 \item Course code - Professor
 \item Local
 \end{itemize}
-To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can select the day you want. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
+To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open-source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can select the day you want. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
 To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student need it. 
 
 \subsubsection{Lecture Halls}
@@ -1439,14 +1486,11 @@ GitHub lists the total number of lines of the whole project as a staggering 397,
 \item Number of lines of code written in CSS by other contributors: 880
 \end{itemize}
 
-
-
-
 \section{Ionic Framework}
 The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 \subsection{Benefits}
 \begin{itemize}
-\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJs \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
+\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
 \item The css and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
 \item A large community that provide quick response and many example for simple topics. Moreover, this community provide a great plugins panel, it was never necessary to create our own. 
 \item Well documented. Every component possible attributes are listed and described and some basic example are provided.
@@ -1461,7 +1505,6 @@ The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 \item Still in development. Some plugins and components still in development. They contains bug and should not be deploy for an end user. 
 \end{itemize}
 
-
 \section{Testing}
 \subsection{Unit Test}
 
@@ -1470,7 +1513,7 @@ In order to assess the performance of our application, we profiled it using Goog
 \subsubsection{Profiling}
 We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in annex X (TODO).
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[scale = 0.25]{Images/libraries.png}
 \caption{Profile of the Libraries functionality}
@@ -1497,14 +1540,6 @@ We will now look at the execution times of other functionalities: //TODO make a 
 \item Displaying the events : 2890ms
 \item Displaying the details of an item (library, lecture hall, ...): ~700ms
 \item Displaying the list of lecture halls: 1290ms
-
-2298 JS code
-602 js in maps
-
-2999 HTML code
-57 in maps
-
-692+309 CSS
 \item Displaying the map: 3650ms
 \end{itemize}  
 From these results, we can observe 3 types of functionalities:
