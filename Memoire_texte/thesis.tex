@@ -608,9 +608,11 @@ Here we will explain the overall architecture of the application. We will also e
 
 \section{Architecture}
 
-The purpose of the application is to be extensible and easily maintainable. We wanted a programmer to have the possibility to add his functionalities at each level of the application.
-For this we thought our implementation as a tree. At the top level we have the generic parts and configurations that will be everywhere in the application under it we have the settings menu and next to it we have four branches pointing to global sections that we decided to create, themselves pointing to their functionalities and so on. Here is a part of the tree in order to give you the idea.\\
+The purpose of the application is to be extensible and easily maintainable. A programmer have the possibility to add his own functionalities at each level of the application.
+The UCLCampus architecture can be seen as a tree. At the top level there are the generic parts and configurations that will be present everywhere in the application. Under it there are the settings menu and four other nodes representing the global sections. These sections are pointing to their functionalities and so on. Here is a part of the tree in order to give the idea.\\
 
+\begin{figure}
+\centering
 \begin{forest}
 [Application, for tree = {ellipse, draw}, fill = green
 	[Settings]
@@ -618,7 +620,12 @@ For this we thought our implementation as a tree. At the top level we have the g
 	[Campus
 		[Events]
 		[Cafeteria
-			[Menu]		
+			[Cafeteria details
+				[Templates]
+				[JavaScript]			
+			]
+			[Templates]
+			[JavaScript]
 		]
 		[Cercles]
 		[Sports]
@@ -626,11 +633,12 @@ For this we thought our implementation as a tree. At the top level we have the g
 	[Tools]
 	[City]
 ]
-\end{forest} 
+\end{forest}
+\caption{Tree Architecture} 
+\end{figure}
 
 \subsection{Folder organisation}
-We wanted to keep the same state of mind for the file organisation. Ionic base architecture is to put all html file in a folder named templates, all js in a JS folder, ... The problem is that become messy once we have a lot of functionalities(thus a lot of files). We modify it to respect the tree architecture we want. With our folder system, a programmer can add his own subtree to the main tree. And if you want to modify a specific functionality, you have directly access to the related files. Figure 4
-1 is a summary of the change, red folder are those we modify.
+To be consistent with our architecture, the folders and files organisation also follows a tree structure. Ionic base architecture is to group all html file in a folder named templates, all js in a JS folder, ... This design become messy once there are a lot of functionalities and a lot of files. We modify it to respect the same tree architecture that the implementation has. This folders organisation allows programmers to efficiency find a code they need. For example, a programmer want to change the cafeteria details user interface, he can follow the logic patch campus/cafeteria/cafeteriaDetails/templates. This folder path follows the tree implementation as it can be seen on figure 4.1. Figure 4.2 is a summary of the change compare to the base Ionic design. Red folders are those that have been modified. 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
@@ -649,8 +657,8 @@ We wanted to keep the same state of mind for the file organisation. Ionic base a
 
 \subsection{Information processing}
 
-Here I just explain how we deal with the information processing from an architecture's design point of view. The section 4.4 explains in detail how we did it for each specific part.
-There is a lot of external information to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). We have two possible ways to import them.
+This section explains how to deal with informations processing from an architecture point of view. The section 4.4 explains in details how each specific part is retrieved.
+There is a lot of informations to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). It exists three ways to import them. The first way is to use a database, the informations are encoded under table form and it can be retrieve due to query call. The two other methods are web parsing and web services. Web services are always better than web parsing. Web services consist to send a request to a server and receive a response that contains directly the informations. Web parsing send a request to a server but there is a need to search for the informations inside the response. The three methods are used in the application depending the case.\\ For example, the ADE schedule has no web services. It remains web parsing or database. Encode the schedule for all student in the database take 80Mo, it is more than the actual application size and it is too much for a mobile application. In this case, web parsing seems to be the right choice.\\ An other example, the events. Events are updated each day, there is not human resources to update the database each day. It remains web services and web parsing, web services are always better than web parsing and the louvainfo.be (website that contains events) provides it. So we selected web services.
 
 \subsubsection{Database}
 
@@ -669,7 +677,7 @@ Fast\par
 
 &
 
-Need someone to update\par
+Need human resources to update informations\par
 Takes memory \par
 
 
@@ -678,7 +686,7 @@ Takes memory \par
 \caption{Pros and cons of a database}
 \end{table}
 
-\subsubsection{Web parsing}
+\subsubsection{Web Services}
 
 \begin{table}[H]
 \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
@@ -689,15 +697,38 @@ Takes memory \par
 \\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
 
 Automatic update\par
-Easy information retrieval with web services(query)\par
+Easy information retrieval with query\par
 No hardware memory consumption\par
 
 &
 
 Need an Internet connexion and an operational server side\par
-Horrible information retrieval without web services\par
-If the web server change, maybe you will need to recode all the parsing method\par
-Slow\par
+Impossible if not implement on the server\par
+
+\\\bottomrule
+\end{tabularx}
+\caption{Pros and cons of the web services}
+\end{table}
+
+\subsubsection{Web Parsing}
+
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Pros
+&
+\hfil\bfseries Cons
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
+
+Automatic update\par
+No hardware memory consumption\par
+
+&
+
+Need an Internet connexion and an operational server side\par
+Need one more step than web services. This step is to find the required data inside the server response\par
+If the web server change its response, the parsing method also needs to be modified\par
+Slow compare to web services and database\par
 
 
 \\\bottomrule
@@ -705,21 +736,20 @@ Slow\par
 \caption{Pros and cons of the web parsing}
 \end{table}
 
-
-An considerable limitation is the need for someone in order to update the database or creating new parsing system. We have no workforce for it, so if we have the choice between the two methods, we will select the one needing less modification in the future.
-
+\newpage
 \subsection{Front-end and back-end}
 
 \begin{itemize}
 \item Front-end: Part of the user interface that can be separated in two fields. First is design and the second is html, css and JavaScript development.
-\item Back-end: Is the hidden part of the iceberg, what you can't see. For example: the database, the parsing function, ...
+\item Back-end: Everything that is not part of user interface. Storage system, information retrieval.
 \end{itemize}
 
-We create a front-end and a back-end system in our application. It helps a lot for the maintain because you can modify part without involving the other. For example, we store lecture halls in the database but the UCL create a new website with web services providing all lecture halls and their information. It's better than the database because it automatically updates and so you want to use them instead. You can do it in a specific part that is totally isolated from the code for the user interface.	
+The UCLCampus architecture contains a back-end/front-end system. It helps a lot for the modularity. For a functionality, the code for the user interface is totally isolated from the code for storage. That means, it is possible to change a user interface without seeing the code for storage. Inversely, it is possible to change the code for the storage without touching the user interface.\\
+For example, it is possible to pass from a database storage to a web parsing for libraries without consider an impact on the user interface.
 
 \subsection{Factory}
 
-Factory is a functionality from angularjs which we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.2 illustrates this.\\
+Factory is a functionality from angularJS that we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.3 illustrates this.\\
 
 \begin{figure}
 \centering
@@ -731,7 +761,7 @@ For example, we open the page for the schedule. (1)the system notifies the sched
 
 \subsection{State provider}
 
-The state provider is a functionality of angularjs. It allow you to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.3 illustrate the operation of the state provider. 
+The state provider is a functionality of angularjs. It allows to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.4 illustrate the operation of the state provider. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/stateProvider_arch.png}
@@ -800,7 +830,7 @@ There exist two possible way to steal data. The first is if the opponent manage 
 
 \subsubsection{Protections}
 For the first thread, the password and the username should not be stored on the device (even if they are encrypted). So the solution to this problem would be to create the OSIS request directly when the user insert his credentials. With this procedure, we only store the student courses list and forget the credentials once the response is back. The courses list should not be accessible by an other person than the user but it is less critical than credentials, so in this case, it should be encrypted on the local device. \\
-For the traffic sniffing, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public from OSIS, encrypt the request with it, send it back to OSIS which can decrypt it with the secret key. Due to this procedure, the opponent can catch the packets between OSIS and UCLCampus but can't read or do anything with them (except create false request and brute force password and username but this can be done on the website uclouvain.be).
+For the traffic sniffing, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public from OSIS, encrypt the request with it, send it back to OSIS that can decrypt it with the secret key. Due to this procedure, the opponent can catch the packets between OSIS and UCLCampus but can't read or do anything with them (except create false request and brute force password and username but this can be done on the website uclouvain.be).
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
@@ -1374,7 +1404,7 @@ Here we will reflect about the many choices we made and try to decide wether the
 The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 \subsection{Benefits}
 \begin{itemize}
-\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJs \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
+\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
 \item The css and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
 \item A large community that provide quick response and many example for simple topics. Moreover, this community provide a great plugins panel, it was never necessary to create our own. 
 \item Well documented. Every component possible attributes are listed and described and some basic example are provided.
