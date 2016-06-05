@@ -142,5 +142,7 @@
 \contentsline {section}{\numberline {6.2}GitHub}{51}{section.6.2}
 \contentsline {section}{\numberline {6.3}Project Management}{51}{section.6.3}
 \contentsline {section}{\numberline {6.4}Testing}{51}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusion}{52}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bibliography}{53}{chapter.8}
+\contentsline {subsection}{\numberline {6.4.1}Performance testing}{51}{subsection.6.4.1}
+\contentsline {subsubsection}{Profiling}{51}{section*.89}
+\contentsline {chapter}{\numberline {7}Conclusion}{55}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{56}{chapter.8}
