@@ -187,7 +187,7 @@ Not as performant as native\par
 
 The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.\\
 
-The native container alleviates some the issues of the web approach but still reduces performances when compared to a native application. Table 2.3 shows the pros and cons of this final approach.
+The native container alleviates some of the issues of the web approach but still reduces performances when compared to a native application. Table 2.3 shows the pros and cons of this final approach.
 
 \begin{table}[H]
 \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
@@ -223,13 +223,11 @@ The web approach is the best choice if your application is mostly a support for 
 
 Finally, the hybrid approach is best used when you want quick results and need to make frequent updates to your application. It is also useful if you want to include outsiders to the project who aren't fluent in all native technologies.\\
 
-In the context of this thesis, there is no budget therefore choosing the native approach will only depend on the importance of accessing native features. There also won't be a web application, meaning the web approach is probably a bad choice.\\
-
- Furthermore, we believe that making it easier for outsiders to contribute is more important than accessing native features. Indeed, we don't think we will need any feature that would be supported by one platform but not the other and will mainly use generic features. Furthermore, the application will be updated every year (new lecture halls, libraries, ...). We therefore decided to go with an hybrid approach for this thesis.
+In the context of this thesis, there is no budget therefore choosing the native approach will only depend on the importance of accessing native features. There also won't be a web application, meaning the web approach is probably a bad choice. We believe that making it easier for outsiders to contribute is more important than accessing native features. If we needed to access features specific to one platform then the hybrid approach would lose some of its interest as that would result in conditional statements in the code. Such conditional statements can lead to a less readable code. After a certain point, making additional conditional statements becomes unbearable and the solution then becomes to split the code into one version for each platform, which is exactly what we want to avoid in order to keep the code maintainable. We however don't believe we will need to use such features, meaning the hybrid approach is still easier to maintain. Furthermore, the application will be updated every year (new lecture halls, libraries, ...). We therefore decided to go with an hybrid approach for this thesis.
 
 \newpage
 \subsection{Choosing the best hybrid framework}
-There are many different hybrid frameworks and choosing one was no easy task. We were however able to find the following comparison of the most popular frameworks (source http://tutorialzine.com/2015/10/comparing-the-top-frameworks-for-building-hybrid-mobile-apps/)
+There are many different hybrid frameworks and choosing one was no easy task. We were however able to find the following comparison of the most popular frameworks:
 
 \begin{center}
     \begin{tabular}{ | l | p{2cm} | l | l | l | p{3cm} |}
@@ -1404,7 +1402,46 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 
 \chapter{Analysis}
 
-Here we will reflect about the many choices we made and try to decide whether they were the right ones or not.
+TODO
+
+\section{Quantitative analysis}
+
+This section will give some quantitative data regarding the application's source code. This data can be used to get an idea of the amount of work needed to implement a similar application.
+
+\subsection{Lines of code and files}
+
+GitHub lists the total number of lines of the whole project as a staggering 397,656. This number by itself does not mean much as it includes generated binary files and other computer generated files. We will therefore look at the code actually written by hand. This code is divided in three languages, namely JavaScript, HTML and CSS. In this code, there is the code that was written by the authors of this thesis as well as the code written by other contributors. Aside from this code is the SQL code we wrote to update the database with various details. This code is however not documented and is therefore not listed here.
+
+\subsubsection{JavaScript code}
+
+\begin{itemize}
+\item Number of JavaScript files written by the authors: 16
+\item Number of lines of code written in JavaScript by the authors: 1696
+\item Number of JavaScript files written by other contributors: 12
+\item Number of lines of code written in JavaScript by other contributors: 602
+\end{itemize}
+
+\subsubsection{HTML code}
+
+\begin{itemize}
+\item Number of HTML files written by the authors: 16
+\item Number of lines of code written in HTML by the authors: 2942
+\item Number of HTML files written by other contributors: 2
+\item Number of lines of code written in HTML by other contributors: 57
+\end{itemize}
+
+\subsubsection{CSS code}
+
+\begin{itemize}
+\item Number of CSS files written by the authors: 1
+\item Number of lines of code written in CSS by the authors: 309
+\item Number of CSS files written by other contributors: 2
+\item Number of lines of code written in CSS by other contributors: 880
+\end{itemize}
+
+
+
+
 \section{Ionic Framework}
 The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 \subsection{Benefits}
@@ -1460,6 +1497,14 @@ We will now look at the execution times of other functionalities: //TODO make a 
 \item Displaying the events : 2890ms
 \item Displaying the details of an item (library, lecture hall, ...): ~700ms
 \item Displaying the list of lecture halls: 1290ms
+
+2298 JS code
+602 js in maps
+
+2999 HTML code
+57 in maps
+
+692+309 CSS
 \item Displaying the map: 3650ms
 \end{itemize}  
 From these results, we can observe 3 types of functionalities:
@@ -1481,7 +1526,32 @@ We can now see that, once the relevant information has been cached, most functio
 According to [source TODO], a response time ranging between 500 and 1000 ms is considered to be immediate, which is the recommended interval to load pages. Most of our functionalities are in this range. In order to make the wait for slower functionalities more bearable, we added an indicator that the functionality is loading. That way the user still receives feedback to indicate that his action, in this case the press of a button, has been registered and that the application is working on it. 
 We conclude that, despite using a hybrid framework, the performances of our application are acceptable and that most users will not notice any delay when using the majority of the functionalities. Furthermore, the slowest functionalities often depend on the response times of external servers.. In those cases, using a native approach would not have helped performance-wise. 
 \chapter{Conclusion} 
-\chapter{Bibliography}
+
+\begin{thebibliography}{9}
+
+\bibitem{} 
+Andre Charland , Brian Leroux.
+\textit{Mobile application development: web vs. native}. 
+Communications of the ACM, v.54 n.5, May 2011  
+
+\bibitem{} 
+Mario Korf and Eugene Oksman. 2015.
+\textit{Native, HTML5, or Hybrid: Understanding Your Mobile Application Development Options}.
+[ONLINE] Available at: https://developer.salesforce.com/page/Native,\_HTML5,\_or\_Hybrid:\_Understanding\_Your
+\_Mobile\_Application\_Development\_Options. [Accessed 19 May 2016].
+
+
+\bibitem{} 
+Krishnan R Menon. 2015.
+\textit{Hybrid vs Native Mobile App. Decide in 5 minutes!}.
+[ONLINE] Available at: http://julyrapid.com/hybrid-vs-native-mobile-app-decide-5-minutes/. [Accessed 26 May 2016].
+ 
+\bibitem{} 
+Danny Markov. 2015.
+\textit{Comparing The Top Frameworks For Building Hybrid Mobile Apps}.
+[ONLINE] Available at: http://tutorialzine.com/2015/10/comparing-the-top-frameworks-for-building-hybrid-mobile-apps/. [Accessed 18 May 2016].
+
+\end{thebibliography}
 \url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}\\
 \url{https://en.wikipedia.org/wiki/GNU_General_Public_License}\\
 

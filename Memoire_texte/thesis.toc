@@ -138,12 +138,16 @@
 \contentsline {subsubsection}{Adding support for all campuses}{45}{section*.88}
 \contentsline {subsection}{\numberline {5.3.3}Other improvements}{46}{subsection.5.3.3}
 \contentsline {chapter}{\numberline {6}Analysis}{47}{chapter.6}
-\contentsline {section}{\numberline {6.1}Ionic Framework}{47}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Benefits}{47}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Drawbacks}{47}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Testing}{48}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Unit Test}{48}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Performance testing}{48}{subsection.6.2.2}
-\contentsline {subsubsection}{Profiling}{48}{section*.89}
-\contentsline {chapter}{\numberline {7}Conclusion}{51}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bibliography}{52}{chapter.8}
+\contentsline {section}{\numberline {6.1}Quantitative analysis}{47}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Lines of code and files}{47}{subsection.6.1.1}
+\contentsline {subsubsection}{JavaScript code}{47}{section*.89}
+\contentsline {subsubsection}{HTML code}{47}{section*.90}
+\contentsline {subsubsection}{CSS code}{48}{section*.91}
+\contentsline {section}{\numberline {6.2}Ionic Framework}{48}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Benefits}{48}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Drawbacks}{48}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Testing}{49}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Unit Test}{49}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Performance testing}{49}{subsection.6.3.2}
+\contentsline {subsubsection}{Profiling}{49}{section*.92}
+\contentsline {chapter}{\numberline {7}Conclusion}{52}{chapter.7}
