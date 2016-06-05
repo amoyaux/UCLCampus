@@ -1,8 +1,8 @@
-\documentclass[11pt, a4paper]{report}
+% EPL master thesis cover template
+\documentclass{eplmastersthesis}
 
 \usepackage{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+
 \usepackage[T1]{fontenc}
 
 \usepackage{graphicx} % Required for including pictures
@@ -19,6 +19,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[english]{babel}
+\setcounter{chapter}{0}
 \iffalse
 \usepackage{dirtytalk}
 \fi
@@ -26,30 +27,6 @@
 
 \usepackage{lmodern} % load a font with all the characters
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
-
-\linespread{1.2} % Line spacing
-
-%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
-
-\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-
-\renewcommand{\baselinestretch}{1.3}
-\headsep = 10.mm
-%%%% CHOOSE MARGINS %%%%
-
-\geometry{hmargin=2.5cm,top=3cm,bottom=2.3cm}
-%%%% COMMANDS %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%
-\renewcommand\title{UCLCampus: a mobile application for UCL students}
-\newcommand\nametwo{Arnold \textsc{Moyaux}}
-\newcommand\nameone{Baptiste \textsc{Lacasse}}
-\newcommand\options{}
-\newcommand\supervisor{Yves \textsc{Deville}}
-\newcommand\readerone{Kim \textsc{Mens}}
-\newcommand\readertwo{Hildeberto \textsc{Mendonça}}
-\newcommand\readerthree{Mathieu \textsc{Zen}}
-\newcommand\readerfour{Jorge \textsc{Perez Medina}}
-\newcommand\years{2015-2016}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 \lstdefinelanguage{JavaScript}{
   keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
@@ -81,65 +58,44 @@
    showtabs=false,
    captionpos=b
 }
-%%%% BEGIN %%%%
+
+% Fill in here the information: title, student name, speciality, jury members
+\title{Title of the master thesis}	% Master thesis title
+\subtitle{Subtitle (optional)}			% Optional subtitle
+\author{Firstname \textsc{Lastname}}	% Student name
+\secondauthor{Firstname \textsc{Lastname}}	% Second student name if applicable
+\speciality{Speciality}		% Speciality (use one of the following options):
+										% Biomedical Engineering
+										% Chemical and Materials Engineering
+										% Civil Engineering
+										% Computer Science
+										% Computer Science and Engineering
+										% Electrical Engineering
+										% Electro-mechanical Engineering
+										% Mathematical Engineering
+										% Mechanical Engineering
+										% Physical Engineering
+%\options{Option(s)}		% If required by program commission mention options
+\supervisor{Firstname \textsc{Lastname}}	% 1st supervisor name
+\cosupervisor{Firstname \textsc{Lastname}}	% 2nd supervisor name if applicable
+\readerone{Firstname \textsc{Lastname}}		% 1st reader name
+\readertwo{Firstname \textsc{Lastname}}		% 2nd reader name
+\readerthree{Firstname \textsc{Lastname}}	% 3rd reader name
+\years{20..-20..}	% Academic year
+
+
+
 \begin{document}
-
-%%%% COVER %%%%
-\thispagestyle{empty}
-\noindent\begin{minipage}{.25\textwidth}
-\noindent\includegraphics[width=3.6cm]{Images/ucl.jpg}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-\begin{center}
-UNIVERSITE CATHOLIQUE DE LOUVAIN
-\\~\\~
-ECOLE POLYTECHNIQUE DE LOUVAIN
-\\~\\~\\~\\~\\~
-\end{center}
-\end{minipage}
-\begin{minipage}{.25\textwidth}
-\hfill\includegraphics[width=3.6cm]{Images/epl.jpg}
-\\~\\~\\~\\~
-\end{minipage}
-\vspace{4.5cm}
-\begin{center}
-\bfseries{\scshape{\Huge{\title}}}
-\end{center}
-\vspace{4.5cm}
-\begin{minipage}{.5\textwidth}
-\begin{tabular}{ll}
-Supervisor: & \supervisor
-\\ Readers: & \readerone 
-\\          & \readertwo 
-\\          & \readerthree
-\\          & \readerfour
-\end{tabular} 
-\\~\\~
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-\begin{tabular}{l}
-Thesis submitted for the Master's degree
-\\ in computer science and engineering
-\\ by : \nameone
-\\ 	   \nametwo
-\end{tabular}
-\end{minipage}
-\vfill
-\begin{center}
-Louvain-la-Neuve
-\\ Academic year \years
-\end{center}
-%%%% END COVER %%%%
-%----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS
-%----------------------------------------------------------------------------------------
-
+\renewcommand\thepage{}
+\maketitle					% To create front cover page
+\thispagestyle{empty}		% To suppress header and footer on the back of the cover page
 \tableofcontents % Include a table of contents
 \newpage % Begins the essay on a new page instead of on the same page as the table of contents 
-
+\linespread{1.2} % Line spacing
+\renewcommand\thepage{\arabic{page}}
 
 \chapter{Introduction} % Major section
-
+\setcounter{page}{1}
 Brief introduction of the project, the goals and the contents of the rest of the thesis.
 
 
@@ -1493,6 +1449,8 @@ We conclude that, despite using a hybrid framework, the performances of our appl
 \chapter{Bibliography}
 \url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}\\
 \url{https://en.wikipedia.org/wiki/GNU_General_Public_License}\\
+
+% Back cover page
+\backcoverpage
+
 \end{document}
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
