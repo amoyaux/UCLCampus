@@ -78,6 +78,7 @@ angular.module('ionicApp').factory('EventFactory', function($q, $http) {
     },
     all: function() {
       var t = this;
+      console.log(performance.now());
       var dfd = $q.defer();
       var query = "select * from feednormalizer where url='http://louvainfo.be/evenements/feed/calendar/'";
       var format = '&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK';
