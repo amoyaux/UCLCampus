@@ -60,10 +60,11 @@
 \BOOKMARK [2][-]{subsection.5.3.2}{Possible improvements of existing functionalities}{section.5.3}% 60
 \BOOKMARK [2][-]{subsection.5.3.3}{Other improvements}{section.5.3}% 61
 \BOOKMARK [0][-]{chapter.6}{Analysis}{}% 62
-\BOOKMARK [1][-]{section.6.1}{Ionic framework}{chapter.6}% 63
-\BOOKMARK [1][-]{section.6.2}{GitHub}{chapter.6}% 64
-\BOOKMARK [1][-]{section.6.3}{Project Management}{chapter.6}% 65
-\BOOKMARK [1][-]{section.6.4}{Testing}{chapter.6}% 66
-\BOOKMARK [2][-]{subsection.6.4.1}{Performance testing}{section.6.4}% 67
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 68
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 69
+\BOOKMARK [1][-]{section.6.1}{Ionic Framework}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.1.1}{Benefits}{section.6.1}% 64
+\BOOKMARK [2][-]{subsection.6.1.2}{Drawbacks}{section.6.1}% 65
+\BOOKMARK [1][-]{section.6.2}{Testing}{chapter.6}% 66
+\BOOKMARK [2][-]{subsection.6.2.1}{Unit Test}{section.6.2}% 67
+\BOOKMARK [2][-]{subsection.6.2.2}{Performance testing}{section.6.2}% 68
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 69
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 70
