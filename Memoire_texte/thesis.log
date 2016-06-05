@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  5 JUN 2016 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.4)  5 JUN 2016 18:47
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1354,7 +1354,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 ...us/Tools/City Menus}{33}{subsection.5.1.4}
+l.84 ...us/Tools/City Menus}{34}{subsection.5.1.4}
                                                    [1
 
 ])
@@ -1855,7 +1855,7 @@ l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Arnold/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Users/Arnold/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Ar
 nold/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (54 pages, 1295065 bytes).
+Output written on thesis.pdf (54 pages, 1295058 bytes).
 PDF statistics:
  978 PDF objects out of 1000 (max. 8388607)
  337 named destinations out of 1000 (max. 500000)
