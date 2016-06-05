@@ -1,5 +1,6 @@
 angular.module('ionicApp').controller("EventsController", function($scope, $state, $cordovaNetwork, $rootScope, $ionicScrollDelegate, events, EventFactory, $ionicLoading, $ionicPopup, $ionicHistory) {
 	var i = 0;
+	console.log(performance.now());
 	$ionicLoading.show({
 	    content: 'Loading',
 	    animation: 'fade-in',
@@ -44,6 +45,7 @@ angular.module('ionicApp').controller("EventsController", function($scope, $stat
 
 
 		$scope.loadMoreEvents = function() {
+			var start = performance.now();
 			var length = $scope.eventList.length + 10;
 			for(var j = i; $scope.eventList.length < length && j<events.length; j++) {
 				if(events[j].category == $scope.selectedCategory || $scope.selectedCategory == "All categories") {
@@ -52,6 +54,8 @@ angular.module('ionicApp').controller("EventsController", function($scope, $stat
 			}
 			i=j;
 			$scope.$broadcast('scroll.infiniteScrollComplete');
+			var end = performance.now();
+			console.log(end-start);
 		};
 
 		$scope.hasMoreEvents = function(item) {

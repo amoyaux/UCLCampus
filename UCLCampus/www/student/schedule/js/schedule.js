@@ -1,5 +1,7 @@
 angular.module('ionicApp').controller('ScheduleController', function($scope, $rootScope, $cordovaCalendar, $ionicPopup, $http, $cookies, $timeout, $state) {
-
+	 $scope.settings = {
+    	enableFriends: true
+  	 };
 	 $scope.createEvent = function() {
 	  for(i = 0; i < $scope.Schedule.length;i++){
 	  		var date = $scope.Schedule[i].date.split('/');
@@ -82,6 +84,7 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $ro
 			res = res + 54;
 			return res;
 		}
+		var start = performance.now();
 		//var code = 'LMAT1111F,LMAT1111E,LSINF1140,LCOPS1124,LESPO1113D,LECGE1115,LESPO1122,LANGL1370,LSINF1101,LSINF1102,LSINF1103'
 		var code = 'LINGI2262,LINGI2347,LINGI2365,LINGI2369,LSINF2990';
 		var schedList =  JSON.parse(localStorage.getItem('schedule')) || 'fail';
@@ -225,7 +228,9 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $ro
 		}
 		else{
 			$scope.Schedule = schedList;
-		}	
+		}
+		var end = performance.now();
+		console.log("Schedule retrieving + parsing = " + (end-start) + "ms");	
 	})
 
 	$scope.isToday = function(item){
