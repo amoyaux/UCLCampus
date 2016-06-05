@@ -95,17 +95,22 @@
 
 \chapter{Introduction} % Major section
 
-The goal of this thesis was to develop an open-source, multi-platform mobile application for UCL students. The application would be used by students to help them with their everyday student life in a town they might not know much about. The application in itself, while useful, does not constitute this thesis.\\
+The goal of this thesis was to develop an open-source, multi-platform mobile application for UCL students. The application would be used by students to help them with their everyday student life in a town they might not know much about. It would, for example, guide them to their lecture halls or libraries and show them the many activities the town has to offer. The application in itself, while useful, does not constitute this thesis.\\
 
-The difference between a master's thesis and other assignments is that the goal of the thesis is not limited to evaluation and self-improvement. Indeed, a thesis should contribute to the field it is related to, providing insight for other researchers. For some thesis, the contribution is clear and does not need to be discussed any further. This was not the case for this thesis. Indeed, the title, "UCLCampus, a mobile application for UCL students", doesn't indicate what contribution we will be making. We therefore defined two different contributions we wanted to make and decided to model this paper around them. Each of them will define a type of researcher or student that might be interested in reading this thesis.\\
+The difference between a master's thesis and other assignments is that the goal of the thesis is not limited to evaluation and self-improvement. Indeed, a thesis should contribute to the field it is related to, providing insight for other researchers. For some thesis, the contribution is clear and does not need to be discussed any further. This was not the case for this thesis. Indeed, the title, "UCLCampus, a mobile application for UCL students", doesn't indicate what contribution we will be making.\\
+
+ We therefore defined two different contributions we wanted to make and decided to model this paper around them. Each of them will define a type of researcher or student that might be interested in reading this thesis.\\
 
 The first type of readers contains people that are interested in developing another similar application. Indeed, the application we developed is open-source and works on several mobile platforms. Making an application with such attributes implies important design choices that are not always easy to make. The reader might therefore be interested in seeing the choices we made as well as our thought process. This information can be found in the second chapter of this thesis.\\
 The sixth chapter of this thesis contains an analysis of the finished product and evaluates whether we made the right choices at the start of the project, which will also interest the first type of readers.\\
+We hope that such readers will find this thesis useful but still invite them to conduct their own research before developing their application as the field is in constant evolution.\\
 
 The second type of readers are the future students or researchers willing to contribute to the UCLCampus application. These readers will be mostly interested in chapters 3, 4 and 5.\\
 The third chapters explains the reasoning behind the functionalities we decided to add to the application. The fourth chapter depicts the way we implemented the application and explains the design choices we made. Finally, the fifth chapter presents the final product  and explains how future users can contribute to the project while also giving them examples of possible future functionalities. \\
 
-As the astute reader will already have noticed, the thesis follows the chronological order of the project, starting by detailing the background in chapter 2, detailing the project in itself in chapters 3, 4 and 5 and finishes with an analysis of the project as a whole in chapter 6. We hope readers will find insightful informations in this paper and that it will help them in their endeavors.  
+As the astute reader will already have noticed, the thesis follows the chronological order of the project, starting by detailing the background in chapter 2, detailing the project in itself in chapters 3, 4 and 5 and finishes with an analysis of the project as a whole in chapter 6.\\
+
+We hope readers will find insightful informations in this paper and that it will help them in their endeavors.  
 
 
 
@@ -115,12 +120,15 @@ The first thing to do when starting any new project is to choose the way you are
 
 \section{Cross-platform mobile development tools}
 
-The first challenge of this project was choosing the best technique to develop our application across multiple platforms. Indeed, the field has not matured yet and is constantly evolving, with trends appearing and disappearing constantly. It appears that no rigorous research has been done to compare these different trends and that even experts only support their claims with anecdotal evidence. In this context, making an informed decision proved to be challenging. This section details the information we gathered and the choice we ended up making. We however encourage the reader to make his or her own research as the field might have evolved since this was written.
+The first challenge of this project was choosing the best technique to develop our application across multiple platforms. Indeed, the field has not matured yet and is constantly evolving, with trends appearing and disappearing constantly. It appears that no rigorous research has been done to compare these different trends and that even experts only support their claims with anecdotal evidence.\\
+
+ In this context, making an informed decision proved to be challenging. This section details the information we gathered and the choice we ended up making. We however encourage the reader to make his or her own research as the field might have evolved since this was written.
 
 \subsection{The native approach}
 
-The first approach we considered for our project was what is known as the native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS. 
-\\Using the native environment means you will of course have access to every feature and achieve the best performance possible. However, this also means that you will need to maintain one version of your code for each platform you decide to support, thus decreasing maintainability and making harder for anyone to contribute to the project. Table 2.1 summarizes the pros and cons of this approach.
+The first approach we considered for our project was what is known as the native approach. The native approach consists in using the native technology and language for each platform, for instance Java for Android and Objective-C for iOS. \\
+
+Using the native environment means you will of course have access to every feature and achieve the best performance possible. However, this also means that you will need to maintain one version of your code for each platform you decide to support, thus decreasing maintainability and making harder for anyone to contribute to the project. Table 2.1 summarizes the pros and cons of this approach.
 
 \begin{table}[H]
 \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
@@ -148,7 +156,8 @@ Can lead to different versions of the application\par
 
 \subsection{The web approach}
 A second approach we considered was the web approach. This approach consists in using HTML5 to develop an application that will be usable on any platform. \\
-Using a web page to display your application makes it supported on any platform but the additional layer results in overall poorer performances. This layer also makes native features unreachable meaning you might not be able to implement some functionalities. Table 2.2 details the different pros and cons of the web approach.
+
+Using a web page to display your application makes it supported on any platform but the additional layer results in overall poorer performances. This layer also makes native features unreachable meaning you might not be able to implement some functionalities. Table 2.2 details the different pros and cons of the web approach.\\
 
 
 \begin{table}[H]
@@ -176,7 +185,7 @@ Not as performant as native\par
 \end{table}
 \subsection{The hybrid approach}
 
-The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.
+The last approach to develop a mobile application is called the hybrid approach. An hybrid app is mostly built using HTML5 and JavaScript and is then wrapped inside a thin native container, giving it access to native features.\\
 
 The native container alleviates some the issues of the web approach but still reduces performances when compared to a native application. Table 2.3 shows the pros and cons of this final approach.
 
@@ -206,18 +215,19 @@ Not as performant as native\par
 
 \subsection{Our choice}
 
-There isn't one approach that is inherently better than the other ones, the best one depends on what you are trying to accomplish.
+There isn't one approach that is inherently better than the other ones, the best one depends on what you are trying to accomplish.\\
 
-The native approach is best suited when accessing native features of each platform is very important for the application. It is also the choice to be made if you can afford separate budgets for developers in iOS and Android.
+The native approach is best suited when accessing native features of each platform is very important for the application. It is also the choice to be made if you can afford separate budgets for developers in iOS and Android.\\
 
-The web approach is the best choice if your application is mostly a support for your main web application.
+The web approach is the best choice if your application is mostly a support for your main web application.\\
 
-Finally, the hybrid approach is best used when you want quick results and need to make frequent updates to your application. It is also useful if you want to include outsiders to the project who aren't fluent in all native technologies.
+Finally, the hybrid approach is best used when you want quick results and need to make frequent updates to your application. It is also useful if you want to include outsiders to the project who aren't fluent in all native technologies.\\
 
+In the context of this thesis, there is no budget therefore choosing the native approach will only depend on the importance of accessing native features. There also won't be a web application, meaning the web approach is probably a bad choice.\\
 
-In the context of this thesis, there is no budget therefore choosing the native approach will only depend on the importance of accessing native features. There also won't be a web application, meaning the web approach is probably a bad choice. We believe that making it easier for outsiders to contribute is more important than accessing native features. Indeed, we don't think we will need any feature that would be supported by one platform but not the other and will mainly use generic features. Furthermore, the application will be updated every year (new lecture halls, libraries, ...). We therefore decided to go with an hybrid approach for this thesis.
+ Furthermore, we believe that making it easier for outsiders to contribute is more important than accessing native features. Indeed, we don't think we will need any feature that would be supported by one platform but not the other and will mainly use generic features. Furthermore, the application will be updated every year (new lecture halls, libraries, ...). We therefore decided to go with an hybrid approach for this thesis.
 
-
+\newpage
 \subsection{Choosing the best hybrid framework}
 There are many different hybrid frameworks and choosing one was no easy task. We were however able to find the following comparison of the most popular frameworks (source http://tutorialzine.com/2015/10/comparing-the-top-frameworks-for-building-hybrid-mobile-apps/)
 
@@ -613,15 +623,22 @@ While we didn't receive as much feedback as we would have hoped, the one we rece
  \item L'onglet "Aide" est un peu caché et on ne s'attend pas à trouver ces infos là quand on clique, le lien parking devrait plutôt figurer dans le menu "ville" par exemple. (le renommer "infos utiles", ou qqch de plus parlant que "aide" éventuellement).
  \end{itemize}
  [...]}\\\\
+
+This first comment mostly points out that the "Tools" section lacks clarity and that the functionalities we can find in this section are either unclear or useless. Another comment shared the same sentiment:\\
+
  \say{[...] 2. la partie "mails" est sans intérêt puisqu'on est sur un smartphone où la messagerie est probablement déjà configurée.\\
  3. le menu "Aide" pourrait alors remonter d'un niveau et remplacer "Outils" qui n'est d'ailleurs pas très parlant comme titre de menu}\\
+
+This comment also points out that the "Tools" section should either be renamed or that it should contain other functionalities. Both commenters agree that the mail section does not have its place in the application.\\
+
+\newpage
 
 After reading these comments, we decided to rework the Tools section. We agreed that the mail part was superfluous and we decided to drop it entirely. We also decided to drop the "Help" section as we didn't think it was important enough. That left us with the map. We decided that it was important that the map was not grouped with the city, the studies or the campus as it was important to all three sections. We thus decided to leave it in the Tools section. We also decided against renaming the section "Maps" as future contributors may very well add functionalities we didn't think of in this section.
 
 \chapter{Implementation}
 
 
-Here we will explain the overall architecture of the application. We will also explain some aspects we considered when implementing the application.
+Once we had a clear idea of what the application was going to look like, we were ready to start implementing it. We started by designing a high-level view of the program which is detailed in the "Architecture" section. This section details 
 
 \section{Architecture}
 
@@ -1415,13 +1432,13 @@ The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 In order to assess the performance of our application, we profiled it using Google Chrome. Google Chrome indeed has a tool, available using the chrome://inspect address, that allows developers to profile an application running on their Android device. The following results are therefore only relevant for Android phones. The device we used for these tests was a Huawei P8 Lite, a smartphone with average performances (source benchmark). Results may vary with higher or lower end smartphones. Despite the limitations of our testing, the results are still interesting and we will present them in this section.
 \subsubsection{Profiling}
 We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in annex X (TODO).
-\iffalse
-\begin{figure}
+
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.25]{Images/libraries.png}
 \caption{Profile of the Libraries functionality}
 \end{figure}
-\fi
+
 In this figure we can see several interesting things. We start by observing that the application takes approximately 1.1 seconds to display the list of libraries. We ignore the last 0.04 seconds displayed in the figure as the work was done and the rest of the time was spent idle. The rest is split among several tasks:
 \begin{itemize}
 \item Scripting : Running the JavaScript code. Time spent: 495.601ms, 45\% of total time
