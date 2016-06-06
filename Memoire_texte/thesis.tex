@@ -16,7 +16,6 @@
 \usepackage{hyperref}
 \usepackage{tikz,pgf}
 \usepackage{forest}
-\usepackage[toc,page]{appendix}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[english]{babel}
@@ -88,6 +87,14 @@
 \begin{document}
 \maketitle					% To create front cover page
 \thispagestyle{empty}		% To suppress header and footer on the back of the cover page
+\chapter*{Acknowledgements}
+The realization of this master's thesis would not have been possible without the help and guidance of our supervisor, Pr. Yves Deville.\\
+
+We would also like to give special thanks the everyone who contributed to this project even though they had no obligation to do so. We thank Jorge Perez Medina and Mathieu Zen for their invaluable help with the maps functionality of the application but also their many advices regarding the Ionic Framework.\\
+
+ We also thank Hildeberto Mendoça for taking the time to explain the OSIS architecture and for making the link between our application and the UCL information system a reality.\\
+
+This thesis would not exist without their precious help.
 \tableofcontents % Include a table of contents
 \newpage % Begins the essay on a new page instead of on the same page as the table of contents 
 \linespread{1.2} % Line spacing
@@ -329,7 +336,6 @@ GitHub is the state of the art for code sharing and project management on open-s
 \item There are plugins to create a forum linked to the git repository. A forum is useful when other programmers have questions about your code or want to discuss new features.
 \item There are plugins to test or deploy automatically your project.
 \item Creating a wiki for the repository is easy.
-\footnote{Jenkins for example //TODO DETAILLER}
 \end{itemize}
 
 We therefore decided to use GitHub as our sharing platform as it is by far the most used platform nowadays.
@@ -341,7 +347,7 @@ The actual GitHub repository for the project is available at \url{https://github
 The number of university application on Google Play is huge. They often offer a schedule, libraries, lecture halls and maps features. However some applications are more interesting in the UCLCampus case because they are close or can be directly related to our project.  
 
 \subsubsection{LLN Campus}
-LLN Campus was a project developed by 3rd years UCL computer science students. This project's goal was to help the the UCL students in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, maps and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing whether they are open or not. Their project is available on GitHub. //TODO ADD LINK They also created an extensive database for university buildings in Louvain-la-Neuve that we reused in our application with their authorization. 
+LLN Campus was a project developed by 3rd years UCL computer science students. This project's goal was to help the the UCL students in Louvain-la-Neuve. This project is only available for android and is developed in Java. It contains different menus, schedule, libraries, lecture halls, hobbies, maps and links to useful student websites (see figure 2.2). They implemented useful features as an indicator for the libraries showing whether they are open or not. Their project is available on GitHub\footnote{\url{https://github.com/qdeconinck/lln-campus}}. They also created an extensive database for university buildings in Louvain-la-Neuve that we reused in our application with their authorization. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.2]{Images/llncampus.png}
@@ -1245,7 +1251,6 @@ In this example, we create an English translation and the variable "hello\_messa
 The plugin allows to set a preferred language that will be preselected at the application launch. Currently it is English.
 \paragraph{Campus selection} The user can select a campus with the button named "Choose my campus" in the settings menu. This button opens a page with the list of all possible campuses, the user has to choose one and validate his choice. As explained earlier the campus selection influences the available functionalities in application. A pre-selection based on the geolocation happens when the user open UCLCampus and the nearest campus is chosen by default.\\
 For the implementation, we created a campus factory that holds a list of campuses. The items of this list have three attributes, the name of the campus, longitude and latitude. In order to select the closest campus, we created a JavaScript function that just returns the campus minimizing the distance between it and the current position of the user. Thus it is easy to add a new campus to the application or remove one.
-
 \section{Modularity and how to add a new functionality}
 This application was built with the idea that other contributors would have to add functionalities themselves or even take over the project in the future. It was therefore important to be able to add modules to the application without having to understand the whole code. 
 This section will present a user manual on how to get the application to run from scratch and how to add new functionalities.  It must be noted that in order to deploy the application on iOS, one must user OS X as his operating system.  The following steps will however work for any operating system and the user will be able to deploy the application on Android regardless of the OS used.
@@ -1472,13 +1477,11 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 \subsection{Other improvements}
 \begin{itemize}
 \item This project currently uses the 1.3 version of Ionic. It is however already possible to use Ionic 2 and migrating the application to this new version could be interesting. At the time of writing Ionic 2 was only available as a beta release, which is why we didn't use it immediately. Ionic 2.0 is interesting because it deploy tools for the tree architecture that is used (see chapter 4.1).
-\item An other improvement is to create a logo and a splash screen for the application.
-\item Create the Dutch translation. Everything is implemented, it is missing the map between variable and their translation.
-\item Implement database for browser side. 
+\item Another improvement is to create a logo and a splash screen for the application.
+\item Finish the Dutch translation. Everything is implemented, the only thing that is missing the map between the variables and their translations.
+\item Support the functionalities that use the database on browsers. 
 \end{itemize}
-
 \section{Tests}
-
 There are two different kinds of tests. The first kind is unit tests, these tests are simple and ensure that a factory or a function returns the correct result. It can also test the local and global page variables. These tests are designed to test one functionality at a time.
 The second tests are the end to end tests. These tests represent a real world scenario. It allows to test a sequence of functionalities and dependencies between them.
 \subsection{Unit Tests}
@@ -1495,9 +1498,7 @@ Then, install the dependencies by running the following commands in terminal\foo
    $ npm install -g karma-cli
    $ bower install angular-mocks --save-dev
 \end{lstlisting}
-
 At this step, it would be needed to create a configuration file but we have already did it. This file is in the tests directory and is named \textit{my.conf.js}. Open it and add your JavaScript and tests in the files object.
-
 \subsubsection{Step 2: Running the tests} 
 To run the tests, use the following command.
 \begin{lstlisting}[language=bash]
@@ -1523,19 +1524,14 @@ First go to the main repository
 \begin{lstlisting}[language=bash]
    $ cd UCLCampus/UCLCampus
 \end{lstlisting}
-
 Then, install the dependencies\footnote{If webdriver-manager update fails, pass in root mode 'sudo -s' and try again}.
 \begin{lstlisting}[language=bash]
    $ npm install -g protractor
    $ webdriver-manager update
 \end{lstlisting}
-
 We already created the configuration file. It is named\textit{ e2e-tests.conf.js} if you want to modify it. It is currently configured to run the tests on chrome.
-
 \subsubsection{Step 2: Running the tests}
-
 First run the application on localHost.
-
 \begin{lstlisting}[language=bash]
    $ ionic serve --nobrowser
 \end{lstlisting}
@@ -1651,7 +1647,7 @@ These results make a lot of sense since retrieving information online means we h
 We can observe a significant performance increase once the results have been cached in these functionalities, usually around 500ms and almost 3 seconds for the list of sports. This is due to the slow response time of the server we contact to retrieve the sports. The other slower functionalities (maps and events) cannot be easily cached. Indeed, it does not make sense for maps as there are no results to be cached. As for the events, the list is constantly updated and caching the result might lead to inaccurate information being displayed.
 We can now see that, once the relevant information has been cached, most functionalities respond in less than a second. We could not find any standard regarding the recommended response time for an application. However, Android will consider the application as not responding if it stuck for more than 5 seconds. As we can see, none of our functionalities exceed this limit, even when not cached.\\
 
-According to [source TODO], a response time ranging between 500 and 1000 ms is considered to be immediate, which is the recommended interval to load pages. Most of our functionalities are in this range. In order to make the wait for slower functionalities more bearable, we added an indicator that the functionality is loading. That way the user still receives feedback to indicate that his action, in this case the press of a button, has been registered and that the application is working on it. \\
+The response time ranging between 500 and 1000 ms is considered to be immediate\footnote{\url{https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/}}, which is the recommended interval to load pages. Most of our functionalities are in this range. In order to make the wait for slower functionalities more bearable, we added an indicator that the functionality is loading. That way the user still receives feedback to indicate that his action, in this case the press of a button, has been registered and that the application is working on it. \\
 
 We conclude that, despite using a hybrid framework, the performances of our application are acceptable and that most users will not notice any delay when using the majority of the functionalities. Furthermore, the slowest functionalities often depend on the response times of external servers.. In those cases, using a native approach would not have helped performance-wise. 
 
@@ -1660,7 +1656,7 @@ Working on UCLCampus allowed us to experience the Ionic Framework. We learned th
 
 \subsection{Benefits}
 \begin{itemize}
-\item Easy to learn and use. The tutorial on their website is complete and brings possible architecture notions. This tutorial, combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, makes it possible to start an application right away. 
+\item Easy to learn and use. The tutorial on their website is complete and brings possible architecture notions. This tutorial, combined with a tutorial about AngularJS \footnote{We used the w3school tutorials available at \url{http://www.w3schools.com/angular/}}, makes it possible to start an application right away. 
 \item The CSS and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
 \item A large community that provide quick response and many examples for simple topics. Moreover, this community provides a great panel of plugins, meaning it was never necessary to create our own. 
 \item Well documented. Every component is listed and described and some basic examples are provided.
@@ -1731,14 +1727,64 @@ Krishnan R Menon. 2015.
 \textit{Hybrid vs Native Mobile App. Decide in 5 minutes!}.
 [ONLINE] Available at: http://julyrapid.com/hybrid-vs-native-mobile-app-decide-5-minutes/. [Accessed 26 May 2016].
  
+\bibitem{}
+Jay Raj. 2014. 
+\textit{The Top 7 Hybrid Mobile App Frameworks}. 
+[ONLINE] Available at: https://www.sitepoint.com/top-7-hybrid-mobile-app-frameworks/. [Accessed 8 December 2015].
+
+\bibitem{}
+Sunil Arora. 2016. 
+\textit{10 Best Hybrid Mobile App UI Frameworks: HTML5, CSS and JS}. 
+[ONLINE] Available at: http://noeticforce.com/best-hybrid-mobile-app-ui-frameworks-html5-js-css. [Accessed 6 December 2015].
+
 \bibitem{} 
 Danny Markov. 2015.
 \textit{Comparing The Top Frameworks For Building Hybrid Mobile Apps}.
 [ONLINE] Available at: http://tutorialzine.com/2015/10/comparing-the-top-frameworks-for-building-hybrid-mobile-apps/. [Accessed 18 May 2016].
 
+\bibitem{} 
+Richard Stallman. 2016.
+\textit{Why Open Source misses the point of Free Software}.
+[ONLINE] Available at: http://www.gnu.org/philosophy/open-source-misses-the-point.html. [Accessed 15 March 2016].
+
+\bibitem{} 
+Debian. 2016. 
+\textit{License information}.
+[ONLINE] Available at: http://www.debian.org/legal/licenses/. [Accessed 16 March 2016].
+
+\bibitem{} 
+Black Duck. 2016.
+\textit{Top Open Source Licenses}. 
+[ONLINE] Available at: https://www.blackducksoftware.com/top-open-source-licenses. [Accessed 25 March 2016].
+
+\bibitem{} 
+Brett Smith. 2014.
+\textit{A Quick Guide to GPLv3}. 
+[ONLINE] Available at: http://www.gnu.org/licenses/quick-guide-gplv3.en.html. [Accessed 13 April 2016].
+
+\bibitem{}
+Denys Mishunov. 2015.
+\textit{Why Performance Matters, Part 1: The Perception Of Time}. 
+[ONLINE] Available at: https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/. [Accessed 10 May 2016].
+
+\newpage
+
+\bibitem{}
+Ashteya Biharisingh. 2015. 
+\textit{How To Write Automated Tests For Your Ionic App - Part 1}. 
+[ONLINE] Available at: http://gonehybrid.com/how-to-write-automated-tests-for-your-ionic-app-part-1/. [Accessed 26 May 2016].
+
+
+\bibitem{}
+Andrew McGivery. 2015.
+\textit{Unit Testing Your Ionic Framework App}. 
+[ONLINE] Available at: http://mcgivery.com/unit-testing-ionic-app/. [Accessed 27 May 2016].
+
+\bibitem{}
+PassMark Android Benchmark. 2016. 
+\textit{Android Benchmarks, Performance Comparison of Android Devices}. 
+[ONLINE] Available at: http://www.androidbenchmark.net/. [Accessed 12 May 2016].
 \end{thebibliography}
-\url{http://www.gnu.org/philosophy/open-source-misses-the-point.html}\\
-\url{https://en.wikipedia.org/wiki/GNU_General_Public_License}\\
 \newpage
 
 \appendix
