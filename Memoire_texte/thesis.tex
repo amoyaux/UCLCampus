@@ -1478,16 +1478,17 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 
 \section{Tests}
 
-There are two different tests possible. The first are unit test, these tests are simple and ensure that a factory or a function return the good result. It can also test the local and global page variables. These tests are design to test one functionality at a time.
-The second tests are the end to end tests. These tests are a real world scenario. It allows to test a sequence of functionalities and dependencies between them.
+There are two different kinds of tests. The first kind is unit tests, these tests are simple and ensure that a factory or a function returns the correct result. It can also test the local and global page variables. These tests are designed to test one functionality at a time.
+The second tests are the end to end tests. These tests represent a real world scenario. It allows to test a sequence of functionalities and dependencies between them.
 \subsection{Unit Tests}
-There are two type of unit tests. The first aim to control a factory response. The second analyse the controllers variables.
-\subsubsection{Step 1, Tests installation} It is needed to install some packages before running the tests. To do so, move to the right directory:
+There are two type of unit tests. The first aims at controlling a factory response. The second analyses the controllers variables.
+\subsubsection{Step 1: Installing the test}
+Installing some packages is needed to before running the tests. To do so, move to the appropriate directory:
 \begin{lstlisting}[language=bash]
    $ cd UCLCampus/UCLCampus/
 \end{lstlisting}
 
-Then install the dependencies, run the following commands in terminal\footnote{If it fail, try to run npm command with sudo}
+Then, install the dependencies by running the following commands in terminal\footnote{If it fails, try to run npm commands with sudo}
 \begin{lstlisting}[language=bash]
    $ npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
    $ npm install -g karma-cli
@@ -1496,43 +1497,41 @@ Then install the dependencies, run the following commands in terminal\footnote{I
 
 At this step, it would be needed to create a configuration file but we have already did it. This file is in the tests directory and is named \textit{my.conf.js}. Open it and add your JavaScript and tests in the files object.
 
-\subsubsection{Step 2, Run the tests} To run the test, use the following command.
+\subsubsection{Step 2: Running the tests} 
+To run the tests, use the following command.
 \begin{lstlisting}[language=bash]
    $ karma start tests/my.conf.js
 \end{lstlisting}
-It is not needed to run this command after each modifications. These tests run in the background and are automatically recalculated after a change. Figure X.X show the actual result.
+It is not needed to run this command after each modification. These tests run in the background and are automatically recalculated after a change. Figure 5.3 shows the result.
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.7]{Images/tests.png}
-\caption{Tests results}
+\caption{Test results}
 \end{figure}
 
-\subsubsection{Step 3, Create a test.} It will not be explained here, how to create a test because it exists tutorial on web that explains it better than us. In order to make our test we refer to these documents:\\
- \url{http://mcgivery.com/unit-testing-ionic-app/}\\ \url{http://gonehybrid.com/how-to-write-automated-tests-for-your-ionic-app-part-2/}.
-
-\subsubsection{Actual Tests}
-There is two folders, one for controller tests and the other for factory tests. The actual sets of tests ensure that factories return the good result. There is not a lot of tests on controllers because the majority of variables come from factory result. There is actually a important restriction. The test are made on a browser and some functionalities don't work on it. This implies that some functionalities couldn't be tested as \textit{Lecture Halls} and\textit{ Libraries }for example.
+\subsubsection{Current Tests}
+There are two folders, one for controller tests and the other for factory tests. The current set of tests ensures that factories return the good result. There is not a lot of tests on controllers because the majority of variables come from factory results. There is actually a important restriction. The test are made on a browser and some functionalities don't work on it. This implies that some functionalities couldn't be tested such as \textit{Lecture Halls} and\textit{ Libraries }for example. Indeed, these functionalities cannot be run through a browser and require either a smartphone or an emulator to work properly. 
 
 \subsection{End to End Tests}
 
-End to End tests open a browser and carry out actions has a real person. These tests allow to test dependencies among functionalities. For example login with specific credentials, access schedule page, test if the schedule class slots are consistent with the credentials. Another example is to test the interface change after a campus site modification.
+End to End tests open a browser and carry out actions just like a real person. These tests allow to test dependencies among functionalities. For example login with specific credentials, accessing the schedule page, test if the schedule class slots are consistent with the credentials. Another example is to test the interface change after a campus site modification.
 
-\subsubsection{Step 1, Install test}
+\subsubsection{Step 1: Installing the tests}
 
 First go to the main repository
 \begin{lstlisting}[language=bash]
    $ cd UCLCampus/UCLCampus
 \end{lstlisting}
 
-Then install the dependencies\footnote{If webdriver-manager update fail, pass in root mode 'sudo -s' and try again}.
+Then, install the dependencies\footnote{If webdriver-manager update fails, pass in root mode 'sudo -s' and try again}.
 \begin{lstlisting}[language=bash]
    $ npm install -g protractor
    $ webdriver-manager update
 \end{lstlisting}
 
-We already create the configuration file. It is named\textit{ e2e-tests.conf.js} if you want to modify it. Actually it is configured to do test on chrome.
+We already created the configuration file. It is named\textit{ e2e-tests.conf.js} if you want to modify it. It is currently configured to run the tests on chrome.
 
-\subsubsection{Step 2, Run Test}
+\subsubsection{Step 2: Running the tests}
 
 First run the application on localHost.
 
@@ -1540,13 +1539,13 @@ First run the application on localHost.
    $ ionic serve --nobrowser
 \end{lstlisting}
 
-Then run the test.
+Then run the tests.
 
 \begin{lstlisting}[language=bash]
    protractor tests/e2e-tests.conf.js
 \end{lstlisting}
 
-It will run visually the tests on the browser and return a feedback in terminal (figure 5.4).
+It will run the tests on the browser with a visual feedback and return a more detailed feedback in terminal as shown in figure 5.4.
 
 \begin{figure}[H]
 \centering
@@ -1554,17 +1553,11 @@ It will run visually the tests on the browser and return a feedback in terminal 
 \caption{End to End Tests results}
 \end{figure}
 
-\subsubsection{Create tests}
-
-Again, it will not be explain how to create tests because there is a lot of tutorials on the net. We refer to this documents:\\
-\url{http://gonehybrid.com/how-to-write-automated-tests-for-your-ionic-app-part-3/}\\
-\url{http://www.protractortest.org/#/api}
 
 \subsubsection{Our tests}
-We created test for login with good or false credentials.
-Actually there is no more tests but it would be interesting to test the schedule and the change after a new campus selected.\\
-Again, all the tests are in browser, and functionalities that work with device functions could not be tested.
-
+We tested the login functionality with correct and incorrect credentials.
+Currently there are no other tests but it would be interesting to test the schedule and the change after a new campus selected.\\
+Again, all the tests are in browser, and functionalities that work with device functions could not be tested. 
 \chapter{Analysis}
 
 Once the application was implemented, we needed to reflect on the choices we made along the way and try to determine whether they were the right ones or not. We also analyze the application as a whole. The first section gives some quantitative data regarding the source code of the application while the second section explains some tests we made to determine the performances of our finished product. Finally, the last section gives some insight on hybrid approaches and more specifically the Ionic framework.
