@@ -158,3 +158,6 @@
 \contentsline {subsection}{\numberline {6.3.1}Benefits}{54}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Drawbacks}{55}{subsection.6.3.2}
 \contentsline {chapter}{\numberline {7}Conclusion}{56}{chapter.7}
+\contentsline {chapter}{\numberline {A}InVision Screenshots}{59}{appendix.A}
+\contentsline {chapter}{\numberline {B}UCLCampus Screenshots}{60}{appendix.B}
+\contentsline {chapter}{\numberline {C}Performance Measurements}{61}{appendix.C}
