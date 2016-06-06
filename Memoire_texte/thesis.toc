@@ -127,26 +127,36 @@
 \contentsline {subsubsection}{Step 2: Writing the JavaScript code}{45}{section*.82}
 \contentsline {subsubsection}{Step 3: Writing the HTML code}{45}{section*.83}
 \contentsline {subsubsection}{Step 4: Adding your functionality to the application}{45}{section*.84}
-\contentsline {subsection}{\numberline {5.2.6}Step 5: submitting your functionality}{46}{subsection.5.2.6}
+\contentsline {subsubsection}{Step 5: submitting your functionality}{46}{section*.85}
 \contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{47}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Future functionalities}{47}{subsection.5.3.1}
-\contentsline {subsubsection}{The "City" module}{47}{section*.85}
-\contentsline {subsubsection}{"Cercles" and "Kot \IeC {\`a} Projets"}{47}{section*.86}
-\contentsline {subsubsection}{Integrating OSIS}{47}{section*.87}
-\contentsline {subsubsection}{Tools}{47}{section*.88}
+\contentsline {subsubsection}{The "City" module}{47}{section*.86}
+\contentsline {subsubsection}{"Cercles" and "Kot \IeC {\`a} Projets"}{47}{section*.87}
+\contentsline {subsubsection}{Integrating OSIS}{47}{section*.88}
+\contentsline {subsubsection}{Tools}{47}{section*.89}
 \contentsline {subsection}{\numberline {5.3.2}Possible improvements of existing functionalities}{47}{subsection.5.3.2}
-\contentsline {subsubsection}{Adding support for all campuses}{47}{section*.89}
+\contentsline {subsubsection}{Adding support for all campuses}{47}{section*.90}
 \contentsline {subsection}{\numberline {5.3.3}Other improvements}{48}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Unit tests}{48}{section.5.4}
-\contentsline {chapter}{\numberline {6}Analysis}{49}{chapter.6}
-\contentsline {section}{\numberline {6.1}Quantitative analysis}{49}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Lines of code and files}{49}{subsection.6.1.1}
-\contentsline {subsubsection}{JavaScript code}{49}{section*.90}
-\contentsline {subsubsection}{HTML code}{49}{section*.91}
-\contentsline {subsubsection}{CSS code}{50}{section*.92}
-\contentsline {section}{\numberline {6.2}Performance testing}{50}{section.6.2}
-\contentsline {subsubsection}{Profiling}{50}{section*.93}
-\contentsline {section}{\numberline {6.3}Ionic Framework}{52}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Benefits}{52}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Drawbacks}{53}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{54}{chapter.7}
+\contentsline {section}{\numberline {5.4}Tests}{48}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Unit Tests}{48}{subsection.5.4.1}
+\contentsline {subsubsection}{Step 1, Tests installation}{48}{section*.91}
+\contentsline {subsubsection}{Step 2, Run the tests}{49}{section*.92}
+\contentsline {subsubsection}{Step 3, Create a test.}{49}{section*.94}
+\contentsline {subsubsection}{Actual Tests}{49}{section*.95}
+\contentsline {subsection}{\numberline {5.4.2}End to End Tests}{49}{subsection.5.4.2}
+\contentsline {subsubsection}{Step 1, Install test}{49}{section*.96}
+\contentsline {subsubsection}{Step 2, Run Test}{50}{section*.97}
+\contentsline {subsubsection}{Create tests}{50}{section*.99}
+\contentsline {subsubsection}{Our tests}{50}{section*.100}
+\contentsline {chapter}{\numberline {6}Analysis}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Quantitative analysis}{51}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Lines of code and files}{51}{subsection.6.1.1}
+\contentsline {subsubsection}{JavaScript code}{51}{section*.101}
+\contentsline {subsubsection}{HTML code}{51}{section*.102}
+\contentsline {subsubsection}{CSS code}{52}{section*.103}
+\contentsline {section}{\numberline {6.2}Performance testing}{52}{section.6.2}
+\contentsline {subsubsection}{Profiling}{52}{section*.104}
+\contentsline {section}{\numberline {6.3}Ionic Framework}{54}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Benefits}{54}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Drawbacks}{55}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{56}{chapter.7}

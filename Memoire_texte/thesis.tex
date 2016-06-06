@@ -1439,7 +1439,7 @@ Change it to the following:
 \end{lstlisting}
 The campus field in each item is used if you want to create functionalities specific to one or several, but not all, campuses. For instance, the maps functionality is currently only available for the Louvain-La-Neuve campus. An empty campus field means that we can access the function from all campuses.
 You can now access the new functionality from the tools menu of the application. You can now start editing the JavaScript and HTML files to create a more complicated function.
-\subsection{Step 5: submitting your functionality}
+\subsubsection{Step 5: submitting your functionality}
 Once you have completed a functionality and believe it is ready to be integrated into the application, you can send a pull request to the project owner. The pull request will then be reviewed and will be added to the application if it is accepted. For more information about forks and pull requests, please refer to: https://help.github.com/articles/using-pull-requests/ and https://help.github.com/articles/fork-a-repo/.
 \section{Future functionalities and possible improvements}
 In this section, we will review the functionalities we couldn't add to the current application for various reasons, as well as looking at ways we could improve the existing functionalities.
@@ -1473,11 +1473,97 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 \item This project currently uses the 1.3 version of Ionic. It is however already possible to use Ionic 2 and migrating the application to this new version could be interesting. At the time of writing Ionic 2 was only available as a beta release, which is why we didn't use it immediately. Ionic 2.0 is interesting because it deploy tools for the tree architecture that is used (see chapter 4.1).
 \item An other improvement is to create a logo and a splash screen for the application.
 \item Create the Dutch translation. Everything is implemented, it is missing the map between variable and their translation.
+\item Implement database for browser side. 
 \end{itemize}
 
-\section{Unit tests}
+\section{Tests}
 
+There are two different tests possible. The first are unit test, these tests are simple and ensure that a factory or a function return the good result. It can also test the local and global page variables. These tests are design to test one functionality at a time.
+The second tests are the end to end tests. These tests are a real world scenario. It allows to test a sequence of functionalities and dependencies between them.
+\subsection{Unit Tests}
+There are two type of unit tests. The first aim to control a factory response. The second analyse the controllers variables.
+\subsubsection{Step 1, Tests installation} It is needed to install some packages before running the tests. To do so, move to the right directory:
+\begin{lstlisting}[language=bash]
+   $ cd UCLCampus/UCLCampus/
+\end{lstlisting}
 
+Then install the dependencies, run the following commands in terminal\footnote{If it fail, try to run npm command with sudo}
+\begin{lstlisting}[language=bash]
+   $ npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
+   $ npm install -g karma-cli
+   $ bower install angular-mocks --save-dev
+\end{lstlisting}
+
+At this step, it would be needed to create a configuration file but we have already did it. This file is in the tests directory and is named \textit{my.conf.js}. Open it and add your JavaScript and tests in the files object.
+
+\subsubsection{Step 2, Run the tests} To run the test, use the following command.
+\begin{lstlisting}[language=bash]
+   $ karma start tests/my.conf.js
+\end{lstlisting}
+It is not needed to run this command after each modifications. These tests run in the background and are automatically recalculated after a change. Figure X.X show the actual result.
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.7]{Images/tests.png}
+\caption{Tests results}
+\end{figure}
+
+\subsubsection{Step 3, Create a test.} It will not be explained here, how to create a test because it exists tutorial on web that explains it better than us. In order to make our test we refer to these documents:\\
+ \url{http://mcgivery.com/unit-testing-ionic-app/}\\ \url{http://gonehybrid.com/how-to-write-automated-tests-for-your-ionic-app-part-2/}.
+
+\subsubsection{Actual Tests}
+There is two folders, one for controller tests and the other for factory tests. The actual sets of tests ensure that factories return the good result. There is not a lot of tests on controllers because the majority of variables come from factory result. There is actually a important restriction. The test are made on a browser and some functionalities don't work on it. This implies that some functionalities couldn't be tested as \textit{Lecture Halls} and\textit{ Libraries }for example.
+
+\subsection{End to End Tests}
+
+End to End tests open a browser and carry out actions has a real person. These tests allow to test dependencies among functionalities. For example login with specific credentials, access schedule page, test if the schedule class slots are consistent with the credentials. Another example is to test the interface change after a campus site modification.
+
+\subsubsection{Step 1, Install test}
+
+First go to the main repository
+\begin{lstlisting}[language=bash]
+   $ cd UCLCampus/UCLCampus
+\end{lstlisting}
+
+Then install the dependencies\footnote{If webdriver-manager update fail, pass in root mode 'sudo -s' and try again}.
+\begin{lstlisting}[language=bash]
+   $ npm install -g protractor
+   $ webdriver-manager update
+\end{lstlisting}
+
+We already create the configuration file. It is named\textit{ e2e-tests.conf.js} if you want to modify it. Actually it is configured to do test on chrome.
+
+\subsubsection{Step 2, Run Test}
+
+First run the application on localHost.
+
+\begin{lstlisting}[language=bash]
+   $ ionic serve --nobrowser
+\end{lstlisting}
+
+Then run the test.
+
+\begin{lstlisting}[language=bash]
+   protractor tests/e2e-tests.conf.js
+\end{lstlisting}
+
+It will run visually the tests on the browser and return a feedback in terminal (figure 5.4).
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.7]{Images/test2.png}
+\caption{End to End Tests results}
+\end{figure}
+
+\subsubsection{Create tests}
+
+Again, it will not be explain how to create tests because there is a lot of tutorials on the net. We refer to this documents:\\
+\url{http://gonehybrid.com/how-to-write-automated-tests-for-your-ionic-app-part-3/}\\
+\url{http://www.protractortest.org/#/api}
+
+\subsubsection{Our tests}
+We created test for login with good or false credentials.
+Actually there is no more tests but it would be interesting to test the schedule and the change after a new campus selected.\\
+Again, all the tests are in browser, and functionalities that work with device functions could not be tested.
 
 \chapter{Analysis}
 
@@ -1592,6 +1678,7 @@ The UCLCampus implementation brought out our Ionic benefits and drawbacks.
 \item No response for advanced topics. 
 \item A poor architecture for HTTP requests to external website. Ionic removed "cookie" and "set-cookie" in the response parameters. That is a real problem when a website use a cookie authentication or parameters inside the cookie. The reason is that they implemented a local cookie storage which is more efficient. However, it only work for request inside the application.
 \item Still in development. Some plugins and components still in development. They contains bug and should not be deploy for an end user. 
+\item Some functionalities and factories need a specific code for browser. 
 \end{itemize}
 
 \chapter{Conclusion} 
