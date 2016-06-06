@@ -281,8 +281,7 @@
         });
       }
       else{
-        db = openDatabase("database.sqlite", '1', 'test', 1024 * 1024 * 100); // browser
-        console.log(db);
+        db = openDatabase("database.sqlite", '1', 'test', 1024 * 1024); // browser
       }
     });
 

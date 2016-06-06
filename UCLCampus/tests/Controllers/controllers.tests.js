@@ -3,7 +3,7 @@ describe('Controllers', function(){
 
     // load the controller's module
     beforeEach(module('ionicApp'));
-
+    
     beforeEach(inject(function($rootScope, $controller) {
         scope = $rootScope.$new();
         $controller('ScheduleController', {$scope: scope});

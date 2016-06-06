@@ -56,8 +56,9 @@ module.exports = function(config) {
         '../www/tools/maps/js/directives/closeMenu.js',
         '../www/tools/maps/js/services/urlmatcher.js',
         '../www/town/js/town.js',
-        './Controllers/controllers.test.js'
-        ],
+        './Controllers/*.tests.js',
+        './Services/*.tests.js'
+    ],
 
 
     // list of files to exclude
