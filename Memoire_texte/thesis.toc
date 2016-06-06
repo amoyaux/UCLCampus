@@ -40,115 +40,113 @@
 \contentsline {section}{\numberline {3.2}User interface}{20}{section.3.2}
 \contentsline {chapter}{\numberline {4}Implementation}{22}{chapter.4}
 \contentsline {section}{\numberline {4.1}Architecture}{22}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Folder organisation}{22}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Folder organization}{22}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Information processing}{23}{subsection.4.1.2}
 \contentsline {subsubsection}{Database}{24}{section*.28}
 \contentsline {subsubsection}{Web Services}{24}{section*.29}
 \contentsline {subsubsection}{Web Parsing}{24}{section*.30}
-\contentsline {subsection}{\numberline {4.1.3}Front-end and back-end}{25}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Front end and back end}{25}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}Factory}{25}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}State provider}{25}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Coding standards}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Header and footer}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Tree hierarchy}{26}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.1.5}State provider}{26}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Coding standards}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Header and footer}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Tree hierarchy}{27}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Colors}{27}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}Security}{27}{section.4.3}
-\contentsline {subsubsection}{Data to protect}{27}{section*.33}
-\contentsline {subsubsection}{Possible breaks}{27}{section*.34}
-\contentsline {subsubsection}{Protections}{27}{section*.35}
+\contentsline {subsubsection}{Data to protect}{28}{section*.33}
+\contentsline {subsubsection}{Possible threats}{28}{section*.34}
+\contentsline {subsubsection}{Protections}{28}{section*.35}
 \contentsline {section}{\numberline {4.4}Information retrieval}{28}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Student data(OSIS)}{28}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Libraries and lecture halls}{28}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Libraries and lecture halls}{29}{subsection.4.4.2}
 \contentsline {subsubsection}{Database structure}{29}{section*.36}
-\contentsline {subsubsection}{Retrieving lecture halls}{29}{section*.37}
-\contentsline {subsubsection}{Retrieving libraries}{29}{section*.38}
+\contentsline {subsubsection}{Retrieving lecture halls}{30}{section*.37}
+\contentsline {subsubsection}{Retrieving libraries}{30}{section*.38}
 \contentsline {subsection}{\numberline {4.4.3}Events}{30}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Schedule}{30}{subsection.4.4.4}
-\contentsline {subsubsection}{ADE custom URL}{30}{section*.39}
+\contentsline {subsection}{\numberline {4.4.4}Schedule}{31}{subsection.4.4.4}
+\contentsline {subsubsection}{ADE custom URL}{31}{section*.39}
 \contentsline {subsubsection}{Parsing}{31}{section*.40}
 \contentsline {subsubsection}{Local storage}{31}{section*.41}
-\contentsline {subsection}{\numberline {4.4.5}University canteen}{31}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.5}Cafeteria}{32}{subsection.4.4.5}
 \contentsline {subsection}{\numberline {4.4.6}Sports}{32}{subsection.4.4.6}
 \contentsline {subsubsection}{URL}{32}{section*.42}
 \contentsline {subsubsection}{Parsing}{32}{section*.43}
-\contentsline {subsubsection}{Local storage}{32}{section*.44}
-\contentsline {chapter}{\numberline {5}The Application}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}The application UCLCampus}{33}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Header}{33}{subsection.5.1.1}
-\contentsline {paragraph}{design}{33}{section*.45}
-\contentsline {paragraph}{Implementation}{33}{section*.46}
-\contentsline {subsection}{\numberline {5.1.2}Footer}{33}{subsection.5.1.2}
-\contentsline {paragraph}{Design}{33}{section*.47}
-\contentsline {paragraph}{Implementation}{34}{section*.48}
-\contentsline {subsection}{\numberline {5.1.3}The Homepage}{34}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}The Student/Campus/Tools/City Menus}{34}{subsection.5.1.4}
-\contentsline {paragraph}{Design}{34}{section*.50}
-\contentsline {paragraph}{Implementation}{35}{section*.51}
-\contentsline {subsection}{\numberline {5.1.5}Studies}{35}{subsection.5.1.5}
-\contentsline {subsubsection}{Schedule}{35}{section*.52}
-\contentsline {subsubsection}{Lecture Halls}{36}{section*.53}
-\contentsline {subsubsection}{Libraries}{36}{section*.54}
-\contentsline {subsubsection}{Uclouvain.be and Moodle}{36}{section*.55}
-\contentsline {subsubsection}{Implementation}{36}{section*.56}
-\contentsline {subsection}{\numberline {5.1.6}Campus}{36}{subsection.5.1.6}
-\contentsline {subsubsection}{Events}{37}{section*.57}
-\contentsline {paragraph}{Design}{37}{section*.58}
-\contentsline {paragraph}{Events list}{37}{section*.59}
-\contentsline {paragraph}{Event details}{37}{section*.60}
-\contentsline {paragraph}{Implementation}{37}{section*.61}
-\contentsline {subsubsection}{University restaurants}{38}{section*.62}
-\contentsline {paragraph}{Design}{38}{section*.63}
-\contentsline {paragraph}{Implementation}{38}{section*.64}
-\contentsline {subsubsection}{Sports}{38}{section*.65}
-\contentsline {paragraph}{Design}{39}{section*.66}
-\contentsline {paragraph}{Implementation}{39}{section*.67}
-\contentsline {subsection}{\numberline {5.1.7}Tools}{39}{subsection.5.1.7}
-\contentsline {subsubsection}{LLN Maps}{39}{section*.69}
-\contentsline {paragraph}{Design}{39}{section*.70}
-\contentsline {paragraph}{Implementation}{40}{section*.71}
-\contentsline {subsection}{\numberline {5.1.8}City}{40}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}Others}{40}{subsection.5.1.9}
-\contentsline {subsubsection}{Settings menu}{40}{section*.72}
-\contentsline {paragraph}{Design}{40}{section*.73}
-\contentsline {paragraph}{Language}{40}{section*.74}
-\contentsline {paragraph}{Campus selection}{41}{section*.75}
-\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{41}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Setting up the framework}{41}{subsection.5.2.1}
-\contentsline {subsubsection}{Step 1: Installing Git}{41}{section*.76}
-\contentsline {subsubsection}{Step 2: Installing Node.js}{41}{section*.77}
-\contentsline {subsubsection}{Step 3: Installing Ionic and its dependencies}{42}{section*.78}
-\contentsline {subsection}{\numberline {5.2.2}Installing UCLCampus}{42}{subsection.5.2.2}
-\contentsline {subsubsection}{Step 1: Forking the project}{42}{section*.79}
-\contentsline {subsubsection}{Step 2: Installing the required packages}{42}{section*.80}
-\contentsline {subsection}{\numberline {5.2.3}Running the application}{43}{subsection.5.2.3}
-\contentsline {subsubsection}{Running the application in an Internet browser}{43}{section*.81}
-\contentsline {subsection}{\numberline {5.2.4}Running the application on a device or emulator}{43}{subsection.5.2.4}
-\contentsline {subsection}{\numberline {5.2.5}Adding a new functionality}{44}{subsection.5.2.5}
-\contentsline {subsubsection}{Step 1: Creating the required files}{44}{section*.82}
-\contentsline {subsubsection}{Step 2: Writing the JavaScript code}{44}{section*.83}
-\contentsline {subsubsection}{Step 3: Writing the HTML code}{44}{section*.84}
-\contentsline {subsubsection}{Step 4: Adding your functionality to the application}{44}{section*.85}
-\contentsline {subsection}{\numberline {5.2.6}Step 5: submitting your functionality}{45}{subsection.5.2.6}
-\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{46}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Future functionalities}{46}{subsection.5.3.1}
-\contentsline {subsubsection}{The "City" module}{46}{section*.86}
-\contentsline {subsubsection}{"Cercles" and "Kot \IeC {\`a} Projets"}{46}{section*.87}
-\contentsline {subsubsection}{Integrating OSIS}{46}{section*.88}
-\contentsline {subsubsection}{Tools}{46}{section*.89}
-\contentsline {subsection}{\numberline {5.3.2}Possible improvements of existing functionalities}{46}{subsection.5.3.2}
-\contentsline {subsubsection}{Adding support for all campuses}{46}{section*.90}
-\contentsline {subsection}{\numberline {5.3.3}Other improvements}{47}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Analysis}{48}{chapter.6}
-\contentsline {section}{\numberline {6.1}Quantitative analysis}{48}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Lines of code and files}{48}{subsection.6.1.1}
-\contentsline {subsubsection}{JavaScript code}{48}{section*.91}
-\contentsline {subsubsection}{HTML code}{48}{section*.92}
-\contentsline {subsubsection}{CSS code}{49}{section*.93}
-\contentsline {section}{\numberline {6.2}Ionic Framework}{49}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Benefits}{49}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Drawbacks}{49}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Testing}{50}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Unit Test}{50}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Performance testing}{50}{subsection.6.3.2}
-\contentsline {subsubsection}{Profiling}{50}{section*.94}
-\contentsline {chapter}{\numberline {7}Conclusion}{53}{chapter.7}
+\contentsline {subsubsection}{Local storage}{33}{section*.44}
+\contentsline {chapter}{\numberline {5}The Application}{34}{chapter.5}
+\contentsline {section}{\numberline {5.1}The UCLCampus application}{34}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Header}{34}{subsection.5.1.1}
+\contentsline {paragraph}{Design}{34}{section*.45}
+\contentsline {paragraph}{Implementation}{34}{section*.46}
+\contentsline {subsection}{\numberline {5.1.2}Footer}{34}{subsection.5.1.2}
+\contentsline {paragraph}{Design}{34}{section*.47}
+\contentsline {paragraph}{Implementation}{35}{section*.48}
+\contentsline {subsection}{\numberline {5.1.3}The Homepage}{35}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}The Student/Campus/Tools/City Menus}{35}{subsection.5.1.4}
+\contentsline {paragraph}{Design}{35}{section*.50}
+\contentsline {paragraph}{Implementation}{36}{section*.51}
+\contentsline {subsection}{\numberline {5.1.5}Studies}{36}{subsection.5.1.5}
+\contentsline {subsubsection}{Schedule}{36}{section*.52}
+\contentsline {subsubsection}{Lecture Halls}{37}{section*.53}
+\contentsline {subsubsection}{Libraries}{37}{section*.54}
+\contentsline {subsubsection}{Uclouvain.be and Moodle}{37}{section*.55}
+\contentsline {subsubsection}{Implementation}{37}{section*.56}
+\contentsline {subsection}{\numberline {5.1.6}Campus}{37}{subsection.5.1.6}
+\contentsline {subsubsection}{Events}{38}{section*.57}
+\contentsline {paragraph}{Design}{38}{section*.58}
+\contentsline {paragraph}{Events list}{38}{section*.59}
+\contentsline {paragraph}{Event details}{38}{section*.60}
+\contentsline {paragraph}{Implementation}{38}{section*.61}
+\contentsline {subsubsection}{Cafeterias}{39}{section*.62}
+\contentsline {paragraph}{Design}{39}{section*.63}
+\contentsline {paragraph}{Implementation}{39}{section*.64}
+\contentsline {subsubsection}{Sports}{40}{section*.65}
+\contentsline {paragraph}{Design}{40}{section*.66}
+\contentsline {paragraph}{Implementation}{40}{section*.67}
+\contentsline {subsection}{\numberline {5.1.7}Tools}{40}{subsection.5.1.7}
+\contentsline {subsubsection}{LLN Maps}{40}{section*.69}
+\contentsline {paragraph}{Design}{40}{section*.70}
+\contentsline {subsection}{\numberline {5.1.8}City}{41}{subsection.5.1.8}
+\contentsline {subsection}{\numberline {5.1.9}Others}{41}{subsection.5.1.9}
+\contentsline {subsubsection}{Settings menu}{41}{section*.71}
+\contentsline {paragraph}{Design}{41}{section*.72}
+\contentsline {paragraph}{Language}{41}{section*.73}
+\contentsline {paragraph}{Campus selection}{42}{section*.74}
+\contentsline {section}{\numberline {5.2}Modularity and how to add a new functionality}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Setting up the framework}{42}{subsection.5.2.1}
+\contentsline {subsubsection}{Step 1: Installing Git}{42}{section*.75}
+\contentsline {subsubsection}{Step 2: Installing Node.js}{42}{section*.76}
+\contentsline {subsubsection}{Step 3: Installing Ionic and its dependencies}{43}{section*.77}
+\contentsline {subsection}{\numberline {5.2.2}Installing UCLCampus}{43}{subsection.5.2.2}
+\contentsline {subsubsection}{Step 1: Forking the project}{43}{section*.78}
+\contentsline {subsubsection}{Step 2: Installing the required packages}{43}{section*.79}
+\contentsline {subsection}{\numberline {5.2.3}Running the application}{44}{subsection.5.2.3}
+\contentsline {subsubsection}{Running the application in an Internet browser}{44}{section*.80}
+\contentsline {subsection}{\numberline {5.2.4}Running the application on a device or emulator}{44}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Adding a new functionality}{45}{subsection.5.2.5}
+\contentsline {subsubsection}{Step 1: Creating the required files}{45}{section*.81}
+\contentsline {subsubsection}{Step 2: Writing the JavaScript code}{45}{section*.82}
+\contentsline {subsubsection}{Step 3: Writing the HTML code}{45}{section*.83}
+\contentsline {subsubsection}{Step 4: Adding your functionality to the application}{45}{section*.84}
+\contentsline {subsection}{\numberline {5.2.6}Step 5: submitting your functionality}{46}{subsection.5.2.6}
+\contentsline {section}{\numberline {5.3}Future functionalities and possible improvements}{47}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Future functionalities}{47}{subsection.5.3.1}
+\contentsline {subsubsection}{The "City" module}{47}{section*.85}
+\contentsline {subsubsection}{"Cercles" and "Kot \IeC {\`a} Projets"}{47}{section*.86}
+\contentsline {subsubsection}{Integrating OSIS}{47}{section*.87}
+\contentsline {subsubsection}{Tools}{47}{section*.88}
+\contentsline {subsection}{\numberline {5.3.2}Possible improvements of existing functionalities}{47}{subsection.5.3.2}
+\contentsline {subsubsection}{Adding support for all campuses}{47}{section*.89}
+\contentsline {subsection}{\numberline {5.3.3}Other improvements}{48}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Unit tests}{48}{section.5.4}
+\contentsline {chapter}{\numberline {6}Analysis}{49}{chapter.6}
+\contentsline {section}{\numberline {6.1}Quantitative analysis}{49}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Lines of code and files}{49}{subsection.6.1.1}
+\contentsline {subsubsection}{JavaScript code}{49}{section*.90}
+\contentsline {subsubsection}{HTML code}{49}{section*.91}
+\contentsline {subsubsection}{CSS code}{50}{section*.92}
+\contentsline {section}{\numberline {6.2}Performance testing}{50}{section.6.2}
+\contentsline {subsubsection}{Profiling}{50}{section*.93}
+\contentsline {section}{\numberline {6.3}Ionic Framework}{52}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Benefits}{52}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Drawbacks}{53}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{54}{chapter.7}

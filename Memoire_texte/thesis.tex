@@ -93,7 +93,7 @@
 
 \chapter{Introduction} % Major section
 
-The goal of this thesis was to develop an open-source, multi-platform mobile application for UCL students. The application would be used by students to help them with their everyday student life in a town they might not know much about. It would, for example, guide them to their lecture halls or libraries and show them the many activities the town has to offer. The application in itself, while useful, does not constitute this thesis.\\
+The goal of this thesis was to develop an open-source, multi-platform mobile application for UCL students not only in Louvain-La-Neuve but also in all the  other UCL campuses. The application would be used by students to help them with their everyday student life in a town they might not know much about. It would, for example, guide them to their lecture halls or libraries and show them the many activities the town has to offer. The application in itself, while useful, does not constitute this thesis.\\
 
 The difference between a master's thesis and other assignments is that the goal of the thesis is not limited to evaluation and self-improvement. Indeed, a thesis should contribute to the field it is related to, providing insight for other researchers. For some theses, the contribution is clear and does not need to be discussed any further. This was not the case for this thesis. Indeed, the title, "UCLCampus, a mobile application for UCL students", doesn't indicate what contribution we will be making.\\
 
@@ -244,6 +244,7 @@ There are many different hybrid frameworks and choosing one was no easy task. We
 This table seems to be the most complete comparison of hybrid frameworks existing at the moment and it shows that Ionic is the most balanced and that it doesn't have any prominent weaknesses. Despite the lack of objectivity of the measurements used, this table seemed to reflect the opinion of other authors comparing hybrid frameworks. Since realizing benchmarks for all those frameworks would represent a tremendous amount of work that would go well beyond the scope of this thesis, we decided to trust the advice of the aforementioned reviews. We thus decided to use the Ionic framework in the context of this thesis.
 \section{Open-source project and code sharing}
 
+Another important component of our project was the open-source aspect. We will now look at the implications of an open-source project and choose the best licenses and sharing platforms for our application. 
 
 \subsection{Open-source And Free Software}
 \subsubsection{What is an open-source, free software?}
@@ -372,7 +373,7 @@ We contacted the researchers that implemented the LLN Maps application and asked
 
 
 \subsubsection{Quivr}
-Quivr \footnote{\url{https://quivr.be/home/}} is the application developed by the Katholieke Universiteit Leuven. It is not open-source. This application is developed by 22 members and has over 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friend system, libraries, university restaurants and news. The list of features is impressive but the lack of available source code made it impossible for us to use this application as a basis for ours in any way.
+Quivr \footnote{\url{https://quivr.be/home/}} is the application developed by the Katholieke Universiteit Leuven. It is not open-source. This application is developed by 22 members and has over 60 000 users. It has a lot of features and it takes into account all KUL sites, not only Leuven. The different features are a schedule, a friend system, libraries, cafeterias and news. The list of features is impressive but the lack of available source code made it impossible for us to use this application as a basis for ours in any way.
 
 
 \section{Project Management Methodologies}
@@ -467,7 +468,7 @@ Now that the background has been set and that we have made our initial choices, 
 
 
 In order to define what kind of functionalities would be part of our application, we needed to know what the students needed. The first step was to define a number of user stories that we would then translate into functionalities.\\ 
-We split our user stories into several categories:
+The user stories were split into several categories:
 
 \begin{itemize}
 
@@ -548,11 +549,11 @@ We will now give a list of the different user stories we thought of for each of 
 \item As a user, I can have a GPS guide to access "Cercles" from my location.
 \end{itemize}
 
-\item{Restaurants Universitaires}
+\item{Cafeteria}
 \begin{itemize}
-\item As a user, I can see the different "Restaurants Universitaires" in my campus.
-\item As a user, I can check the menu of the "Restaurants Universitaires".
-\item As a user, I can have a GPS guide to access "Restaurant Universitaires" from my location.
+\item As a user, I can see the different Cafeteria in my campus.
+\item As a user, I can check the menu of the Cafeteria.
+\item As a user, I can have a GPS guide to access Cafeterias from my location.
 \end{itemize}
 
 \item{Sports}
@@ -652,15 +653,14 @@ After reading these comments, we decided to rework the Tools section. We agreed 
 
 \chapter{Implementation}
 
-
-Once we had a clear idea of what the application was going to look like, we were ready to start implementing it. We started by designing a high-level view of the program which is detailed in the "Architecture" section. This section details 
+Once we had a clear idea of what the application was going to look like, we were ready to start implementing it. We started by designing a high-level view of the program which is detailed in the "Architecture" section 
 
 \section{Architecture}
 
-The purpose of the application is to be extensible and easily maintainable. A programmer have the possibility to add his own functionalities at each level of the application.
-The UCLCampus architecture can be seen as a tree. At the top level there are the generic parts and configurations that will be present everywhere in the application. Under it there are the settings menu and four other nodes representing the global sections. These sections are pointing to their functionalities and so on. Here is a part of the tree in order to give the idea.\\
+The purpose of the application is to be extensible and easily maintainable. A programmer needs to have the possibility to add his own functionalities at each level of the application.\\
+The UCLCampus architecture can be seen as a tree. At the top level there are the generic parts and configurations that will be present everywhere in the application. Under it there are the settings menu and four other nodes representing the global sections. These sections are pointing to their functionalities and so on. Here is a part of the tree.\\
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{forest}
 [Application, for tree = {ellipse, draw}, fill = green
@@ -686,9 +686,9 @@ The UCLCampus architecture can be seen as a tree. At the top level there are the
 \caption{Tree Architecture} 
 \end{figure}
 
-\subsection{Folder organisation}
-To be consistent with our architecture, the folders and files organisation also follows a tree structure. Ionic base architecture is to group all html file in a folder named templates, all js in a JS folder, ... This design become messy once there are a lot of functionalities and a lot of files. We modify it to respect the same tree architecture that the implementation has. This folders organisation allows programmers to efficiency find a code they need. For example, a programmer want to change the cafeteria details user interface, he can follow the logic patch campus/cafeteria/cafeteriaDetails/templates. This folder path follows the tree implementation as it can be seen on figure 4.1. Figure 4.2 is a summary of the change compare to the base Ionic design. Red folders are those that have been modified. 
-\begin{figure}
+\subsection{Folder organization}
+To be consistent with our architecture, the folders and files organization also follows a tree structure. Ionic base architecture is to group all html file in a folder named templates, all JavaScropt files in a JS folder and so on. This design becomes messy once there are a lot of functionalities and a lot of files. We modify it to respect the same tree structure described in the previous section. This folder organization allows programmers to efficiently find the code they need. For example, if a programmer wants to change the Cafeteria details user interface, he can follow the logical path Campus/Cafeteria/Cafeteria Details/templates. This folder path follows the tree implementation as seen on figure 4.1. Figure 4.2 is a summary of the changes we made to the basic Ionic design. Red folders are those that have been modified.\\ 
+\begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
    \includegraphics[width=.4\linewidth]{Images/folder_before.jpg}
@@ -706,8 +706,13 @@ To be consistent with our architecture, the folders and files organisation also 
 
 \subsection{Information processing}
 
-This section explains how to deal with informations processing from an architecture point of view. The section 4.4 explains in details how each specific part is retrieved.
-There is a lot of informations to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). It exists three ways to import them. The first way is to use a database, the informations are encoded under table form and it can be retrieve due to query call. The two other methods are web parsing and web services. Web services are always better than web parsing. Web services consist to send a request to a server and receive a response that contains directly the informations. Web parsing send a request to a server but there is a need to search for the informations inside the response. The three methods are used in the application depending the case.\\ For example, the ADE schedule has no web services. It remains web parsing or database. Encode the schedule for all student in the database take 80Mo, it is more than the actual application size and it is too much for a mobile application. In this case, web parsing seems to be the right choice.\\ An other example, the events. Events are updated each day, there is not human resources to update the database each day. It remains web services and web parsing, web services are always better than web parsing and the louvainfo.be (website that contains events) provides it. So we selected web services.
+This section explains how to deal with information processing from an architectural point of view. The section 4.4 explains in details how each specific part is implemented.
+There is a lot of information to relay into the application (libraries schedule, libraries addresses, daily events in the campus,...). There are three ways to import them. The first way is to use a database, the information are encoded in tabular form and it can be retrieve using queries. The two other methods are web parsing and web services. Web services are always better than web parsing. Web services consist in sending a request to a server and receiving a response that contains exactly the information needed. Web parsing is sending a request to a server but there is a need to search for the information inside the response.\\
+
+In an ideal scenario, static information would only be retrieved via a local database whereas frequently updated information could be retrieved using web services. However, such databases and web services are not always available. This means that he three methods are used in the application depending on the available service.
+\\ For example, the ADE schedule has no web service. We therefore need to either use web parsing or store the information in a database. Encoding the schedule for all students in the database requires 80Mo of memory space, which is more than the actual application size and is too much for a mobile application. In this case, web parsing seems to be the right choice.\\  Another example is the events. Events are updated daily. If we were to store such events in a database, we would need a developer to update said database daily. In this case however, the events are available through a RSS flux, meaning we don't need to parse the website to retrieve them.
+
+The following figures detail the pros and cons of each of these 3 approaches.
 
 \subsubsection{Database}
 
@@ -726,7 +731,7 @@ Fast\par
 
 &
 
-Need human resources to update informations\par
+Need human resources to update information\par
 Takes memory \par
 
 
@@ -752,7 +757,7 @@ No hardware memory consumption\par
 &
 
 Need an Internet connexion and an operational server side\par
-Impossible if not implement on the server\par
+Impossible if not implemented on the server\par
 
 \\\bottomrule
 \end{tabularx}
@@ -777,7 +782,7 @@ No hardware memory consumption\par
 Need an Internet connexion and an operational server side\par
 Need one more step than web services. This step is to find the required data inside the server response\par
 If the web server change its response, the parsing method also needs to be modified\par
-Slow compare to web services and database\par
+Slow compared to web services and database\par
 
 
 \\\bottomrule
@@ -786,44 +791,54 @@ Slow compare to web services and database\par
 \end{table}
 
 \newpage
-\subsection{Front-end and back-end}
+\subsection{Front end and back end}
 
+The application is split into two main parts:
 \begin{itemize}
-\item Front-end: Part of the user interface that can be separated in two fields. First is design and the second is html, css and JavaScript development.
-\item Back-end: Everything that is not part of user interface. Storage system, information retrieval.
+\item The front end: The front end is the interface between the user and the back end. It can either design the graphical user interface or the methods implemented to give programmers access to data regardless of the way they are retrieved.
+\item The back end: Everything that is not part of user interface. Storage system, information retrieval, ....
 \end{itemize}
 
-The UCLCampus architecture contains a back-end/front-end system. It helps a lot for the modularity. For a functionality, the code for the user interface is totally isolated from the code for storage. That means, it is possible to change a user interface without seeing the code for storage. Inversely, it is possible to change the code for the storage without touching the user interface.\\
-For example, it is possible to pass from a database storage to a web parsing for libraries without consider an impact on the user interface.
+The UCLCampus architecture contains a back end/front end system. Such a system makes the application more modular. For a functionality, the code for the user interface is totally isolated from the code for storage. This means that it is possible to change a user interface without seeing the code for storage. Inversely, it is possible to change the code for the storage without touching the user interface.\\
+For example, it is possible to pass from a database storage to a web parsing for libraries without this change having an impact on the user interface methods.
 
 \subsection{Factory}
 
-Factory is a functionality from angularJS that we used as a back-end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front-end. Figure 4.3 illustrates this.\\
+A factory is a functionality from AngularJS that we used as a back end service. The factory will take the data from the database or web parsing, modify the data format to be easier to handle and then transmit it to the front end. Figure 4.3 illustrates this.\\
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/factory_arch.png}
 \caption{Factory operation}
 \end{figure}
 
-For example, we open the page for the schedule. (1)the system notifies the schedule factory in order to get his data. (2) the factory create a custom HTTP request and send it to the ADE domain. (3) Server sends a response. (4) Data in the response are not easy to manipulate (long string with html tags inside), so the factory pick the important element in the response(with a parsing algorithm) and put them in a JavaScript object where data are easy to handle. (5) Send new data to front-end.
+For instance, the steps explained in figure 4.3 would result in the following behavior if we wanted to retrieve a student's schedule via ADE.
+
+\begin{enumerate}
+\item The system notifies the schedule factory in order to get the required data.
+\item The factory create a custom HTTP request and send it to the ADE domain.
+\item The ADE server sends a response.
+\item The data found in the response is not easy to manipulate (long string with html tags inside), so the factory picks the important elements in the response and puts them in a JavaScript object which is easier to handle.
+\item Send new data to the front end.\\
+\end{enumerate}
 
 \subsection{State provider}
 
-The state provider is a functionality of angularjs. It allows to define the page configuration (cached or not for example). Furthermore it create an edge between the back end and the front end, figure 4.4 illustrate the operation of the state provider. 
+The state provider is a functionality of AngularJS. It allows to define some options for the different views of the application. It can, for instance, be used to define whether a given view should be cached or not. Furthermore it creates an edge between the back end and the front end. Figure 4.4 illustrates the operations of the state provider. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/stateProvider_arch.png}
 \caption{State provider operation}
 \end{figure}
-First the application ask for a page. The state provider contain a list of specific state(one state by page), it will return the state relative to the asked page. The state will contain information about the page:
+First the application asks for a page. The state provider contains a list of specific states (one state by page), it will then return the state relative to the asked page. The state will contain information about the page:
 \begin{itemize}
-\item The location of the html template
-\item The associate controller(js)
-\item A flag for cache memory(true or false)
-\item The section membership(for example student if we are in the student tab)
-\end{itemize}. For back end data(optional), the state will call the needed factory and wait its response before launching the template and the controller for the user interface. JavaScript(controller) and Html can exchange informations and sent it to back end in some cases.
-\iffalse
+\item The location of the HTML template
+\item The associate controller(JavaScript)
+\item A flag for cached memory (true or false)
+\item The section membership (for example student if we are in the student tab)
+\end{itemize}. If the state needs to access data through the back end, the state will call the needed factory and wait for its response before launching the template and the controller for the user interface. The following snippet gives an example of a state as seen in the state provider.
+
+
 \begin{lstlisting}
 .state('app.name', {
     cache:{true or false},
@@ -833,7 +848,7 @@ First the application ask for a page. The state provider contain a list of speci
         templateUrl: "html file",
         controller: "page controller(javaScript)",
         resolve:{
-          facotry: function(Factory) {
+          factory: function(Factory) {
             return Factory.neededData();
           }
         }
@@ -841,24 +856,32 @@ First the application ask for a page. The state provider contain a list of speci
     }
   })
 \end{lstlisting}
-\fi
+
+We can see that every information needed is shown in this snippet. We start by giving the state a name. We will use this name to start the state. We then define whether the corresponding view should be cached or not. Then, we define the url of the state.
+
+The views field contains the tab the view is located in as well as the location of the template (HTML file) and controller (JavaScript file).
+The resolve is only used if we need to access data from the back end. 
+
 \section{Coding standards}
+
+This section defines a few standards we established when adding functionalities to the application. 
+
 \subsection{Header and footer}
-We managed our code to create automatically a default new footer and header when you start new html template. The footer and header have a specific color for each tab-section (blue for student, yellow for campus, purple for tools and green for town). We allow developers to overwrite the default header but under two condition
+We managed our code to automatically create a new default footer and header when you start new HTML template. The footer and header have a specific color for each tab-section (blue for student, yellow for campus, purple for tools and green for town). We allow developers to overwrite the default header but under two conditions:
 \begin{itemize}
-\item The title have to keep the same font and have to be center.
-\item The header color must respect the section color
+\item The title has to keep the same font and has to be centered.
+\item The header color must respect the section color.
 \end{itemize}
-Footer must not be overwrite or be hidden. If developers need to insert their specific header or footer, Ionic provide a css in order to add subfooter and subheader.
+Footers must not be overwritten or hidden. If developers need to insert their specific header or footer, Ionic provides a CSS in order to add subfooters and subheaders.
 \subsection{Tree hierarchy}
-We want developers to keep the tree hierarchy we created for the state and for the folder. For css and extra JavaScript, html, we don't enforce any rules as long as it stay in the relative module.
+We want developers to keep the tree hierarchy we created for the state and for the folders. 
 \subsection{Colors}
-We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For this we modified the sass theme of Ionic. This allow module developed with basic ionic css component to update with the application color instantly and automatically. The main color of UCLCampus is the blue "UCL".
+We used the UCL color code\footnote{https://www.uclouvain.be/459461.html}. For this we modified the sass theme of Ionic. This allows modules developed with basic ionic CSS component to use the application's colors instantly and automatically.
 
 \begin{center}
     \begin{tabular}{ | c | c | c |}
     \hline
-    Color & css name & code\\ \hline
+    Color & CSS name & Code\\ \hline
     Blue & positive & \#00214e\\ \hline
     Yellow & energized & \#f29400\\ \hline
     Purple & royal & \#88005d\\ \hline
@@ -868,24 +891,31 @@ We used the UCL colors code\footnote{https://www.uclouvain.be/459461.html}. For 
 
 \section{Security}
 
-This section is not implemented yet because the web services from OSIS wasn't ready but if we had to implement it, that would be this way
-Three steps are needed for the security. First what do I need to protect? Second what are the threats and how the opponent can exploit them? Last, what do we need to implement in order to make it impossible? 
+Most of the application's features don't need an additional security layer on the application's end as they only consist in parsing publicly available web pages or accessing publicly available databases. It is however important to secure the data retrieved from the uclouvain.be website concerning a student's classes. This information is indeed not publicly available. However, this functionality was not implemented in the current version of the application for reasons detailed in the next chapter. We however looked at ways we could make sure no data is accessible by anyone else than the student himself.
 
 \subsubsection{Data to protect}
-The only data the hacker can be interest in, are the personal data of the user that means his password and username. He couldn't stole data of the database because the application his open-source and they are so available on GitHub. An other thread would be the opponent to modify the data of the database but this is impossible because the database is replicated on local storage and the functionalities only communicate with that one (thus, the only database he can modify, is the local database on his smartphone). About our code, it's available on GitHub due to open-source project and it's protected by a license. Therefore the only data that hacker could be interested to steal are the personal data of the user.
 
-\subsubsection{Possible breaks}
-There exist two possible way to steal data. The first is if the opponent manage to get the hardware device, in this case, the opponent could try to access and steal data in the local storage. The second threat is to sniff the traffic between the application and OSIS, in this case he could intercept the package containing the request with the password and the username as parameters. 
+The data we need to secure consists of several things:
+
+\begin{itemize}
+\item The student's credentials
+\item The student's classes
+\item The database of all students' classes
+\end{itemize}
+
+\subsubsection{Possible threats}
+A person other than the student might try to access the aforementioned data in two different ways. The first way to access the data is through the student's phone, by looking in the local storage. The second way is to inspect the packages sent by the application to the OSIS server and vice-versa. 
 
 \subsubsection{Protections}
-For the first thread, the password and the username should not be stored on the device (even if they are encrypted). So the solution to this problem would be to create the OSIS request directly when the user insert his credentials. With this procedure, we only store the student courses list and forget the credentials once the response is back. The courses list should not be accessible by an other person than the user but it is less critical than credentials, so in this case, it should be encrypted on the local device. \\
-For the traffic sniffing, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public from OSIS, encrypt the request with it, send it back to OSIS that can decrypt it with the secret key. Due to this procedure, the opponent can catch the packets between OSIS and UCLCampus but can't read or do anything with them (except create false request and brute force password and username but this can be done on the website uclouvain.be).
+For the first threat, the password and the username should not be stored on the device (even if they are encrypted). So the solution to this problem would be to create the OSIS request directly when the user inserts his credentials. With this procedure, we only store the student classes list and forget the credentials once the request is sent. The courses list should not be accessible by an other person than the user but it is less critical than credentials, so in this case, it should be encrypted on the local device. \\
+
+For the second threat, a solution would be to create a secure connexion with OSIS where packets are encrypted. For example an RSA encryption with public and secret key, UCLCampus would send a first request to obtain a public key from OSIS, encrypt the request with it, send it back to OSIS that can decrypt it with the secret key. Due to this procedure, the person trying to access the data can catch the packets between OSIS and UCLCampus but can't read or do anything with them.
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
 \subsection{Student data(OSIS)}
 
-OSIS web services are not implemented but a dummy server has been implemented to simulate its behaviour. The SGSI give us the JSON response format.
+OSIS web serviceshave not yet been implemented but would be implemented in the following way. The SGSI replies to our request with a JSON file that has the following structure:
 
 \begin{verbatim}
 Student[{
@@ -903,11 +933,11 @@ Student[{
     },{..},...]
 }]
 \end{verbatim}
-This represent a student with a first-name, last-name and a registration id. The offers represent a learning option. Example, BAC1 in computer sciences. A learning unit represent a course. \\
+This represents a student with a first name, last name and a registration id. The offers represent a learning option. Example, BAC1 in computer science. A learning unit represent a course. \\
 
-We create a query with the student user-name and password as parameters to obtain this response. The response can be automatically transform from JSON to a JavaScript object. The JavaScript is stored and used in other functionalities.\\
+We create a query with the student username and password as parameters to obtain this response. The response can be automatically transformed from this JSON format to a JavaScript object. The JavaScript is stored and used in other functionalities.\\
 
-If the username and password in the query don't match any student, it return a empty response. 
+If the username and password in the query don't match any student, the server returns an empty response. 
 
 
 
@@ -939,7 +969,7 @@ The first field is useful if we want to have different campuses while the second
 
 \subsubsection{Retrieving lecture halls}
 
-Once we had the completed the database, we had to connect it to our application. In order to do so, we used the cordovaSQLite plugin. Once connected, we were able to retrieve the lecture halls using the following SQL query: 
+Once we had completed the database, we had to connect it to our application. In order to do so, we used the cordovaSQLite plugin. Once connected, we were able to retrieve the lecture halls using the following SQL query: 
 \begin{verbatim}
 SELECT * FROM poi WHERE TYPE = 'auditoire' AND CAMPUS = ?
 \end{verbatim}
@@ -967,7 +997,7 @@ This query retrieves all poi with type "bibliotheque" and finds their respective
 
 \subsection{Events}
 
-In order to find events taking place in Louvain-la-Neuve, we used the www.louvainfo.be website. This website provides a schedule of all upcoming events in the city. It is however specific to Louvain-la-Neuve and we would need to find equivalent websites for the other campuses. \\ The website provides an Atom RSS feed of the events. We decided to use Yahoo Query Language to parse the RSS feed and retrieve the information. The reason we used the Yahoo Query language was that it was the only way we found to perform such an operation. Indeed, the more widely used Google Feed API has been deprecated. We therefore had no other choice but thankfully we haven't encountered any issue with YQL.\\
+In order to find events taking place in Louvain-la-Neuve, we used the www.louvainfo.be website. This website provides a schedule of all upcoming events in the city. It is however specific to Louvain-la-Neuve and we would need to find equivalent websites for the other campuses. \\ The website provides an Atom RSS feed of the events. We decided to use Yahoo Query Language to parse the RSS feed and retrieve the information. The reason we used the Yahoo Query language (YQL) was that it was the only way we found to perform such an operation. Indeed, the more widely used Google Feed API has been deprecated. We therefore had no other choice but thankfully we haven't encountered any issue with YQL.\\
 \\We used the following query to retrieve the feed:
 \begin{verbatim}
 select * from feednormalizer where url='http://louvainfo.be/evenements/feed/calendar/'
@@ -975,19 +1005,17 @@ select * from feednormalizer where url='http://louvainfo.be/evenements/feed/cale
 The result is then automatically parsed and stored in a JavaScript objects array. 
 
 \subsection{Schedule}
-For the schedule we had no choice between database or web parsing. The ADE dump database for all courses(of all the students) has a size of 70mb which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customize url in order to extract specific informations. It's a bit worse than web services because you need a parsing technique.
+For the schedule we had no choice but to use web parsing. The ADE dump database for all courses (of all the students) has a size of 80Mo which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customized urls in order to extract specific informations. It's a bit worse than web services because you need to parse the response to retrieve the relevant information.
 \subsubsection{ADE custom URL}
-The request always start with \url{http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?}. After it we can add some query parameters.
+The request always starts with \url{http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?}. After this we can add some query parameters.
 \begin{itemize}
-\item code : The course code we want to see on the schedule. The list of course acronym used come from the OSIS response. It is the list of acronym for all leaning unit in the actual offer of the student. .
-\item weeks : The weeks we want to see. It's a number per weeks. We wanted to get all the year so we used a suite from 1 to 52 (1,2,3,...).
-\item projectID : A number defining the academic year we want to see(16 for 2015-2016). This number need to be manually updated each year. We couldn't update it automatically because it seems to be a random number chosen each year(7 and 16 for the last two years).
-\item password and username : Require for ADE connexion.
-\item page configuration : There are multiple parameters that I won't explain. Their purpose is to custom the ADE web page we access. We used it to get a tabular summarizing the schedule that is easier to parse than the original web site. 
+\item Code : The course code we want to see on the schedule. The list of course acronyms used comes from the OSIS response. It is the list of acronyms for all leaning units in the current offer of the student. .
+\item weeks : The weeks we want to see. It's a number per weeks. We wanted to get all the year so we used a list from 1 to 52 (1,2,3,...).
+\item projectID : A number defining the academic year we want to see(16 for 2015-2016). This number needs to be manually updated each year. We couldn't update it automatically because it seems to be a random number chosen each year(7 and 16 for the last two years).
 \end{itemize}
 
 \subsubsection{Parsing}
-Http response contain an html code. The tabular is really useful here in the parsing because it provides a block of informations easy to extract. It contain information about each lecture of the year. Here is the syntax of the tabular in the response.\\
+The HTTP response contains an HTML code. It contains information about each lecture of the year. Here is the syntax of the table in the response.\\
 <tbody>\\
 \tab <tr>\\
 \tab \tab <td>Date</td>\\
@@ -1001,63 +1029,63 @@ Http response contain an html code. The tabular is really useful here in the par
 \tab \tab <td>Place</td>\\
 \tab \tab <td>Course Code again</td>\\
 \tab </tr>\\
-\tab <tr> an other lecture </tr>\\
+\tab <tr> Another lecture </tr>\\
 \tab ...\\
 </tbody>\\
-We used a string parsing based on regular expression in order to extract information from tags and place it into a JavaScript object with field easily accessible. At the end the back end sent a list of lecture object to the front end.
+We used a string parsing based on regular expression in order to extract information from tags and place it into a JavaScript object with field easily accessible. Once the parsing is done the back end sends a list of lecture objects to the front end.
 
 \subsubsection{Local storage}
-We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student access the page we load it from local storage instead of parsing it again. That allow us a better performance because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
+We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student accesses the page we load it from local storage instead of parsing it again. This increases performances because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
 
-\subsection{University canteen}
-We choose to store the main informations(name, place, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modification are needed. We encode the 6 restaurants present on the ucl website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. For the database we created a new table and encoded data manually. About the menu we couldn't store it in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had his own syntax(even if they have the same rendering) ant thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
+\subsection{Cafeteria}
+We chose to store the main informations (name, location, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modifications are needed. We encode the 6 restaurants present on the UCL website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. For the database we created a new table and encoded data manually. The menus sadly couldn't be stored in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had its own syntax and thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
 \subsection{Sports}
-We couldn't store the sports in a database because the planning undergoes changes every year and we don't have manpower to update it. The sports department don't have web services either so the only solution we had was to parse the website. On a positive note, the Louvain-la-Neuve and Woluwe sites share the same website and thus the parsing is effective for both. 
+We couldn't store the sports in a database because the planning undergoes changes every year and we don't have manpower to update it. The sports department doesn't have web services either so the only solution we had was to parse the website. On a positive note, the Louvain-la-Neuve and Woluwe sites share the same website and thus the parsing is effective for both. 
 \subsubsection{URL}
-The base url for the two sites is the same \footnote{\url{http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?}}. There exist two main query parameters possible
+The base URL for the two websites is the same \footnote{\url{http://ucl-fms01.sipr.ucl.ac.be:82/ucl_sport/recordlist.php?}}. There are two main query parameters possible:
 \begin{itemize}
-\item The campus: A number defining the campus for which we want to show the sports schedule(1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory create a specific request with 2(resp.4) when the selected campus is Louvain-la-Neuve(Woluwe)
-\item The skip: The sport web site response contains only 50 sports time slots. The skip argument permit to access the other sports instances after the first fifty.
+\item The campus: A number defining the campus for which we want to show the sports schedule(1 for all, 2 for Louvain-la-Neuve, 4 for Woluwe). The factory creates a specific request with 2 (resp.4) when the selected campus is Louvain-la-Neuve (Woluwe)
+\item The skip: The sport web site response contains only 50 sports time slots. The skip argument allows to access the other sports instances after the first fifty.
 \end{itemize}
-It is a bit more difficult and slower than the other request because in this case we need to create a request by 50 sports time slots(for example if we have 132 sports we need three request. The first taking 0-50 instances, the second 51-100 and 101-132 for the last). Moreover the website is not 100\% available some times, we couldn't access it because it was off line so we added a time-out method in order to prevent the user that the website is probably off-line.
+It is a bit more difficult and slower than the other request because in this case we need to create a request by 50 sports time slots(for example if we have 132 sports we need three request. The first taking 0-50 instances, the second 51-100 and 101-132 for the last). Moreover the website is not always available, and we sometimes couldn't access it because it was offline so we added a time-out method in order to prevent the user from waiting indefinitely.
 \subsubsection{Parsing}
-For the parsing the sport has quite close structure than with the schedule except different tag name so we used an other string parsing method based on regular expression. The sport website create a page that contain the sport closer than the day and the time we are. For example if we Friday 14 hours, it will show the Friday sports time slots after 14 hours first. Thus we iterate over all the time slots until we are sure that we capture all the sport for a week. We stocked the result in an other list of JavaScript object that we store and send to the front end.
+For the parsing the sport has a similar structure than the schedule except it uses different tag names so we used another string parsing method based on regular expression. The sport website creates a page that contain the sport closer to the current day and the time. For example if today is Friday and it is 14 o'clock, it will show the Friday sports time slots after 14 o'clock first. Thus we iterate over all the time slots until we are sure that we capture all the sport for a week. We stocked the result in an other list of JavaScript object that we store and send to the front end.
 \subsubsection{Local storage}
-Exactly the same reasoning than for the schedule. Here we saved the result for both Louvain-la-Neuve and Woluwe in different table so we have them both in memory once they has been accessed at least once. Moreover each time the page is requested the software will reorganize the list in order to have the closer time slots first which are in general more suitable for the user. 
+The reasoning here is the same as the one described in the schedule section above. Here we saved the result for both Louvain-la-Neuve and Woluwe in different tables so we have them both in memory once they has been accessed at least once. Moreover each time the page is requested the software will reorganize the list in order to have the closer time slots first which is in general more suitable for the user. 
 
 \newpage
 
 \chapter{The Application}
 
-In this section we will present the application as we implemented it. In the first time we will explain the design. Secondly, we will explain how it works from a technical point of view. All the page screen described in this section can be found in the annexe X. The application has a size of 50 Mo.
+This section will detail the different functionalities we were able to implement in our final version of the application and will explain how to add a new functionality to future contributors. The chapter will end by explaining a series of test we implemented to make sure the implemented functionalities were working as intended. //TODO annexe
 
-\section{The application UCLCampus}
+\section{The UCLCampus application}
 
 \subsection{Header}
-\paragraph{design}
-We create a global header for the application. The header has different colours depending on the section (Chap 4.2.3 for more details). Otherwise, it has three components, the first is the name of the page. For example "Sainte-Barbe" if we are looking at the details of this one. The two other components are buttons, the first is the back button, it allows to back to the previous page. The second button open the settings menu. This header is by default enable on all the pages of the application but the programmer can overwrite it if he wants to add something, such as new buttons, search bar,...
+\paragraph{Design}
+We created a global header for the application. The header has different colors depending on the section (Chap 4.2.3 for more details). Otherwise, it has three components. The first is the name of the page. For example "Sainte-Barbe" if we are looking at the details of this lecture hall. The two other components are buttons, the first is the back button, it allows to go back to the previous page. The second button open the settings menu. This header is by default enabled on all the pages of the application but the programmer can overwrite it if he wants to add something, such as new buttons, search bar,...
 \paragraph{Implementation}
-Ionic framework provides a file named index.html in its architecture. This file has two purposes. The first is to list all the JavaScript present in the application in order to run them. The second is to create pieces of a user interface that will be available everywhere in the application. These pieces can be overwritten. We used it to create the header, the footer and the settings menu. It's a good point for the maintainability because here we have a single code for every header except if they have been overwritten. Thus it can be modified quickly and efficiently. The implementation of the header will not be described here given its lack of interest. It's only html and css code with components provided by Ionic.
+The Ionic framework provides a file named index.html in its architecture. This file has two purposes. The first is to list all the JavaScript present in the application in order to run them. The second is to create pieces of a user interface that will be available everywhere in the application. These pieces can be overwritten. We used it to create the header, the footer and the settings menu. It's a good point for the maintainability because here we have a single code for every header except if they have been overwritten. Thus it can be modified quickly and efficiently. 
 \subsection{Footer}
 \paragraph{Design}
-The footer is a bar with buttons below the screen. As the header, the footer colour change depending on the section. There are four buttons on the footer, the four main sections (student, campus, tools, city). We thought it was more user-friendly to do that because you don't need to click on the previous page until you reach the main menu if you want to explore another section. For example, if you are looking at the details of a lecture hall and you want to see the events of the week, without footer you need to click three times on the back button to reach the home menu then select campus and events it is five manipulations. With footer, you can click on the campus button and then event, it is only two steps. The footer points out in which section you are, it will greyed out all the buttons except the one representing that one.
+The footer is a bar with buttons at the bottom of the screen. As the header, the footer color changes depending on the section. There are four buttons on the footer, corresponding to the four main sections (student, campus, tools, city). We thought it was more user-friendly to do that because you don't need to click on the previous page until you reach the main menu if you want to explore another section. For example, if you are looking at the details of a lecture hall and you want to see the events of the week, without footer you would need to click three times on the back button to reach the home menu then select campus and events, making it a total of five manipulations. With the footer, you can click on the campus button and then event, which is only two steps. 
 \paragraph{Implementation}
-Ionic provide all the components and an extended architecture for the tabs(buttons in the footer). When we create a page, we create a state associated with it(see chapter 4.1.5). In this state, we can set an argument specifying the section it belongs. Once it is done, Ionic manage automatically the tabs function. 
-For example, if we are on the libraries’ page, there exist a state associate to it, informing that this page belongs to the student section. From that, the framework manages automatically to highlight the student button in the footer in order to show the user that he is in the student section.
-For more details\footnote{\url{http://ionicframework.com/docs/api/directive/ionNavView/}} see figure 5.1, it creates a tree structure of sections, or tabs in the schema. Each section holds a list of views (pages) and his own navigation history stack. The history stack matter for the back button function. 
-\begin{figure}
+Ionic provide all the components and an extended architecture for the tabs (buttons in the footer). When we create a page, we create a state associated with it (see chapter 4.1.5). In this state, we can set an argument specifying the section it belongs to. Once it is done, Ionic automatically manages the tabs function. 
+For example, if we are on the libraries’ page, there exists a state associated with it, informing that this page belongs to the student section. From that, the framework manages automatically to highlight the student button in the footer in order to show the user that he is in the student section.
+For more details\footnote{\url{http://ionicframework.com/docs/api/directive/ionNavView/}} see figure 5.1, it creates a tree structure of sections, or tabs in the schema. Each section holds a list of views (pages) and its own navigation history stack. The history stack matters for the back button function. 
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/tabs-nav-stack.png}
 \caption{Tabs diagram}
 \end{figure}
 
 \subsection{The Homepage}
-When the user launch UCLCampus on his smartphone, he arrives on the homepage. This page contains the header and four buttons(student, campus, tools, city). The purpose of this page is to not force the user to be in a menu once he opens the application. Another choice could be to put him in the student section and let him use the footer button to navigate between sub menus, we found this solution less comfortable for the user. We remove footer from the homepage because it's redundant to have the sub menu button at the same time as the content of the page and in the footer. No technical details will be given for this page due to lack of interesting parts. It is created with classic HTML, JavaScript and css code.
+When the user launches UCLCampus on his smartphone, he arrives on the homepage. This page contains the header and four buttons(student, campus, tools, city). The purpose of this page is to not force the user to be in a menu once he opens the application. Another choice could be to put him in the student section and let him use the footer button to navigate between sub menus, we found this solution less comfortable for the user. We removed the footer from the homepage because it's redundant to have the sub menu buttons at the same time as the content of the page and in the footer.
 \subsection{The Student/Campus/Tools/City Menus}
-This four sub menus have the same design and are implemented the same way.
+The four sub-menus have the same design and are implemented the same way.
 TODO lien vers l'annexe des screens ou alors importer l'image. 
 \paragraph{Design}
-The menu offers a list of buttons. Each button is composed of its functionality name and a representative icon next to it. We choose to remove the back button of the header because it was useless to go back to the main menu. Instead, the user can use the footer buttons to access a new section. 
+The menu offers a list of buttons. Each button has a corresponding functionality and a representative icon next to it.
 \paragraph{Implementation}
 The four menus have the same code skeleton. The principle is simple, each menu has his own factory. This factory holds a list of objects, each object represents a button. These buttons have different parameters: 
 \begin{itemize}
@@ -1065,57 +1093,57 @@ The four menus have the same code skeleton. The principle is simple, each menu h
 \item Icon: An icon representing the functionality.
 \item URL: The technical link to the new page. If this is set, website parameter should be null.
 \item Website: The application can open an external website, in this case this field is the URL. If this field is set, URL should be null.
-\item Campus: A list of campus where the functionality is implemented. For example, if we set it to ['Louvain-la-Neuve','Woluwe']. If the user's selected campus is one of this, he will see the button on the menu, if not the button is not present. The list can be empty([]), this case is equivalent to write all the campus (more efficient for the programmer). 
+\item Campus: A list of campuses where the functionality is implemented. For example, if we set it to ['Louvain-la-Neuve','Woluwe']. If the user's selected campus is one of these, he will see the button on the menu, if not the button is not present. The list can be empty([]), this case is equivalent to write all the campuses which is easier for the programmer. 
 \end{itemize}
-Then this list is simply passed to HTML and JavaScript controller that use it in order to create the user interface.
+This list is then simply passed to the HTML and JavaScript controller that use it in order to create the user interface.
 \subsection{Studies}
 The student menu contains all information relevant to the academic year. All the functionality except libraries and lecture halls are available for every campus. We have libraries and lecture halls informations in database only for Louvain-la-Neuve and Woluwe. 
 \subsubsection{Schedule}
-For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. Nevertheless we implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
+For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. We nevertheless implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
 \begin{itemize}
 \item Time slot
 \item Course code - Professor
 \item Local
 \end{itemize}
-To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open-source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that display a calendar where you can select the day you want. More, we implemented swipe right and swipe left functions in order to add or remove a day from the actual date.
-To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student need it. 
+To only display the lecture for a selected day we create a JavaScript filter. In order to let the user select a day we used the onezone datepicker plugin(open-source, MIT license\footnote{\url{https://market.ionic.io/plugins/onezone-datepicker}}), it's just a date picker object that displays a calendar where you can select the day you want. Moreover, we implemented swipe right and swipe left functions in order to add or remove a day from the current date.
+To export the list of lectures to the native calendar, we used the PhoneGap Calendar plugin \footnote{\url{https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin}}(MIT). It allow us to create, remove and update events in the agenda. However this plugin is still in development and could create some issues, it should not be delivered to end users but we could not find a better solution. We add a button in the header to refresh the schedule if the student needs to. 
 
 \subsubsection{Lecture Halls}
-We implemented it in two phases. The first an overview of all the halls. For this the controller call a first time the factory method to have all the lecture halls in a list where we can access details efficiently (for example lectureHall.addr,...), in order to display them in the html. This menu use the general header and footer, and just display a list of auditoriums with
+This functionality was implemented in two phases. The first state is an overview of all the halls. For this the controller calls the factory method a first time to have all the lecture halls in a list where we can access details efficiently (for example lectureHall.addr,...), in order to display them in the HTML. This menu uses the general header and footer, and just display a list of lecture halls with:
 \begin{itemize}
 \item A picture of it on the left side
 \item The name
 \item The address
 \end{itemize}
-If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture halls, the address and a button linking to the map with the position and gps preconfigure for it.
-From a technical point of view, we call a first time the back end to have the list of all lecture halls and once the user select one, we redirect to a new url with the id as query parameter and we ask the factory again but only for the selected hall details.
+If a user has an interest for a specific lecture hall, he can click on it in order to see its details. The details are a bigger image in order to have a better representation of the lecture hall, the address and a button linking to the lecture hall's position on the map.
+From a technical point of view, we call a first time the back end to have the list of all lecture halls and once the user selects one, we redirect to a new URL with the id as query parameter and we ask the factory again but only for the selected hall details.
 
 \subsubsection{Libraries}
-We used the same process than for the lecture halls except for one detail. The libraries have opening time, we found that display directly in the list if the library is closed or open a cool feature. We add it under the address as a small green section with the word open if it is or a red section with closed otherwise. If the user want to see the opening time, we add it in the detail. 
-Technically, it was just the same process than for lecture hall with small modifications in order to include the opening times. For this, we add a JavaScript function that takes as parameter the opening time and return true or false.
+We used the same process as the one used for the lecture halls except for one detail. The libraries have an opening times, we found that displaying this information directly in the list if the library is closed or open was an interesting feature. We add it under the address as a small green section with the word open if it is or a red section with closed otherwise. If the user wants to see the opening time, we added them in the details. 
+Technically, it was just the same process as for lecture halls with small modifications in order to include the opening times. For this, we added a JavaScript function that takes as parameter the opening time and returns true or false.
 
 \subsubsection{Uclouvain.be and Moodle}
 
-Uclouvain.be and moodle are just link to the website in a first time, we think that it is possible to parse both but the Moodle website is already smartphone responsive and has a good display. The website uclouvain.be is too big to parse all informations, so we put a link in our application if the user want to search for specific informations. We choose the browser icon for the button with the aim to inform the user that it open a website and not a functionality we implemented. 
+Uclouvain.be and moodle are just links to the website. We chose the browser icon for the button with the aim to inform the user that it opens a website and is not a functionality we implemented. 
 \subsubsection{Implementation}
-As explained in chapter 5.1.4 about the sub menus, we set the variable website for uclouvain.be and Moodle. Due to that when the user click on the button we call a function openUrl that we created. In order to open external URLs in Ionic we used the InAppBrowser plugin \footnote{\url{http://cordova.apache.org/docs/en/3.0.0/cordova/inappbrowser/inappbrowser.html}} which allow you to open it in application browser, system browser or Cordova webview. The plugin provide a navigation bar but this one has a poor design, so we choose to remove it for android because the user can go back to the application with the physical back button. However, we had to keep it for ios because there is the only way to have a way back to the application. 
+As explained in chapter 5.1.4 about the submenus, we set the variable website for uclouvain.be and Moodle. This means that when the user clicks on the button we call a function called openUrl that we created. In order to open external URLs in Ionic we used the InAppBrowser plugin \footnote{\url{http://cordova.apache.org/docs/en/3.0.0/cordova/inappbrowser/inappbrowser.html}} which allows you to open it in the application browser, system browser or Cordova webview. The plugin provides a navigation bar but this one has a poor design, so we chose to remove it for android because the user can go back to the application with the physical back button. However, we had to keep it for iOS because there is the only way to have a way back to the application. 
 
 \subsection{Campus}
-The campus section contains elements relative to live on the campus and that haven't direct link to the academic year. 
+The campus section contains elements relative to live on the campus and that don't have a direct link to the academic year. 
 
 \subsubsection{Events}
 The events section is only available for the Louvain-la-Neuve campus. All the events informations (including pictures) come from the website \url{http://louvainfo.be/}.
 \paragraph{Design}
-The events page can be break down in two parts. The first page with the list of all events sorted by starting date and the second part when you click an event in order to obtain its details. 
+The events page can be broken down in two parts. The first page with the list of all events sorted by starting date and the second part when you click an event in order to obtain its details. 
 \paragraph{Events list}
-The events list keep the classical header and footer. Each item of the list represent a event with three informations:
+The events list keeps the classical header and footer. Each item of the list represent a event with three informations:
 \begin{itemize}
 \item The name of the event
 \item The starting date (date + time)
 \item The place
 \end{itemize}
-Moreover, each event has a category. We create a sub header where the user can open a combobox and select a specific category. Once a category is selected, the list is filter and shows only the relevant events. When a user click on an event in the list, it will open the page details.
-\paragraph{Event details} This page has the classic header and footer, the title in the header is the event name. I will describe the element in order of appearance from top to bottom.
+Moreover, each event has a category. We create a sub header where the user can open a combobox and select a specific category. Once a category is selected, the list is filtered and shows only the relevant events. When a user clicks on an event in the list, it will open the page details.
+\paragraph{Event details} This page has the classic header and footer, the title in the header is the event name. The following list describes the elements in order of appearance from top to bottom.
 \begin{itemize}
 \item A picture of the event
 \item Start date and time 
@@ -1125,10 +1153,10 @@ Moreover, each event has a category. We create a sub header where the user can o
 \item A first button opening the event page on \url{louvainfo.be}
 \item A second button opening the place on the map
 \end{itemize}
-We faced two problem with the description The first is that the RSS only send a text with a max length fixed, thus sometime we are no able to get all the description. In this case, we detect and add "..." to the end of the text so the user now the description is not complete and they can look at it on the website. Second problem, the description is a huge text and it take a lot of place on screen(the user need to scroll down a lot to access the button, it is not user friendly at all). To face it, we created an expandable text. At the beginning we only show the first two lines to the user and bellow then we add a button "$\oplus$ more" once the user click on this button, the full text appear with at the end a new button "$\ominus$ less"(his button reduce the text to the first two line). This allow us to show the user the description and the two buttons bellow it without a scroll need.
+We faced two problems with the description The first is that the RSS only sends a text with a fixed maximum length, meaning we sometimes are not able to get all the description. In this case, we detect and add "..." to the end of the text so the user knows the description is not complete and they can look at it on the website. Second problem, the description is a huge text and it takes a lot of place on screen (the user needs to scroll down a lot to access the button, which is not user friendly at all). To alleviate this issue, we created an expandable text. At the beginning we only show the first two lines to the user and bellow then we add a button "$\oplus$ more" once the user clicks on this button, the full text appears with at the end a new button "$\ominus$ less"(this button reduces the text to the first two lines). This allows us to display the description and the two buttons bellow it without any scrolling.
 \paragraph{Implementation}
-For the implementation, it work the same way than for the libraries and lectures halls. The factory find and parse all the data in list(of JavaScript object) that is sent to the JavaScript controller. The controller prepare data for the HTML which display it in order to create the user interface. Same for the details, the factory send the details as a JavaScript object to the controller that send it to the HTML. The list of category that the user can select is create automatically by the application, it look at all event and their category and create a list with them. 
-\subsubsection{University restaurants}
+For the implementation, it works the same way than for the libraries and lectures halls. The factory finds and parses all the data in  a list of JavaScript object that is sent to the JavaScript controller. The controller prepares data for the HTML which displays it in order to create the user interface. Same for the details, the factory sends the details as a JavaScript object to the controller that sends it to the HTML. The list of category that the user can select is created automatically by the application, it looks at all the events and their categories and create a list with them. 
+\subsubsection{Cafeterias}
 As explained in chapter 4.4.5 we only include the restaurants listed on \url{https://www.uclouvain.be/restaurants-universitaires.html}. Thus this functionality is only operational on the Louvain-la-Neuve, Woluwe and Mons campus.
 \paragraph{Design}
 The design of the restaurants is really close to the libraries, we first have a list of all restaurants in the campus with the following informations.
@@ -1136,12 +1164,12 @@ The design of the restaurants is really close to the libraries, we first have a 
 \item A picture of the restaurant on the left
 \item The restaurant name
 \item The place
-\item Label "open" or "close"
-\item Opening on lunch time
-\item If exist, evening opening
+\item Label "open" or "closed"
+\item Opening time on lunch time
+\item If relevant, evening opening time
 \end{itemize}
-The opening time have always the same format: date - date, time - time (for example Monday to Saturday, from 12h to 14h)
-The user can select a restaurant in order to see the details. The details are in order of appearance from top to bottom (the restaurant name is the header title). 
+The opening time always has the same format: date - date, time - time (for example Monday to Saturday, from 12h to 14h)
+The user can select a restaurant in order to see the details. The details are in order of appearance from top to bottom (the restaurant name is the header title): 
 \begin{itemize}
 \item A picture of the restaurant
 \item Noon time opening 
@@ -1151,32 +1179,35 @@ The user can select a restaurant in order to see the details. The details are in
 \item Button "See on map"
 \item Button "Menu"
 \end{itemize}
-For the description, we used the same way for events and restaurants(an expandable text, see more details in the events section). The button "Menu" open the specific menu url for the restaurant. The button see on map open the map functionality with the restaurant preselect in order to start the gps guide.
+For the description, we used the same technique as the one we used for events and restaurants (an expandable text, see more details in the events section). The "Menu" button opens the specific menu for the restaurant. The "See on map" button opens the map functionality with the restaurant preselected in order to start the GPS guide.
 \paragraph{Implementation}
-The factory retrieve all the database informations to the restaurant controller(js). The controller send the data to the html that is seen by users. We couldn't reuse the javaScript code that detect if a library is open or close because the restaurant could possibly have an evening opening, so we created a new JavaScript file with all utility functions and place it in the folder for restaurants. 
+The factory conveys all the database information regarding cafeterias to the restaurant controller. The controller sends the data to the HTML that is seen by users. We couldn't reuse the JavaScript code that detects if a library is open or closed because the restaurant could possibly have an evening opening, so we created a new JavaScript file with all utility functions and placed it in the folder for restaurants. 
+
+\newpage
+
 \subsubsection{Sports}
-The sport section is available for two campus: Louvain-la-Neuve and Woluwe. 
+The sport section is available for two campuses: Louvain-la-Neuve and Woluwe. 
 \paragraph{Design}
-There is only one page for the sport. First, we introduce a sub header where the user can select to see only one specific sport or the global schedule with all available sports. Under header, the sports are display into a list. Each sport in the list contain the following details:
+There is only one page for the sport. First, we introduce a sub header where the user can select to see only one specific sport or the global schedule with all available sports. Under this header, the sports are displayed in a list. Each sport in the list contains the following details:
 \begin{itemize}
-\item The name of the sport (for example Badminton). If the user select a specific sport, this information become useless, in this case we remove this field.
+\item The name of the sport (for example Badminton). If the user selects a specific sport, this information becomes useless, in this case we remove this field.
 \item Day and time (ex: Saturday 20:00 - 21:30)
 \item Place 
 \end{itemize}
-The list is ordered by date and time. The first sport instances in the list are the one of the day. Then it follow a classic order. For example if we look at the sport list a Wednesday, the first sport time slot we will see are those of the day, then those of Thursday and so on. 
+The list is ordered by date and time. The first sport instances in the list are the ones of the day. Then it follows a classic order. For example if we look at the sport list a Wednesday, the first sport time slot we will see are those of the day, then those of Thursday and so on. 
 \paragraph{Implementation}
-The factory retrieve data from website or from database if it has already been parsed. The special trick is that we want the factory to return a list of sport ordered by day starting from the day we are. The UCL sport website already order the sport by date, so we just kept their order while parsing. When the user connect a new day, we will pop the block of sport of the day before it and put them at the end of the list as show in figure 5.2.
-\begin{figure}
+The factory retrieves data from a website or from a database if it has already been parsed. The special trick is that we want the factory to return a list of sport ordered by day starting from the day we are. The UCL sport website already orders the sport by date, so we just kept their order while parsing. When the user connects a new day, we will pop the block of sport of the day before it and put them at the end of the list as show in figure 5.2.
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.3]{Images/sportsorting.png}
 \caption{Sorting day operation}
 \end{figure}
-The list of sport type(that the user can select in the combo box) is created in the controller. This one automatically update and display sport in alphabetical order. Then the controller communicate all the sport time slots and the list of distinct sports to the HTML that is seen by the user. 
+The list of sport types (that the user can select in the combo box) is created in the controller. This one automatically updates and displays sports in alphabetical order. Then the controller communicates all the sport time slots and the list of distinct sports to the HTML that is seen by the user. 
 \subsection{Tools}
-The actual only functionality of tools are lln maps \footnote{\url{https://github.com/mathieuzen/llnmaps}} . We created the menu in order to introduce new functionalities later. 
+The only functionality in the tools section is the maps \footnote{\url{https://github.com/mathieuzen/llnmaps}} . We created the menu in order to introduce new functionalities later. 
 \subsubsection{LLN Maps}
 \paragraph{Design}
-lln maps has its own header and footer, after a discussion with our contributors about the way to merge them to our application. First, they have a search side menu so we decide to overwrite our settings side menu that is unreachable from the maps. Therefore, the settings button in the header is replaced by a search button. In their footer, they have a compass or map mode. Actually, we didn't fix a choice, There exist a lot of alternatives.
+LLNMaps has its own header and footer, after a discussion with our contributors about the way to merge them to our application. First, they have a search side menu so we decided to overwrite our settings side menu that is unreachable from the maps. Therefore, the settings button in the header is replaced by a search button. In their footer, they have a compass or map mode. There are several alternatives regarding the footer.
 \begin{itemize}
 \item Put the compass button in the header
 \item Add it in our footer
@@ -1184,23 +1215,21 @@ lln maps has its own header and footer, after a discussion with our contributors
 \item Create a sub header
 \item Put it on the map page (not in a footer or header) 
 \end{itemize}
-\paragraph{Implementation}
-We do not pretend to discuss about the implementation of lln maps that is not the purpose of this section. We will discuss the technical points useful for our application. The main interactions with lln maps are the buttons "See on maps" placed throughout UCLCampus. They inform us that we could use url in order to open a preselected place and have the gps ready to be launched. Though lln maps is not fully integrated and thus our button not linked yet, we saw that some abbreviations of lln maps and UCLCampus (for lecture halls,...) are different so we created a database table in order to gather them. 
 \subsection{City}
-For the city section, we only created the menu in order to add new functionalities later. However, this section is more sensitive than other because it add external business in the application and it is a kind of advertising, so more advanced discussion should take place when adding a functionality.
+For the city section, we only created the menu in order to add new functionalities later. However, this section is more sensitive than other because it add external businesses in the application, so more advanced discussion should take place when adding a functionality.
 \subsection{Others}
 \subsubsection{Settings menu}
-The settings menu can be open everywhere in the application except for the map.
+The settings menu can be opened everywhere in the application except for the map.
 \paragraph{Design}
-This menu is a side menu, that mean when the user open it, it does not take all the screen as a new page. Instead it cut the screen in two parts (cut vertically). The part on the left is the page where the user opened the settings menu, the second part is the settings menu. That allows the user to change a setting without being perturbed in its actual task.
+This menu is a side menu, which means when the user opens it, it does not take all the screen as a new page. Instead it cuts the screen in two parts. The part on the left is the page where the user opened the settings menu, the second part is the settings menu. That allows the user to change a setting without being disturbed in his current task.
 The settings menu offers three items:
 \begin{itemize}
 \item The language
 \item The campus
 \item Logout
 \end{itemize}
-\paragraph{Language} We introduced three different languages, French, Dutch and English. The student can select one of this three languages and all the application will directly been translated into it. Actually the translation in Dutch is not done (though it is implemented). \\
-For the implementation, we used a plugin called "angular-translate" \footnote{\url{https://github.com/angular-translate/angular-translate}}(MIT). This plugin allows to create a configuration where you define the application languages, and for each languages it hold a kind of dictionary with the variable and his translation.\\
+\paragraph{Language} We introduced three different languages, French, Dutch and English. The student can select one of this three languages and all the application will directly been translated into it. The translation in Dutch is not done yet although it is implemented and just needs the actual translations. \\
+For the implementation, we used a plugin called "angular-translate" \footnote{\url{https://github.com/angular-translate/angular-translate}}(MIT). This plugin allows to create a configuration where you define the application languages, and for each languages it holds a kind of dictionary with the variables and their translations.\\
 Here is an example of the code for translation:
 \begin{verbatim}
         $translateProvider.translations('en', {
@@ -1208,13 +1237,14 @@ Here is an example of the code for translation:
             goodbye_message: "Goodbye"
         });
 \end{verbatim}
-In this example, we create an English translation and the variable "hello\_message" is translated by "Hello" in the user interface (same for goodbye). Our application has more variables to translate but the process is exactly the same. One more step is needed to translate the variable, at each time we want a variable in the html to be translated we need to apply a translation filter onto it. For example 
+In this example, we create an English translation and the variable "hello\_message" is translated by "Hello" in the user interface (same for goodbye). Our application has more variables to translate but the process is exactly the same. One more step is needed to translate the variable, at each time we want a variable in the HTML to be translated we need to apply a translation filter onto it. For example 
 \begin{verbatim}
 		<html tag>{{"hello_message" | translate}}</html tag> 
 \end{verbatim}
-The plugin allows to set a preferred language that will be preselected at the application launch. Actually it is English.
-\paragraph{Campus selection} The user can select a campus with the button named "Choose my campus" in the settings menu. This button open a page with the list of all possible campus, the user has to choose one and validate his choice. As explained earlier the campus selection influences the available functionalities in application. A pre selection based on the geolocation happens when the user open UCLCampus and the nearest campus is chosen per default.\\
-For the implementation, we created a campus factory that hold a list of campus. The items of this list have three attributes, the name of the campus, longitude and latitude. In order to select per default the closest campus, we created a JavaScript function that just return the campus minimising the distance between it and the actual position of the user. Thus it is easy to add a new campus to the application or remove one, but the programmers should care about the compatibility between the new campus and all the functionalities enable for all sites. 
+The plugin allows to set a preferred language that will be preselected at the application launch. Currently it is English.
+\paragraph{Campus selection} The user can select a campus with the button named "Choose my campus" in the settings menu. This button opens a page with the list of all possible campuses, the user has to choose one and validate his choice. As explained earlier the campus selection influences the available functionalities in application. A pre-selection based on the geolocation happens when the user open UCLCampus and the nearest campus is chosen by default.\\
+For the implementation, we created a campus factory that holds a list of campuses. The items of this list have three attributes, the name of the campus, longitude and latitude. In order to select the closest campus, we created a JavaScript function that just returns the campus minimizing the distance between it and the current position of the user. Thus it is easy to add a new campus to the application or remove one.
+
 \section{Modularity and how to add a new functionality}
 This application was built with the idea that other contributors would have to add functionalities themselves or even take over the project in the future. It was therefore important to be able to add modules to the application without having to understand the whole code. 
 This section will present a user manual on how to get the application to run from scratch and how to add new functionalities.  It must be noted that in order to deploy the application on iOS, one must user OS X as his operating system.  The following steps will however work for any operating system and the user will be able to deploy the application on Android regardless of the OS used.
@@ -1432,7 +1462,7 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 \item Libraries
 \item Events
 \item Sports
-\item University restaurants
+\item Cafeterias
 \item Cercles
 \item Kot à projets
 \item The entire "City" module
@@ -1445,11 +1475,13 @@ A lot of functionalities are only supported by a few campuses so far. We list he
 \item Create the Dutch translation. Everything is implemented, it is missing the map between variable and their translation.
 \end{itemize}
 
+\section{Unit tests}
+
 
 
 \chapter{Analysis}
 
-TODO
+Once the application was implemented, we needed to reflect on the choices we made along the way and try to determine whether they were the right ones or not. We also analyze the application as a whole. The first section gives some quantitative data regarding the source code of the application while the second section explains some tests we made to determine the performances of our finished product. Finally, the last section gives some insight on hybrid approaches and more specifically the Ionic framework.
 
 \section{Quantitative analysis}
 
@@ -1486,32 +1518,11 @@ GitHub lists the total number of lines of the whole project as a staggering 397,
 \item Number of lines of code written in CSS by other contributors: 880
 \end{itemize}
 
-\section{Ionic Framework}
-The UCLCampus implementation brought out our Ionic benefits and drawbacks.
-\subsection{Benefits}
-\begin{itemize}
-\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
-\item The css and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
-\item A large community that provide quick response and many example for simple topics. Moreover, this community provide a great plugins panel, it was never necessary to create our own. 
-\item Well documented. Every component possible attributes are listed and described and some basic example are provided.
-\item AngularJs provide a rich architecture to modulate the source code. 
-\item Easy to handle web services and database management. 
-\item Correct performance for a container approach. See section 6.3.1 for details.
-\end{itemize}
-\subsection{Drawbacks}
-\begin{itemize}
-\item No response for advanced topics. 
-\item A poor architecture for HTTP requests to external website. Ionic removed "cookie" and "set-cookie" in the response parameters. That is a real problem when a website use a cookie authentication or parameters inside the cookie. The reason is that they implemented a local cookie storage which is more efficient. However, it only work for request inside the application.
-\item Still in development. Some plugins and components still in development. They contains bug and should not be deploy for an end user. 
-\end{itemize}
+\section{Performance testing}
 
-\section{Testing}
-\subsection{Unit Test}
-
-\subsection{Performance testing}
 In order to assess the performance of our application, we profiled it using Google Chrome. Google Chrome indeed has a tool, available using the chrome://inspect address, that allows developers to profile an application running on their Android device. The following results are therefore only relevant for Android phones. The device we used for these tests was a Huawei P8 Lite, a smartphone with average performances (source benchmark). Results may vary with higher or lower end smartphones. Despite the limitations of our testing, the results are still interesting and we will present them in this section.
 \subsubsection{Profiling}
-We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in annex X (TODO).
+We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in annex X (TODO).\\
 
 \begin{figure}
 \centering
@@ -1529,13 +1540,13 @@ In this figure we can see several interesting things. We start by observing that
 \item Idle. Time spent : 385ms, 35\% of total time
 \end{itemize}
 We can see that, despite displaying several images, the application only spends 14.1\% of its time to render and paint said images. Instead, most of the time is spent scripting. This means that the most time consuming thing the application does when displaying the libraries is finding said libraries in the database and converting the result to a JavaScript list. This behavior seems to remain the same for every functionality of the application. Indeed, scripting is usually the main task in every profile, ranging anywhere from 30 to 60\% of the total execution time. 
-We will now look at the execution times of other functionalities: //TODO make a table ??
+We will now look at the execution times of other functionalities: 
 \begin{itemize}
 \item Changing tabs : 489ms
 \item Displaying the schedule : 2005ms
 \item Displaying the list of sports : 4260ms
 \item Displaying the student menu : 700ms
-\item Displaying the cafeterias : 1051ms
+\item Displaying the Cafeterias : 1051ms
 \item Displaying the campus menu : 970ms
 \item Displaying the events : 2890ms
 \item Displaying the details of an item (library, lecture hall, ...): ~700ms
@@ -1552,16 +1563,57 @@ These results make a lot of sense since retrieving information online means we h
 \begin{itemize}
 \item Displaying the list of lecture halls: 834ms
 \item Displaying the list of libraries: 782ms
-\item Displaying the cafeterias: 754ms
+\item Displaying the Cafeterias: 754ms
 \item Displaying the schedule: 1530ms
+
 \item Displaying the list of sports: 1350ms
 \end{itemize}
 We can observe a significant performance increase once the results have been cached in these functionalities, usually around 500ms and almost 3 seconds for the list of sports. This is due to the slow response time of the server we contact to retrieve the sports. The other slower functionalities (maps and events) cannot be easily cached. Indeed, it does not make sense for maps as there are no results to be cached. As for the events, the list is constantly updated and caching the result might lead to inaccurate information being displayed.
-We can now see that, once the relevant information has been cached, most functionalities respond in less than a second. We could not find any standard regarding the recommended response time for an application. However, Android will consider the application as not responding if it stuck for more than 5 seconds. As we can see, none of our functionalities exceed this limit, even when not cached.
-According to [source TODO], a response time ranging between 500 and 1000 ms is considered to be immediate, which is the recommended interval to load pages. Most of our functionalities are in this range. In order to make the wait for slower functionalities more bearable, we added an indicator that the functionality is loading. That way the user still receives feedback to indicate that his action, in this case the press of a button, has been registered and that the application is working on it. 
+We can now see that, once the relevant information has been cached, most functionalities respond in less than a second. We could not find any standard regarding the recommended response time for an application. However, Android will consider the application as not responding if it stuck for more than 5 seconds. As we can see, none of our functionalities exceed this limit, even when not cached.\\
+
+According to [source TODO], a response time ranging between 500 and 1000 ms is considered to be immediate, which is the recommended interval to load pages. Most of our functionalities are in this range. In order to make the wait for slower functionalities more bearable, we added an indicator that the functionality is loading. That way the user still receives feedback to indicate that his action, in this case the press of a button, has been registered and that the application is working on it. \\
+
 We conclude that, despite using a hybrid framework, the performances of our application are acceptable and that most users will not notice any delay when using the majority of the functionalities. Furthermore, the slowest functionalities often depend on the response times of external servers.. In those cases, using a native approach would not have helped performance-wise. 
+
+\section{Ionic Framework}
+The UCLCampus implementation brought out our Ionic benefits and drawbacks.
+\subsection{Benefits}
+\begin{itemize}
+\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
+\item The css and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
+\item A large community that provide quick response and many example for simple topics. Moreover, this community provide a great plugins panel, it was never necessary to create our own. 
+\item Well documented. Every component possible attributes are listed and described and some basic example are provided.
+\item AngularJs provide a rich architecture to modulate the source code. 
+\item Easy to handle web services and database management. 
+\item Correct performance for a container approach. See section 6.2.1 for details.
+\end{itemize}
+\subsection{Drawbacks}
+\begin{itemize}
+\item No response for advanced topics. 
+\item A poor architecture for HTTP requests to external website. Ionic removed "cookie" and "set-cookie" in the response parameters. That is a real problem when a website use a cookie authentication or parameters inside the cookie. The reason is that they implemented a local cookie storage which is more efficient. However, it only work for request inside the application.
+\item Still in development. Some plugins and components still in development. They contains bug and should not be deploy for an end user. 
+\end{itemize}
+
 \chapter{Conclusion} 
 
+This thesis exposed the whole development process we followed in order to develop the UCLCampus application, starting with an analysis of the existing tools, followed by the implementation itself and finishing with an analysis of the project once it was done.\\
+
+Aside from analyzing the finished application itself, we also need to reflect on the thesis as a whole, especially regarding the two contributions we described in the introduction.\\
+
+The first contribution we wanted to make was to allow other people to use this thesis as a reference to start a new application themselves. While we had trouble finding relevant information regarding the different options we had we still believe that the second chapter of this thesis can be helpful, even though the information found there might soon be irrelevant if the field evolves too much.
+We consider chapter 6 to be really useful for the targeted readers as it provides quantitative data regarding performances and remarks concerning one of the most used hybrid framework nowadays.\\
+
+The second contribution we were aiming for was the application and the hope that this application would be continued by other students in the future. We think we have provided a solid basis for future students to work on despite not being able to implement all the functionalities we had in mind. Indeed, one of the many learning outcomes of this thesis was that it is not easy to evaluate the time required to accomplish a task without a deep understanding of the underlying technology you are using. We however do not consider this to be a failure as it was planned from that start that the application would be further developed in the future.\\
+
+Another important learning outcome is the hands-on experience we were able to get through working on a full scale project. We were indeed able to learn languages such as JavaScript, HTML and CSS and familiarize ourselves with Cordova, AngularJS and the Ionic Framework. This knowledge and experience was something that was lacking in our academic background. We furthermore believe that we would not have been able to acquire such useful and highly demanded skills through a more theoretical thesis.\\
+
+This project also helped us develop our communication skills as it was imperative to expose the work that had currently been done both to our supervisor but also to the other contributors. We had to give them regular feedback and clearly expose our ideas as well as take their criticism into account when working on the application.\\
+
+\newpage
+
+We also put other skills that were already present in our academic background to the test, realizing that our existing knowledge was not always enough. Such skills include SQL which we used to access the database but also and more importantly our project management skills. A project of this magnitude indeed requires careful planning and we might have been able to do even more had we planned accordingly.\\
+
+We are nonetheless satisfied with our finished products and hope the students who will take over the project will make it even better. We also hope these students as well as other researchers will put this thesis to good use.\\
 \begin{thebibliography}{9}
 
 \bibitem{} 
