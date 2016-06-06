@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.6.6)  6 JUN 2016 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.6.6)  6 JUN 2016 16:38
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1045,6 +1045,36 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -1903,11 +1933,368 @@ Appendix A.
 
 ]
 Appendix B.
-[62
 
-]
+<Images/Application_screens/Screenshot_2016-06-06-13-40-15.png, id=975, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-40-15.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-40-15.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-40
+-15.png used on input line 1798.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-40-50.png, id=976, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-40-50.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-40-50.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-40
+-50.png used on input line 1803.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-41-05.png, id=977, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-41-05.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-41-05.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-41
+-05.png used on input line 1808.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-41-26.png, id=978, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-41-26.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-41-26.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-41
+-26.png used on input line 1814.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-43-14.png, id=979, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-43-14.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-43-14.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-43
+-14.png used on input line 1819.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-43-30.png, id=980, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-43-30.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-43-30.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-43
+-30.png used on input line 1824.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-44-12.png, id=981, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-44-12.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-44-12.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-44
+-12.png used on input line 1830.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-44-26.png, id=982, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-44-26.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-44-26.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-44
+-26.png used on input line 1835.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-45-05.png, id=983, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-45-05.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-45-05.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
+-05.png used on input line 1840.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-45-20.png, id=984, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-45-20.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-45-20.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
+-20.png used on input line 1846.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-45-51.png, id=985, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-45-51.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-45-51.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
+-51.png used on input line 1851.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-45-37.png, id=986, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-45-37.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-45-37.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
+-37.png used on input line 1854.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-46-04.png, id=987, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-46-04.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-46-04.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
+-04.png used on input line 1863.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-46-46.png, id=988, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-46-46.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-46-46.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
+-46.png used on input line 1868.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-46-56.png, id=989, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-46-56.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-46-56.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
+-56.png used on input line 1873.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-47-05.png, id=990, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-47-05.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-47-05.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
+-05.png used on input line 1879.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-47-19.png, id=991, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-47-19.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-47-19.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
+-19.png used on input line 1884.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-47-47.png, id=992, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-47-47.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-47-47.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
+-47.png used on input line 1889.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-48-01.png, id=993, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-48-01.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-48-01.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
+-01.png used on input line 1895.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-48-08.png, id=994, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-48-08.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-48-08.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
+-08.png used on input line 1900.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-48-21.png, id=995, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-48-21.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-48-21.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
+-21.png used on input line 1905.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-48-40.png, id=996, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-48-40.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-48-40.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
+-40.png used on input line 1911.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-49-08.png, id=997, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-49-08.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-49-08.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
+-08.png used on input line 1916.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-49-21.png, id=998, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-49-21.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-49-21.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
+-21.png used on input line 1921.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-49-30.png, id=999, 722.7pt
+ x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-49-30.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-49-30.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
+-30.png used on input line 1927.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-49-46.png, id=1000, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-49-46.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-49-46.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
+-46.png used on input line 1932.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-49-55.png, id=1001, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-49-55.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-49-55.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
+-55.png used on input line 1937.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-50-02.png, id=1002, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-50-02.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-50-02.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
+-02.png used on input line 1943.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-50-14.png, id=1003, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-50-14.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-50-14.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
+-14.png used on input line 1948.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-50-28.png, id=1004, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-50-28.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-50-28.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
+-28.png used on input line 1953.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-51-21.png, id=1005, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-51-21.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-51-21.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-51
+-21.png used on input line 1959.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-51-29.png, id=1006, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-51-29.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-51-29.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-51
+-29.png used on input line 1964.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+
+<Images/Application_screens/Screenshot_2016-06-06-13-52-44.png, id=1007, 722.7p
+t x 1284.8pt>
+File: Images/Application_screens/Screenshot_2016-06-06-13-52-44.png Graphic fil
+e (type png)
+
+<use Images/Application_screens/Screenshot_2016-06-06-13-52-44.png>
+Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-52
+-44.png used on input line 1969.
+(pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
+ [62
+
+ <./Images/Application_screens/Screenshot_2016-06-06-13-40-15.png> <./Images/Ap
+plication_screens/Screenshot_2016-06-06-13-40-50.png> <./Images/Application_scr
+eens/Screenshot_2016-06-06-13-41-05.png>] [63 <./Images/Application_screens/Scr
+eenshot_2016-06-06-13-41-26.png> <./Images/Application_screens/Screenshot_2016-
+06-06-13-43-14.png> <./Images/Application_screens/Screenshot_2016-06-06-13-43-3
+0.png> <./Images/Application_screens/Screenshot_2016-06-06-13-44-12.png> <./Ima
+ges/Application_screens/Screenshot_2016-06-06-13-44-26.png> <./Images/Applicati
+on_screens/Screenshot_2016-06-06-13-45-05.png>] [64 <./Images/Application_scree
+ns/Screenshot_2016-06-06-13-45-20.png> <./Images/Application_screens/Screenshot
+_2016-06-06-13-45-51.png> <./Images/Application_screens/Screenshot_2016-06-06-1
+3-45-37.png> <./Images/Application_screens/Screenshot_2016-06-06-13-46-04.png> 
+<./Images/Application_screens/Screenshot_2016-06-06-13-46-46.png> <./Images/App
+lication_screens/Screenshot_2016-06-06-13-46-56.png>] [65 <./Images/Application
+_screens/Screenshot_2016-06-06-13-47-05.png> <./Images/Application_screens/Scre
+enshot_2016-06-06-13-47-19.png> <./Images/Application_screens/Screenshot_2016-0
+6-06-13-47-47.png> <./Images/Application_screens/Screenshot_2016-06-06-13-48-01
+.png> <./Images/Application_screens/Screenshot_2016-06-06-13-48-08.png> <./Imag
+es/Application_screens/Screenshot_2016-06-06-13-48-21.png>] [66 <./Images/Appli
+cation_screens/Screenshot_2016-06-06-13-48-40.png> <./Images/Application_screen
+s/Screenshot_2016-06-06-13-49-08.png> <./Images/Application_screens/Screenshot_
+2016-06-06-13-49-21.png> <./Images/Application_screens/Screenshot_2016-06-06-13
+-49-30.png> <./Images/Application_screens/Screenshot_2016-06-06-13-49-46.png> <
+./Images/Application_screens/Screenshot_2016-06-06-13-49-55.png>] [67 <./Images
+/Application_screens/Screenshot_2016-06-06-13-50-02.png> <./Images/Application_
+screens/Screenshot_2016-06-06-13-50-14.png> <./Images/Application_screens/Scree
+nshot_2016-06-06-13-50-28.png> <./Images/Application_screens/Screenshot_2016-06
+-06-13-51-21.png> <./Images/Application_screens/Screenshot_2016-06-06-13-51-29.
+png> <./Images/Application_screens/Screenshot_2016-06-06-13-52-44.png>]
 Appendix C.
-[63
+[68
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1944,29 +2331,29 @@ Appendix C.
 
 
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1979.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1979.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1798.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1979.
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1979.
 
 
-Overfull \hbox (1.90796pt too wide) in paragraph at lines 1798--1799
+Overfull \hbox (1.90796pt too wide) in paragraph at lines 1979--1980
  [][][] 
  []
 
-[64
+[69
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1800.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1800.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1981.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1981.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1800.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1800.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1981.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1981.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B813A6E73E5657708716B342BE6A5407;5116.
@@ -1976,10 +2363,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 43879 strings out of 493335
- 953539 string characters out of 3139235
- 994925 words of memory out of 3000000
- 46323 multiletter control sequences out of 15000+200000
+ 44061 strings out of 493335
+ 963600 string characters out of 3139235
+ 994926 words of memory out of 3000000
+ 46455 multiletter control sequences out of 15000+200000
  102945 words of font info for 128 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  142i,10n,167p,10380b,4638s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1996,9 +2383,9 @@ eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (65 pages, 1818365 bytes).
+Output written on thesis.pdf (70 pages, 9705732 bytes).
 PDF statistics:
- 1118 PDF objects out of 1200 (max. 8388607)
- 407 named destinations out of 1000 (max. 500000)
- 29352 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1186 PDF objects out of 1200 (max. 8388607)
+ 423 named destinations out of 1000 (max. 500000)
+ 29517 words of extra memory for PDF output out of 29859 (max. 10000000)
 
