@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.2)  6 JUN 2016 15:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.2)  6 JUN 2016 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1534,7 +1534,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1600--1601
 
  []
 
-<Images/libraries.png, id=933, 1860.9525pt x 1060.96375pt>
+<Images/libraries.png, id=935, 1860.9525pt x 1060.96375pt>
 File: Images/libraries.png Graphic file (type png)
 
 <use Images/libraries.png>
@@ -1743,28 +1743,28 @@ Appendix B.
 
 ]
 Appendix C.
-<Images/cafetaria.png, id=987, 1863.96375pt x 1059.96pt>
+<Images/cafetaria.png, id=990, 1863.96375pt x 1059.96pt>
 File: Images/cafetaria.png Graphic file (type png)
 
 <use Images/cafetaria.png>
 Package pdftex.def Info: Images/cafetaria.png used on input line 1795.
 (pdftex.def)             Requested size: 279.5825pt x 158.98714pt.
 
-<Images/campus.png, id=988, 1863.96375pt x 1062.97125pt>
+<Images/campus.png, id=991, 1863.96375pt x 1062.97125pt>
 File: Images/campus.png Graphic file (type png)
 
 <use Images/campus.png>
 Package pdftex.def Info: Images/campus.png used on input line 1800.
 (pdftex.def)             Requested size: 279.5825pt x 159.43881pt.
 
-<Images/events.png, id=989, 1863.96375pt x 1060.96375pt>
+<Images/events.png, id=992, 1863.96375pt x 1060.96375pt>
 File: Images/events.png Graphic file (type png)
 
 <use Images/events.png>
 Package pdftex.def Info: Images/events.png used on input line 1805.
 (pdftex.def)             Requested size: 279.5825pt x 159.1377pt.
 
-<Images/lecturehalldetail.png, id=990, 1860.9525pt x 1057.9525pt>
+<Images/lecturehalldetail.png, id=993, 1860.9525pt x 1057.9525pt>
 File: Images/lecturehalldetail.png Graphic file (type png)
 
 <use Images/lecturehalldetail.png>
@@ -1773,14 +1773,14 @@ Package pdftex.def Info: Images/lecturehalldetail.png used on input line 1810.
  [63
 
  <./Images/cafetaria.png (PNG copy)> <./Images/campus.png (PNG copy)>]
-<Images/lecturehalls.png, id=998, 1863.96375pt x 1056.94875pt>
+<Images/lecturehalls.png, id=1001, 1863.96375pt x 1056.94875pt>
 File: Images/lecturehalls.png Graphic file (type png)
 
 <use Images/lecturehalls.png>
 Package pdftex.def Info: Images/lecturehalls.png used on input line 1815.
 (pdftex.def)             Requested size: 279.5825pt x 158.53546pt.
 
-<Images/lecturehallscached.png, id=999, 1863.96375pt x 1063.975pt>
+<Images/lecturehallscached.png, id=1002, 1863.96375pt x 1063.975pt>
 File: Images/lecturehallscached.png Graphic file (type png)
 
 <use Images/lecturehallscached.png>
@@ -1793,41 +1793,41 @@ Package pdftex.def Info: Images/libraries.png used on input line 1825.
 (pdftex.def)             Requested size: 279.13083pt x 159.1377pt.
  [64 <./Images/events.png (PNG copy)> <./Images/lecturehalldetail.png (PNG copy
 )> <./Images/lecturehalls.png (PNG copy)>]
-<Images/librarydetail.png, id=1007, 1864.9675pt x 1060.96375pt>
+<Images/librarydetail.png, id=1010, 1864.9675pt x 1060.96375pt>
 File: Images/librarydetail.png Graphic file (type png)
 
 <use Images/librarydetail.png>
 Package pdftex.def Info: Images/librarydetail.png used on input line 1830.
 (pdftex.def)             Requested size: 279.73305pt x 159.1377pt.
 
-<Images/maps.png, id=1008, 1861.95625pt x 1059.96pt>
+<Images/maps.png, id=1011, 1861.95625pt x 1059.96pt>
 File: Images/maps.png Graphic file (type png)
  <use Images/maps.png>
 Package pdftex.def Info: Images/maps.png used on input line 1835.
 (pdftex.def)             Requested size: 279.28139pt x 158.98714pt.
 
-<Images/menus.png, id=1009, 1864.9675pt x 1057.9525pt>
+<Images/menus.png, id=1012, 1864.9675pt x 1057.9525pt>
 File: Images/menus.png Graphic file (type png)
  <use Images/menus.png>
 Package pdftex.def Info: Images/menus.png used on input line 1840.
 (pdftex.def)             Requested size: 279.73305pt x 158.68602pt.
 
 [65 <./Images/lecturehallscached.png (PNG copy)> <./Images/librarydetail.png (P
-NG copy)>] <Images/schedule.png, id=1017, 1861.95625pt x 1059.96pt>
+NG copy)>] <Images/schedule.png, id=1020, 1861.95625pt x 1059.96pt>
 File: Images/schedule.png Graphic file (type png)
 
 <use Images/schedule.png>
 Package pdftex.def Info: Images/schedule.png used on input line 1845.
 (pdftex.def)             Requested size: 279.28139pt x 158.98714pt.
 
-<Images/schedulecached.png, id=1018, 1861.95625pt x 1062.97125pt>
+<Images/schedulecached.png, id=1021, 1861.95625pt x 1062.97125pt>
 File: Images/schedulecached.png Graphic file (type png)
 
 <use Images/schedulecached.png>
 Package pdftex.def Info: Images/schedulecached.png used on input line 1850.
 (pdftex.def)             Requested size: 279.28139pt x 159.43881pt.
 
-<Images/sports4.png, id=1019, 1860.9525pt x 1060.96375pt>
+<Images/sports4.png, id=1022, 1860.9525pt x 1060.96375pt>
 File: Images/sports4.png Graphic file (type png)
 
 <use Images/sports4.png>
@@ -1835,14 +1835,14 @@ Package pdftex.def Info: Images/sports4.png used on input line 1855.
 (pdftex.def)             Requested size: 279.13083pt x 159.1377pt.
  [66 <./Images/maps.png (PNG copy)> <./Images/menus.png (PNG copy)> <./Images/s
 chedule.png (PNG copy)>]
-<Images/sportscached.png, id=1028, 1864.9675pt x 1062.97125pt>
+<Images/sportscached.png, id=1031, 1864.9675pt x 1062.97125pt>
 File: Images/sportscached.png Graphic file (type png)
 
 <use Images/sportscached.png>
 Package pdftex.def Info: Images/sportscached.png used on input line 1860.
 (pdftex.def)             Requested size: 279.73305pt x 159.43881pt.
 
-<Images/student.png, id=1029, 1863.96375pt x 1060.96375pt>
+<Images/student.png, id=1032, 1863.96375pt x 1060.96375pt>
 File: Images/student.png Graphic file (type png)
 
 <use Images/student.png>
@@ -1908,16 +1908,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1874.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1874.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1874.
 
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 84992091AE4C3FE863BE4E5B40FEFEFB;5042.
 
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 435FF132707B296125C2B36B07DAB806;5043
+(rerunfilecheck)             After:  FD62BF0F3608F9D8E591BD488AF79914;5044.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31544 strings out of 495028
- 645838 string characters out of 6181498
+ 31545 strings out of 495028
+ 645850 string characters out of 6181498
  723929 words of memory out of 5000000
  33678 multiletter control sequences out of 15000+600000
  102945 words of font info for 128 fonts, out of 8000000 for 9000
@@ -1934,10 +1940,10 @@ f/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 ts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (70 pages, 3564653 bytes).
+Output written on thesis.pdf (70 pages, 3564895 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 1057 compressed objects within 11 object streams
- 427 named destinations out of 1000 (max. 500000)
+ 1187 PDF objects out of 1200 (max. 8388607)
+ 1060 compressed objects within 11 object streams
+ 428 named destinations out of 1000 (max. 500000)
  29422 words of extra memory for PDF output out of 29859 (max. 10000000)
 

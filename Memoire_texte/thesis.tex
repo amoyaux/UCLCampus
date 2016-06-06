@@ -116,7 +116,7 @@ The third chapters explains the reasoning behind the functionalities we decided 
 
 As the astute reader will already have noticed, the thesis follows the chronological order of the project, starting by detailing the background in chapter 2, detailing the project in itself in chapters 3, 4 and 5 and finishes with an analysis of the project as a whole in chapter 6.\\
 
-We hope readers will find insightful informations in this paper and that it will help them in their endeavors.  
+We hope readers will find insightful information in this paper and that it will help them in their endeavors.  
 
 
 
@@ -357,7 +357,7 @@ LLN Campus was a project developed by 3rd years UCL computer science students. T
 \newpage
 
 \subsubsection{LLN Maps}
-LLN Maps is an application showing maps of Louvain-La-Neuve with relevant information and is developed by researchers of the Louvain School of Management. It is implemented using the Ionic framework. It contains various information such as the locations of lecture halls, libraries or train stations. This information is available as markers on a map. A GPS guidance with time calculation is possible from the user's position to each points of interest. There is a search bar if a specific information is required. Moreover a compass mode is available. See figure 2.3 for a visual.
+LLN Maps is an application showing maps of Louvain-La-Neuve with relevant information and is developed by researchers of the Louvain School of Management. It is implemented using the Ionic framework. It contains various information such as the locations of lecture halls, libraries or train stations. This information is available as markers on a map. A GPS guidance with time calculation is possible from the user's position to each points of interest. There is a search bar if a specific information is required. Moreover, a compass mode is available. See figure 2.3 for a visual.
 
 
 \begin{figure}[H]
@@ -920,9 +920,9 @@ For the second threat, a solution would be to create a secure connexion with OSI
 \section{Information retrieval}
 
 In this section we will detail the different sources of information we used in our application as well as the technologies we had to use in order to retrieve said information. 
-\subsection{Student data(OSIS)}
+\subsection{Student data (OSIS)}
 
-OSIS web serviceshave not yet been implemented but would be implemented in the following way. The SGSI replies to our request with a JSON file that has the following structure:
+OSIS web services have not yet been implemented but would be implemented in the following way. The SGSI replies to our request with a JSON file that has the following structure:
 
 \begin{verbatim}
 Student[{
@@ -1012,7 +1012,7 @@ select * from feednormalizer where url='http://louvainfo.be/evenements/feed/cale
 The result is then automatically parsed and stored in a JavaScript objects array. 
 
 \subsection{Schedule}
-For the schedule we had no choice but to use web parsing. The ADE dump database for all courses (of all the students) has a size of 80Mo which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customized urls in order to extract specific informations. It's a bit worse than web services because you need to parse the response to retrieve the relevant information.
+For the schedule we had no choice but to use web parsing. The ADE dump database for all courses (of all the students) has a size of 80Mo which is way too much memory for a mobile application. Therefore ADE has a custom web site where you are able to send customized urls in order to extract specific information. It's a bit worse than web services because you need to parse the response to retrieve the relevant information.
 \subsubsection{ADE custom URL}
 The request always starts with \url{http://horairev6.uclouvain.be/jsp/custom/modules/plannings/direct_planning.jsp?}. After this we can add some query parameters.
 \begin{itemize}
@@ -1044,8 +1044,8 @@ We used a string parsing based on regular expression in order to extract informa
 \subsubsection{Local storage}
 We thought it could be good to keep the schedule relative to the logged student in memory. In this case he could have an access to it every time without the need of an internet connexion. For this, once the parsing done, we keep the new schedule object in memory and the next time the student accesses the page we load it from local storage instead of parsing it again. This increases performances because it's faster and has a better availability. The problem is that the schedule can change during the year so we allow the student to force a new web request with a new parsing in order to update it (with a refresh button on the page).
 
-\subsection{Cafeteria}
-We chose to store the main informations (name, location, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modifications are needed. We encode the 6 restaurants present on the UCL website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. For the database we created a new table and encoded data manually. The menus sadly couldn't be stored in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had its own syntax and thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
+\subsection{Cafeterias}
+We chose to store the main information (name, location, image, opening time) about restaurants in the database because it's  something that will not change every year and there is not a lot of field to update if some modifications are needed. We encode the 6 restaurants present on the UCL website\footnote{https://www.uclouvain.be/restaurants-universitaires.html}. For the database we created a new table and encoded data manually. The menus sadly couldn't be stored in the database because of the existence of the daily menu (we should omit them or update them manually each week). We wanted to do some web parsing but the html code for each restaurant had its own syntax and thus we would need to create one parsing technique by university canteen which was a too heavy workload for the time we had. Instead we chose to create a button linking to the related menu page.
 \subsection{Sports}
 We couldn't store the sports in a database because the planning undergoes changes every year and we don't have manpower to update it. The sports department doesn't have web services either so the only solution we had was to parse the website. On a positive note, the Louvain-la-Neuve and Woluwe sites share the same website and thus the parsing is effective for both. 
 \subsubsection{URL}
@@ -1103,7 +1103,7 @@ The four menus have the same code skeleton. The principle is simple, each menu h
 \end{itemize}
 This list is then simply passed to the HTML and JavaScript controller that use it in order to create the user interface.
 \subsection{Studies}
-The student menu contains all information relevant to the academic year. All the functionality except libraries and lecture halls are available for every campus. We have libraries and lecture halls informations in database only for Louvain-la-Neuve and Woluwe. 
+The student menu contains all information relevant to the academic year. All the functionality except libraries and lecture halls are available for every campus. We have libraries and lecture halls information in database only for Louvain-la-Neuve and Woluwe. 
 \subsubsection{Schedule}
 For the schedule we didn't want to implement a fresh new calendar algorithm with a lot of functionalities because it's already present on all smartphone as native agenda. So the purpose of this section was allow the student to export their ADE schedule directly to their agenda. We nevertheless implemented a display function where the student can see the lectures he has for a selected day. In order to implement it we used the data send by the back end (explained in chap 4.4), we display this data as list with
 \begin{itemize}
@@ -1138,11 +1138,11 @@ As explained in chapter 5.1.4 about the submenus, we set the variable website fo
 The campus section contains elements relative to live on the campus and that don't have a direct link to the academic year. 
 
 \subsubsection{Events}
-The events section is only available for the Louvain-la-Neuve campus. All the events informations (including pictures) come from the website \url{http://louvainfo.be/}.
+The events section is only available for the Louvain-la-Neuve campus. All the events information (including pictures) come from the website \url{http://louvainfo.be/}.
 \paragraph{Design}
 The events page can be broken down in two parts. The first page with the list of all events sorted by starting date and the second part when you click an event in order to obtain its details. 
 \paragraph{Events list}
-The events list keeps the classical header and footer. Each item of the list represent a event with three informations:
+The events list keeps the classical header and footer. Each item of the list represent a event with the following information:
 \begin{itemize}
 \item The name of the event
 \item The starting date (date + time)
@@ -1165,7 +1165,7 @@ For the implementation, it works the same way than for the libraries and lecture
 \subsubsection{Cafeterias}
 As explained in chapter 4.4.5 we only include the restaurants listed on \url{https://www.uclouvain.be/restaurants-universitaires.html}. Thus this functionality is only operational on the Louvain-la-Neuve, Woluwe and Mons campus.
 \paragraph{Design}
-The design of the restaurants is really close to the libraries, we first have a list of all restaurants in the campus with the following informations.
+The design of the restaurants is really close to the libraries, we first have a list of all restaurants in the campus with the following information:
 \begin{itemize}
 \item A picture of the restaurant on the left
 \item The restaurant name
@@ -1595,7 +1595,7 @@ GitHub lists the total number of lines of the whole project as a staggering 397,
 
 \section{Performance testing}
 
-In order to assess the performance of our application, we profiled it using Google Chrome. Google Chrome indeed has a tool, available using the chrome://inspect address, that allows developers to profile an application running on their Android device. The following results are therefore only relevant for Android phones. The device we used for these tests was a Huawei P8 Lite, a smartphone with average performances (source benchmark). Results may vary with higher or lower end smartphones. Despite the limitations of our testing, the results are still interesting and we will present them in this section.
+In order to assess the performance of our application, we profiled it using Google Chrome. Google Chrome indeed has a tool, available using the chrome://inspect address, that allows developers to profile an application running on their Android device. The following results are therefore only relevant for Android phones. The device we used for these tests was a Huawei P8 Lite, a smartphone with average performances \footnote{\url{http://www.androidbenchmark.net/}}. Results may vary with higher or lower end smartphones. Despite the limitations of our testing, the results are still interesting and we will present them in this section.
 \subsubsection{Profiling}
 We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in appendix C.\\
 
