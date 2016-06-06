@@ -629,7 +629,7 @@ We will now give a list of the different user stories we thought of for each of 
 
 \section{User interface}
 
-Once we determined the different features we wanted in our application, we needed to organize them in a way that makes sense for users. In order to do so, we made sketches of what the application might look like using InVision. InVision is a website that lets people design and style mobile applications prototypes. It allows us to get an idea of what the finished product might look like without having to dive into any code. The sketches we made are available in the annex.\\
+Once we determined the different features we wanted in our application, we needed to organize them in a way that makes sense for users. In order to do so, we made sketches of what the application might look like using InVision. InVision is a website that lets people design and style mobile applications prototypes. It allows us to get an idea of what the finished product might look like without having to dive into any code. The sketches we made are available in the appendix A.\\
 
 In these sketches, we can see that we decided to have one menu per category we defined in the previous section. Each menu has an associated color, allowing the user to always have visual clues to help them know where they are.\\
 
@@ -1064,7 +1064,7 @@ The reasoning here is the same as the one described in the schedule section abov
 
 \chapter{The Application}
 
-This section will detail the different functionalities we were able to implement in our final version of the application and will explain how to add a new functionality to future contributors. The chapter will end by explaining a series of test we implemented to make sure the implemented functionalities were working as intended. //TODO annexe
+This section will detail the different functionalities we were able to implement in our final version of the application and will explain how to add a new functionality to future contributors. The chapter will end by explaining a series of test we implemented to make sure the implemented functionalities were working as intended. Appendix B shows some screenshots on our final application.
 
 \section{The UCLCampus application}
 
@@ -1090,7 +1090,6 @@ For more details\footnote{\url{http://ionicframework.com/docs/api/directive/ionN
 When the user launches UCLCampus on his smartphone, he arrives on the homepage. This page contains the header and four buttons(student, campus, tools, city). The purpose of this page is to not force the user to be in a menu once he opens the application. Another choice could be to put him in the student section and let him use the footer button to navigate between sub menus, we found this solution less comfortable for the user. We removed the footer from the homepage because it's redundant to have the sub menu buttons at the same time as the content of the page and in the footer.
 \subsection{The Student/Campus/Tools/City Menus}
 The four sub-menus have the same design and are implemented the same way.
-TODO lien vers l'annexe des screens ou alors importer l'image. 
 \paragraph{Design}
 The menu offers a list of buttons. Each button has a corresponding functionality and a representative icon next to it.
 \paragraph{Implementation}
@@ -1598,7 +1597,7 @@ GitHub lists the total number of lines of the whole project as a staggering 397,
 
 In order to assess the performance of our application, we profiled it using Google Chrome. Google Chrome indeed has a tool, available using the chrome://inspect address, that allows developers to profile an application running on their Android device. The following results are therefore only relevant for Android phones. The device we used for these tests was a Huawei P8 Lite, a smartphone with average performances (source benchmark). Results may vary with higher or lower end smartphones. Despite the limitations of our testing, the results are still interesting and we will present them in this section.
 \subsubsection{Profiling}
-We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in annex X (TODO).\\
+We used Google Chrome tool in order to profile several functionalities of our application. It is important to note that monitoring and recording the application's activity adds a bit of overhead and the results we show here will be slightly worse than the ones one would obtain without any monitoring tool. However, the overhead is not important enough to invalidate the results. The idea is to start the profiling, click a button and wait until the next view is displayed. This gives us an idea of how long a user has to wait between views. Figure 6.1 shows the result we obtained when clicking on the "Libraries" button in the Student Menu. The rest the profiles are available in appendix C.\\
 
 \begin{figure}
 \centering
@@ -1789,7 +1788,184 @@ PassMark Android Benchmark. 2016.
 
 \appendix
 \chapter{InVision Screenshots}
+This appendix contains the pictures we used for InVision. It still possible to play the sketch on \url{https://invis.io/MX4YY6F78#/115769135_Main_menu}.
+\begin{figure}[H]
+    \centering
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/home2.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/settings.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menu-etude.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/12211075_10207057657552707_718284172_o.jpg}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/auditoiredetail.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/liste-cours.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menu-bibli.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/biblidetail.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menu-login.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/horaire-bibli.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/detail-cours.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/agenda.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menucampus.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/cercleliste.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/cercledetail.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/kapliste.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/kapdetail.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/sports.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menu-city.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/agence.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/menu-tourisme.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/liste-musees.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/detail-musee.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/loisir.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/theatre.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/cinema.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/liste-resto.png}
+    \end{subfigure}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/detail-resto.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/liste-bars.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/detail-bar.png}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+\begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/tools.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/map.png}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Images/InVision/help-list.png}
+    \end{subfigure}
+\end{figure}
 
 \chapter{UCLCampus Screenshots}
 \begin{figure}[H]
@@ -1972,6 +2148,81 @@ PassMark Android Benchmark. 2016.
 
 
 \chapter{Performance Measurements}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/cafetaria.png}
+\caption{Profile of the cafeteria functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/campus.png}
+\caption{Profile of the campus menu functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/events.png}
+\caption{Profile of the events functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/lecturehalldetail.png}
+\caption{Profile of the details for a lecture hall functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/lecturehalls.png}
+\caption{Profile of the list of lecture halls functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/lecturehallscached.png}
+\caption{Profile of the list of lecture functionality when cached}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/libraries.png}
+\caption{Profile of the list of libraries functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/librarydetail.png}
+\caption{Profile of the details for a library functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/maps.png}
+\caption{Profile of the maps functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/menus.png}
+\caption{Profile of the menus}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/schedule.png}
+\caption{Profile of the schedule functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/schedulecached.png}
+\caption{Profile of the schedule functionality when cached}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/sports4.png}
+\caption{Profile of the sports functionality}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/sportscached.png}
+\caption{Profile of the sports functionality when cached}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.15]{Images/student.png}
+\caption{Profile of the student menu functionality}
+\end{figure}
 
 
 

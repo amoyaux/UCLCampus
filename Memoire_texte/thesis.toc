@@ -159,5 +159,5 @@
 \contentsline {subsection}{\numberline {6.3.2}Drawbacks}{56}{subsection.6.3.2}
 \contentsline {chapter}{\numberline {7}Conclusion}{57}{chapter.7}
 \contentsline {chapter}{\numberline {A}InVision Screenshots}{61}{appendix.A}
-\contentsline {chapter}{\numberline {B}UCLCampus Screenshots}{62}{appendix.B}
-\contentsline {chapter}{\numberline {C}Performance Measurements}{68}{appendix.C}
+\contentsline {chapter}{\numberline {B}UCLCampus Screenshots}{66}{appendix.B}
+\contentsline {chapter}{\numberline {C}Performance Measurements}{72}{appendix.C}
