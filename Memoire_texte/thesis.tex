@@ -1662,24 +1662,41 @@ According to [source TODO], a response time ranging between 500 and 1000 ms is c
 We conclude that, despite using a hybrid framework, the performances of our application are acceptable and that most users will not notice any delay when using the majority of the functionalities. Furthermore, the slowest functionalities often depend on the response times of external servers.. In those cases, using a native approach would not have helped performance-wise. 
 
 \section{Ionic Framework}
-The UCLCampus implementation brought out our Ionic benefits and drawbacks.
+Working on UCLCampus allowed us to experience the Ionic Framework. We learned that it had some benefits and some downsides we will now expose.
+
 \subsection{Benefits}
 \begin{itemize}
-\item Easy to learn and use. The tutorial on their website is complete and bring possible architecture notions. Combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, it is possible to start an application. 
-\item The css and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
-\item A large community that provide quick response and many example for simple topics. Moreover, this community provide a great plugins panel, it was never necessary to create our own. 
-\item Well documented. Every component possible attributes are listed and described and some basic example are provided.
-\item AngularJs provide a rich architecture to modulate the source code. 
+\item Easy to learn and use. The tutorial on their website is complete and brings possible architecture notions. This tutorial, combined with a tutorial about angularJS \footnote{We used w3school tutorial \url{http://www.w3schools.com/angular/}}, makes it possible to start an application right away. 
+\item The CSS and JavaScript code provided are useful and well designed. Around 90\% of the css components and icons used come from it.
+\item A large community that provide quick response and many examples for simple topics. Moreover, this community provides a great panel of plugins, meaning it was never necessary to create our own. 
+\item Well documented. Every component is listed and described and some basic examples are provided.
+\item AngularJs provides a rich architecture to modulate the source code. 
 \item Easy to handle web services and database management. 
-\item Correct performance for a container approach. See section 6.2.1 for details.
+\item Very decent performances. See section 6.2.1 for details.
+\item The application does not feel emulated.
 \end{itemize}
+
+We can see that the Ionic Framework held its initial promises. The application has a good native look and feel and for the most part, the documentation and community were great. We however encountered some minor issues for which we were unable to find any solutions. 
+
 \subsection{Drawbacks}
 \begin{itemize}
+
 \item No response for advanced topics. 
-\item A poor architecture for HTTP requests to external website. Ionic removed "cookie" and "set-cookie" in the response parameters. That is a real problem when a website use a cookie authentication or parameters inside the cookie. The reason is that they implemented a local cookie storage which is more efficient. However, it only work for request inside the application.
-\item Still in development. Some plugins and components still in development. They contains bug and should not be deploy for an end user. 
+\item Bug report still has not been answered 3 months after the report. 
+\item A poor architecture for HTTP requests to external website. 
+\item Some plugins and components still in development and contain some bug.
 \item Some functionalities and factories need a specific code for browser. 
+
 \end{itemize}
+
+We encountered a minor bug in our application. Indeed, when changing the Category filter in the events functionality, the new filter will be applied but the display of the selection tool will not be updated the first time it is used. Every subsequent attempt updates the view just fine. We reported this bug on the Ionic project GitHub but sadly never received an answer. We admit that the bug is minor and that the Ionic team probably has more important issues to tackle but we still were disappointed to receive no answer.\\
+
+Another issue we encountered was when we tried to use cookies in external websites requests. Ionic removed "cookie" and "set-cookie" in the response parameters. That is a real problem when a website uses a cookie authentication or parameters inside the cookie. The reason is that they implemented a local cookie storage which is more efficient. However, it only works for request inside the application.
+We could not find a way to work around this problem.\\
+
+Finally, some of the plugins we found contained some bugs, for instance the calendar plugin.\\
+
+As we can see Ionic is not perfect but the issues we encountered were minor and the overall experience is still overwhelmingly good. We therefore recommend it to people wishing to start their own application and to the future students working on UCLCampus.
 
 \chapter{Conclusion} 
 
