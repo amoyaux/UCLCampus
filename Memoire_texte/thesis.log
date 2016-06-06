@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.6.6)  6 JUN 2016 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.6.6)  6 JUN 2016 17:23
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1728,7 +1728,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1600--1601
 
  []
 
-<Images/libraries.png, id=925, 1860.9525pt x 1060.96375pt>
+<Images/libraries.png, id=927, 1860.9525pt x 1060.96375pt>
 File: Images/libraries.png Graphic file (type png)
 
 <use Images/libraries.png>
@@ -1929,21 +1929,21 @@ ame{cite.}) has been already used, duplicate ignored
 l.1782 \bibitem{}
                   [60]
 Appendix A.
-<Images/InVision/home2.png, id=972, 365.11406pt x 518.6878pt>
+<Images/InVision/home2.png, id=975, 365.11406pt x 518.6878pt>
 File: Images/InVision/home2.png Graphic file (type png)
 
 <use Images/InVision/home2.png>
 Package pdftex.def Info: Images/InVision/home2.png used on input line 1797.
 (pdftex.def)             Requested size: 136.57462pt x 194.01674pt.
 
-<Images/InVision/settings.png, id=973, 274.02374pt x 360.59718pt>
+<Images/InVision/settings.png, id=976, 274.02374pt x 360.59718pt>
 File: Images/InVision/settings.png Graphic file (type png)
 
 <use Images/InVision/settings.png>
 Package pdftex.def Info: Images/InVision/settings.png used on input line 1802.
 (pdftex.def)             Requested size: 136.57462pt x 179.7259pt.
 
-<Images/InVision/menu-etude.png, id=974, 272.51813pt x 273.27094pt>
+<Images/InVision/menu-etude.png, id=977, 272.51813pt x 273.27094pt>
 File: Images/InVision/menu-etude.png Graphic file (type png)
 
 <use Images/InVision/menu-etude.png>
@@ -1951,7 +1951,7 @@ Package pdftex.def Info: Images/InVision/menu-etude.png used on input line 1805
 .
 (pdftex.def)             Requested size: 136.57462pt x 136.95203pt.
 
-<Images/InVision/12211075_10207057657552707_718284172_o.jpg, id=975, 602.25pt x
+<Images/InVision/12211075_10207057657552707_718284172_o.jpg, id=978, 602.25pt x
  1027.84pt>
 File: Images/InVision/12211075_10207057657552707_718284172_o.jpg Graphic file (
 type jpg)
@@ -1960,7 +1960,7 @@ Package pdftex.def Info: Images/InVision/12211075_10207057657552707_718284172_o
 .jpg used on input line 1811.
 (pdftex.def)             Requested size: 136.57462pt x 233.08899pt.
 
-<Images/InVision/auditoiredetail.png, id=976, 365.86688pt x 525.46312pt>
+<Images/InVision/auditoiredetail.png, id=979, 365.86688pt x 525.46312pt>
 File: Images/InVision/auditoiredetail.png Graphic file (type png)
 
 <use Images/InVision/auditoiredetail.png>
@@ -1968,7 +1968,7 @@ Package pdftex.def Info: Images/InVision/auditoiredetail.png used on input line
  1816.
 (pdftex.def)             Requested size: 136.57462pt x 196.15018pt.
 
-<Images/InVision/liste-cours.png, id=977, 273.27094pt x 375.65344pt>
+<Images/InVision/liste-cours.png, id=980, 273.27094pt x 375.65344pt>
 File: Images/InVision/liste-cours.png Graphic file (type png)
 
 <use Images/InVision/liste-cours.png>
@@ -1976,7 +1976,7 @@ Package pdftex.def Info: Images/InVision/liste-cours.png used on input line 182
 1.
 (pdftex.def)             Requested size: 136.57462pt x 187.746pt.
 
-<Images/InVision/menu-bibli.png, id=978, 272.51813pt x 373.395pt>
+<Images/InVision/menu-bibli.png, id=981, 272.51813pt x 373.395pt>
 File: Images/InVision/menu-bibli.png Graphic file (type png)
 
 <use Images/InVision/menu-bibli.png>
@@ -1984,7 +1984,7 @@ Package pdftex.def Info: Images/InVision/menu-bibli.png used on input line 1827
 .
 (pdftex.def)             Requested size: 136.57462pt x 187.13005pt.
 
-<Images/InVision/biblidetail.png, id=979, 366.61969pt x 525.46312pt>
+<Images/InVision/biblidetail.png, id=982, 366.61969pt x 525.46312pt>
 File: Images/InVision/biblidetail.png Graphic file (type png)
 
 <use Images/InVision/biblidetail.png>
@@ -1992,7 +1992,7 @@ Package pdftex.def Info: Images/InVision/biblidetail.png used on input line 183
 2.
 (pdftex.def)             Requested size: 136.57462pt x 195.74928pt.
 
-<Images/InVision/menu-login.png, id=980, 272.51813pt x 371.88937pt>
+<Images/InVision/menu-login.png, id=983, 272.51813pt x 371.88937pt>
 File: Images/InVision/menu-login.png Graphic file (type png)
 
 <use Images/InVision/menu-login.png>
@@ -2000,7 +2000,7 @@ Package pdftex.def Info: Images/InVision/menu-login.png used on input line 1837
 .
 (pdftex.def)             Requested size: 136.57462pt x 186.37549pt.
 
-<Images/InVision/horaire-bibli.png, id=981, 274.77657pt x 469.755pt>
+<Images/InVision/horaire-bibli.png, id=984, 274.77657pt x 469.755pt>
 File: Images/InVision/horaire-bibli.png Graphic file (type png)
 
 <use Images/InVision/horaire-bibli.png>
@@ -2008,7 +2008,7 @@ Package pdftex.def Info: Images/InVision/horaire-bibli.png used on input line 1
 843.
 (pdftex.def)             Requested size: 136.57462pt x 233.49353pt.
 
-<Images/InVision/detail-cours.png, id=982, 272.51813pt x 450.9347pt>
+<Images/InVision/detail-cours.png, id=985, 272.51813pt x 450.9347pt>
 File: Images/InVision/detail-cours.png Graphic file (type png)
 
 <use Images/InVision/detail-cours.png>
@@ -2016,7 +2016,7 @@ Package pdftex.def Info: Images/InVision/detail-cours.png used on input line 18
 48.
 (pdftex.def)             Requested size: 136.57462pt x 225.98972pt.
 
-<Images/InVision/agenda.png, id=983, 273.27094pt x 469.00218pt>
+<Images/InVision/agenda.png, id=986, 273.27094pt x 469.00218pt>
 File: Images/InVision/agenda.png Graphic file (type png)
 
 <use Images/InVision/agenda.png>
@@ -2028,7 +2028,7 @@ Package pdftex.def Info: Images/InVision/agenda.png used on input line 1853.
 ion/menu-etude.png> <./Images/InVision/12211075_10207057657552707_718284172_o.j
 pg> <./Images/InVision/auditoiredetail.png> <./Images/InVision/liste-cours.png>
 ]
-<Images/InVision/menucampus.png, id=990, 274.02374pt x 299.61937pt>
+<Images/InVision/menucampus.png, id=993, 274.02374pt x 299.61937pt>
 File: Images/InVision/menucampus.png Graphic file (type png)
 
 <use Images/InVision/menucampus.png>
@@ -2036,7 +2036,7 @@ Package pdftex.def Info: Images/InVision/menucampus.png used on input line 1859
 .
 (pdftex.def)             Requested size: 136.57462pt x 149.33385pt.
 
-<Images/InVision/cercleliste.png, id=991, 274.02374pt x 371.13657pt>
+<Images/InVision/cercleliste.png, id=994, 274.02374pt x 371.13657pt>
 File: Images/InVision/cercleliste.png Graphic file (type png)
 
 <use Images/InVision/cercleliste.png>
@@ -2044,7 +2044,7 @@ Package pdftex.def Info: Images/InVision/cercleliste.png used on input line 186
 4.
 (pdftex.def)             Requested size: 136.57462pt x 184.97885pt.
 
-<Images/InVision/cercledetail.png, id=992, 365.86688pt x 543.53062pt>
+<Images/InVision/cercledetail.png, id=995, 365.86688pt x 543.53062pt>
 File: Images/InVision/cercledetail.png Graphic file (type png)
 
 <use Images/InVision/cercledetail.png>
@@ -2052,14 +2052,14 @@ Package pdftex.def Info: Images/InVision/cercledetail.png used on input line 18
 69.
 (pdftex.def)             Requested size: 136.57462pt x 202.89459pt.
 
-<Images/InVision/kapliste.png, id=993, 274.02374pt x 350.81062pt>
+<Images/InVision/kapliste.png, id=996, 274.02374pt x 350.81062pt>
 File: Images/InVision/kapliste.png Graphic file (type png)
 
 <use Images/InVision/kapliste.png>
 Package pdftex.def Info: Images/InVision/kapliste.png used on input line 1875.
 (pdftex.def)             Requested size: 136.57462pt x 174.84816pt.
 
-<Images/InVision/kapdetail.png, id=994, 365.11406pt x 665.48625pt>
+<Images/InVision/kapdetail.png, id=997, 365.11406pt x 665.48625pt>
 File: Images/InVision/kapdetail.png Graphic file (type png)
 
 <use Images/InVision/kapdetail.png>
@@ -2067,14 +2067,14 @@ Package pdftex.def Info: Images/InVision/kapdetail.png used on input line 1880.
 
 (pdftex.def)             Requested size: 136.57462pt x 248.92714pt.
 
-<Images/InVision/sports.png, id=995, 274.02374pt x 398.23781pt>
+<Images/InVision/sports.png, id=998, 274.02374pt x 398.23781pt>
 File: Images/InVision/sports.png Graphic file (type png)
 
 <use Images/InVision/sports.png>
 Package pdftex.def Info: Images/InVision/sports.png used on input line 1885.
 (pdftex.def)             Requested size: 136.57462pt x 198.48643pt.
 
-<Images/InVision/menu-city.png, id=996, 274.02374pt x 329.73187pt>
+<Images/InVision/menu-city.png, id=999, 274.02374pt x 329.73187pt>
 File: Images/InVision/menu-city.png Graphic file (type png)
 
 <use Images/InVision/menu-city.png>
@@ -2082,14 +2082,14 @@ Package pdftex.def Info: Images/InVision/menu-city.png used on input line 1891.
 
 (pdftex.def)             Requested size: 136.57462pt x 164.34225pt.
 
-<Images/InVision/agence.png, id=997, 272.51813pt x 480.29437pt>
+<Images/InVision/agence.png, id=1000, 272.51813pt x 480.29437pt>
 File: Images/InVision/agence.png Graphic file (type png)
 
 <use Images/InVision/agence.png>
 Package pdftex.def Info: Images/InVision/agence.png used on input line 1896.
 (pdftex.def)             Requested size: 136.57462pt x 240.70357pt.
 
-<Images/InVision/menu-tourisme.png, id=998, 273.27094pt x 375.65344pt>
+<Images/InVision/menu-tourisme.png, id=1001, 273.27094pt x 375.65344pt>
 File: Images/InVision/menu-tourisme.png Graphic file (type png)
 
 <use Images/InVision/menu-tourisme.png>
@@ -2101,7 +2101,7 @@ Images/InVision/menu-login.png> <./Images/InVision/horaire-bibli.png> <./Images
 /InVision/detail-cours.png> <./Images/InVision/agenda.png> <./Images/InVision/m
 enucampus.png> <./Images/InVision/cercleliste.png> <./Images/InVision/cercledet
 ail.png>]
-<Images/InVision/liste-musees.png, id=1006, 274.02374pt x 375.65344pt>
+<Images/InVision/liste-musees.png, id=1009, 274.02374pt x 375.65344pt>
 File: Images/InVision/liste-musees.png Graphic file (type png)
 
 <use Images/InVision/liste-musees.png>
@@ -2109,7 +2109,7 @@ Package pdftex.def Info: Images/InVision/liste-musees.png used on input line 19
 07.
 (pdftex.def)             Requested size: 136.57462pt x 187.23012pt.
 
-<Images/InVision/detail-musee.png, id=1007, 273.27094pt x 566.86781pt>
+<Images/InVision/detail-musee.png, id=1010, 273.27094pt x 566.86781pt>
 File: Images/InVision/detail-musee.png Graphic file (type png)
 
 <use Images/InVision/detail-musee.png>
@@ -2117,28 +2117,28 @@ Package pdftex.def Info: Images/InVision/detail-musee.png used on input line 19
 12.
 (pdftex.def)             Requested size: 136.57462pt x 283.3121pt.
 
-<Images/InVision/loisir.png, id=1008, 274.02374pt x 368.87813pt>
+<Images/InVision/loisir.png, id=1011, 274.02374pt x 368.87813pt>
 File: Images/InVision/loisir.png Graphic file (type png)
 
 <use Images/InVision/loisir.png>
 Package pdftex.def Info: Images/InVision/loisir.png used on input line 1917.
 (pdftex.def)             Requested size: 136.57462pt x 183.85323pt.
 
-<Images/InVision/theatre.png, id=1009, 219.06844pt x 536.75531pt>
+<Images/InVision/theatre.png, id=1012, 219.06844pt x 536.75531pt>
 File: Images/InVision/theatre.png Graphic file (type png)
 
 <use Images/InVision/theatre.png>
 Package pdftex.def Info: Images/InVision/theatre.png used on input line 1923.
 (pdftex.def)             Requested size: 136.57462pt x 334.63583pt.
 
-<Images/InVision/cinema.png, id=1010, 274.02374pt x 453.94594pt>
+<Images/InVision/cinema.png, id=1013, 274.02374pt x 453.94594pt>
 File: Images/InVision/cinema.png Graphic file (type png)
 
 <use Images/InVision/cinema.png>
 Package pdftex.def Info: Images/InVision/cinema.png used on input line 1928.
 (pdftex.def)             Requested size: 136.57462pt x 226.25203pt.
 
-<Images/InVision/liste-resto.png, id=1011, 274.02374pt x 375.65344pt>
+<Images/InVision/liste-resto.png, id=1014, 274.02374pt x 375.65344pt>
 File: Images/InVision/liste-resto.png Graphic file (type png)
 
 <use Images/InVision/liste-resto.png>
@@ -2148,7 +2148,7 @@ Package pdftex.def Info: Images/InVision/liste-resto.png used on input line 193
  [63 <./Images/InVision/kapliste.png> <./Images/InVision/kapdetail.png> <./Imag
 es/InVision/sports.png> <./Images/InVision/menu-city.png> <./Images/InVision/ag
 ence.png> <./Images/InVision/menu-tourisme.png>] <Images/InVision/detail-resto.
-png, id=1018, 273.27094pt x 523.20468pt>
+png, id=1021, 273.27094pt x 523.20468pt>
 File: Images/InVision/detail-resto.png Graphic file (type png)
 
 <use Images/InVision/detail-resto.png>
@@ -2156,7 +2156,7 @@ Package pdftex.def Info: Images/InVision/detail-resto.png used on input line 19
 40.
 (pdftex.def)             Requested size: 136.57462pt x 261.48993pt.
 
-<Images/InVision/liste-bars.png, id=1019, 274.77657pt x 375.65344pt>
+<Images/InVision/liste-bars.png, id=1022, 274.77657pt x 375.65344pt>
 File: Images/InVision/liste-bars.png Graphic file (type png)
 
 <use Images/InVision/liste-bars.png>
@@ -2164,7 +2164,7 @@ Package pdftex.def Info: Images/InVision/liste-bars.png used on input line 1945
 .
 (pdftex.def)             Requested size: 136.57462pt x 186.71997pt.
 
-<Images/InVision/detail-bar.png, id=1020, 273.27094pt x 479.54156pt>
+<Images/InVision/detail-bar.png, id=1023, 273.27094pt x 479.54156pt>
 File: Images/InVision/detail-bar.png Graphic file (type png)
 
 <use Images/InVision/detail-bar.png>
@@ -2172,21 +2172,21 @@ Package pdftex.def Info: Images/InVision/detail-bar.png used on input line 1950
 .
 (pdftex.def)             Requested size: 136.57462pt x 239.66774pt.
 
-<Images/InVision/tools.png, id=1021, 274.02374pt x 343.2825pt>
+<Images/InVision/tools.png, id=1024, 274.02374pt x 343.2825pt>
 File: Images/InVision/tools.png Graphic file (type png)
 
 <use Images/InVision/tools.png>
 Package pdftex.def Info: Images/InVision/tools.png used on input line 1956.
 (pdftex.def)             Requested size: 136.57462pt x 171.09605pt.
 
-<Images/InVision/map.png, id=1022, 274.02374pt x 438.13687pt>
+<Images/InVision/map.png, id=1025, 274.02374pt x 438.13687pt>
 File: Images/InVision/map.png Graphic file (type png)
 
 <use Images/InVision/map.png>
 Package pdftex.def Info: Images/InVision/map.png used on input line 1961.
 (pdftex.def)             Requested size: 136.57462pt x 218.3726pt.
 
-<Images/InVision/help-list.png, id=1023, 274.02374pt x 322.20375pt>
+<Images/InVision/help-list.png, id=1026, 274.02374pt x 322.20375pt>
 File: Images/InVision/help-list.png Graphic file (type png)
 
 <use Images/InVision/help-list.png>
@@ -2201,7 +2201,7 @@ png> <./Images/InVision/tools.png> <./Images/InVision/map.png> <./Images/InVisi
 on/help-list.png>]
 Appendix B.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-40-15.png, id=1036, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-40-15.png, id=1039, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-40-15.png Graphic fil
 e (type png)
@@ -2211,7 +2211,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-40
 -15.png used on input line 1974.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-40-50.png, id=1037, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-40-50.png, id=1040, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-40-50.png Graphic fil
 e (type png)
@@ -2221,7 +2221,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-40
 -50.png used on input line 1979.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-41-05.png, id=1038, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-41-05.png, id=1041, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-41-05.png Graphic fil
 e (type png)
@@ -2231,7 +2231,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-41
 -05.png used on input line 1984.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-41-26.png, id=1039, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-41-26.png, id=1042, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-41-26.png Graphic fil
 e (type png)
@@ -2241,7 +2241,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-41
 -26.png used on input line 1990.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-43-14.png, id=1040, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-43-14.png, id=1043, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-43-14.png Graphic fil
 e (type png)
@@ -2251,7 +2251,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-43
 -14.png used on input line 1995.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-43-30.png, id=1041, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-43-30.png, id=1044, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-43-30.png Graphic fil
 e (type png)
@@ -2261,7 +2261,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-43
 -30.png used on input line 2000.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-44-12.png, id=1042, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-44-12.png, id=1045, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-44-12.png Graphic fil
 e (type png)
@@ -2271,7 +2271,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-44
 -12.png used on input line 2006.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-44-26.png, id=1043, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-44-26.png, id=1046, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-44-26.png Graphic fil
 e (type png)
@@ -2281,7 +2281,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-44
 -26.png used on input line 2011.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-45-05.png, id=1044, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-45-05.png, id=1047, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-45-05.png Graphic fil
 e (type png)
@@ -2291,7 +2291,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
 -05.png used on input line 2016.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-45-20.png, id=1045, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-45-20.png, id=1048, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-45-20.png Graphic fil
 e (type png)
@@ -2301,7 +2301,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
 -20.png used on input line 2022.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-45-51.png, id=1046, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-45-51.png, id=1049, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-45-51.png Graphic fil
 e (type png)
@@ -2311,7 +2311,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
 -51.png used on input line 2027.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-45-37.png, id=1047, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-45-37.png, id=1050, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-45-37.png Graphic fil
 e (type png)
@@ -2321,7 +2321,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-45
 -37.png used on input line 2030.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-46-04.png, id=1048, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-46-04.png, id=1051, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-46-04.png Graphic fil
 e (type png)
@@ -2331,7 +2331,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
 -04.png used on input line 2039.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-46-46.png, id=1049, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-46-46.png, id=1052, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-46-46.png Graphic fil
 e (type png)
@@ -2341,7 +2341,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
 -46.png used on input line 2044.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-46-56.png, id=1050, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-46-56.png, id=1053, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-46-56.png Graphic fil
 e (type png)
@@ -2351,7 +2351,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-46
 -56.png used on input line 2049.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-47-05.png, id=1051, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-47-05.png, id=1054, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-47-05.png Graphic fil
 e (type png)
@@ -2361,7 +2361,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
 -05.png used on input line 2055.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-47-19.png, id=1052, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-47-19.png, id=1055, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-47-19.png Graphic fil
 e (type png)
@@ -2371,7 +2371,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
 -19.png used on input line 2060.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-47-47.png, id=1053, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-47-47.png, id=1056, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-47-47.png Graphic fil
 e (type png)
@@ -2381,7 +2381,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-47
 -47.png used on input line 2065.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-48-01.png, id=1054, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-48-01.png, id=1057, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-48-01.png Graphic fil
 e (type png)
@@ -2391,7 +2391,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
 -01.png used on input line 2071.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-48-08.png, id=1055, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-48-08.png, id=1058, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-48-08.png Graphic fil
 e (type png)
@@ -2401,7 +2401,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
 -08.png used on input line 2076.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-48-21.png, id=1056, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-48-21.png, id=1059, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-48-21.png Graphic fil
 e (type png)
@@ -2411,7 +2411,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
 -21.png used on input line 2081.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-48-40.png, id=1057, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-48-40.png, id=1060, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-48-40.png Graphic fil
 e (type png)
@@ -2421,7 +2421,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-48
 -40.png used on input line 2087.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-49-08.png, id=1058, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-49-08.png, id=1061, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-49-08.png Graphic fil
 e (type png)
@@ -2431,7 +2431,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
 -08.png used on input line 2092.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-49-21.png, id=1059, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-49-21.png, id=1062, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-49-21.png Graphic fil
 e (type png)
@@ -2441,7 +2441,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
 -21.png used on input line 2097.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-49-30.png, id=1060, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-49-30.png, id=1063, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-49-30.png Graphic fil
 e (type png)
@@ -2451,7 +2451,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
 -30.png used on input line 2103.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-49-46.png, id=1061, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-49-46.png, id=1064, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-49-46.png Graphic fil
 e (type png)
@@ -2461,7 +2461,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
 -46.png used on input line 2108.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-49-55.png, id=1062, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-49-55.png, id=1065, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-49-55.png Graphic fil
 e (type png)
@@ -2471,7 +2471,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-49
 -55.png used on input line 2113.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-50-02.png, id=1063, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-50-02.png, id=1066, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-50-02.png Graphic fil
 e (type png)
@@ -2481,7 +2481,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
 -02.png used on input line 2119.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-50-14.png, id=1064, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-50-14.png, id=1067, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-50-14.png Graphic fil
 e (type png)
@@ -2491,7 +2491,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
 -14.png used on input line 2124.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-50-28.png, id=1065, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-50-28.png, id=1068, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-50-28.png Graphic fil
 e (type png)
@@ -2501,7 +2501,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-50
 -28.png used on input line 2129.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-51-21.png, id=1066, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-51-21.png, id=1069, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-51-21.png Graphic fil
 e (type png)
@@ -2511,7 +2511,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-51
 -21.png used on input line 2135.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-51-29.png, id=1067, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-51-29.png, id=1070, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-51-29.png Graphic fil
 e (type png)
@@ -2521,7 +2521,7 @@ Package pdftex.def Info: Images/Application_screens/Screenshot_2016-06-06-13-51
 -29.png used on input line 2140.
 (pdftex.def)             Requested size: 136.57462pt x 242.80104pt.
 
-<Images/Application_screens/Screenshot_2016-06-06-13-52-44.png, id=1068, 722.7p
+<Images/Application_screens/Screenshot_2016-06-06-13-52-44.png, id=1071, 722.7p
 t x 1284.8pt>
 File: Images/Application_screens/Screenshot_2016-06-06-13-52-44.png Graphic fil
 e (type png)
@@ -2561,28 +2561,28 @@ nshot_2016-06-06-13-50-28.png> <./Images/Application_screens/Screenshot_2016-06
 -06-13-51-21.png> <./Images/Application_screens/Screenshot_2016-06-06-13-51-29.
 png> <./Images/Application_screens/Screenshot_2016-06-06-13-52-44.png>]
 Appendix C.
-<Images/cafetaria.png, id=1105, 1863.96375pt x 1059.96pt>
+<Images/cafetaria.png, id=1108, 1863.96375pt x 1059.96pt>
 File: Images/cafetaria.png Graphic file (type png)
 
 <use Images/cafetaria.png>
 Package pdftex.def Info: Images/cafetaria.png used on input line 2153.
 (pdftex.def)             Requested size: 279.5825pt x 158.98714pt.
 
-<Images/campus.png, id=1106, 1863.96375pt x 1062.97125pt>
+<Images/campus.png, id=1109, 1863.96375pt x 1062.97125pt>
 File: Images/campus.png Graphic file (type png)
 
 <use Images/campus.png>
 Package pdftex.def Info: Images/campus.png used on input line 2158.
 (pdftex.def)             Requested size: 279.5825pt x 159.43881pt.
 
-<Images/events.png, id=1107, 1863.96375pt x 1060.96375pt>
+<Images/events.png, id=1110, 1863.96375pt x 1060.96375pt>
 File: Images/events.png Graphic file (type png)
 
 <use Images/events.png>
 Package pdftex.def Info: Images/events.png used on input line 2163.
 (pdftex.def)             Requested size: 279.5825pt x 159.1377pt.
 
-<Images/lecturehalldetail.png, id=1108, 1860.9525pt x 1057.9525pt>
+<Images/lecturehalldetail.png, id=1111, 1860.9525pt x 1057.9525pt>
 File: Images/lecturehalldetail.png Graphic file (type png)
 
 <use Images/lecturehalldetail.png>
@@ -2591,14 +2591,14 @@ Package pdftex.def Info: Images/lecturehalldetail.png used on input line 2168.
  [72
 
  <./Images/cafetaria.png (PNG copy)> <./Images/campus.png (PNG copy)>]
-<Images/lecturehalls.png, id=1116, 1863.96375pt x 1056.94875pt>
+<Images/lecturehalls.png, id=1119, 1863.96375pt x 1056.94875pt>
 File: Images/lecturehalls.png Graphic file (type png)
 
 <use Images/lecturehalls.png>
 Package pdftex.def Info: Images/lecturehalls.png used on input line 2173.
 (pdftex.def)             Requested size: 279.5825pt x 158.53546pt.
 
-<Images/lecturehallscached.png, id=1117, 1863.96375pt x 1063.975pt>
+<Images/lecturehallscached.png, id=1120, 1863.96375pt x 1063.975pt>
 File: Images/lecturehallscached.png Graphic file (type png)
 
 <use Images/lecturehallscached.png>
@@ -2611,41 +2611,41 @@ Package pdftex.def Info: Images/libraries.png used on input line 2183.
 (pdftex.def)             Requested size: 279.13083pt x 159.1377pt.
  [73 <./Images/events.png (PNG copy)> <./Images/lecturehalldetail.png (PNG copy
 )> <./Images/lecturehalls.png (PNG copy)>]
-<Images/librarydetail.png, id=1125, 1864.9675pt x 1060.96375pt>
+<Images/librarydetail.png, id=1128, 1864.9675pt x 1060.96375pt>
 File: Images/librarydetail.png Graphic file (type png)
 
 <use Images/librarydetail.png>
 Package pdftex.def Info: Images/librarydetail.png used on input line 2188.
 (pdftex.def)             Requested size: 279.73305pt x 159.1377pt.
 
-<Images/maps.png, id=1126, 1861.95625pt x 1059.96pt>
+<Images/maps.png, id=1129, 1861.95625pt x 1059.96pt>
 File: Images/maps.png Graphic file (type png)
  <use Images/maps.png>
 Package pdftex.def Info: Images/maps.png used on input line 2193.
 (pdftex.def)             Requested size: 279.28139pt x 158.98714pt.
 
-<Images/menus.png, id=1127, 1864.9675pt x 1057.9525pt>
+<Images/menus.png, id=1130, 1864.9675pt x 1057.9525pt>
 File: Images/menus.png Graphic file (type png)
  <use Images/menus.png>
 Package pdftex.def Info: Images/menus.png used on input line 2198.
 (pdftex.def)             Requested size: 279.73305pt x 158.68602pt.
 
 [74 <./Images/lecturehallscached.png (PNG copy)> <./Images/librarydetail.png (P
-NG copy)>] <Images/schedule.png, id=1135, 1861.95625pt x 1059.96pt>
+NG copy)>] <Images/schedule.png, id=1138, 1861.95625pt x 1059.96pt>
 File: Images/schedule.png Graphic file (type png)
 
 <use Images/schedule.png>
 Package pdftex.def Info: Images/schedule.png used on input line 2203.
 (pdftex.def)             Requested size: 279.28139pt x 158.98714pt.
 
-<Images/schedulecached.png, id=1136, 1861.95625pt x 1062.97125pt>
+<Images/schedulecached.png, id=1139, 1861.95625pt x 1062.97125pt>
 File: Images/schedulecached.png Graphic file (type png)
 
 <use Images/schedulecached.png>
 Package pdftex.def Info: Images/schedulecached.png used on input line 2208.
 (pdftex.def)             Requested size: 279.28139pt x 159.43881pt.
 
-<Images/sports4.png, id=1137, 1860.9525pt x 1060.96375pt>
+<Images/sports4.png, id=1140, 1860.9525pt x 1060.96375pt>
 File: Images/sports4.png Graphic file (type png)
 
 <use Images/sports4.png>
@@ -2653,14 +2653,14 @@ Package pdftex.def Info: Images/sports4.png used on input line 2213.
 (pdftex.def)             Requested size: 279.13083pt x 159.1377pt.
  [75 <./Images/maps.png (PNG copy)> <./Images/menus.png (PNG copy)> <./Images/s
 chedule.png (PNG copy)>]
-<Images/sportscached.png, id=1145, 1864.9675pt x 1062.97125pt>
+<Images/sportscached.png, id=1148, 1864.9675pt x 1062.97125pt>
 File: Images/sportscached.png Graphic file (type png)
 
 <use Images/sportscached.png>
 Package pdftex.def Info: Images/sportscached.png used on input line 2218.
 (pdftex.def)             Requested size: 279.73305pt x 159.43881pt.
 
-<Images/student.png, id=1146, 1863.96375pt x 1060.96375pt>
+<Images/student.png, id=1149, 1863.96375pt x 1060.96375pt>
 File: Images/student.png Graphic file (type png)
 
 <use Images/student.png>
@@ -2727,15 +2727,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2232.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2232.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B813A6E73E5657708716B342BE6A5407;5116.
+(rerunfilecheck)             Checksum: FFE310A20EDB0601028988FC74ECBDCF;5118.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44332 strings out of 493335
- 970854 string characters out of 3139235
+ 44333 strings out of 493335
+ 970866 string characters out of 3139235
  994926 words of memory out of 3000000
  46643 multiletter control sequences out of 15000+200000
  102945 words of font info for 128 fonts, out of 3000000 for 9000
@@ -2754,9 +2754,9 @@ eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (79 pages, 13488841 bytes).
+Output written on thesis.pdf (79 pages, 13489546 bytes).
 PDF statistics:
- 1307 PDF objects out of 1440 (max. 8388607)
- 458 named destinations out of 1000 (max. 500000)
+ 1310 PDF objects out of 1440 (max. 8388607)
+ 459 named destinations out of 1000 (max. 500000)
  29752 words of extra memory for PDF output out of 29859 (max. 10000000)
 
