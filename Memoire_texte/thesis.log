@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.2)  6 JUN 2016 12:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.2)  6 JUN 2016 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -840,6 +840,36 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -1054,151 +1084,170 @@ Package xcolor Warning: Incompatible color definition on input line 89.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./EPL_TFEbanner.jpg>]
-(./thesis.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 4.
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 ...us/Tools/City Menus}{35}{subsection.5.1.4}
-                                                   [1
+l.98 \tableofcontents
+                      % Include a table of contents [1
+
+] (./thesis.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
+ [2
 
 ])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [2]
+
+[3]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
  []
 
-[3
+[4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-[4]
+[5]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-[5
+[6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 []|\T1/lmr/m/n/10.95 (+20) Powerful CLI,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
 []|\T1/lmr/m/n/10.95 (+20) Monaca Could
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 237--237
+Underfull \hbox (badness 2393) in paragraph at lines 245--245
 []|\T1/lmr/m/n/10.95 (+20) React De-vel-oper
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
 \T1/lmr/m/n/10.95 (+20) Tools ex-ten-sion
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 239--239
+Underfull \hbox (badness 2012) in paragraph at lines 247--247
 []|\T1/lmr/m/n/10.95 (+20) Free CLI, other
  []
 
 
-Overfull \hbox (6.91663pt too wide) in paragraph at lines 231--242
+Overfull \hbox (6.91663pt too wide) in paragraph at lines 239--250
  [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 253.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 261.
 
 (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 253.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 261.
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-[8]
+[9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 278.
+(Font)              <9> on input line 286.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 278.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 278.
+(Font)              <5> on input line 286.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 286.
 
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1208,104 +1257,87 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 3557) in paragraph at lines 282--282
+Underfull \hbox (badness 3557) in paragraph at lines 290--290
 [][][]\T1/lmr/m/n/9 (+20) This three quotes come from their FAQ []$\T1/lmtt/m/n
 /9 http : / / www . apache . org / foundation / license-[]faq . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
 [][][]\T1/lmr/m/n/9 (+20) Tivoization, Laws pro-hibit-ing, Dis-crim-i-na-tory p
 atent deals []$\T1/lmtt/m/n/9 http : / / www . gnu . org / licenses /
  []
 
-[9] [10] <Images/llncampus.png, id=447, 642.4pt x 1027.84pt>
+[10] [11] <Images/llncampus.png, id=453, 642.4pt x 1027.84pt>
 File: Images/llncampus.png Graphic file (type png)
 
 <use Images/llncampus.png>
-Package pdftex.def Info: Images/llncampus.png used on input line 346.
+Package pdftex.def Info: Images/llncampus.png used on input line 353.
 (pdftex.def)             Requested size: 128.47772pt x 205.56436pt.
- [11 <./Images/llncampus.png>]
-<Images/llnmaps1.jpg, id=459, 408.52625pt x 601.24625pt>
+ [12 <./Images/llncampus.png>]
+<Images/llnmaps1.jpg, id=466, 408.52625pt x 601.24625pt>
 File: Images/llnmaps1.jpg Graphic file (type jpg)
 
 <use Images/llnmaps1.jpg>
-Package pdftex.def Info: Images/llnmaps1.jpg used on input line 360.
+Package pdftex.def Info: Images/llnmaps1.jpg used on input line 367.
 (pdftex.def)             Requested size: 136.57462pt x 200.99901pt.
 
-<Images/llnmaps2.jpg, id=460, 527.9725pt x 903.375pt>
+<Images/llnmaps2.jpg, id=467, 527.9725pt x 903.375pt>
 File: Images/llnmaps2.jpg Graphic file (type jpg)
 
 <use Images/llnmaps2.jpg>
-Package pdftex.def Info: Images/llnmaps2.jpg used on input line 365.
+Package pdftex.def Info: Images/llnmaps2.jpg used on input line 372.
 (pdftex.def)             Requested size: 125.19281pt x 214.20918pt.
- [12 <./Images/llnmaps1.jpg> <./Images/llnmaps2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+ [13 <./Images/llnmaps1.jpg> <./Images/llnmaps2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
-[13] <Images/issue.png, id=486, 698.61pt x 336.50719pt>
+[14] <Images/issue.png, id=492, 698.61pt x 336.50719pt>
 File: Images/issue.png Graphic file (type png)
  <use Images/issue.png>
-Package pdftex.def Info: Images/issue.png used on input line 430.
+Package pdftex.def Info: Images/issue.png used on input line 437.
 (pdftex.def)             Requested size: 454.09113pt x 218.72707pt.
 
-<Images/dashboard.png, id=487, 1438.6247pt x 732.48656pt>
+<Images/dashboard.png, id=493, 1438.6247pt x 732.48656pt>
 File: Images/dashboard.png Graphic file (type png)
 
 <use Images/dashboard.png>
-Package pdftex.def Info: Images/dashboard.png used on input line 449.
+Package pdftex.def Info: Images/dashboard.png used on input line 456.
 (pdftex.def)             Requested size: 647.37514pt x 329.61589pt.
- [14 <./Images/issue.png>] [15 <./Images/dashboard.png>] [16]
+ [15 <./Images/issue.png>] [16 <./Images/dashboard.png>] [17]
 Chapter 3.
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
-[17
+[18
 
-] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 629--630
+] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 643--644
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
@@ -1314,10 +1346,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
-[20] [21]
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+[21] [22]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--662
+Underfull \hbox (badness 10000) in paragraph at lines 667--669
 
  []
 
@@ -1337,209 +1384,194 @@ Underfull \hbox (badness 10000) in paragraph at lines 660--662
 \forest@temp@box=\box32754 (local)
 \forest@temp@box=\box32753 (local)
 \forest@temp@box=\box32752 (local)
-<Images/folder_before.jpg, id=530, 648.17157pt x 746.03719pt>
+<Images/folder_before.jpg, id=536, 648.17157pt x 746.03719pt>
 File: Images/folder_before.jpg Graphic file (type jpg)
 
 <use Images/folder_before.jpg>
-Package pdftex.def Info: Images/folder_before.jpg used on input line 694.
+Package pdftex.def Info: Images/folder_before.jpg used on input line 701.
 (pdftex.def)             Requested size: 91.04742pt x 104.786pt.
 
-<Images/folder_after.jpg, id=531, 309.40594pt x 770.12718pt>
+<Images/folder_after.jpg, id=537, 309.40594pt x 770.12718pt>
 File: Images/folder_after.jpg Graphic file (type jpg)
 
 <use Images/folder_after.jpg>
-Package pdftex.def Info: Images/folder_after.jpg used on input line 699.
+Package pdftex.def Info: Images/folder_after.jpg used on input line 706.
 (pdftex.def)             Requested size: 91.04742pt x 226.62149pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--705
+Underfull \hbox (badness 10000) in paragraph at lines 697--712
 
  []
 
-[22
+[23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 709--711
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
 
  []
 
-[23 <./Images/folder_before.jpg> <./Images/folder_after.jpg>] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
+[24 <./Images/folder_before.jpg> <./Images/folder_after.jpg>] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 814--815
 
  []
 
-<Images/factory_arch.png, id=553, 961.34157pt x 560.8453pt>
+<Images/factory_arch.png, id=559, 961.34157pt x 560.8453pt>
 File: Images/factory_arch.png Graphic file (type png)
 
 <use Images/factory_arch.png>
-Package pdftex.def Info: Images/factory_arch.png used on input line 811.
+Package pdftex.def Info: Images/factory_arch.png used on input line 818.
 (pdftex.def)             Requested size: 288.4047pt x 168.25488pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 822--823
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
-<Images/stateProvider_arch.png, id=554, 806.26219pt x 672.26157pt>
+<Images/stateProvider_arch.png, id=560, 806.26219pt x 672.26157pt>
 File: Images/stateProvider_arch.png Graphic file (type png)
 
 <use Images/stateProvider_arch.png>
-Package pdftex.def Info: Images/stateProvider_arch.png used on input line 830.
+Package pdftex.def Info: Images/stateProvider_arch.png used on input line 837.
 (pdftex.def)             Requested size: 241.88052pt x 201.68002pt.
- [25 <./Images/factory_arch.png>]
+ [26 <./Images/factory_arch.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 844.
- [26 <./Images/stateProvider_arch.png>] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 910--911
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 938--939
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 851.
+ [27 <./Images/stateProvider_arch.png>] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 917--918
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1000--1002
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
 
  []
 
 
-Overfull \hbox (36.84747pt too wide) in paragraph at lines 1003--1003
+Underfull \hbox (badness 10000) in paragraph at lines 945--946
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1009
+
+ []
+
+
+Overfull \hbox (36.84747pt too wide) in paragraph at lines 1010--1010
 []\T1/lmtt/m/n/10.95 select * from feednormalizer where url='http://louvainfo.b
 e/evenements/feed/calendar/' 
  []
 
-[30]
-Overfull \hbox (24.80438pt too wide) in paragraph at lines 1010--1011
+[31]
+Overfull \hbox (24.80438pt too wide) in paragraph at lines 1017--1018
 \T1/lmr/m/n/10.95 (-20) The re-quest al-ways starts with []$\T1/lmtt/m/n/10.95 
 http : / / horairev6 . uclouvain . be / jsp / custom / modules / plannings /
  []
 
-[31] [32] [33]
+[32] [33] [34]
 Chapter 5.
-<Images/tabs-nav-stack.png, id=640, 540.0175pt x 804.00375pt>
+<Images/tabs-nav-stack.png, id=646, 540.0175pt x 804.00375pt>
 File: Images/tabs-nav-stack.png Graphic file (type png)
 
 <use Images/tabs-nav-stack.png>
-Package pdftex.def Info: Images/tabs-nav-stack.png used on input line 1078.
+Package pdftex.def Info: Images/tabs-nav-stack.png used on input line 1085.
 (pdftex.def)             Requested size: 162.0065pt x 241.20299pt.
- [34
+ [35
 
-] [35 <./Images/tabs-nav-stack.png>]
-[36] [37] [38] [39]
-<Images/sportsorting.png, id=702, 918.43124pt x 402.75468pt>
+] [36 <./Images/tabs-nav-stack.png>]
+[37] [38] [39] [40]
+<Images/sportsorting.png, id=708, 918.43124pt x 402.75468pt>
 File: Images/sportsorting.png Graphic file (type png)
 
 <use Images/sportsorting.png>
-Package pdftex.def Info: Images/sportsorting.png used on input line 1202.
+Package pdftex.def Info: Images/sportsorting.png used on input line 1209.
 (pdftex.def)             Requested size: 275.5315pt x 120.82733pt.
- [40 <./Images/sportsorting.png>] [41]
+ [41 <./Images/sportsorting.png>] [42]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 1265--1266
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1267--1269
+Underfull \hbox (badness 10000) in paragraph at lines 1274--1276
 
  []
 
-[42] [43]
-Overfull \hbox (22.5811pt too wide) in paragraph at lines 1368--1369
+[43] [44]
+Overfull \hbox (22.5811pt too wide) in paragraph at lines 1375--1376
 \T1/lmr/m/n/10.95 (-20) For more op-tions on the launch com-mand, please re-fer
  to http://ionicframework.com/docs/cli/run.html. 
  []
 
-[44] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[45] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-) [45] [46]
-[47] [48] <Images/tests.png, id=875, 554.07pt x 135.50626pt>
+) [46] [47]
+[48] [49] <Images/tests.png, id=882, 554.07pt x 135.50626pt>
 File: Images/tests.png Graphic file (type png)
 
 <use Images/tests.png>
-Package pdftex.def Info: Images/tests.png used on input line 1508.
+Package pdftex.def Info: Images/tests.png used on input line 1515.
 (pdftex.def)             Requested size: 387.84636pt x 94.85371pt.
- [49 <./Images/tests.png>]
-<Images/test2.png, id=897, 549.55313pt x 229.60782pt>
+ [50 <./Images/tests.png>]
+<Images/test2.png, id=903, 549.55313pt x 229.60782pt>
 File: Images/test2.png Graphic file (type png)
  <use Images/test2.png>
-Package pdftex.def Info: Images/test2.png used on input line 1552.
+Package pdftex.def Info: Images/test2.png used on input line 1559.
 (pdftex.def)             Requested size: 384.68457pt x 160.72437pt.
 
-[50 <./Images/test2.png>]
+[51 <./Images/test2.png>]
 Chapter 6.
-[51
+[52
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1604--1605
+Underfull \hbox (badness 10000) in paragraph at lines 1611--1612
 
  []
 
-<Images/libraries.png, id=912, 1860.9525pt x 1060.96375pt>
+<Images/libraries.png, id=918, 1860.9525pt x 1060.96375pt>
 File: Images/libraries.png Graphic file (type png)
 
 <use Images/libraries.png>
-Package pdftex.def Info: Images/libraries.png used on input line 1608.
+Package pdftex.def Info: Images/libraries.png used on input line 1615.
 (pdftex.def)             Requested size: 465.23698pt x 265.24028pt.
 
-Overfull \hbox (9.99287pt too wide) in paragraph at lines 1608--1609
+Overfull \hbox (9.99287pt too wide) in paragraph at lines 1615--1616
  [][] 
  []
 
-[52] [53 <./Images/libraries.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1650--1652
+[53] [54 <./Images/libraries.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1657--1659
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1653--1654
-
- []
-
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 1685--1686
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1687--1689
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1691
+Underfull \hbox (badness 10000) in paragraph at lines 1660--1661
 
  []
 
 [55]
+Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1694--1696
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1697--1698
+
+ []
+
+[56]
 Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1696--1697
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1698--1699
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1700--1702
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 1703--1704
 
@@ -1551,66 +1583,157 @@ Underfull \hbox (badness 10000) in paragraph at lines 1705--1706
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1707--1708
+Underfull \hbox (badness 10000) in paragraph at lines 1707--1709
 
  []
 
-[56
+
+Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1713
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1714--1715
+
+ []
+
+[57
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1711--1712
+Underfull \hbox (badness 10000) in paragraph at lines 1718--1719
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1713--1714
+Underfull \hbox (badness 10000) in paragraph at lines 1720--1721
 
  []
 
-[57]
-Underfull \hbox (badness 4156) in paragraph at lines 1722--1726
+[58]
+Underfull \hbox (badness 4156) in paragraph at lines 1729--1733
 []\T1/lmr/m/n/10.95 (+20) Mario Korf and Eu-gene Oks-man. 2015. \T1/lmr/m/it/10
 .95 (+20) Na-tive, HTML5, or Hy-brid: Un-der-
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 1722--1726
+Underfull \hbox (badness 3884) in paragraph at lines 1729--1733
 \T1/lmr/m/it/10.95 (+20) stand-ing Your Mo-bile Ap-pli-ca-tion De-vel-op-ment O
 p-tions\T1/lmr/m/n/10.95 (+20) . [ON-LINE] Avail-able at:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1722--1726
+Underfull \hbox (badness 10000) in paragraph at lines 1729--1733
 \T1/lmr/m/n/10.95 (-13) https://developer.salesforce.com/page/Native,_HTML5,_or
 _Hybrid:_Understanding_Your
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1739--1741
-
+Underfull \hbox (badness 10000) in paragraph at lines 1761--1764
+[]\T1/lmr/m/n/10.95 (+20) Debian. 2016. \T1/lmr/m/it/10.95 (+20) Li-cense in-fo
+r-ma-tion\T1/lmr/m/n/10.95 (+20) . [ON-LINE] Avail-able at:
  []
 
-[58
+
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1769
+[]\T1/lmr/m/n/10.95 (+20) Black Duck. 2016. \T1/lmr/m/it/10.95 (+20) Top Open S
+ource Li-censes\T1/lmr/m/n/10.95 (+20) . [ON-LINE] Avail-able at:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1769
+\T1/lmr/m/n/10.95 (+20) https://www.blackducksoftware.com/top-open-source-licen
+ses. [Ac-cessed 25 March
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1771--1774
+[]\T1/lmr/m/n/10.95 (+20) Brett Smith. 2014. \T1/lmr/m/it/10.95 (+20) A Quick G
+uide to GPLv3\T1/lmr/m/n/10.95 (+20) . [ON-LINE] Avail-able at:
+ []
+
+[59
 
 pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1743 \backcoverpage
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{cite.}) has been already used, duplicate ignored
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1743 \backcoverpage
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{cite.}) has been already used, duplicate ignored
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1743 \backcoverpage
-                     ]
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1780 \newpage
+               ]pdfTeX warning (ext4): destination with the same identifier (na
+me{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1782 \bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1788 \bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1793 \bibitem{}
+                  [60]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -1645,29 +1768,29 @@ l.1743 \backcoverpage
 
 
 
-Package xcolor Warning: Incompatible color definition on input line 1743.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1743.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1743.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1802.
 
-Package xcolor Warning: Incompatible color definition on input line 1743.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Overfull \hbox (1.90796pt too wide) in paragraph at lines 1743--1744
+Overfull \hbox (1.90796pt too wide) in paragraph at lines 1802--1803
  [][][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1745.
-[59
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1804.
+[61
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1745.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1804.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1745.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1745.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1804.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1804.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 474924E8DB0E4C5E9020BD94F81B4588;4866.
@@ -1677,11 +1800,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31435 strings out of 495028
- 643714 string characters out of 6181498
- 723943 words of memory out of 5000000
+ 31445 strings out of 495028
+ 643820 string characters out of 6181498
+ 722928 words of memory out of 5000000
  33619 multiletter control sequences out of 15000+600000
- 102555 words of font info for 125 fonts, out of 8000000 for 9000
+ 102945 words of font info for 128 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  107i,10n,129p,1127b,4522s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1695,10 +1818,10 @@ f/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 ts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (60 pages, 1706393 bytes).
+Output written on thesis.pdf (62 pages, 1710870 bytes).
 PDF statistics:
- 1089 PDF objects out of 1200 (max. 8388607)
- 987 compressed objects within 10 object streams
- 397 named destinations out of 1000 (max. 500000)
+ 1101 PDF objects out of 1200 (max. 8388607)
+ 997 compressed objects within 10 object streams
+ 401 named destinations out of 1000 (max. 500000)
  29328 words of extra memory for PDF output out of 29859 (max. 10000000)
 
