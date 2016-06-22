@@ -22,7 +22,7 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $ro
 	  }
 	  $ionicPopup.alert({
 	    title: "Done",
-	  	content: "Your classes have been exported. \n Care your smartphone will maybe be slow for 1 minute"
+	  	content: "Your classes have been exported."
 	  })
 	  window.localStorage['agenda'] = 'true';
 	  $rootScope.agendaUpDated = true;
@@ -48,7 +48,7 @@ angular.module('ionicApp').controller('ScheduleController', function($scope, $ro
 	  }
 	  $ionicPopup.alert({
 	    title: "Done",
-	  	content: "Your classes have been removed. \n Care your smartphone will maybe be slow for 1 minute"
+	  	content: "Your classes have been removed."
 	  })
 	  window.localStorage['agenda'] = 'false';
 	  $rootScope.agendaUpDated = false;

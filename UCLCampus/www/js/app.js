@@ -274,10 +274,10 @@
       if (window.cordova) { //emulator/device
         window.plugins.sqlDB.remove("database.sqlite", 0, function() {}, function(error) {});  //remove db first
         window.plugins.sqlDB.copy("database.sqlite", 0, function() {
-          db = $cordovaSQLite.openDB({name:"database.sqlite", location:"database.sqlite"});
+          db = $cordovaSQLite.openDB({name:"database.sqlite"});
         }, function(error) {
             console.error("There was an error copying the database: " + error.code);
-            db = $cordovaSQLite.openDB({name:"database.sqlite", location:"database.sqlite"});
+            db = $cordovaSQLite.openDB({name:"database.sqlite"});
         });
       }
       else{
@@ -397,7 +397,7 @@
   }
 }) 
 
-.controller("HomeController", function($scope, $state, $rootScope, $ionicHistory, $cordovaNetwork, CampusFactory, campus) {
+.controller("HomeController", function($scope, $state, $rootScope, $ionicHistory, $ionicNavBarDelegate, $cordovaNetwork, CampusFactory, campus) {
 
   if(selectedCampus == null) {
     selectedCampus = campus;
@@ -407,6 +407,7 @@
   }
   $rootScope.currentTab=1;
   $ionicHistory.clearHistory();
+  $ionicNavBarDelegate.showBackButton(false);
   $rootScope.goHome = function(){
     $ionicHistory.nextViewOptions({
       disableAnimate: true,

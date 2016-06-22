@@ -1,7 +1,7 @@
-angular.module('ionicApp').controller('LoginController', function($scope, $state, $ionicPopup, AuthService) {
+angular.module('ionicApp').controller('LoginController', function($scope, $rootScope, $state, $ionicPopup, AuthService) {
   console.log("login");
   $scope.data = {};
- 
+  $rootScope.currentTab=1;
   $scope.login = function(data) {
     AuthService.login(data.username, data.password).then(function(authenticated) {
       $state.go('app.home', {}, {reload: true});
